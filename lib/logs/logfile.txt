@@ -1,0 +1,506 @@
+# Logfile created on 2015-07-05 10:12:41 -0700 by logger.rb/44203
+D, [2015-07-05T10:12:41.001319 #8444] DEBUG -- : Created logger
+I, [2015-07-05T10:12:41.001817 #8444]  INFO -- : Program started
+W, [2015-07-05T10:12:41.001817 #8444]  WARN -- : Nothing to do!
+D, [2015-07-05T10:12:41.014829 #8444] DEBUG -- : ...............Report for: Application...........
+D, [2015-07-05T10:12:41.014829 #8444] DEBUG -- : Description:   Represents the Excel application that manages the workbook. 
+D, [2015-07-05T10:12:41.015333 #8444] DEBUG -- : Properties: 1
+D, [2015-07-05T10:12:41.015333 #8444] DEBUG -- : ["calculationMode", "String", "Returns the calculation mode used in the workbook. Possible values are Automatic: Excel controls recalculation, Manual: Calculation is done when the user requests it, or Semiautomatic: Excel controls recalculation but ignores changes in tables."]
+D, [2015-07-05T10:12:41.015829 #8444] DEBUG -- : Methods: 1
+D, [2015-07-05T10:12:41.015829 #8444] DEBUG -- : ["calculate", "Void", "Perform calculation on the workbook or application."]
+D, [2015-07-05T10:12:41.016329 #8444] DEBUG -- : Params: 1
+D, [2015-07-05T10:12:41.016329 #8444] DEBUG -- : ["calculationType", "String", "Optional. Specifies the calculation type to use. Possible values are: ReCalculate: Performs normal calculation by calculating all the formulas in the workbook, Full: Forces a full calculation of the data, FullRebuild: Forces a full calculation of the data and rebuilds the dependencies. This option is similar to re-entering all formulas. Note: If calculationType is not specified, the 'ReCalculate' option is used by default.", "calculate"]
+D, [2015-07-05T10:12:41.019849 #8444] DEBUG -- : ...............Report for: Workbook...........
+D, [2015-07-05T10:12:41.020331 #8444] DEBUG -- : Description:  Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc. It can be used to list related references. 
+D, [2015-07-05T10:12:41.020331 #8444] DEBUG -- : Properties: 5
+D, [2015-07-05T10:12:41.020331 #8444] DEBUG -- : ["application", "Application", "Returns an object that represents the Excel application managing the workbook."]
+D, [2015-07-05T10:12:41.020331 #8444] DEBUG -- : ["names", "NamedItem collection", "Collection of named items defined in the workbook. Returns referene and range names."]
+D, [2015-07-05T10:12:41.020331 #8444] DEBUG -- : ["tables", "Table collection", "Collection of Tables associated with the workbook."]
+D, [2015-07-05T10:12:41.020849 #8444] DEBUG -- : ["worksheets", "Worksheet collection", "Collection of Worksheets associated with the workbook."]
+D, [2015-07-05T10:12:41.020849 #8444] DEBUG -- : ["bindings", "Binding collection", "A collection of all the Binding objects that are part of the workbook."]
+D, [2015-07-05T10:12:41.021350 #8444] DEBUG -- : Methods: 1
+D, [2015-07-05T10:12:41.021350 #8444] DEBUG -- : ["getSelectedRange", "Range", "Gets the currently selected Range from the Workbook."]
+D, [2015-07-05T10:12:41.021350 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.027337 #8444] DEBUG -- : ...............Report for: Worksheet...........
+D, [2015-07-05T10:12:41.027837 #8444] DEBUG -- : Description:  An Excel worksheet is a collection cells organized by rows and columns. It can contain data, tables, charts, etc. 
+D, [2015-07-05T10:12:41.027837 #8444] DEBUG -- : Properties: 5
+D, [2015-07-05T10:12:41.027837 #8444] DEBUG -- : ["id", "String", "A unique Id that identifies the Worksheet object in a Workbook. For a given worksheet, the Id remains constant through changes such as renames or moves."]
+D, [2015-07-05T10:12:41.028340 #8444] DEBUG -- : ["position", "Number", "The zero-based position of the worksheet within the workbook."]
+D, [2015-07-05T10:12:41.028340 #8444] DEBUG -- : ["name", "String", "The display name of the worksheet."]
+D, [2015-07-05T10:12:41.028340 #8444] DEBUG -- : ["charts", "Chart collection", "Collection of charts that are part of the worksheet."]
+D, [2015-07-05T10:12:41.028840 #8444] DEBUG -- : ["tables", "Table collection", "Collection of tables that are part of the worksheet."]
+D, [2015-07-05T10:12:41.028840 #8444] DEBUG -- : Methods: 5
+D, [2015-07-05T10:12:41.028840 #8444] DEBUG -- : ["activate", "void", "Activate the worksheet in the Excel UI."]
+D, [2015-07-05T10:12:41.029346 #8444] DEBUG -- : ["delete", "void", "Deletes the worksheet from the workbook."]
+D, [2015-07-05T10:12:41.029346 #8444] DEBUG -- : ["getCell", "Range", "Gets the range object containing the single cell specified by the zero-indexed row and column numbers."]
+D, [2015-07-05T10:12:41.029346 #8444] DEBUG -- : ["getRange", "Range", "Gets the range object specified by the address or name."]
+D, [2015-07-05T10:12:41.029852 #8444] DEBUG -- : ["getUsedRange", "Range", "Gets the used range of the worksheet."]
+D, [2015-07-05T10:12:41.029852 #8444] DEBUG -- : Params: 4
+D, [2015-07-05T10:12:41.029852 #8444] DEBUG -- : ["row", "Number", "Required. The row number of the cell to be retrieved. Zero-indexed.", "getCell"]
+D, [2015-07-05T10:12:41.030354 #8444] DEBUG -- : ["column", "Number", "Required. the column number of the cell to be retrieved. Zero-indexed.", "getCell"]
+D, [2015-07-05T10:12:41.030354 #8444] DEBUG -- : ["address", "String", "Optional. The address or the name of the range. If not specified, the entire worksheet range is returned.", "getRange"]
+D, [2015-07-05T10:12:41.030354 #8444] DEBUG -- : ["param", "String", "Required. The name or id of the worksheet.", "INVALID"]
+D, [2015-07-05T10:12:41.037344 #8444] DEBUG -- : ...............Report for: WorksheetCollection...........
+D, [2015-07-05T10:12:41.037344 #8444] DEBUG -- : Description:  Represents a collection of worksheet objects that are part of the workbook. 
+D, [2015-07-05T10:12:41.037344 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.037852 #8444] DEBUG -- : ["count", "Number", "Number of objects in the collection."]
+D, [2015-07-05T10:12:41.037852 #8444] DEBUG -- : ["items", "Worksheet", "A collection of worksheet objects that are part of the workbook"]
+D, [2015-07-05T10:12:41.037852 #8444] DEBUG -- : Methods: 3
+D, [2015-07-05T10:12:41.037852 #8444] DEBUG -- : ["add", "Worksheet", "Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets and the new worksheet becomes the active sheet in the workbook."]
+D, [2015-07-05T10:12:41.038345 #8444] DEBUG -- : ["getActiveWorksheet", "Worksheet", "Gets the currently active worksheet in the workbook."]
+D, [2015-07-05T10:12:41.038345 #8444] DEBUG -- : ["getItem", "Worksheet", "Gets a worksheet object using its name or Id."]
+D, [2015-07-05T10:12:41.038345 #8444] DEBUG -- : Params: 2
+D, [2015-07-05T10:12:41.038844 #8444] DEBUG -- : ["name", "String", "Optional. The name of the worksheet to be added. If not specified, Excel determines the name of the new worksheet being added.", "add"]
+D, [2015-07-05T10:12:41.038844 #8444] DEBUG -- : ["param", "String", "Required. The name or id of the worksheet.", "getItem"]
+W, [2015-07-05T10:12:41.039346 #8444]  WARN -- : ..No Param Match for: WorksheetCollection . index..........
+D, [2015-07-05T10:12:41.041346 #8444] DEBUG -- : ...............Report for: Range...........
+D, [2015-07-05T10:12:41.041346 #8444] DEBUG -- : Description:  Range represents a cell, a row, a column, a selection of cells containing one or more contiguous blocks of cells. 
+D, [2015-07-05T10:12:41.041346 #8444] DEBUG -- : Properties: 14
+D, [2015-07-05T10:12:41.041847 #8444] DEBUG -- : ["address", "String", "Returns Represents the range reference in A1 Style. Address value will contain the Sheet reference (e.g., Sheet1!A1:B4)."]
+D, [2015-07-05T10:12:41.041847 #8444] DEBUG -- : ["addressLocal", "String", "Returns the range reference for the specified range in the language of the user."]
+D, [2015-07-05T10:12:41.041847 #8444] DEBUG -- : ["cellCount", "Number", "Number of cells in the range."]
+D, [2015-07-05T10:12:41.041847 #8444] DEBUG -- : ["columnIndex", "Number", "Returns the number of the first column in the first area in the specified range. This is adjusted to be Zero-indexed."]
+D, [2015-07-05T10:12:41.041847 #8444] DEBUG -- : ["columnCount", "Number", "Returns the number of the first row of the first area in the range. This is adjusted to be Zero-indexed."]
+D, [2015-07-05T10:12:41.041847 #8444] DEBUG -- : ["formulas", "String", "Represents the object's formula in A1 style notation."]
+D, [2015-07-05T10:12:41.041847 #8444] DEBUG -- : ["formulasLocal", "String", "Formula for the object, in the language of the user in A1 style notation."]
+D, [2015-07-05T10:12:41.042346 #8444] DEBUG -- : ["numberFormat", "String", "Value that represents the format code for the object."]
+D, [2015-07-05T10:12:41.042346 #8444] DEBUG -- : ["rowcount", "Number", "Returns the total number of columns in the Range selected."]
+D, [2015-07-05T10:12:41.042346 #8444] DEBUG -- : ["rowIndex", "Number", "Returns the number of the first row of the first area in the range. This is adjusted to be Zero-indexed."]
+D, [2015-07-05T10:12:41.042346 #8444] DEBUG -- : ["text", "String", "Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API."]
+D, [2015-07-05T10:12:41.042847 #8444] DEBUG -- : ["values", "any", "Unformatted values of the specified range."]
+D, [2015-07-05T10:12:41.042847 #8444] DEBUG -- : ["format", "Range Format", "Format object contains Range's Font, fill, Borders, Alignment, Style, etc. settings"]
+D, [2015-07-05T10:12:41.042847 #8444] DEBUG -- : ["worksheet", "Worksheet", "The worksheet containing the current range."]
+D, [2015-07-05T10:12:41.042847 #8444] DEBUG -- : Methods: 8
+D, [2015-07-05T10:12:41.043366 #8444] DEBUG -- : ["clear", "void", "Clear Range values, format, fill, border, etc."]
+D, [2015-07-05T10:12:41.043366 #8444] DEBUG -- : ["delete", "void", "Deletes the range data, clears the formatting, and shifts the cells."]
+D, [2015-07-05T10:12:41.043366 #8444] DEBUG -- : ["getCell", "Range", "Returns a range containing the single cell specified by the zero-indexed row and column numbers"]
+D, [2015-07-05T10:12:41.043862 #8444] DEBUG -- : ["getEntireColumn", "Range", "Gets an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells."]
+D, [2015-07-05T10:12:41.043862 #8444] DEBUG -- : ["getEntireRow", "Range", "Gets an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells."]
+D, [2015-07-05T10:12:41.044363 #8444] DEBUG -- : ["getUsedRange", "Range", "Returns the used range of the given range object."]
+D, [2015-07-05T10:12:41.044363 #8444] DEBUG -- : ["insert", "void", "Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space."]
+D, [2015-07-05T10:12:41.044363 #8444] DEBUG -- : ["select", "void", "Selects the specified Range in the Excel UI."]
+D, [2015-07-05T10:12:41.044363 #8444] DEBUG -- : Params: 5
+D, [2015-07-05T10:12:41.044850 #8444] DEBUG -- : ["applyTo", "String", "Optional. All, Format, Content. If this option is not provided then the content and format of the range will be cleared.", "clear"]
+D, [2015-07-05T10:12:41.044850 #8444] DEBUG -- : ["shift", "String", "Specifies which way to shift the cells. Possible values are: Left or Up. If this argument is omitted, Microsoft Excel decides based on the shape of the range.", "delete"]
+D, [2015-07-05T10:12:41.044850 #8444] DEBUG -- : ["row", "Number", "Required. Row number of the cell to be retrieved. Zero-indexed.", "getCell"]
+D, [2015-07-05T10:12:41.045354 #8444] DEBUG -- : ["column", "Number", "Required. Column number of the cell to be retrieved. Zero-indexed.", "getCell"]
+D, [2015-07-05T10:12:41.045354 #8444] DEBUG -- : ["shift", "String", "Optional. Specifies which way to shift the cells. Can be one of the following: Right or Down. If this argument is omitted, Microsoft Excel decides based on the shape of the range.", "insert"]
+W, [2015-07-05T10:12:41.045851 #8444]  WARN -- : ..No Method Match for: Range . GetBoundingRect..........
+W, [2015-07-05T10:12:41.045851 #8444]  WARN -- : ..No Param Match for: Range . anotherRange..........
+W, [2015-07-05T10:12:41.046352 #8444]  WARN -- : ..No Method Match for: Range . GetColumn..........
+W, [2015-07-05T10:12:41.046352 #8444]  WARN -- : ..No Param Match for: Range . column..........
+W, [2015-07-05T10:12:41.046352 #8444]  WARN -- : ..No Method Match for: Range . GetIntersection..........
+W, [2015-07-05T10:12:41.046352 #8444]  WARN -- : ..No Param Match for: Range . anotherRange..........
+W, [2015-07-05T10:12:41.046859 #8444]  WARN -- : ..No Method Match for: Range . GetOffsetRange..........
+W, [2015-07-05T10:12:41.046859 #8444]  WARN -- : ..No Param Match for: Range . rowOffset..........
+W, [2015-07-05T10:12:41.046859 #8444]  WARN -- : ..No Param Match for: Range . columnOffset..........
+W, [2015-07-05T10:12:41.047353 #8444]  WARN -- : ..No Method Match for: Range . GetRow..........
+W, [2015-07-05T10:12:41.047353 #8444]  WARN -- : ..No Param Match for: Range . row..........
+D, [2015-07-05T10:12:41.052853 #8444] DEBUG -- : ...............Report for: NamedItemCollection...........
+D, [2015-07-05T10:12:41.052853 #8444] DEBUG -- : Description:  A collection of all the nameditem objects that are part of the workbook. 
+D, [2015-07-05T10:12:41.052853 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.053355 #8444] DEBUG -- : ["count", "Number", "Number of objects in the collection."]
+D, [2015-07-05T10:12:41.053355 #8444] DEBUG -- : ["items", "Named Item", "A collection of all the nameditem objects that are part of the workbook"]
+D, [2015-07-05T10:12:41.053355 #8444] DEBUG -- : Methods: 2
+D, [2015-07-05T10:12:41.053855 #8444] DEBUG -- : ["getItem", "Named Item", "Gets a nameditem object using its name"]
+D, [2015-07-05T10:12:41.053855 #8444] DEBUG -- : ["getItemAt", "Named Item", "Gets a nameditem based on its position in the collection."]
+D, [2015-07-05T10:12:41.053855 #8444] DEBUG -- : Params: 2
+D, [2015-07-05T10:12:41.054369 #8444] DEBUG -- : ["name", "String", "Required. nameditem name.", "getItem"]
+D, [2015-07-05T10:12:41.054369 #8444] DEBUG -- : ["index", "Number", "Required. Index value of the object to be retrieved. Zero-indexed.", "getItemAt"]
+D, [2015-07-05T10:12:41.058858 #8444] DEBUG -- : ...............Report for: NamedItem...........
+D, [2015-07-05T10:12:41.058858 #8444] DEBUG -- : Description:  Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, reference to a range. This object can be used to obtain Range object associated with names. 
+D, [2015-07-05T10:12:41.059362 #8444] DEBUG -- : Properties: 4
+D, [2015-07-05T10:12:41.059362 #8444] DEBUG -- : ["name", "String", "The name of the object."]
+D, [2015-07-05T10:12:41.059362 #8444] DEBUG -- : ["type", "String", "Indicates what type of reference is associated with the name. Possible values are: Range, String, Integer, Double, Boolean."]
+D, [2015-07-05T10:12:41.059860 #8444] DEBUG -- : ["value", "String", "Represents the formula that the name is defined to refer to. e.g., =Sheet14!$B$2:$H$12, =4.75, etc."]
+D, [2015-07-05T10:12:41.059860 #8444] DEBUG -- : ["visible", "Boolean", "Determines whether the object is visible or not."]
+D, [2015-07-05T10:12:41.059860 #8444] DEBUG -- : Methods: 1
+D, [2015-07-05T10:12:41.059860 #8444] DEBUG -- : ["getRange", "Range", "Returns the Range object that is associated with the name. Returns null if the name is not of the type Range."]
+D, [2015-07-05T10:12:41.060362 #8444] DEBUG -- : Params: 1
+D, [2015-07-05T10:12:41.060362 #8444] DEBUG -- : ["name", "String", "Required. Name of the item.", "INVALID"]
+D, [2015-07-05T10:12:41.065865 #8444] DEBUG -- : ...............Report for: Binding...........
+D, [2015-07-05T10:12:41.066364 #8444] DEBUG -- : Description:  Represents a Add-in binding that is defined in the workbook. 
+D, [2015-07-05T10:12:41.066364 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.066364 #8444] DEBUG -- : ["id", "String", "String"]
+D, [2015-07-05T10:12:41.066364 #8444] DEBUG -- : ["type", "String", "Returns the type of the binding. Possible values are: Table,Range or Text."]
+D, [2015-07-05T10:12:41.066865 #8444] DEBUG -- : Methods: 3
+D, [2015-07-05T10:12:41.066865 #8444] DEBUG -- : ["getRange", "Range", "Returns the range represented by the binding."]
+D, [2015-07-05T10:12:41.066865 #8444] DEBUG -- : ["getTable", "Table", "Returns the table represented by the binding."]
+D, [2015-07-05T10:12:41.067365 #8444] DEBUG -- : ["getText", "String", "Returns the text represented by the binding."]
+D, [2015-07-05T10:12:41.067365 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.072886 #8444] DEBUG -- : ...............Report for: BindingCollection...........
+D, [2015-07-05T10:12:41.072886 #8444] DEBUG -- : Description:  Represents the collection of all the [Binding](binding.md) objects that are part of the workbook. 
+D, [2015-07-05T10:12:41.073368 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.073368 #8444] DEBUG -- : ["count", "Number", "Returns the number of bindings in the collection."]
+D, [2015-07-05T10:12:41.073368 #8444] DEBUG -- : ["items", "Binding", "Returns a collection of all the bindings defined in a workbook."]
+D, [2015-07-05T10:12:41.073875 #8444] DEBUG -- : Methods: 2
+D, [2015-07-05T10:12:41.073875 #8444] DEBUG -- : ["getItem", "Binding", "Gets a Binding object by id."]
+D, [2015-07-05T10:12:41.073875 #8444] DEBUG -- : ["getItemAt", "Binding", "Gets a Binding object based on its position in the items array."]
+D, [2015-07-05T10:12:41.074370 #8444] DEBUG -- : Params: 1
+D, [2015-07-05T10:12:41.074370 #8444] DEBUG -- : ["index", "Number", "Required. Index value of the object to be retrieved. Zero-indexed.", "getItemAt"]
+W, [2015-07-05T10:12:41.074370 #8444]  WARN -- : ..No Param Match for: BindingCollection . id..........
+D, [2015-07-05T10:12:41.080375 #8444] DEBUG -- : ...............Report for: TableCollection...........
+D, [2015-07-05T10:12:41.080375 #8444] DEBUG -- : Description:   Represents a collection of all the tables that are part of the workbook. 
+D, [2015-07-05T10:12:41.080875 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.080875 #8444] DEBUG -- : ["count", "Number", "Returns the number of tables in the workbook."]
+D, [2015-07-05T10:12:41.080875 #8444] DEBUG -- : ["items", "Table", "Returns a collection of all the table objects that are part of the workbook."]
+D, [2015-07-05T10:12:41.080875 #8444] DEBUG -- : Methods: 3
+D, [2015-07-05T10:12:41.081374 #8444] DEBUG -- : ["add", "Table", "Create a new table. The range source address determines the worksheet under which the table will be added."]
+D, [2015-07-05T10:12:41.081374 #8444] DEBUG -- : ["getItem", "Table", "Gets a table by name."]
+D, [2015-07-05T10:12:41.081374 #8444] DEBUG -- : ["getItemAt", "Table", "Gets a table based on its position in the collection."]
+D, [2015-07-05T10:12:41.081374 #8444] DEBUG -- : Params: 2
+D, [2015-07-05T10:12:41.081875 #8444] DEBUG -- : ["name", "String", "Required. table name.", "add"]
+D, [2015-07-05T10:12:41.081875 #8444] DEBUG -- : ["index", "Number", "Required. Index value of the object to be retrieved. Zero-indexed.", "getItemAt"]
+W, [2015-07-05T10:12:41.081875 #8444]  WARN -- : ..No Param Match for: TableCollection . id..........
+W, [2015-07-05T10:12:41.082387 #8444]  WARN -- : ..No Param Match for: TableCollection . address..........
+W, [2015-07-05T10:12:41.082387 #8444]  WARN -- : ..No Param Match for: TableCollection . hasHeaders..........
+D, [2015-07-05T10:12:41.089398 #8444] DEBUG -- : ...............Report for: Table...........
+D, [2015-07-05T10:12:41.089881 #8444] DEBUG -- : Description:  Represents a collection of organized cells designed to make management of the data easy. 
+D, [2015-07-05T10:12:41.089881 #8444] DEBUG -- : Properties: 7
+D, [2015-07-05T10:12:41.089881 #8444] DEBUG -- : ["id", "Number", "A unique key that identifies the Table object in a Workbook. Note: If the table gets deleted, Excel Workbook could re-use the id value for another Table."]
+D, [2015-07-05T10:12:41.090381 #8444] DEBUG -- : ["name", "String", "Name of the table."]
+D, [2015-07-05T10:12:41.090381 #8444] DEBUG -- : ["showHeaders", "Boolean", "Indicates whether the header row is visible or not. This value can be set to show or remove the header row."]
+D, [2015-07-05T10:12:41.090381 #8444] DEBUG -- : ["showTotals", "Boolean", "Indicates whether the total row is visible or not. This value can be set to show or remove the total row."]
+D, [2015-07-05T10:12:41.090895 #8444] DEBUG -- : ["style", "String", "Constant value that represents the Table style. Possible values are: Light1 thru Light21, Medium1 thru Medium28, StyleDark1 thru StyleDark11."]
+D, [2015-07-05T10:12:41.090895 #8444] DEBUG -- : ["columns", "TableColumn collection", "Represents a collection of all the columns in the table."]
+D, [2015-07-05T10:12:41.090895 #8444] DEBUG -- : ["rows", "TableRow collection", "Represents a collection of all the rows in the table."]
+D, [2015-07-05T10:12:41.090895 #8444] DEBUG -- : Methods: 5
+D, [2015-07-05T10:12:41.091389 #8444] DEBUG -- : ["delete", "void", "Deletes the worksheet"]
+D, [2015-07-05T10:12:41.091389 #8444] DEBUG -- : ["getHeaderRowRange", "Range", "Gets the Range object associated with Data Body of the Table."]
+D, [2015-07-05T10:12:41.091389 #8444] DEBUG -- : ["getDataBodyRange", "Range", "Gets the Header Row Range object associated with the Table"]
+D, [2015-07-05T10:12:41.091882 #8444] DEBUG -- : ["getRange", "Range", "Gets the Range object associated with the Table."]
+D, [2015-07-05T10:12:41.091882 #8444] DEBUG -- : ["getTotalRowRange", "Range", "Get Totals Range object associated with the Table."]
+D, [2015-07-05T10:12:41.091882 #8444] DEBUG -- : Params: 2
+D, [2015-07-05T10:12:41.092382 #8444] DEBUG -- : ["name", "String", "Required. Table name.", "INVALID"]
+D, [2015-07-05T10:12:41.092382 #8444] DEBUG -- : ["index", "Number", "Required. Table index. Zero-indexed.", "INVALID"]
+D, [2015-07-05T10:12:41.098888 #8444] DEBUG -- : ...............Report for: TableColumnCollection...........
+D, [2015-07-05T10:12:41.098888 #8444] DEBUG -- : Description:  Represents a collection of all the columns that are part of the table. 
+D, [2015-07-05T10:12:41.099387 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.099387 #8444] DEBUG -- : ["count", "Number", "Returns the number of columns in the table."]
+D, [2015-07-05T10:12:41.099387 #8444] DEBUG -- : ["items", "Table Column", "Returns a collection of all the column objects that are part of the table."]
+D, [2015-07-05T10:12:41.099888 #8444] DEBUG -- : Methods: 3
+D, [2015-07-05T10:12:41.099888 #8444] DEBUG -- : ["add", "Table Column", "Adds a new column to the table."]
+D, [2015-07-05T10:12:41.099888 #8444] DEBUG -- : ["getItem", "Table Column", "Gets a column object by name or id."]
+D, [2015-07-05T10:12:41.099888 #8444] DEBUG -- : ["getItemAt", "tablecolumn", "Gets a column based on its position in the collection."]
+D, [2015-07-05T10:12:41.100388 #8444] DEBUG -- : Params: 2
+D, [2015-07-05T10:12:41.100388 #8444] DEBUG -- : ["param", "String", "Required. tablecolumn name or id.", "getItem"]
+D, [2015-07-05T10:12:41.100388 #8444] DEBUG -- : ["index", "Number", "Required. Index value of the object to be retrieved. Zero-indexed.", "getItemAt"]
+W, [2015-07-05T10:12:41.100889 #8444]  WARN -- : ..No Param Match for: TableColumnCollection . id..........
+W, [2015-07-05T10:12:41.100889 #8444]  WARN -- : ..No Param Match for: TableColumnCollection . index..........
+W, [2015-07-05T10:12:41.100889 #8444]  WARN -- : ..No Param Match for: TableColumnCollection . values..........
+D, [2015-07-05T10:12:41.107893 #8444] DEBUG -- : ...............Report for: TableColumn...........
+D, [2015-07-05T10:12:41.107893 #8444] DEBUG -- : Description:  Represents a Column in a table. The TableColumn object is a member of the TableColumns collection. 
+D, [2015-07-05T10:12:41.107893 #8444] DEBUG -- : Properties: 4
+D, [2015-07-05T10:12:41.108394 #8444] DEBUG -- : ["id", "Number", "Returns the unique key that identifies the column within the table."]
+D, [2015-07-05T10:12:41.108394 #8444] DEBUG -- : ["index", "Number", "Returns the index number of the column within the columns collection of the table. Zero-indexed."]
+D, [2015-07-05T10:12:41.108394 #8444] DEBUG -- : ["name", "String", "Returns the name of the table column."]
+D, [2015-07-05T10:12:41.108394 #8444] DEBUG -- : ["values", "Array ", "Returns unformatted values of the table Column."]
+D, [2015-07-05T10:12:41.108906 #8444] DEBUG -- : Methods: 5
+D, [2015-07-05T10:12:41.108906 #8444] DEBUG -- : ["delete", "void", "Deletes the column from the table."]
+D, [2015-07-05T10:12:41.108906 #8444] DEBUG -- : ["getDataBodyRange", "Range", "Gets a range object associated with the data portion of the column."]
+D, [2015-07-05T10:12:41.109403 #8444] DEBUG -- : ["getHeaderRowRange", "Range", "Gets a header range object associated with the column."]
+D, [2015-07-05T10:12:41.109403 #8444] DEBUG -- : ["getRange", "Range", "Gets a range object associated with the entire column."]
+D, [2015-07-05T10:12:41.109403 #8444] DEBUG -- : ["getTotalRowRange", "Range", "Gets the Range object associated with the totals row of the column."]
+D, [2015-07-05T10:12:41.109895 #8444] DEBUG -- : Params: 1
+D, [2015-07-05T10:12:41.109895 #8444] DEBUG -- : ["param", "String or Number", "Column index (Zero-indexed) or column name of the column that you wish to get.", "INVALID"]
+D, [2015-07-05T10:12:41.115399 #8444] DEBUG -- : ...............Report for: TableRowCollection...........
+D, [2015-07-05T10:12:41.115904 #8444] DEBUG -- : Description:  Represents a collection of all the rows that are part of the table. 
+D, [2015-07-05T10:12:41.115904 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.115904 #8444] DEBUG -- : ["count", "Number", "Returns the number of rows in the table."]
+D, [2015-07-05T10:12:41.116405 #8444] DEBUG -- : ["items", "Table Row", "Returns a collection of all the row objects that are part of the table."]
+D, [2015-07-05T10:12:41.116405 #8444] DEBUG -- : Methods: 2
+D, [2015-07-05T10:12:41.116405 #8444] DEBUG -- : ["add", "Table Row", "Adds a new row to the table."]
+D, [2015-07-05T10:12:41.116405 #8444] DEBUG -- : ["getItemAt", "Table Row", "Gets a row based on its position in the collection."]
+D, [2015-07-05T10:12:41.116899 #8444] DEBUG -- : Params: 3
+D, [2015-07-05T10:12:41.116899 #8444] DEBUG -- : ["index", "Number", "Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. **Zero-indexed**", "add"]
+D, [2015-07-05T10:12:41.116899 #8444] DEBUG -- : ["values", "any", "A 2-dimensional array of unformatted values of the table row.", "add"]
+D, [2015-07-05T10:12:41.117405 #8444] DEBUG -- : ["index", "Number", "Required. Index value of the object to be retrieved. Zero-indexed.", "getItemAt"]
+D, [2015-07-05T10:12:41.123404 #8444] DEBUG -- : ...............Report for: TableRow...........
+D, [2015-07-05T10:12:41.123404 #8444] DEBUG -- : Description:   Represents a row in a table. 
+D, [2015-07-05T10:12:41.123404 #8444] DEBUG -- : Properties: 3
+D, [2015-07-05T10:12:41.123404 #8444] DEBUG -- : ["index", "Number", "Returns the index number of the row within the rows collection of the table. Zero-indexed."]
+D, [2015-07-05T10:12:41.123905 #8444] DEBUG -- : ["values", "Array ", "Returns or sets the unformatted values in the column."]
+D, [2015-07-05T10:12:41.123905 #8444] DEBUG -- : ["range", "Range", "Returns the range object associated with the row."]
+D, [2015-07-05T10:12:41.123905 #8444] DEBUG -- : Methods: 2
+D, [2015-07-05T10:12:41.124413 #8444] DEBUG -- : ["delete", "void", "Deletes the row from the table."]
+D, [2015-07-05T10:12:41.124413 #8444] DEBUG -- : ["getRange", "Range", "Returns the Range object associated with the entire row."]
+D, [2015-07-05T10:12:41.124413 #8444] DEBUG -- : Params: 1
+D, [2015-07-05T10:12:41.124413 #8444] DEBUG -- : ["index", "Number", "Row index of the row that you wish to get. Zero-indexed.", "INVALID"]
+D, [2015-07-05T10:12:41.128925 #8444] DEBUG -- : ...............Report for: RangeFormat...........
+D, [2015-07-05T10:12:41.128925 #8444] DEBUG -- : Description:   Format object represents format settings of a Range. This includes Font, fill, Borders, Alignment, Style, etc. 
+D, [2015-07-05T10:12:41.129408 #8444] DEBUG -- : Properties: 6
+D, [2015-07-05T10:12:41.129408 #8444] DEBUG -- : ["horizontalAlignment", "String", "Represents the horizontal alignment for the specified object. The value of this property can be to one of the following constants: General, Fill, CenterAcrossSelection, Center, Distributed, Justify, Left, Right. null indicates that the entire range doesn't have uniform horizontal alignment."]
+D, [2015-07-05T10:12:41.129408 #8444] DEBUG -- : ["verticalAlignment", "String", "Represents the vertical alignment for the specified object. The value of this property can be to one of the following constants: Bottom, Center, Distributed, Justify, Top. null indicates that the entire range doesn't have uniform vertical alignment."]
+D, [2015-07-05T10:12:41.129926 #8444] DEBUG -- : ["wrapText", "Boolean", "Indicates if Excel wraps the text in the object. null indicates that the entire range doesn't have uniform wrap setting"]
+D, [2015-07-05T10:12:41.129926 #8444] DEBUG -- : ["borders", "Range Border collection", "Collection of border objects that apply to the overall Range selected"]
+D, [2015-07-05T10:12:41.129926 #8444] DEBUG -- : ["font", "Range Font", "Returns the Font object defined on the overall Range selected"]
+D, [2015-07-05T10:12:41.130410 #8444] DEBUG -- : ["fill", "Range Fill", "Returns the fill object defined on the overall Range selected"]
+D, [2015-07-05T10:12:41.130410 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.130410 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.134913 #8444] DEBUG -- : ...............Report for: RangeFill...........
+D, [2015-07-05T10:12:41.135414 #8444] DEBUG -- : Description:   Represents the interior of an object, which includes fill formating information. 
+D, [2015-07-05T10:12:41.135414 #8444] DEBUG -- : Properties: 1
+D, [2015-07-05T10:12:41.135414 #8444] DEBUG -- : ["color", "String", "HTML color code representation of the fill color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., #FF0000 represents Red. ('255' red, '0' green, and '0' blue)"]
+D, [2015-07-05T10:12:41.135926 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.135926 #8444] DEBUG -- : Params: 0
+W, [2015-07-05T10:12:41.135926 #8444]  WARN -- : ..No Method Match for: RangeFill . Clear..........
+D, [2015-07-05T10:12:41.136912 #8444] DEBUG -- : ...............Report for: RangeBorder...........
+D, [2015-07-05T10:12:41.136912 #8444] DEBUG -- : Description:  # Range Border  Represents the border of an object. 
+D, [2015-07-05T10:12:41.137416 #8444] DEBUG -- : Properties: 4
+D, [2015-07-05T10:12:41.137416 #8444] DEBUG -- : ["sideIndex", "String", "Constant value that indicates the specific side of the border. Possible values are:  DiagonalDown, DiagonalUp, EdgeBottom, EdgeLeft, EdgeRight, EdgeTop, InsideHorizontal, InsideVertical."]
+D, [2015-07-05T10:12:41.137416 #8444] DEBUG -- : ["style", "String", "One of the constants of line style specifying the line style for the border. Options are: Continuous: Continuous line, Dash: Dashed line, DashDot: Alternating dashes and dots, DashDotDot: Dash followed by two dots, Dot: Dotted line, Double: Double line, None: No line, SlantDashDot: Slanted dashes."]
+D, [2015-07-05T10:12:41.137916 #8444] DEBUG -- : ["weight", "String", "BorderWeight value that specifies the weight of the border around a range. Options are: Hairline: Hairline (thinnest border), Medium: Medium, Thick: Thick (widest border), Thin: Thin."]
+D, [2015-07-05T10:12:41.137916 #8444] DEBUG -- : ["color", "String", "HTML color code representing the color of the border line"]
+D, [2015-07-05T10:12:41.138433 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.138433 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.143935 #8444] DEBUG -- : ...............Report for: RangeBorderCollection...........
+D, [2015-07-05T10:12:41.143935 #8444] DEBUG -- : Description:   Represents the border objects that make up Range border. 
+D, [2015-07-05T10:12:41.143935 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.144420 #8444] DEBUG -- : ["count", "Number", "Number of objects in the collection."]
+D, [2015-07-05T10:12:41.144420 #8444] DEBUG -- : ["items", "Range Border", "A collection of all the border objects of the Range."]
+D, [2015-07-05T10:12:41.144420 #8444] DEBUG -- : Methods: 3
+D, [2015-07-05T10:12:41.144919 #8444] DEBUG -- : ["getItem", "border", "Gets a border object using its name"]
+D, [2015-07-05T10:12:41.144919 #8444] DEBUG -- : ["getItem", "border", "Gets a border object using its name"]
+D, [2015-07-05T10:12:41.144919 #8444] DEBUG -- : ["getItemAt", "border", "Gets a border object using its index"]
+D, [2015-07-05T10:12:41.144919 #8444] DEBUG -- : Params: 2
+D, [2015-07-05T10:12:41.145425 #8444] DEBUG -- : ["name", "String", "Required. border name.", "getItem"]
+D, [2015-07-05T10:12:41.145425 #8444] DEBUG -- : ["index", "Number", "Required. Index value of the object to be retrieved. Zero-indexed.", "getItemAt"]
+W, [2015-07-05T10:12:41.145425 #8444]  WARN -- : ..No Param Match for: RangeBorderCollection . index..........
+D, [2015-07-05T10:12:41.151424 #8444] DEBUG -- : ...............Report for: RangeFont...........
+D, [2015-07-05T10:12:41.151424 #8444] DEBUG -- : Description:   This object represents the font attributes (font name, font size, color, and so on) for an object. 
+D, [2015-07-05T10:12:41.151424 #8444] DEBUG -- : Properties: 9
+D, [2015-07-05T10:12:41.151424 #8444] DEBUG -- : ["name", "String", "Font name (e.g., \"Calibri\")"]
+D, [2015-07-05T10:12:41.151944 #8444] DEBUG -- : ["size", "Integer", "Size of the font (e.g., 11)"]
+D, [2015-07-05T10:12:41.151944 #8444] DEBUG -- : ["color", "String", "HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., #FF0000 represents Red. ('255' red, '0' green, and '0' blue)"]
+D, [2015-07-05T10:12:41.151944 #8444] DEBUG -- : ["italic", "Boolean", "Represents the bold status of italic. true if the font style is italic"]
+D, [2015-07-05T10:12:41.152424 #8444] DEBUG -- : ["bold", "Boolean", "Represents the bold status of font. true if the font is bold."]
+D, [2015-07-05T10:12:41.152424 #8444] DEBUG -- : ["strikethrough", "Boolean", "true if the font is struck through with a horizontal line. false by default."]
+D, [2015-07-05T10:12:41.152424 #8444] DEBUG -- : ["subscript", "Boolean", "true if the font is formatted as subscript. false by default."]
+D, [2015-07-05T10:12:41.152925 #8444] DEBUG -- : ["superscript", "Boolean", "true if the font is formatted as superscript; false by default."]
+D, [2015-07-05T10:12:41.152925 #8444] DEBUG -- : ["underline", "String", "Type of underline applied to the font. Can be one of the following constants. Possible Values: None, Single, Double, SingleAccounting, DoubleAccounting"]
+D, [2015-07-05T10:12:41.152925 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.152925 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.158930 #8444] DEBUG -- : ...............Report for: ChartCollection...........
+D, [2015-07-05T10:12:41.159432 #8444] DEBUG -- : Description:  A collection of all the chart objects on a worksheet. 
+D, [2015-07-05T10:12:41.159432 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.159432 #8444] DEBUG -- : ["count", "Number", "Number of objects in the collection."]
+D, [2015-07-05T10:12:41.159928 #8444] DEBUG -- : ["items", "Chart", "A collection of all the chart objects that are part of the workbook"]
+D, [2015-07-05T10:12:41.159928 #8444] DEBUG -- : Methods: 3
+D, [2015-07-05T10:12:41.159928 #8444] DEBUG -- : ["add", "Chart", "Creates a new chart. The new chart becomes the active workbook."]
+D, [2015-07-05T10:12:41.159928 #8444] DEBUG -- : ["getItem", "Chart", "Gets a chart object using its name"]
+D, [2015-07-05T10:12:41.159928 #8444] DEBUG -- : ["getItemAt", "Chart", "Gets a chart based on its position in the collection."]
+D, [2015-07-05T10:12:41.160429 #8444] DEBUG -- : Params: 5
+D, [2015-07-05T10:12:41.160429 #8444] DEBUG -- : ["type", "String", "Represents the type of a chart.", "add"]
+D, [2015-07-05T10:12:41.160429 #8444] DEBUG -- : ["sourceData", "String", "The address or name of the range that contains the source data.", "add"]
+D, [2015-07-05T10:12:41.160429 #8444] DEBUG -- : ["seriesBy", "String", "Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Rows, Columns or Auto.", "add"]
+D, [2015-07-05T10:12:41.160429 #8444] DEBUG -- : ["name", "String", "Required. chart name.", "getItem"]
+D, [2015-07-05T10:12:41.160429 #8444] DEBUG -- : ["index", "Number", "Required. Index value of the object to be retrieved. Zero-indexed.", "getItemAt"]
+W, [2015-07-05T10:12:41.160429 #8444]  WARN -- : ..No Param Match for: ChartCollection . id..........
+D, [2015-07-05T10:12:41.180945 #8444] DEBUG -- : ...............Report for: Chart...........
+D, [2015-07-05T10:12:41.181445 #8444] DEBUG -- : Description:  Represents a chart object in a workbook. 
+D, [2015-07-05T10:12:41.181445 #8444] DEBUG -- : Properties: 11
+D, [2015-07-05T10:12:41.181445 #8444] DEBUG -- : ["name", "String", "Represents the name of a Chart object."]
+D, [2015-07-05T10:12:41.181946 #8444] DEBUG -- : ["height", "Number", "A Number value that represents the height, in points, of the chart object."]
+D, [2015-07-05T10:12:41.181946 #8444] DEBUG -- : ["width", "Number", "A Number value that represents the width, in points, of the chart object."]
+D, [2015-07-05T10:12:41.181946 #8444] DEBUG -- : ["top", "Number", "a Number value that represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart)."]
+D, [2015-07-05T10:12:41.182446 #8444] DEBUG -- : ["left", "Number", "a Number value that represents the distance, in points, from the left edge of the object to the left edge of column A (on a worksheet) or the left edge of the chart area (on a chart)."]
+D, [2015-07-05T10:12:41.182446 #8444] DEBUG -- : ["title", "ChartTitle", "Returns a ChartTitle object that represents the title of the specified chart, including the text, visibility, position and formating of the title."]
+D, [2015-07-05T10:12:41.182446 #8444] DEBUG -- : ["series", "Chart Series Collection", "Returns an object that represents either a single series or collection of series in the chart."]
+D, [2015-07-05T10:12:41.182446 #8444] DEBUG -- : ["axes", "Chart Axes", "Represents a collection of Axes in the Chart."]
+D, [2015-07-05T10:12:41.182946 #8444] DEBUG -- : ["dataLabels", "Chart Data Labels", "Represents the datalabels on the chart."]
+D, [2015-07-05T10:12:41.182946 #8444] DEBUG -- : ["legend", "Chart Legend", "Returns a Legend object that represents the legend for the chart."]
+D, [2015-07-05T10:12:41.182946 #8444] DEBUG -- : ["format", "Chart Area Format", "Represents the formatting of a chart object, which includes fill(interior/background), line/border and font formatting."]
+D, [2015-07-05T10:12:41.183446 #8444] DEBUG -- : Methods: 2
+D, [2015-07-05T10:12:41.183446 #8444] DEBUG -- : ["delete", "void", "Deletes the Chart"]
+D, [2015-07-05T10:12:41.183446 #8444] DEBUG -- : ["setData", "Chart", "Sets the sourceData and seriesBy of the Chart."]
+D, [2015-07-05T10:12:41.183947 #8444] DEBUG -- : Params: 2
+D, [2015-07-05T10:12:41.183947 #8444] DEBUG -- : ["sourceData", "String", "The address or name of the range that contains the source data.", "setData"]
+D, [2015-07-05T10:12:41.183947 #8444] DEBUG -- : ["seriesBy", "String", "Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Rows, Columns or Auto.", "setData"]
+D, [2015-07-05T10:12:41.187963 #8444] DEBUG -- : ...............Report for: ChartAreaFormat...........
+D, [2015-07-05T10:12:41.187963 #8444] DEBUG -- : Description:  Provides access to the Office Art formatting for chart elements. 
+D, [2015-07-05T10:12:41.187963 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.188463 #8444] DEBUG -- : ["fill", "Chart Fill", "Represents the fill format of an object, which includes interior/background formating information."]
+D, [2015-07-05T10:12:41.188463 #8444] DEBUG -- : ["font", "ChartFont", "Represents the font attributes (font name, font size, color, and so on) for an object."]
+D, [2015-07-05T10:12:41.188463 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.188958 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.193453 #8444] DEBUG -- : ...............Report for: ChartSeriesCollection...........
+D, [2015-07-05T10:12:41.193972 #8444] DEBUG -- : Description:  A collection of all the ChartSeries objects of a chart. 
+D, [2015-07-05T10:12:41.193972 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.193972 #8444] DEBUG -- : ["count", "Number", "Returns the number of series in the collection."]
+D, [2015-07-05T10:12:41.194471 #8444] DEBUG -- : ["items", "Chart Series", "A collection of all the chart series objects."]
+D, [2015-07-05T10:12:41.194471 #8444] DEBUG -- : Methods: 1
+D, [2015-07-05T10:12:41.194471 #8444] DEBUG -- : ["getItemAt", "ChartSeries", "Gets a ChartSeries object based on its position in the collection."]
+D, [2015-07-05T10:12:41.194966 #8444] DEBUG -- : Params: 1
+D, [2015-07-05T10:12:41.194966 #8444] DEBUG -- : ["index", "Number", "Required. Index value of the object to be retrieved. Zero-indexed.", "getItemAt"]
+D, [2015-07-05T10:12:41.198974 #8444] DEBUG -- : ...............Report for: ChartSeries...........
+D, [2015-07-05T10:12:41.198974 #8444] DEBUG -- : Description:  Represents a series in a chart. 
+D, [2015-07-05T10:12:41.198974 #8444] DEBUG -- : Properties: 3
+D, [2015-07-05T10:12:41.199468 #8444] DEBUG -- : ["name", "String", "Returns or sets the name of a series in a chart."]
+D, [2015-07-05T10:12:41.199468 #8444] DEBUG -- : ["points", "ChartPoint Collection", "Represents an object that returns a single point or a collection of all the points in the series."]
+D, [2015-07-05T10:12:41.199468 #8444] DEBUG -- : ["format", "ChartSeriesFormat", "Represents the formatting of a chart series, which includes fill(interior/background) and line formatting."]
+D, [2015-07-05T10:12:41.199958 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.199958 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.202460 #8444] DEBUG -- : ...............Report for: ChartSeriesFormat...........
+D, [2015-07-05T10:12:41.202460 #8444] DEBUG -- : Description:  Provides access to the Office Art formatting for chart Series. 
+D, [2015-07-05T10:12:41.202960 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.202960 #8444] DEBUG -- : ["fill", "Chart Fill", "Represents the fill format of a chart series, which includes interior/background formating information."]
+D, [2015-07-05T10:12:41.202960 #8444] DEBUG -- : ["line", "Chart Line Format", "Represents line and border formatting."]
+D, [2015-07-05T10:12:41.202960 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.203460 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.207480 #8444] DEBUG -- : ...............Report for: ChartPointsCollection...........
+D, [2015-07-05T10:12:41.207480 #8444] DEBUG -- : Description:   A collection of all the ChartPoint objects of a chart. 
+D, [2015-07-05T10:12:41.207972 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.207972 #8444] DEBUG -- : ["count", "Number", "Returns the number of chart points in the collection."]
+D, [2015-07-05T10:12:41.207972 #8444] DEBUG -- : ["items", "Chart Point", "A collection of all the chart objects that are part of the workbook."]
+D, [2015-07-05T10:12:41.208463 #8444] DEBUG -- : Methods: 1
+D, [2015-07-05T10:12:41.208463 #8444] DEBUG -- : ["getItemAt", "ChartPoint", "Gets a ChartPoint object based on its position in the collection."]
+D, [2015-07-05T10:12:41.208463 #8444] DEBUG -- : Params: 1
+D, [2015-07-05T10:12:41.208463 #8444] DEBUG -- : ["index", "Number", "Required. Index value of the object to be retrieved. Zero-indexed.", "getItemAt"]
+D, [2015-07-05T10:12:41.211467 #8444] DEBUG -- : ...............Report for: ChartPoint...........
+D, [2015-07-05T10:12:41.211467 #8444] DEBUG -- : Description:  Represents a point of a series in a chart. 
+D, [2015-07-05T10:12:41.211467 #8444] DEBUG -- : Properties: 1
+D, [2015-07-05T10:12:41.211966 #8444] DEBUG -- : ["format", "Chart Point Format", "Represents the formatting of a chart point, which includes fill (interior/background) and line formatting."]
+D, [2015-07-05T10:12:41.211966 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.211966 #8444] DEBUG -- : Params: 0
+W, [2015-07-05T10:12:41.211966 #8444]  WARN -- : ......No Properties Match for: ChartPoint . Value..........
+D, [2015-07-05T10:12:41.214467 #8444] DEBUG -- : ...............Report for: ChartPointFormat...........
+D, [2015-07-05T10:12:41.214969 #8444] DEBUG -- : Description:  Provides access to the Office Art formatting for chart points. 
+D, [2015-07-05T10:12:41.214969 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.214969 #8444] DEBUG -- : ["fill", "Chart Fill", "Represents the fill format of an object, which includes interior/background formating information."]
+D, [2015-07-05T10:12:41.214969 #8444] DEBUG -- : ["line", "Chart Line Format", "Represents line and border formatting."]
+D, [2015-07-05T10:12:41.215469 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.215469 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.219489 #8444] DEBUG -- : ...............Report for: ChartAxes...........
+D, [2015-07-05T10:12:41.219489 #8444] DEBUG -- : Description:  Represents a collection of all Axis objects in a chart including categoryAxis, valueAxis, and seriesAxis. 
+D, [2015-07-05T10:12:41.219489 #8444] DEBUG -- : Properties: 3
+D, [2015-07-05T10:12:41.219489 #8444] DEBUG -- : ["categoryAxis", "ChartAxis", "Represents the category axis in a chart."]
+D, [2015-07-05T10:12:41.219989 #8444] DEBUG -- : ["valueAxis", "ChartAxis", "Represents the value axis in a chart."]
+D, [2015-07-05T10:12:41.219989 #8444] DEBUG -- : ["seriesAxis", "ChartAxis", "Represents the series axis in a 3D chart."]
+D, [2015-07-05T10:12:41.219989 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.220487 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.225476 #8444] DEBUG -- : ...............Report for: ChartAxis...........
+D, [2015-07-05T10:12:41.225476 #8444] DEBUG -- : Description:  Represents a single axis in a chart. 
+D, [2015-07-05T10:12:41.225476 #8444] DEBUG -- : Properties: 8
+D, [2015-07-05T10:12:41.225976 #8444] DEBUG -- : ["minimum", "object", "Returns or sets the minimum value on the value axis. Auto if left empty."]
+D, [2015-07-05T10:12:41.225976 #8444] DEBUG -- : ["maximum", "object", "Returns or sets the maximum value on the value axis. Auto if left empty."]
+D, [2015-07-05T10:12:41.225976 #8444] DEBUG -- : ["majorunit", "object", "Returns or sets the interval between two major tick marks. Auto if left empty."]
+D, [2015-07-05T10:12:41.225976 #8444] DEBUG -- : ["minorunit", "object", "Returns or sets the interval between two minor tick marks. Auto if left empty."]
+D, [2015-07-05T10:12:41.226477 #8444] DEBUG -- : ["title", "ChartAxisTitle", "Represents the title of a specified axis."]
+D, [2015-07-05T10:12:41.226477 #8444] DEBUG -- : ["majorGridlines", "ChartGridlines", "Returns a Gridlines object that represents the major gridlines for the specified axis."]
+D, [2015-07-05T10:12:41.226477 #8444] DEBUG -- : ["minorGridlines", "ChartGridlines", "Returns a Gridlines object that represents the minor gridlines for the specified axis."]
+D, [2015-07-05T10:12:41.226977 #8444] DEBUG -- : ["format", "ChartAxisFormat", "Represents the formatting of a chart object, which includes line/border and font formatting."]
+D, [2015-07-05T10:12:41.226977 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.226977 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.229979 #8444] DEBUG -- : ...............Report for: ChartAxisFormat...........
+D, [2015-07-05T10:12:41.229979 #8444] DEBUG -- : Description:  Provides access to the Office Art formatting for chart Axis. 
+D, [2015-07-05T10:12:41.229979 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.230480 #8444] DEBUG -- : ["line", "Chart Line Format", "Represents line and border formatting."]
+D, [2015-07-05T10:12:41.230480 #8444] DEBUG -- : ["font", "ChartFont", "Represents the font attributes (font name, font size, color, and so on) for a chart axis element."]
+D, [2015-07-05T10:12:41.230480 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.230980 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.234481 #8444] DEBUG -- : ...............Report for: ChartAxisTitle...........
+D, [2015-07-05T10:12:41.234993 #8444] DEBUG -- : Description:  Represents the title of a specified chart axis. 
+D, [2015-07-05T10:12:41.234993 #8444] DEBUG -- : Properties: 3
+D, [2015-07-05T10:12:41.234993 #8444] DEBUG -- : ["text", "String", "Represents the title of a axis."]
+D, [2015-07-05T10:12:41.235482 #8444] DEBUG -- : ["visible", "Boolean", "A boolean that specifies the visibility of an axis title. True if the axis or chart has a visible title."]
+D, [2015-07-05T10:12:41.235482 #8444] DEBUG -- : ["format", "ChartAxisTitleFormat", "Represents the formatting of a chart axis title font formatting."]
+D, [2015-07-05T10:12:41.235482 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.235987 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.238485 #8444] DEBUG -- : ...............Report for: ChartAxisTitleFormat...........
+D, [2015-07-05T10:12:41.238485 #8444] DEBUG -- : Description:  The ChartAxisTitleFormat object has the following relationships defined: 
+D, [2015-07-05T10:12:41.238485 #8444] DEBUG -- : Properties: 1
+D, [2015-07-05T10:12:41.238485 #8444] DEBUG -- : ["font", "ChartFont", "Represents the font attributes, such as font name, font size, color, etc. of chart axis title object."]
+D, [2015-07-05T10:12:41.238986 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.238986 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.242486 #8444] DEBUG -- : ...............Report for: ChartDataLabels...........
+D, [2015-07-05T10:12:41.242486 #8444] DEBUG -- : Description:  Represents a colection of all the data labels on a chart point or trendline. 
+D, [2015-07-05T10:12:41.242988 #8444] DEBUG -- : Properties: 9
+D, [2015-07-05T10:12:41.242988 #8444] DEBUG -- : ["position", "String", "DataLabelPosition value that represents the position of the data label. Valid position for DataLabels are: \"Invalid\", \"None\", \"Center\", \"InsideEnd\", \"InsideBase\", \"OutsideEnd\",\"Left\", \"Right\", \"Top\",\"Bottom\", \"BestFit\", \"Callout\"."]
+D, [2015-07-05T10:12:41.242988 #8444] DEBUG -- : ["separator", "String", "String representing the separator used for the data labels on a chart."]
+D, [2015-07-05T10:12:41.242988 #8444] DEBUG -- : ["showBubbleSize", "Boolean", "Set to true to show the bubble size for the data labels on a chart. Set to false to hide."]
+D, [2015-07-05T10:12:41.243489 #8444] DEBUG -- : ["showCategoryName", "Boolean", "Set to true to display the category name for the data labels on a chart. Set to false to hide."]
+D, [2015-07-05T10:12:41.243489 #8444] DEBUG -- : ["showLegendKey", "Boolean", "True if the data label legend key is visible."]
+D, [2015-07-05T10:12:41.243489 #8444] DEBUG -- : ["showPercentage", "Boolean", "Set to true to display the percentage value for the data labels on a chart. Seto to false to hide."]
+D, [2015-07-05T10:12:41.244000 #8444] DEBUG -- : ["showSeriesName", "Boolean", "Set to true to display the series name for the data labels on a chart. Set to false to hide."]
+D, [2015-07-05T10:12:41.244000 #8444] DEBUG -- : ["ShowValue", "Boolean", "Set to true to display the value for the data labels on a chart. Set to false hide."]
+D, [2015-07-05T10:12:41.244000 #8444] DEBUG -- : ["format", "Chart Data Label Format", "Represents the format of chart datalabels, which includes fill(interior/background) and font formatting."]
+D, [2015-07-05T10:12:41.244505 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.244505 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.247491 #8444] DEBUG -- : ...............Report for: ChartDataLabelFormat...........
+D, [2015-07-05T10:12:41.247997 #8444] DEBUG -- : Description:   Provides access to the Office Art formatting of the chart data label. 
+D, [2015-07-05T10:12:41.247997 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.247997 #8444] DEBUG -- : ["fill", "Chart Fill", "Represents the fill format of the chart data label, which includes interior/background formating information."]
+D, [2015-07-05T10:12:41.248492 #8444] DEBUG -- : ["font", "ChartFont", "Represents the font attributes (font name, font size, color, and so on) for a chart data label."]
+D, [2015-07-05T10:12:41.248492 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.248492 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.253012 #8444] DEBUG -- : ...............Report for: ChartGridlines...........
+D, [2015-07-05T10:12:41.253012 #8444] DEBUG -- : Description:  Represents major or minor gridlines on a chart axis. 
+D, [2015-07-05T10:12:41.253012 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.253012 #8444] DEBUG -- : ["visible", "Boolean", "Returns or sets a boolean. True if the axis has gridlines."]
+D, [2015-07-05T10:12:41.253513 #8444] DEBUG -- : ["format", "ChartGridlinesFormat", "Represents the formatting of chart gridlines."]
+D, [2015-07-05T10:12:41.253513 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.253513 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.255996 #8444] DEBUG -- : ...............Report for: ChartGridlinesFormat...........
+D, [2015-07-05T10:12:41.256498 #8444] DEBUG -- : Description:  Provides access to the Office Art formatting for chart gridlines. 
+D, [2015-07-05T10:12:41.256498 #8444] DEBUG -- : Properties: 1
+D, [2015-07-05T10:12:41.256498 #8444] DEBUG -- : ["line", "Chart Line Format", "Represents line and border formatting."]
+D, [2015-07-05T10:12:41.256998 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.256998 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.261018 #8444] DEBUG -- : ...............Report for: ChartLegend...........
+D, [2015-07-05T10:12:41.261501 #8444] DEBUG -- : Description:  Represents the legend in a chart. Each chart can have only one legend. 
+D, [2015-07-05T10:12:41.261501 #8444] DEBUG -- : Properties: 4
+D, [2015-07-05T10:12:41.261501 #8444] DEBUG -- : ["visible", "Boolean", "A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart."]
+D, [2015-07-05T10:12:41.262019 #8444] DEBUG -- : ["position", "String", "Returns or sets a legend position value that represents the position of the legend on the chart. Possible values are: Top,Bottom,Cornor,Left,Right,'Custom','Invalid'"]
+D, [2015-07-05T10:12:41.262019 #8444] DEBUG -- : ["overlay", "Boolean", "True if the legend with be overlapping with the chart."]
+D, [2015-07-05T10:12:41.262019 #8444] DEBUG -- : ["format", "ChartLegendFormat", "Represents the formatting of a chart legend, which includes fill(interior/background) and font formatting."]
+D, [2015-07-05T10:12:41.262019 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.262516 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.265004 #8444] DEBUG -- : ...............Report for: ChartLegendFormat...........
+D, [2015-07-05T10:12:41.265004 #8444] DEBUG -- : Description:  Provides access to the Office Art formatting for chart Legend. 
+D, [2015-07-05T10:12:41.265004 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.265504 #8444] DEBUG -- : ["fill", "Chart Fill", "Represents the fill format of an object, which includes interior/background formating information."]
+D, [2015-07-05T10:12:41.265504 #8444] DEBUG -- : ["font", "ChartFont", "Represents the font attributes such as font name, font size, color, etc. of a chart legend."]
+D, [2015-07-05T10:12:41.265504 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.265504 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.270024 #8444] DEBUG -- : ...............Report for: ChartTitle...........
+D, [2015-07-05T10:12:41.270024 #8444] DEBUG -- : Description:  Represents a chart title object of a chart. A ChartTitle object specifies the text, visibility and formating of the chart title. 
+D, [2015-07-05T10:12:41.270521 #8444] DEBUG -- : Properties: 4
+D, [2015-07-05T10:12:41.270521 #8444] DEBUG -- : ["text", "String", "Represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping."]
+D, [2015-07-05T10:12:41.270521 #8444] DEBUG -- : ["visible", "Boolean", "A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart."]
+D, [2015-07-05T10:12:41.271011 #8444] DEBUG -- : ["overlay", "Boolean", "True if the title overlays the chart."]
+D, [2015-07-05T10:12:41.271011 #8444] DEBUG -- : ["format", "ChartTitleFormat", "Represents the formatting of a chart title, which includes fill(interior/background) and font formatting."]
+D, [2015-07-05T10:12:41.271011 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.271515 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.274527 #8444] DEBUG -- : ...............Report for: ChartTitleFormat...........
+D, [2015-07-05T10:12:41.274527 #8444] DEBUG -- : Description:  Provides access to the Office Art formatting for chart title. 
+D, [2015-07-05T10:12:41.274527 #8444] DEBUG -- : Properties: 2
+D, [2015-07-05T10:12:41.275028 #8444] DEBUG -- : ["fill", "Chart Fill", "Represents the fill format of an object, which includes interior/background formating information."]
+D, [2015-07-05T10:12:41.275028 #8444] DEBUG -- : ["font", "ChartFont", "Represents the font attributes (font name, font size, color, and so on) for an object."]
+D, [2015-07-05T10:12:41.275028 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.275524 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.279531 #8444] DEBUG -- : ...............Report for: ChartFill...........
+D, [2015-07-05T10:12:41.279531 #8444] DEBUG -- : Description:  Represents the fill formatting for a chart element. 
+D, [2015-07-05T10:12:41.279531 #8444] DEBUG -- : Properties: 0
+D, [2015-07-05T10:12:41.280031 #8444] DEBUG -- : Methods: 2
+D, [2015-07-05T10:12:41.280031 #8444] DEBUG -- : ["setSolidColor", "void", "Sets the fill formatting of a chart element to a uniform color."]
+D, [2015-07-05T10:12:41.280031 #8444] DEBUG -- : ["clear", "void", "Clear the fill format of a chart element."]
+D, [2015-07-05T10:12:41.280521 #8444] DEBUG -- : Params: 1
+D, [2015-07-05T10:12:41.280521 #8444] DEBUG -- : ["color", "String", "HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., #FF0000 represents Red. ('255' red, '0' green, and '0' blue)", "setSolidColor"]
+D, [2015-07-05T10:12:41.284518 #8444] DEBUG -- : ...............Report for: ChartLineFormat...........
+D, [2015-07-05T10:12:41.284518 #8444] DEBUG -- : Description:  Provides access to the Office Art formatting for chart line elements. 
+D, [2015-07-05T10:12:41.285021 #8444] DEBUG -- : Properties: 1
+D, [2015-07-05T10:12:41.285021 #8444] DEBUG -- : ["color", "String", "HTML color code representing the color of lines in the chart."]
+D, [2015-07-05T10:12:41.285021 #8444] DEBUG -- : Methods: 1
+D, [2015-07-05T10:12:41.285021 #8444] DEBUG -- : ["clear", "void", "Clear the line format of a chart element."]
+D, [2015-07-05T10:12:41.285518 #8444] DEBUG -- : Params: 0
+D, [2015-07-05T10:12:41.289037 #8444] DEBUG -- : ...............Report for: ChartFont...........
+D, [2015-07-05T10:12:41.289527 #8444] DEBUG -- : Description:   This object represents the font attributes (font name, font size, color, and so on) for an object. 
+D, [2015-07-05T10:12:41.289527 #8444] DEBUG -- : Properties: 6
+D, [2015-07-05T10:12:41.289527 #8444] DEBUG -- : ["name", "String", "Font name (e.g., \"Calibri\")"]
+D, [2015-07-05T10:12:41.290022 #8444] DEBUG -- : ["size", "number", "Size of the font (e.g., 11)"]
+D, [2015-07-05T10:12:41.290022 #8444] DEBUG -- : ["color", "String", "HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., #FF0000 represents Red. ('255' red, '0' green, and '0' blue)"]
+D, [2015-07-05T10:12:41.290022 #8444] DEBUG -- : ["italic", "Boolean", "Represents the bold status of italic. true if the font style is italic"]
+D, [2015-07-05T10:12:41.290521 #8444] DEBUG -- : ["bold", "Boolean", "Represents the bold status of font. true if the font is bold."]
+D, [2015-07-05T10:12:41.290521 #8444] DEBUG -- : ["underline", "Boolean", "Type of underline applied to the font. Can be one of the following constants. Possible Values: None, Single, Double, SingleAccounting, DoubleAccounting"]
+D, [2015-07-05T10:12:41.290521 #8444] DEBUG -- : Methods: 0
+D, [2015-07-05T10:12:41.291022 #8444] DEBUG -- : Params: 0
