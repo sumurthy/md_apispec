@@ -9,7 +9,7 @@ None
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear()](#clear)|void|Clear the fill color of a chart element.||
 |[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.||
@@ -52,7 +52,7 @@ chartFillObject.setSolidColor(color);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|color|string|Optional. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|
+|color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|
 
 #### Returns
 void

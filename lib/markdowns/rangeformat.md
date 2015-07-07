@@ -63,4 +63,5 @@ range.format.borders('EdgeRight').lineStyle = 'Continuous';
 range.format.borders('EdgeTop').lineStyle = 'Continuous';
 ctx.executeAsync().then();
 ```
+
 [Back](#properties)

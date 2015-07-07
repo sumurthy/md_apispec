@@ -14,7 +14,7 @@ Represents a defined name for a range of cells or value. Names can be primitive 
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getRange()](#getrange)|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.||
 
@@ -59,4 +59,5 @@ ctx.executeAsync().then(function () {
 		Console.log(namedItem.type);
 });
 ```
+
 [Back](#properties)

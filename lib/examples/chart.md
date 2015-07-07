@@ -24,10 +24,10 @@ ctx.executeAsync().then();
 ### Getter setter
 
 Get a chart named "Chart1"
+
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
-
 ctx.load(chart);
 ctx.executeAsync().then(function () {
 		Console.log("Chart1 Loaded");
@@ -37,11 +37,14 @@ ctx.executeAsync().then(function () {
 Update a chart including renaming, positioning and resizing.
 
 ```js
-chartObject.name="New Name";
-chartObject.top = 100;
-chartObject.left = 100;
-chartObject.height = 200;
-chartObject.weight = 200;
+var ctx = new Excel.ExcelClientContext();
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+chart.name="New Name";
+chart.top = 100;
+chart.left = 100;
+chart.height = 200;
+chart.weight = 200;
+ctx.executeAsync().then();
 ```
 Rename the chart to new name, resize the chart to 200 points in both height and weight. Move Chart1 to 100 points to the top and left. 
 
@@ -54,7 +57,5 @@ chart.top = 100;
 chart.left = 100;
 chart.height =200;
 chart.width =200;
-ctx.executeAsync().then(function () {
-		Console.log("Chart Updated");
-});
+ctx.executeAsync().then();
 ```

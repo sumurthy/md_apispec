@@ -12,7 +12,7 @@ Represents the border objects that make up range border.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name||
 |[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Gets a border object using its index||
@@ -28,7 +28,7 @@ rangeBorderCollectionObject.getItem(index);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|string|Optional. Index value of the border object to be retrieved.  Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp|
+|index|string|Index value of the border object to be retrieved.  Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp|
 
 #### Returns
 [RangeBorder](rangeborder.md)
@@ -49,7 +49,7 @@ rangeBorderCollectionObject.getItemAt(index);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [RangeBorder](rangeborder.md)
@@ -102,4 +102,5 @@ range.format.borders('EdgeLeft').lineStyle = 'Continuous';
 range.format.borders('EdgeRight').lineStyle = 'Continuous';
 range.format.borders('EdgeTop').lineStyle = 'Continuous';
 ctx.executeAsync().then();
-```[Back](#properties)
+```
+[Back](#properties)

@@ -12,7 +12,7 @@ Represents a row in a table.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[delete()](#delete)|void|Deletes the row from the table.||
 |[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.||
@@ -92,4 +92,5 @@ ctx.load(row);
 ctx.executeAsync().then(function () {
 	Console.log(row.values);
 });
-```[Back](#properties)
+```
+[Back](#properties)

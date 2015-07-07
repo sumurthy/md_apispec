@@ -15,7 +15,7 @@ Represents an Excel table.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[delete()](#delete)|void|Deletes the table.||
 |[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.||
@@ -184,4 +184,5 @@ ctx.load(table);
 ctx.executeAsync().then(function () {
 		Console.log(table.tableStyle);
 });
-```[Back](#properties)
+```
+[Back](#properties)

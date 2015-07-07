@@ -41,8 +41,8 @@ module SpecMaker
 	GETTER = 'Getter Examples'
 	SETTER = 'Setter Examples'
 	BACKTOMETHOD = '[Back](#methods)'
-	BACKTOPROPERTY = '[Back](#properties)'
 	NEWLINE = "\n"
+	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
 	PIPE = '|'
 	TWONEWLINES = "\n\n"
 	PROPERTY_HEADER = "| Property       | Type    |Description|Notes |" + NEWLINE
@@ -51,7 +51,7 @@ module SpecMaker
 	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
 
 	RELATIONSHIP_HEADER = "| Relationship | Type    |Description|Notes |" + NEWLINE
-	METHOD_HEADER = "| Methos           | Type    |Description|Notes |" + NEWLINE
+	METHOD_HEADER = "| Methos           | Return Type    |Description|Notes |" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void]
 	
 	def self.uncapitalize (str="")
@@ -100,9 +100,6 @@ module SpecMaker
 		replacements = [ [" ", "-"], ["[", ""], ["]", ""],["(", ""], [")", ""], [",", ""], [":", ""] ]				
 		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
 		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
-
-		puts "#{method[:signature].strip}, == , #{methodPlusLink}"
-
 		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE+PIPE) + NEWLINE
 	end
 
@@ -120,7 +117,7 @@ module SpecMaker
 			@mdlines.push PARAM_HEADER + TABLE_2ND_LINE_PARAM 
 			method[:parameters].each do |param|
 				# Append optional and enum possible values (if applicable).
-				finalPDesc = param[:isRequired] ? 'Optional. ' + param[:description] : param[:description]
+				finalPDesc = param[:isRequired] ? param[:description] : 'Optional. ' + param[:description]
 				appendEnum = ''
 				if (param[:enumNameJs] != nil) && (@enumHash.has_key? param[:enumNameJs])
 

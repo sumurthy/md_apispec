@@ -22,7 +22,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.||
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.||
@@ -49,7 +49,7 @@ rangeObject.clear(applyTo);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|applyTo|string|Determines the type of clear action. Possible values are: All (default option), Format, and Content. Possible values are: `All` Default-option,`Formats` ,`Contents` |
+|applyTo|string|Optional. Determines the type of clear action. Possible values are: All (default option), Format, and Content. Possible values are: `All` Default-option,`Formats` ,`Contents` |
 
 #### Returns
 void
@@ -79,7 +79,7 @@ rangeObject.delete(shift);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|shift|string|Optional. Specifies which way to shift the cells. Possible values are: Up (default option) or Left.  Possible values are: Up, Left|
+|shift|string|Specifies which way to shift the cells. Possible values are: Up (default option) or Left.  Possible values are: Up, Left|
 
 #### Returns
 void
@@ -107,7 +107,7 @@ rangeObject.getBoundingRect(anotherRange);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|anotherRange|object|Optional. The range object or address or range name.|
+|anotherRange|object|The range object or address or range name.|
 
 #### Returns
 [Range](range.md)
@@ -138,8 +138,8 @@ rangeObject.getCell(row, column);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|row|number|Optional. Row number of the cell to be retrieved. Zero-indexed.|
-|column|number|Optional. Column number of the cell to be retrieved. Zero-indexed.|
+|row|number|Row number of the cell to be retrieved. Zero-indexed.|
+|column|number|Column number of the cell to be retrieved. Zero-indexed.|
 
 #### Returns
 [Range](range.md)
@@ -171,7 +171,7 @@ rangeObject.getColumn(column);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|column|number|Optional. Column number of the range to be retrieved. Zero-indexed.|
+|column|number|Column number of the range to be retrieved. Zero-indexed.|
 
 #### Returns
 [Range](range.md)
@@ -257,7 +257,7 @@ rangeObject.getIntersection(anotherRange);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|anotherRange|object|Optional. The range object or range address that will be used to determine the intersection of ranges.|
+|anotherRange|object|The range object or range address that will be used to determine the intersection of ranges.|
 
 #### Returns
 [Range](range.md)
@@ -278,8 +278,8 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|rowOffset|number|Optional. The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.|
-|columnOffset|number|Optional. The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.|
+|rowOffset|number|The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.|
+|columnOffset|number|The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.|
 
 #### Returns
 [Range](range.md)
@@ -300,7 +300,7 @@ rangeObject.getRow(row);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|row|number|Optional. Row number of the range to be retrieved. Zero-indexed.|
+|row|number|Row number of the range to be retrieved. Zero-indexed.|
 
 #### Returns
 [Range](range.md)
@@ -349,7 +349,7 @@ rangeObject.insert(shift);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|shift|string|Optional. Specifies which way to shift the cells. Can be one of the following: Down (default option) or Right.  Possible values are: Down, Right|
+|shift|string|Specifies which way to shift the cells. Can be one of the following: Down (default option) or Right.  Possible values are: Down, Right|
 
 #### Returns
 void
@@ -452,4 +452,5 @@ ctx.executeAsync().then(function () {
 		Console.log(rangeWorksheet.name);
 });
 ```
+
 [Back](#properties)

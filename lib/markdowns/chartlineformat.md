@@ -11,7 +11,7 @@ Enapsulates the formatting options for line elements.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear()](#clear)|void|Clear the line format of a chart element.||
 
@@ -50,5 +50,6 @@ Set chart major gridlines on value axis to be red.
 ```js
 var ctx = new Excel.ExcelClientContext();
 var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.axes.valueaxis.majorGridlines;
+
 
 [Back](#properties)

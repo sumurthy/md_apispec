@@ -12,7 +12,7 @@ A collection of all the chart points within a series inside a chart.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.||
 
@@ -27,7 +27,7 @@ chartPointsCollectionObject.getItemAt(index);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [ChartPoint](chartpoint.md)
@@ -68,4 +68,5 @@ ctx.executeAsync().then(function () {
 });
 
 ```
+
 [Back](#properties)

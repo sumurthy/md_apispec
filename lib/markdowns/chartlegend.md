@@ -45,4 +45,5 @@ chart.legend.overlay = false;
 ctx.executeAsync().then(function () {
 		Console.log("Legend Shown ");
 });
-``` [Back](#properties)
+``` 
+[Back](#properties)

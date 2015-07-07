@@ -37,4 +37,5 @@ ctx.executeAsync().then(function () {
 		Console.log("Datalabels Shown");
 });
 ```
+
 [Back](#properties)

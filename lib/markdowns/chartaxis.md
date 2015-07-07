@@ -47,4 +47,5 @@ ctx.executeAsync().then(function () {
 		Console.log("Axis Settings Changed");
 });
 ```
+
 [Back](#properties)

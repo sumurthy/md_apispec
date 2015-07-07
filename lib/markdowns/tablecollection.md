@@ -12,7 +12,7 @@ Represents a collection of all the tables that are part of the workbook.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.||
 |[getItem(id: object)](#getitemid-object)|[Table](table.md)|Gets a table by Name or ID.||
@@ -29,8 +29,8 @@ tableCollectionObject.add(address, hasHeaders);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|address|string|Optional. Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.|
-|hasHeaders|bool|Optional. Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
+|address|string|Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.|
+|hasHeaders|bool|Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
 
 #### Returns
 [Table](table.md)
@@ -58,7 +58,7 @@ tableCollectionObject.getItem(id);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|id|object|Optional. Name or ID of the table to be retrieved.|
+|id|object|Name or ID of the table to be retrieved.|
 
 #### Returns
 [Table](table.md)
@@ -79,7 +79,7 @@ tableCollectionObject.getItemAt(index);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [Table](table.md)
@@ -122,4 +122,5 @@ ctx.executeAsync().then(function () {
 	
 });
 
-```[Back](#properties)
+```
+[Back](#properties)

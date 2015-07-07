@@ -13,7 +13,7 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[activate()](#activate)|void|Activate the worksheet in the Excel UI.||
 |[delete()](#delete)|void|Deletes the worksheet from the workbook.||
@@ -80,8 +80,8 @@ worksheetObject.getCell(row, column);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|row|number|Optional. The row number of the cell to be retrieved. Zero-indexed.|
-|column|number|Optional. the column number of the cell to be retrieved. Zero-indexed.|
+|row|number|The row number of the cell to be retrieved. Zero-indexed.|
+|column|number|the column number of the cell to be retrieved. Zero-indexed.|
 
 #### Returns
 [Range](range.md)
@@ -112,7 +112,7 @@ worksheetObject.getRange(address);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|address|string|The address or the name of the range. If not specified, the entire worksheet range is returned.|
+|address|string|Optional. The address or the name of the range. If not specified, the entire worksheet range is returned.|
 
 #### Returns
 [Range](range.md)
@@ -196,5 +196,6 @@ ctx.executeAsync().then(function () {
 		Console.log(worksheet.index);
 });
 ```
+
 
 [Back](#properties)

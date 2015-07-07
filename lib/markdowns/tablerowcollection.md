@@ -12,7 +12,7 @@ Represents a collection of all the rows that are part of the table.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[add(index: number, values: object[][])](#addindex-number-values-object)|[TableRow](tablerow.md)|Adds a new row to the table.||
 |[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.||
@@ -28,8 +28,8 @@ tableRowCollectionObject.add(index, values);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|number|Specifies the relative position of the new row. If null, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
-|values|object[][]|A 2-dimensional array of unformatted values of the table row.|
+|index|number|Optional. Specifies the relative position of the new row. If null, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
+|values|object[][]|Optional. A 2-dimensional array of unformatted values of the table row.|
 
 #### Returns
 [TableRow](tablerow.md)
@@ -50,7 +50,7 @@ tableRowCollectionObject.getItemAt(index);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [TableRow](tablerow.md)
@@ -81,4 +81,5 @@ ctx.executeAsync().then(function () {
 		Console.log(tablerows.items[i].index);
 	}
 });
-```[Back](#properties)
+```
+[Back](#properties)

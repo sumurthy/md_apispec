@@ -9,7 +9,7 @@ None
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.||
 

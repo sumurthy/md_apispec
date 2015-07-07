@@ -12,7 +12,7 @@ A collection of all the chart objects on a worksheet.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)|[Chart](chart.md)|Creates a new chart.||
 |[getItem(id: string)](#getitemid-string)|[Chart](chart.md)|Gets a chart using its ID.||
@@ -30,9 +30,9 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|type|string|Optional. Represents the type of a chart.  Possible values are: Invalid, ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, PieExploded, BarOfPie, XYScatterSmooth, XYScatterSmoothNoMarkers, XYScatterLines, XYScatterLinesNoMarkers, AreaStacked, AreaStacked100, DoughnutExploded, RadarMarkers, RadarFilled, Surface, SurfaceWireframe, SurfaceTopView, SurfaceTopViewWireframe, Bubble, Bubble3DEffect, StockHLC, StockOHLC, StockVHLC, StockVOHLC, CylinderColClustered, CylinderColStacked, CylinderColStacked100, CylinderBarClustered, CylinderBarStacked, CylinderBarStacked100, CylinderCol, ConeColClustered, ConeColStacked, ConeColStacked100, ConeBarClustered, ConeBarStacked, ConeBarStacked100, ConeCol, PyramidColClustered, PyramidColStacked, PyramidColStacked100, PyramidBarClustered, PyramidBarStacked, PyramidBarStacked100, PyramidCol, Line, Pie, XYScatter, Area, Doughnut, Radar|
-|sourceData|string|Optional. The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
-|seriesBy|string|Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
+|type|string|Represents the type of a chart.  Possible values are: Invalid, ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, PieExploded, BarOfPie, XYScatterSmooth, XYScatterSmoothNoMarkers, XYScatterLines, XYScatterLinesNoMarkers, AreaStacked, AreaStacked100, DoughnutExploded, RadarMarkers, RadarFilled, Surface, SurfaceWireframe, SurfaceTopView, SurfaceTopViewWireframe, Bubble, Bubble3DEffect, StockHLC, StockOHLC, StockVHLC, StockVOHLC, CylinderColClustered, CylinderColStacked, CylinderColStacked100, CylinderBarClustered, CylinderBarStacked, CylinderBarStacked100, CylinderCol, ConeColClustered, ConeColStacked, ConeColStacked100, ConeBarClustered, ConeBarStacked, ConeBarStacked100, ConeCol, PyramidColClustered, PyramidColStacked, PyramidColStacked100, PyramidBarClustered, PyramidBarStacked, PyramidBarStacked100, PyramidCol, Line, Pie, XYScatter, Area, Doughnut, Radar|
+|sourceData|string|The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
+|seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
 
 #### Returns
 [Chart](chart.md)
@@ -63,7 +63,7 @@ chartCollectionObject.getItem(id);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|id|string|Optional. Id of the chart to be retrieved.|
+|id|string|Id of the chart to be retrieved.|
 
 #### Returns
 [Chart](chart.md)
@@ -84,7 +84,7 @@ chartCollectionObject.getItem(name);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|name|string|Optional. Name of the chart to be retrieved.|
+|name|string|Name of the chart to be retrieved.|
 
 #### Returns
 [Chart](chart.md)
@@ -111,7 +111,7 @@ chartCollectionObject.getItemAt(index);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [Chart](chart.md)
@@ -155,5 +155,6 @@ ctx.executeAsync().then(function () {
 	Console.log("charts: Count= " + charts.count);
 });
 ```
+
 
 [Back](#properties)

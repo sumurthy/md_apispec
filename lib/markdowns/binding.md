@@ -12,7 +12,7 @@ Represents an Office.js binding that is defined in the workbook.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.||
 |[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.||
@@ -108,4 +108,5 @@ ctx.load(binding);
 ctx.executeAsync().then(function() {
 	Console.log(binding.type);
 });
-```[Back](#properties)
+```
+[Back](#properties)

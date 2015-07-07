@@ -12,7 +12,7 @@ Represents the collection of all the binding objects that are part of the workbo
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.||
 |[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.||
@@ -28,7 +28,7 @@ bindingCollectionObject.getItem(id);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|id|string|Optional. Id of the binding object to be retrieved. Zero-indexed.|
+|id|string|Id of the binding object to be retrieved.|
 
 #### Returns
 [Binding](binding.md)
@@ -49,7 +49,7 @@ bindingCollectionObject.getItemAt(index);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
 
 #### Returns
 [Binding](binding.md)
@@ -92,4 +92,5 @@ ctx.executeAsync().then(function () {
 });
 
 ```
+
 [Back](#properties)

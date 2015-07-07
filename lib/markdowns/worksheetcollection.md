@@ -11,7 +11,7 @@ Represents a collection of worksheet objects that are part of the workbook.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.||
 |[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Gets the currently active worksheet in the workbook.||
@@ -28,7 +28,7 @@ worksheetCollectionObject.add(name);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|name|string|The name of the worksheet to be added. If specified, name should be unqiue. If not specified, Excel determines the name of the new worksheet.|
+|name|string|Optional. The name of the worksheet to be added. If specified, name should be unqiue. If not specified, Excel determines the name of the new worksheet.|
 
 #### Returns
 [Worksheet](worksheet.md)
@@ -82,7 +82,7 @@ worksheetCollectionObject.getItem(index);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|string|Optional. The Name or ID of the worksheet.|
+|index|string|The Name or ID of the worksheet.|
 
 #### Returns
 [Worksheet](worksheet.md)
@@ -109,4 +109,5 @@ ctx.executeAsync().then(function () {
 	}
 });
 ```
+
 [Back](#properties)

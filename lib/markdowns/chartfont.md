@@ -28,4 +28,5 @@ Use chart title as an example.
 ```js
 chartObject.title.format.font.name = "Calibri";
 chartObject.title.format.font.size = 12;
+
 [Back](#properties)

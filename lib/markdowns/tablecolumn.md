@@ -14,7 +14,7 @@ Represents a column in a table.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[delete()](#delete)|void|Deletes the column from the table.||
 |[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the column.||
@@ -177,4 +177,5 @@ ctx.load(column);
 ctx.executeAsync().then(function () {
 	Console.log(column.values);
 });
-```[Back](#properties)
+```
+[Back](#properties)
