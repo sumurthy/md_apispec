@@ -34,7 +34,7 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|type|string|Represents the type of a chart.  Possible values are: Invalid, ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, PieExploded, BarOfPie, XYScatterSmooth, XYScatterSmoothNoMarkers, XYScatterLines, XYScatterLinesNoMarkers, AreaStacked, AreaStacked100, DoughnutExploded, RadarMarkers, RadarFilled, Surface, SurfaceWireframe, SurfaceTopView, SurfaceTopViewWireframe, Bubble, Bubble3DEffect, StockHLC, StockOHLC, StockVHLC, StockVOHLC, CylinderColClustered, CylinderColStacked, CylinderColStacked100, CylinderBarClustered, CylinderBarStacked, CylinderBarStacked100, CylinderCol, ConeColClustered, ConeColStacked, ConeColStacked100, ConeBarClustered, ConeBarStacked, ConeBarStacked100, ConeCol, PyramidColClustered, PyramidColStacked, PyramidColStacked100, PyramidBarClustered, PyramidBarStacked, PyramidBarStacked100, PyramidCol, Line, Pie, XYScatter, Area, Doughnut, Radar|
+|type|string|Represents the type of a chart.  Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc.|
 |sourceData|string|The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
 |seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
 
@@ -78,12 +78,14 @@ chartCollectionObject.getItem(id);
 
 ```js
 var ctx = new Excel.ExcelClientContext();
-var chartname = 'Chart1';
-var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
+var chartId = 'SamplChartId';
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartId);
 ctx.executeAsync().then(function () {
-		Console.log(chart.index);
+		Console.log(chart.height);
 });
 ```
+
+
 
 [Back](#methods)
 
@@ -104,9 +106,16 @@ chartCollectionObject.getItem(name);
 [Chart](chart.md)
 
 #### Examples
-```js
 
+```js
+var ctx = new Excel.ExcelClientContext();
+var chartname = 'Chart1';
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
+ctx.executeAsync().then(function () {
+		Console.log(chart.height);
+});
 ```
+
 
 [Back](#methods)
 

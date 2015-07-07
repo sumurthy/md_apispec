@@ -30,6 +30,7 @@ module SpecMaker
 	@enumHash = JSON.parse File.read(ENUMS)
 	@gsType = ''
 	JSON_SOURCE_FOLDER = "jsonFiles"
+	###JSON_SOURCE_FOLDER = 'C:\Users\suramam\Git\wip\lib\jsonFiles'
 	MARKDOWN_OUTPUT_FOLDER = "markdowns/"
 	EXAMPLES_FOLDER = "examples/"
 	HEADER1 = '# '

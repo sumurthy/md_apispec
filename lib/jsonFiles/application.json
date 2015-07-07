@@ -12,7 +12,7 @@
       "name": "calculationMode",
       "dataType": "string",
       "description": "Returns the calculation mode used in the workbook.",
-      "isReadOnly": false,
+      "isReadOnly": true,
       "enumNameJs": "Excel.CalculationMode",
       "isCollection": false,
       "possibleValues": null,

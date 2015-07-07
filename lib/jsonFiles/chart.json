@@ -122,7 +122,7 @@
       "name": "format",
       "dataType": "ChartAreaFormat",
       "description": "Encapsulates the format properties for the chart area.",
-      "isReadOnly": false,
+      "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
       "possibleValues": null,

@@ -23,7 +23,7 @@
       "name": "type",
       "dataType": "string",
       "description": "Returns the type of the binding.",
-      "isReadOnly": false,
+      "isReadOnly": true,
       "enumNameJs": "Excel.BindingType",
       "isCollection": false,
       "possibleValues": null,

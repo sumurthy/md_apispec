@@ -45,7 +45,7 @@
       "name": "name",
       "dataType": "string",
       "description": "The display name of the worksheet.",
-      "isReadOnly": true,
+      "isReadOnly": false,
       "enumNameJs": null,
       "isCollection": false,
       "possibleValues": null,

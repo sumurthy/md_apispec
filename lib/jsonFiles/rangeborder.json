@@ -34,7 +34,7 @@
       "name": "sideIndex",
       "dataType": "string",
       "description": "Constant value that indicates the specific side of the border.",
-      "isReadOnly": false,
+      "isReadOnly": true,
       "enumNameJs": "Excel.BorderIndex",
       "isCollection": false,
       "possibleValues": null,

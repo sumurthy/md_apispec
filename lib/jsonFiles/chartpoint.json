@@ -12,7 +12,7 @@
       "name": "format",
       "dataType": "ChartPointFormat",
       "description": "Encapsulates the format properties chart point.",
-      "isReadOnly": false,
+      "isReadOnly": true,
       "enumNameJs": null,
       "isCollection": false,
       "possibleValues": null,

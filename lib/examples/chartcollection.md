@@ -40,16 +40,29 @@ ctx.executeAsync().then(function () {
 });
 ```
 
-### getItem(id: string)
+### getItem(name: string)
 
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chartname = 'Chart1';
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
 ctx.executeAsync().then(function () {
-		Console.log(chart.index);
+		Console.log(chart.height);
 });
 ```
+
+### getItem(id: string)
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var chartId = 'SamplChartId';
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartId);
+ctx.executeAsync().then(function () {
+		Console.log(chart.height);
+});
+```
+
+
 ### getItemAt(index: number)
 
 ```js

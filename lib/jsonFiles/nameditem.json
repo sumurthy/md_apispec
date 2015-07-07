@@ -23,7 +23,7 @@
       "name": "type",
       "dataType": "string",
       "description": "Indicates what type of reference is associated with the name.",
-      "isReadOnly": false,
+      "isReadOnly": true,
       "enumNameJs": "Excel.NamedItemType",
       "isCollection": false,
       "possibleValues": null,

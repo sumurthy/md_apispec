@@ -61,18 +61,6 @@ ctx.executeAsync().then(function() {
 	Console.log(range.address);
 });
 ```
-
-Below example get the entire worksheeet range. If the entire worksheet range is returned, the grid properties of the Range (values, numberFormat, formula) will contain `null` since the Range in question is unbounded.
-
-```js
-var rangeName = 'MyRange';
-var ctx = new Excel.ExcelClientContext();
-var range = ctx.workbook.worksheets.getItem(sheetName).getRange();
-ctx.load(range);
-ctx.executeAsync().then(function() {
-	Console.log(range.address);
-});
-```
 ### getUsedRange()
 
 ```js
@@ -88,6 +76,7 @@ ctx.executeAsync().then(function () {
 
 ### Getter and setter Worksheet
 
+Get worksheet properties based on sheet name.
 ```js
 var ctx = new Excel.ExcelClientContext();
 var wSheetName = 'Sheet1';
@@ -96,4 +85,15 @@ ctx.executeAsync().then(function () {
 		Console.log(worksheet.index);
 });
 ```
+
+Set worksheet position. 
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var wSheetName = 'Sheet1';
+var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+worksheet.position = 0;
+ctx.executeAsync().then();
+```
+
 

@@ -6,7 +6,7 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.||
-|name|string|The display name of the worksheet. Read-only.||
+|name|string|The display name of the worksheet.||
 |position|int|The zero-based position of the worksheet within the workbook.||
 
 ## Relationships
@@ -157,18 +157,6 @@ ctx.executeAsync().then(function() {
 });
 ```
 
-Below example get the entire worksheeet range. If the entire worksheet range is returned, the grid properties of the Range (values, numberFormat, formula) will contain `null` since the Range in question is unbounded.
-
-```js
-var rangeName = 'MyRange';
-var ctx = new Excel.ExcelClientContext();
-var range = ctx.workbook.worksheets.getItem(sheetName).getRange();
-ctx.load(range);
-ctx.executeAsync().then(function() {
-	Console.log(range.address);
-});
-```
-
 [Back](#methods)
 
 ### getUsedRange()
@@ -202,6 +190,7 @@ ctx.executeAsync().then(function () {
 
 #### Getter and Setter Examples
 
+Get worksheet properties based on sheet name.
 ```js
 var ctx = new Excel.ExcelClientContext();
 var wSheetName = 'Sheet1';
@@ -210,6 +199,17 @@ ctx.executeAsync().then(function () {
 		Console.log(worksheet.index);
 });
 ```
+
+Set worksheet position. 
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var wSheetName = 'Sheet1';
+var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+worksheet.position = 0;
+ctx.executeAsync().then();
+```
+
 
 
 [Back](#properties)
