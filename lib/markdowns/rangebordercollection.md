@@ -24,7 +24,8 @@ None
 Gets a border object using its name
 
 #### Syntax
-```jsrangeBorderCollectionObject.getItem(index);
+```js
+rangeBorderCollectionObject.getItem(index);
 ```
 
 #### Parameters
@@ -46,7 +47,8 @@ Gets a border object using its name
 Gets a border object using its index
 
 #### Syntax
-```jsrangeBorderCollectionObject.getItemAt(index);
+```js
+rangeBorderCollectionObject.getItemAt(index);
 ```
 
 #### Parameters

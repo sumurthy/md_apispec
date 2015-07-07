@@ -108,7 +108,7 @@ module SpecMaker
 
 		@mdlines.push HEADER3 + method[:signature] + NEWLINE	
 		@mdlines.push method[:description] + TWONEWLINES	
-		@mdlines.push HEADER4 + "Syntax" + NEWLINE + '```js'
+		@mdlines.push HEADER4 + "Syntax" + NEWLINE + '```js' + NEWLINE
 		@mdlines.push method[:syntax] + NEWLINE + '```' + TWONEWLINES
 		@mdlines.push HEADER4 + "Parameters" + NEWLINE
 

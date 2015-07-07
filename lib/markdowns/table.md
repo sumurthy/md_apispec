@@ -32,7 +32,8 @@ Represents an Excel table.
 Deletes the table.
 
 #### Syntax
-```jstableObject.delete();
+```js
+tableObject.delete();
 ```
 
 #### Parameters
@@ -56,7 +57,8 @@ ctx.executeAsync().then();
 Gets the range object associated with the data body of the table.
 
 #### Syntax
-```jstableObject.getDataBodyRange();
+```js
+tableObject.getDataBodyRange();
 ```
 
 #### Parameters
@@ -81,7 +83,8 @@ ctx.executeAsync().then(function () {
 Gets the range object associated with header row of the table.
 
 #### Syntax
-```jstableObject.getHeaderRowRange();
+```js
+tableObject.getHeaderRowRange();
 ```
 
 #### Parameters
@@ -107,7 +110,8 @@ ctx.executeAsync().then(function () {
 Gets the range object associated with the entire table.
 
 #### Syntax
-```jstableObject.getRange();
+```js
+tableObject.getRange();
 ```
 
 #### Parameters
@@ -133,7 +137,8 @@ ctx.executeAsync().then(function () {
 Gets the range object associated with totals row of the table.
 
 #### Syntax
-```jstableObject.getTotalRowRange();
+```js
+tableObject.getTotalRowRange();
 ```
 
 #### Parameters

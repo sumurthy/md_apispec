@@ -25,7 +25,8 @@ None
 Gets the currently selected range from the workbook.
 
 #### Syntax
-```jsworkbookObject.getSelectedRange();
+```js
+workbookObject.getSelectedRange();
 ```
 
 #### Parameters

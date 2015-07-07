@@ -21,7 +21,8 @@ None
 Clear the fill color of a chart element.
 
 #### Syntax
-```jschartFillObject.clear();
+```js
+chartFillObject.clear();
 ```
 
 #### Parameters
@@ -49,7 +50,8 @@ ctx.executeAsync().then(function () {
 Sets the fill formatting of a chart element to a uniform color.
 
 #### Syntax
-```jschartFillObject.setSolidColor(color);
+```js
+chartFillObject.setSolidColor(color);
 ```
 
 #### Parameters

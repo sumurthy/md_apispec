@@ -22,7 +22,8 @@ None
 Recalculate all currently opened workbooks in Excel.
 
 #### Syntax
-```jsapplicationObject.calculate(calculationType);
+```js
+applicationObject.calculate(calculationType);
 ```
 
 #### Parameters

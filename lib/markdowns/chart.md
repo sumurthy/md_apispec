@@ -33,7 +33,8 @@ Represents a chart object in a workbook.
 Deletes the chart object.
 
 #### Syntax
-```jschartObject.delete();
+```js
+chartObject.delete();
 ```
 
 #### Parameters
@@ -58,7 +59,8 @@ ctx.executeAsync().then(function () {
 Resets the source data for the chart.
 
 #### Syntax
-```jschartObject.setData(sourceData, seriesBy);
+```js
+chartObject.setData(sourceData, seriesBy);
 ```
 
 #### Parameters

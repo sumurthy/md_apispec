@@ -25,7 +25,8 @@ None
 Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.
 
 #### Syntax
-```jstableCollectionObject.add(address, hasHeaders);
+```js
+tableCollectionObject.add(address, hasHeaders);
 ```
 
 #### Parameters
@@ -55,7 +56,8 @@ ctx.executeAsync().then(function () {
 Gets a table by Name or ID.
 
 #### Syntax
-```jstableCollectionObject.getItem(id);
+```js
+tableCollectionObject.getItem(id);
 ```
 
 #### Parameters
@@ -77,7 +79,8 @@ Gets a table by Name or ID.
 Gets a table based on its position in the collection.
 
 #### Syntax
-```jstableCollectionObject.getItemAt(index);
+```js
+tableCollectionObject.getItemAt(index);
 ```
 
 #### Parameters

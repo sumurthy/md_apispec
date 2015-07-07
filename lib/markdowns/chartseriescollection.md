@@ -23,7 +23,8 @@ None
 Retrieves a series based on its position in the collection
 
 #### Syntax
-```jschartSeriesCollectionObject.getItemAt(index);
+```js
+chartSeriesCollectionObject.getItemAt(index);
 ```
 
 #### Parameters

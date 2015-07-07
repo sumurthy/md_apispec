@@ -22,7 +22,8 @@ None
 Gets a nameditem object using its name
 
 #### Syntax
-```jsnamedItemCollectionObject.getItem(name);
+```js
+namedItemCollectionObject.getItem(name);
 ```
 
 #### Parameters

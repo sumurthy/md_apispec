@@ -24,7 +24,8 @@ None
 Gets a binding object by ID.
 
 #### Syntax
-```jsbindingCollectionObject.getItem(id);
+```js
+bindingCollectionObject.getItem(id);
 ```
 
 #### Parameters
@@ -46,7 +47,8 @@ Gets a binding object by ID.
 Gets a binding object based on its position in the items array.
 
 #### Syntax
-```jsbindingCollectionObject.getItemAt(index);
+```js
+bindingCollectionObject.getItemAt(index);
 ```
 
 #### Parameters

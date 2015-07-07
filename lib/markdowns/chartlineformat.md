@@ -22,7 +22,8 @@ None
 Clear the line format of a chart element.
 
 #### Syntax
-```jschartLineFormatObject.clear();
+```js
+chartLineFormatObject.clear();
 ```
 
 #### Parameters
