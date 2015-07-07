@@ -1,42 +1,42 @@
-# Logfile created on 2015-07-06 19:53:03 -0700 by logger.rb/44203
-W, [2015-07-06T19:53:03.321735 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for application  
-W, [2015-07-06T19:53:03.327761 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for binding  
-W, [2015-07-06T19:53:03.336266 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for bindingCollection  
-E, [2015-07-06T19:53:03.340782 #13380] ERROR -- : ....Example not found for method: getItem(id: string), bindingCollection  
-W, [2015-07-06T19:53:03.340782 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartAreaFormat  
-W, [2015-07-06T19:53:03.355193 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartAxes  
-W, [2015-07-06T19:53:03.356192 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartAxisFormat  
-W, [2015-07-06T19:53:03.356192 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartAxisTitleFormat  
-W, [2015-07-06T19:53:03.356192 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for chartCollection  
-E, [2015-07-06T19:53:03.356192 #13380] ERROR -- : ....Example not found for method: getItem(id: string), chartCollection  
-W, [2015-07-06T19:53:03.356192 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartDataLabelFormat  
-W, [2015-07-06T19:53:03.356192 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for chartDataLabels  
-W, [2015-07-06T19:53:03.371821 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartFill  
-W, [2015-07-06T19:53:03.375773 #13380]  WARN -- : ....Either Getter or Setter or both not found : [setter found] for chartFont  
-W, [2015-07-06T19:53:03.376287 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartGridlinesFormat  
-W, [2015-07-06T19:53:03.376287 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartLegendFormat  
-W, [2015-07-06T19:53:03.376287 #13380]  WARN -- : ....Either Getter or Setter or both not found : [setter found] for chartLineFormat  
-W, [2015-07-06T19:53:03.376287 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartPoint  
-W, [2015-07-06T19:53:03.376287 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartPointFormat  
-W, [2015-07-06T19:53:03.376287 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for chartPointsCollection  
-W, [2015-07-06T19:53:03.376287 #13380]  WARN -- : ....Either Getter or Setter or both not found : [setter found] for chartSeries  
-W, [2015-07-06T19:53:03.376287 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for chartSeriesCollection  
-W, [2015-07-06T19:53:03.376287 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartSeriesFormat  
-W, [2015-07-06T19:53:03.391958 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartTitleFormat  
-W, [2015-07-06T19:53:03.391958 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for namedItem  
-W, [2015-07-06T19:53:03.391958 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for namedItemCollection  
-E, [2015-07-06T19:53:03.440883 #13380] ERROR -- : ....Example not found for method: getColumn(column: number), range  
-E, [2015-07-06T19:53:03.457410 #13380] ERROR -- : ....Example not found for method: getIntersection(anotherRange: object), range  
-E, [2015-07-06T19:53:03.458928 #13380] ERROR -- : ....Example not found for method: getOffsetRange(rowOffset: number, columnOffset: number), range  
-E, [2015-07-06T19:53:03.458928 #13380] ERROR -- : ....Example not found for method: getRow(row: number), range  
-E, [2015-07-06T19:53:03.458928 #13380] ERROR -- : ....Example not found for method: getItem(index: string), rangeBorderCollection  
-W, [2015-07-06T19:53:03.501585 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for tableCollection  
-E, [2015-07-06T19:53:03.512211 #13380] ERROR -- : ....Example not found for method: getItem(id: object), tableCollection  
-W, [2015-07-06T19:53:03.533029 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for tableColumnCollection  
-E, [2015-07-06T19:53:03.543705 #13380] ERROR -- : ....Example not found for method: add(index: number, values: object[][]), tableColumnCollection  
-E, [2015-07-06T19:53:03.546695 #13380] ERROR -- : ....Example not found for method: getItem(id: object), tableColumnCollection  
-W, [2015-07-06T19:53:03.551696 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for tableRowCollection  
-E, [2015-07-06T19:53:03.560229 #13380] ERROR -- : ....Example not found for method: add(index: number, values: object[][]), tableRowCollection  
-W, [2015-07-06T19:53:03.560229 #13380]  WARN -- : ....Either Getter or Setter or both not found : [none found] for workbook  
-W, [2015-07-06T19:53:03.574334 #13380]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for worksheetCollection  
-E, [2015-07-06T19:53:03.592802 #13380] ERROR -- : ....Example not found for method: getItem(index: string), worksheetCollection  
+# Logfile created on 2015-07-06 19:57:12 -0700 by logger.rb/44203
+W, [2015-07-06T19:57:12.908040 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for application  
+W, [2015-07-06T19:57:12.909539 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for binding  
+W, [2015-07-06T19:57:12.911038 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for bindingCollection  
+E, [2015-07-06T19:57:12.911536 #20356] ERROR -- : ....Example not found for method: getItem(id: string), bindingCollection  
+W, [2015-07-06T19:57:12.914036 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartAreaFormat  
+W, [2015-07-06T19:57:12.914541 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartAxes  
+W, [2015-07-06T19:57:12.916039 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartAxisFormat  
+W, [2015-07-06T19:57:12.917039 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartAxisTitleFormat  
+W, [2015-07-06T19:57:12.917539 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for chartCollection  
+E, [2015-07-06T19:57:12.919038 #20356] ERROR -- : ....Example not found for method: getItem(id: string), chartCollection  
+W, [2015-07-06T19:57:12.919539 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartDataLabelFormat  
+W, [2015-07-06T19:57:12.920039 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for chartDataLabels  
+W, [2015-07-06T19:57:12.921042 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartFill  
+W, [2015-07-06T19:57:12.922540 #20356]  WARN -- : ....Either Getter or Setter or both not found : [setter found] for chartFont  
+W, [2015-07-06T19:57:12.923539 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartGridlinesFormat  
+W, [2015-07-06T19:57:12.925038 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartLegendFormat  
+W, [2015-07-06T19:57:12.925551 #20356]  WARN -- : ....Either Getter or Setter or both not found : [setter found] for chartLineFormat  
+W, [2015-07-06T19:57:12.926540 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartPoint  
+W, [2015-07-06T19:57:12.927538 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartPointFormat  
+W, [2015-07-06T19:57:12.928039 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for chartPointsCollection  
+W, [2015-07-06T19:57:12.929039 #20356]  WARN -- : ....Either Getter or Setter or both not found : [setter found] for chartSeries  
+W, [2015-07-06T19:57:12.929539 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for chartSeriesCollection  
+W, [2015-07-06T19:57:12.930038 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartSeriesFormat  
+W, [2015-07-06T19:57:12.931539 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for chartTitleFormat  
+W, [2015-07-06T19:57:12.932039 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for namedItem  
+W, [2015-07-06T19:57:12.933039 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for namedItemCollection  
+E, [2015-07-06T19:57:12.943539 #20356] ERROR -- : ....Example not found for method: getColumn(column: number), range  
+E, [2015-07-06T19:57:12.943539 #20356] ERROR -- : ....Example not found for method: getIntersection(anotherRange: object), range  
+E, [2015-07-06T19:57:12.943539 #20356] ERROR -- : ....Example not found for method: getOffsetRange(rowOffset: number, columnOffset: number), range  
+E, [2015-07-06T19:57:12.943539 #20356] ERROR -- : ....Example not found for method: getRow(row: number), range  
+E, [2015-07-06T19:57:12.960512 #20356] ERROR -- : ....Example not found for method: getItem(index: string), rangeBorderCollection  
+W, [2015-07-06T19:57:12.988699 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for tableCollection  
+E, [2015-07-06T19:57:12.993606 #20356] ERROR -- : ....Example not found for method: getItem(id: object), tableCollection  
+W, [2015-07-06T19:57:12.993606 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for tableColumnCollection  
+E, [2015-07-06T19:57:12.993606 #20356] ERROR -- : ....Example not found for method: add(index: number, values: object[][]), tableColumnCollection  
+E, [2015-07-06T19:57:12.993606 #20356] ERROR -- : ....Example not found for method: getItem(id: object), tableColumnCollection  
+W, [2015-07-06T19:57:12.993606 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for tableRowCollection  
+E, [2015-07-06T19:57:12.993606 #20356] ERROR -- : ....Example not found for method: add(index: number, values: object[][]), tableRowCollection  
+W, [2015-07-06T19:57:12.993606 #20356]  WARN -- : ....Either Getter or Setter or both not found : [none found] for workbook  
+W, [2015-07-06T19:57:13.011042 #20356]  WARN -- : ....Either Getter or Setter or both not found : [getter found] for worksheetCollection  
+E, [2015-07-06T19:57:13.011042 #20356] ERROR -- : ....Example not found for method: getItem(index: string), worksheetCollection  

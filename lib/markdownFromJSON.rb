@@ -144,7 +144,7 @@ module SpecMaker
 		else			
 			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
 		end
-		@mdlines.push HEADER4 + dataTypePlusLink + NEWLINE
+		@mdlines.push dataTypePlusLink + NEWLINE
 		
 
 		@mdlines.push NEWLINE + HEADER4 + 'Examples' + NEWLINE

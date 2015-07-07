@@ -11,7 +11,7 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getSelectedRange()|[Range](range.md)|Gets the currently selected range from the workbook.||
+|[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.||
 
 ## API Specification
 
@@ -23,8 +23,9 @@ workbookObject.getSelectedRange();
 
 #### Parameters
 None
+
 #### Returns
-#### [Range](range.md)
+[Range](range.md)
 
 #### Examples
 

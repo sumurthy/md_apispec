@@ -14,8 +14,8 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getItem(id: string)|[Binding](binding.md)|Gets a binding object by ID.||
-|getItemAt(index: number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.||
+|[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.||
+|[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.||
 
 ## API Specification
 
@@ -29,8 +29,9 @@ bindingCollectionObject.getItem(id);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |id|string|Optional. Id of the binding object to be retrieved. Zero-indexed.|
+
 #### Returns
-#### [Binding](binding.md)
+[Binding](binding.md)
 
 #### Examples
 ```js
@@ -49,8 +50,9 @@ bindingCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+
 #### Returns
-#### [Binding](binding.md)
+[Binding](binding.md)
 
 #### Examples
 ```js

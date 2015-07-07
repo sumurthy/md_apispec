@@ -14,9 +14,9 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|add(address: string, hasHeaders: bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.||
-|getItem(id: object)|[Table](table.md)|Gets a table by Name or ID.||
-|getItemAt(index: number)|[Table](table.md)|Gets a table based on its position in the collection.||
+|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.||
+|[getItem(id: object)](#getitemid-object)|[Table](table.md)|Gets a table by Name or ID.||
+|[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.||
 
 ## API Specification
 
@@ -31,8 +31,9 @@ tableCollectionObject.add(address, hasHeaders);
 |:---------------|:--------|:----------|
 |address|string|Optional. Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.|
 |hasHeaders|bool|Optional. Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
+
 #### Returns
-#### [Table](table.md)
+[Table](table.md)
 
 #### Examples
 
@@ -58,8 +59,9 @@ tableCollectionObject.getItem(id);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |id|object|Optional. Name or ID of the table to be retrieved.|
+
 #### Returns
-#### [Table](table.md)
+[Table](table.md)
 
 #### Examples
 ```js
@@ -78,8 +80,9 @@ tableCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+
 #### Returns
-#### [Table](table.md)
+[Table](table.md)
 
 #### Examples
 

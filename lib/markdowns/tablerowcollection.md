@@ -14,8 +14,8 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|add(index: number, values: object[][])|[TableRow](tablerow.md)|Adds a new row to the table.||
-|getItemAt(index: number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.||
+|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableRow](tablerow.md)|Adds a new row to the table.||
+|[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.||
 
 ## API Specification
 
@@ -30,8 +30,9 @@ tableRowCollectionObject.add(index, values);
 |:---------------|:--------|:----------|
 |index|number|Specifies the relative position of the new row. If null, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
 |values|object[][]|A 2-dimensional array of unformatted values of the table row.|
+
 #### Returns
-#### [TableRow](tablerow.md)
+[TableRow](tablerow.md)
 
 #### Examples
 ```js
@@ -50,8 +51,9 @@ tableRowCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+
 #### Returns
-#### [TableRow](tablerow.md)
+[TableRow](tablerow.md)
 
 #### Examples
 

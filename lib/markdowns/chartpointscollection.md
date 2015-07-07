@@ -14,7 +14,7 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getItemAt(index: number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.||
+|[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.||
 
 ## API Specification
 
@@ -28,8 +28,9 @@ chartPointsCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+
 #### Returns
-#### [ChartPoint](chartpoint.md)
+[ChartPoint](chartpoint.md)
 
 #### Examples
 Set the border color for the first points in the points collection

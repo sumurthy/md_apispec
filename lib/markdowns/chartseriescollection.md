@@ -14,7 +14,7 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getItemAt(index: number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection||
+|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection||
 
 ## API Specification
 
@@ -28,8 +28,9 @@ chartSeriesCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+
 #### Returns
-#### [ChartSeries](chartseries.md)
+[ChartSeries](chartseries.md)
 
 #### Examples
 

@@ -13,7 +13,7 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|clear()|void|Clear the line format of a chart element.||
+|[clear()](#clear)|void|Clear the line format of a chart element.||
 
 ## API Specification
 
@@ -25,8 +25,9 @@ chartLineFormatObject.clear();
 
 #### Parameters
 None
+
 #### Returns
-#### void
+void
 
 #### Examples
 

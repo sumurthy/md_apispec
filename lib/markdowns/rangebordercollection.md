@@ -14,8 +14,8 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getItem(index: string)|[RangeBorder](rangeborder.md)|Gets a border object using its name||
-|getItemAt(index: number)|[RangeBorder](rangeborder.md)|Gets a border object using its index||
+|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name||
+|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Gets a border object using its index||
 
 ## API Specification
 
@@ -29,8 +29,9 @@ rangeBorderCollectionObject.getItem(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|string|Optional. Index value of the border object to be retrieved.  Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp|
+
 #### Returns
-#### [RangeBorder](rangeborder.md)
+[RangeBorder](rangeborder.md)
 
 #### Examples
 ```js
@@ -49,8 +50,9 @@ rangeBorderCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+
 #### Returns
-#### [RangeBorder](rangeborder.md)
+[RangeBorder](rangeborder.md)
 
 #### Examples
 ```js

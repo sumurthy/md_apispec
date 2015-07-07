@@ -16,7 +16,7 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getRange()|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.||
+|[getRange()](#getrange)|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.||
 
 ## API Specification
 
@@ -28,8 +28,9 @@ namedItemObject.getRange();
 
 #### Parameters
 None
+
 #### Returns
-#### [Range](range.md)
+[Range](range.md)
 
 #### Examples
 

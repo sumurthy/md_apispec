@@ -13,7 +13,7 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getItem(name: string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name||
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name||
 
 ## API Specification
 
@@ -27,8 +27,9 @@ namedItemCollectionObject.getItem(name);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |name|string|Optional. nameditem name.|
+
 #### Returns
-#### [NamedItem](nameditem.md)
+[NamedItem](nameditem.md)
 
 #### Examples
 

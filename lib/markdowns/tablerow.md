@@ -14,8 +14,8 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|delete()|void|Deletes the row from the table.||
-|getRange()|[Range](range.md)|Returns the range object associated with the entire row.||
+|[delete()](#delete)|void|Deletes the row from the table.||
+|[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.||
 
 ## API Specification
 
@@ -27,8 +27,9 @@ tableRowObject.delete();
 
 #### Parameters
 None
+
 #### Returns
-#### void
+void
 
 #### Examples
 
@@ -50,8 +51,9 @@ tableRowObject.getRange();
 
 #### Parameters
 None
+
 #### Returns
-#### [Range](range.md)
+[Range](range.md)
 
 #### Examples
 

@@ -11,8 +11,8 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|clear()|void|Clear the fill color of a chart element.||
-|setSolidColor(color: string)|void|Sets the fill formatting of a chart element to a uniform color.||
+|[clear()](#clear)|void|Clear the fill color of a chart element.||
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.||
 
 ## API Specification
 
@@ -24,8 +24,9 @@ chartFillObject.clear();
 
 #### Parameters
 None
+
 #### Returns
-#### void
+void
 
 #### Examples
 
@@ -52,8 +53,9 @@ chartFillObject.setSolidColor(color);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |color|string|Optional. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange").|
+
 #### Returns
-#### void
+void
 
 #### Examples
 

@@ -13,7 +13,7 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|clear()|void|Resets the range background.||
+|[clear()](#clear)|void|Resets the range background.||
 
 ## API Specification
 
@@ -25,8 +25,9 @@ rangeFillObject.clear();
 
 #### Parameters
 None
+
 #### Returns
-#### void
+void
 
 #### Examples
 

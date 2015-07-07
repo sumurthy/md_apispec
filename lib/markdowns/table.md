@@ -17,11 +17,11 @@ None
 ## Methods
 | Methos           | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|delete()|void|Deletes the table.||
-|getDataBodyRange()|[Range](range.md)|Gets the range object associated with the data body of the table.||
-|getHeaderRowRange()|[Range](range.md)|Gets the range object associated with header row of the table.||
-|getRange()|[Range](range.md)|Gets the range object associated with the entire table.||
-|getTotalRowRange()|[Range](range.md)|Gets the range object associated with totals row of the table.||
+|[delete()](#delete)|void|Deletes the table.||
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.||
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.||
+|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire table.||
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with totals row of the table.||
 
 ## API Specification
 
@@ -33,8 +33,9 @@ tableObject.delete();
 
 #### Parameters
 None
+
 #### Returns
-#### void
+void
 
 #### Examples
 ```js
@@ -55,8 +56,9 @@ tableObject.getDataBodyRange();
 
 #### Parameters
 None
+
 #### Returns
-#### [Range](range.md)
+[Range](range.md)
 
 #### Examples
 ```js
@@ -78,8 +80,9 @@ tableObject.getHeaderRowRange();
 
 #### Parameters
 None
+
 #### Returns
-#### [Range](range.md)
+[Range](range.md)
 
 #### Examples
 ```js
@@ -102,8 +105,9 @@ tableObject.getRange();
 
 #### Parameters
 None
+
 #### Returns
-#### [Range](range.md)
+[Range](range.md)
 
 #### Examples
 ```js
@@ -126,8 +130,9 @@ tableObject.getTotalRowRange();
 
 #### Parameters
 None
+
 #### Returns
-#### [Range](range.md)
+[Range](range.md)
 
 #### Examples
 ```js
