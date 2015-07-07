@@ -7,20 +7,23 @@ require 'logger'
 require 'json'
 
 module SpecMaker
+
+	LOG_FILE = '../../logs/validateAddComments_log.txt'
 	begin
-		File.delete('../../logs/validateComments_log.txt')
+		File.delete(LOG_FILE)
 		File.delete(EXCELAPI_FILE_TRANSIT)
 	rescue => err
 	    #Ignore this error
 	end
 
-	@logger = Logger.new('logs/validateComments_log.txt')
+	@logger = Logger.new(LOG_FILE)
 	@logger.level = Logger::DEBUG
 
-	EXCELAPI_FILE_SOURCE = '../ExcelAPI.cs'
-	EXCELAPI_FILE_TRANSIT = '../ExcelAPI_transit.cs'
-	EXCELAPI_WITH_COMMENTS = '../ExcelAPI_out.cs'
-	RESOURCE_FOLDER = 'jsonFiles/'
+	EXCELAPI_FILE_SOURCE = '../../data/ExcelAPI.cs'
+	EXCELAPI_FILE_TRANSIT = '../../data/ExcelAPI_transit.cs'
+	EXCELAPI_WITH_COMMENTS = '../../data//ExcelAPI_out.cs'
+	#RESOURCE_FOLDER = 'jsonFiles/'
+	RESOURCE_FOLDER = 'C:/Users/suramam/git/wip/lib/jsonFiles/'
 
 	@csarray = []
 	@csarray_pure = []
