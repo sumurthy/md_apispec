@@ -126,13 +126,13 @@ rangeObject.getBoundingRect(anotherRange);
 
 ```js
 var sheetName = "Sheet1";
-var rangeAddress = "D:F";
+var rangeAddress = "D4:G6";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-var rangeER = range.getEntireRow();
-ctx.load(rangeER);
+var range = range.getBoundingRect("G4:H8");
+ctx.load(range);
 ctx.executeAsync().then(function() {
-	Console.log(rangeER.address);
+	Console.log(range.address); // Prints Sheet1!D4:H8
 });
 ```
 
@@ -251,15 +251,6 @@ None
 [Range](range.md)
 
 #### Examples
-ctx.load(rangeER);
-ctx.executeAsync().then(function() {
-	Console.log(rangeER.address);
-});
-```
-
-
-Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.
-
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "D:F";
@@ -270,6 +261,7 @@ ctx.executeAsync().then(function() {
 	Console.log(rangeER.address);
 });
 ```
+The grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.
 
 
 [Back](#methods)
@@ -332,7 +324,7 @@ var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
 ctx.load(range);
 ctx.executeAsync().then(function() {
-	Console.log(rangeER.address); // prints Sheet1!H3:K5
+	Console.log(range.address); // prints Sheet1!H3:K5
 });
 ```
 
