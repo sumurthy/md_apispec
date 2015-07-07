@@ -96,9 +96,16 @@ worksheetCollectionObject.getItem(index);
 [Worksheet](worksheet.md)
 
 #### Examples
-```js
 
+```js
+var ctx = new Excel.ExcelClientContext();
+var wSheetName = 'Sheet1';
+var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+ctx.executeAsync().then(function () {
+		Console.log(worksheet.index);
+});
 ```
+
 
 [Back](#methods)
 

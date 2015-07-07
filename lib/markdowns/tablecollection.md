@@ -70,9 +70,16 @@ tableCollectionObject.getItem(id);
 [Table](table.md)
 
 #### Examples
-```js
 
+```js
+var ctx = new Excel.ExcelClientContext();
+var tableName = 'Table1';
+var table = ctx.workbook.tables.getItem(tableName);
+ctx.executeAsync().then(function () {
+		Console.log(table.index);
+});
 ```
+
 
 [Back](#methods)
 

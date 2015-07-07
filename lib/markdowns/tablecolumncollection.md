@@ -40,9 +40,18 @@ tableColumnCollectionObject.add(index, values);
 [TableColumn](tablecolumn.md)
 
 #### Examples
-```js
 
+```js
+var ctx = new Excel.ExcelClientContext();
+var tables = ctx.workbook.tables;
+var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
+var column = tables.getItem("Table1").columns.add(null, values);
+ctx.load(column);
+ctx.executeAsync().then(function () {
+	Console.log(column.name);
+});
 ```
+
 
 [Back](#methods)
 
@@ -63,9 +72,16 @@ tableColumnCollectionObject.getItem(id);
 [TableColumn](tablecolumn.md)
 
 #### Examples
-```js
 
+```js
+var ctx = new Excel.ExcelClientContext();
+var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
+ctx.load(tablecolumn)
+ctx.executeAsync().then(function () {
+		Console.log(tablecolumn.name);
+});
 ```
+
 
 [Back](#methods)
 

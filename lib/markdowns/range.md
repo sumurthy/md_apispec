@@ -191,8 +191,16 @@ rangeObject.getColumn(column);
 [Range](range.md)
 
 #### Examples
-```js
 
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getColumn(1);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!B1:B8
+});
 ```
 
 [Back](#methods)
@@ -283,9 +291,18 @@ rangeObject.getIntersection(anotherRange);
 [Range](range.md)
 
 #### Examples
-```js
 
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getIntersection("D4:G6");
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!D4:F6
+});
 ```
+
 
 [Back](#methods)
 
@@ -307,9 +324,18 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 [Range](range.md)
 
 #### Examples
-```js
 
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "D4:F6";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(rangeER.address); // prints Sheet1!H3:K5
+});
 ```
+
 
 [Back](#methods)
 
@@ -330,9 +356,18 @@ rangeObject.getRow(row);
 [Range](range.md)
 
 #### Examples
-```js
 
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getRow(1);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!A2:F2
+});
 ```
+
 
 [Back](#methods)
 

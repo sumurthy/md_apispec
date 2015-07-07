@@ -39,8 +39,16 @@ tableRowCollectionObject.add(index, values);
 [TableRow](tablerow.md)
 
 #### Examples
-```js
 
+```js
+var ctx = new Excel.ExcelClientContext();
+var tables = ctx.workbook.tables;
+var values = [["Sample", "Values", "For", "New", "Row"]];
+var row = tables.getItem("Table1").rows.add(null, values);
+ctx.load(row);
+ctx.executeAsync().then(function () {
+	Console.log(row.index);
+});
 ```
 
 [Back](#methods)

@@ -75,8 +75,14 @@ chartCollectionObject.getItem(id);
 [Chart](chart.md)
 
 #### Examples
-```js
 
+```js
+var ctx = new Excel.ExcelClientContext();
+var chartname = 'Chart1';
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
+ctx.executeAsync().then(function () {
+		Console.log(chart.index);
+});
 ```
 
 [Back](#methods)
@@ -98,14 +104,8 @@ chartCollectionObject.getItem(name);
 [Chart](chart.md)
 
 #### Examples
-
 ```js
-var ctx = new Excel.ExcelClientContext();
-var chartname = 'Chart1';
-var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
-ctx.executeAsync().then(function () {
-		Console.log(chart.index);
-});
+
 ```
 
 [Back](#methods)

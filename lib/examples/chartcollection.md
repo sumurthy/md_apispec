@@ -40,7 +40,7 @@ ctx.executeAsync().then(function () {
 });
 ```
 
-### getItem(name: string)
+### getItem(id: string)
 
 ```js
 var ctx = new Excel.ExcelClientContext();

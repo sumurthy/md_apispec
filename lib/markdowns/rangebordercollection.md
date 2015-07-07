@@ -39,8 +39,19 @@ rangeBorderCollectionObject.getItem(index);
 
 #### Examples
 ```js
-
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+var range = worksheet.getRange(rangeAddress);
+var borderName = 'EdgeTop';
+var border = range.format.borders.getItem(borderName);
+ctx.load(border);
+ctx.executeAsync().then(function () {
+		Console.log(border.style);
+});
 ```
+
 
 [Back](#methods)
 

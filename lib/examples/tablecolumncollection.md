@@ -1,6 +1,6 @@
 # Table Column Collection
 
-### add(index: number, values: any[][])
+### add(index: number, values: object[][])
 
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -13,7 +13,7 @@ ctx.executeAsync().then(function () {
 });
 ```
 
-### getItem(param: string or number)
+### getItem(id: object)
 
 ```js
 var ctx = new Excel.ExcelClientContext();

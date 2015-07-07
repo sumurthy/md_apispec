@@ -1,4 +1,5 @@
 # Table Collection
+
 ### add(address: string, hasHeaders: bool)
 
 ```js
@@ -10,7 +11,7 @@ ctx.executeAsync().then(function () {
 });
 
 ```
-### getItem(name: string)
+### getItem(id: object)
 
 ```js
 var ctx = new Excel.ExcelClientContext();

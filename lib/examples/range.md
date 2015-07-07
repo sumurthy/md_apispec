@@ -84,6 +84,57 @@ ctx.executeAsync().then(function() {
 });
 ```
 
+### getColumn(column: number)
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getColumn(1);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!B1:B8
+});
+```
+### getRow(row: number)
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getRow(1);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!A2:F2
+});
+```
+
+### getIntersection(anotherRange: object)
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getIntersection("D4:G6");
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!D4:F6
+});
+```
+
+### getOffsetRange(rowOffset: number, columnOffset: number)
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "D4:F6";
+var ctx = new Excel.ExcelClientContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
+ctx.load(range);
+ctx.executeAsync().then(function() {
+	Console.log(rangeER.address); // prints Sheet1!H3:K5
+});
+```
+
 ### getUsedRange()
 
 ```js

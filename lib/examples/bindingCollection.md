@@ -1,3 +1,13 @@
+### getItem(id: string)
+
+```js
+var ctx = new Excel.ExcelClientContext();
+var binding = ctx.workbook.bindings.getItem("sampleBindingId");
+ctx.executeAsync().then(function () {
+		Console.log(binding.type);
+});
+```
+
 
 ### getItemAt(index: number)
 ```js
@@ -5,7 +15,7 @@ var ctx = new Excel.ExcelClientContext();
 var lastPosition = ctx.workbook.bindings.count - 1;
 var binding = ctx.workbook.bindings.getItemAt(lastPosition);
 ctx.executeAsync().then(function () {
-		Console.log(binding.id);
+		Console.log(binding.type); 
 });
 ```
 

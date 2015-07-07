@@ -23,7 +23,7 @@ ctx.executeAsync().then(function () {
 });
 ```
 
-### getItem(param: string)
+### getItem(index: string)
 
 ```js
 var ctx = new Excel.ExcelClientContext();

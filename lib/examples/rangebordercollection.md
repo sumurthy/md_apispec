@@ -1,6 +1,6 @@
 # Range Border Collection 
 
-### getItem(name: string)
+### getItem(index: string)
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";

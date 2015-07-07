@@ -1,6 +1,6 @@
 # Table Row Collection
 
-### add(index: number, values: any[][])
+### add(index: number, values: object[][])
 
 ```js
 var ctx = new Excel.ExcelClientContext();
