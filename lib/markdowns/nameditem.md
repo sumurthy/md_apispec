@@ -13,9 +13,10 @@ Represents a defined name for a range of cells or value. Names can be primitive 
 ## Relationships
 None
 
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getRange()](#getrange)|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.||
 

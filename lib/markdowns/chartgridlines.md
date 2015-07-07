@@ -11,6 +11,7 @@ Represents major or minor gridlines on a chart axis.
 | Relationship | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |format|[ChartGridlinesFormat](chartgridlinesformat.md)|Represents the formatting of chart gridlines. Read-only.||
+
 ## Methods
 None
 

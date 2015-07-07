@@ -11,9 +11,10 @@ Represents the collection of all the binding objects that are part of the workbo
 ## Relationships
 None
 
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.||
 |[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.||

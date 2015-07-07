@@ -9,9 +9,7 @@ None
 | Relationship | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |line|[ChartLineFormat](chartlineformat.md)|Represents chart line formatting. Read-only.||
+
 ## Methods
 None
-
-
-## API Specification
 

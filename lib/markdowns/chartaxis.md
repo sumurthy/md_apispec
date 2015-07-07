@@ -17,6 +17,7 @@ Represents a single axis in a chart.
 |majorGridlines|[ChartGridlines](chartgridlines.md)|Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.||
 |minorGridlines|[ChartGridlines](chartgridlines.md)|Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.||
 |title|[ChartAxisTitle](chartaxistitle.md)|Represents the axis title. Read-only.||
+
 ## Methods
 None
 

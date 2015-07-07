@@ -10,9 +10,7 @@ None
 |:---------------|:--------|:----------|:-----|
 |fill|[ChartFill](chartfill.md)|Represents the fill format of an object, which includes interiorbackground formating information. Read-only.||
 |font|[ChartFont](chartfont.md)|Represents the font attributes (font name, font size, color, etc.) for an object. Read-only.||
+
 ## Methods
 None
-
-
-## API Specification
 

@@ -10,9 +10,10 @@ Enapsulates the formatting options for line elements.
 ## Relationships
 None
 
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear()](#clear)|void|Clear the line format of a chart element.||
 

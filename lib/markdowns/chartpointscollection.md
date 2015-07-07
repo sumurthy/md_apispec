@@ -11,9 +11,10 @@ A collection of all the chart points within a series inside a chart.
 ## Relationships
 None
 
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.||
 

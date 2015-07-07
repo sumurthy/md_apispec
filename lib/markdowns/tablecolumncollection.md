@@ -11,9 +11,10 @@ Represents a collection of all the columns that are part of the table.
 ## Relationships
 None
 
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[add(index: number, values: object[][])](#addindex-number-values-object)|[TableColumn](tablecolumn.md)|Adds a new column to the table.||
 |[getItem(id: object)](#getitemid-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.||

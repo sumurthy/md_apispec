@@ -13,6 +13,7 @@ Represents the legend in a chart.
 | Relationship | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |format|[ChartLegendFormat](chartlegendformat.md)|Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.||
+
 ## Methods
 None
 

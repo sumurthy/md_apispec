@@ -11,9 +11,10 @@ Represents a row in a table.
 ## Relationships
 None
 
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[delete()](#delete)|void|Deletes the row from the table.||
 |[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.||

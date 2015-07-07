@@ -13,6 +13,7 @@ Represents the border of an object.
 ## Relationships
 None
 
+
 ## Methods
 None
 

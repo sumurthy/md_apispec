@@ -11,9 +11,10 @@ A collection of all the chart objects on a worksheet.
 ## Relationships
 None
 
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)|[Chart](chart.md)|Creates a new chart.||
 |[getItem(id: string)](#getitemid-string)|[Chart](chart.md)|Gets a chart using its ID.||

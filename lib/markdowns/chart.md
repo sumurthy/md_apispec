@@ -20,9 +20,10 @@ Represents a chart object in a workbook.
 |legend|[ChartLegend](chartlegend.md)|Represents the legend for the chart. Read-only.||
 |series|[ChartSeriesCollection](chartseriescollection.md)|Represents either a single series or collection of series in the chart. Read-only.||
 |title|[ChartTitle](charttitle.md)|Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.||
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[delete()](#delete)|void|Deletes the chart object.||
 |[setData(sourceData: string, seriesBy: string)](#setdatasourcedata-string-seriesby-string)|void|Resets the source data for the chart.||

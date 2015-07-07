@@ -12,6 +12,7 @@ Represents a series in a chart.
 |:---------------|:--------|:----------|:-----|
 |format|[ChartSeriesFormat](chartseriesformat.md)|Represents the formatting of a chart series, which includes fill and line formatting. Read-only.||
 |points|[ChartPointsCollection](chartpointscollection.md)|Represents a collection of all points in the series. Read-only.||
+
 ## Methods
 None
 

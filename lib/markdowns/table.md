@@ -16,9 +16,10 @@ Represents an Excel table.
 |:---------------|:--------|:----------|:-----|
 |columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.||
 |rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.||
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[delete()](#delete)|void|Deletes the table.||
 |[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.||

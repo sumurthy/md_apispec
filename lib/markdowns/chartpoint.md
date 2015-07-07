@@ -11,9 +11,7 @@ Represents a point of a series in a chart.
 | Relationship | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point.||
+
 ## Methods
 None
-
-
-## API Specification
 

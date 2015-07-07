@@ -14,9 +14,10 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 |:---------------|:--------|:----------|:-----|
 |charts|[ChartCollection](chartcollection.md)|Returns collection of charts that are part of the worksheet. Read-only.||
 |tables|[TableCollection](tablecollection.md)|Collection of tables that are part of the worksheet. Read-only.||
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[activate()](#activate)|void|Activate the worksheet in the Excel UI.||
 |[delete()](#delete)|void|Deletes the worksheet from the workbook.||

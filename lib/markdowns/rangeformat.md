@@ -15,6 +15,7 @@ A format object encapsulating the range's font, fill, borders, alignment, and ot
 |borders|[RangeBorderCollection](rangebordercollection.md)|Collection of border objects that apply to the overall range selected. Read-only.||
 |fill|[RangeFill](rangefill.md)|Returns the fill object defined on the overall range. Read-only.||
 |font|[RangeFont](rangefont.md)|Returns the font object defined on the overall range selected. Read-only.||
+
 ## Methods
 None
 

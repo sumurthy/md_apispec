@@ -13,9 +13,10 @@ None
 |names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.||
 |tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.||
 |worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.||
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.||
 

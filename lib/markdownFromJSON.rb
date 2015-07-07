@@ -51,7 +51,7 @@ module SpecMaker
 	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
 
 	RELATIONSHIP_HEADER = "| Relationship | Type    |Description|Notes |" + NEWLINE
-	METHOD_HEADER = "| Methos           | Return Type    |Description|Notes |" + NEWLINE
+	METHOD_HEADER = "| Method           | Return Type    |Description|Notes |" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void]
 	
 	def self.uncapitalize (str="")
@@ -317,7 +317,7 @@ module SpecMaker
 		end		
 
 		# Add method table. 
-		@mdlines.push HEADER2 + 'Methods' + NEWLINE
+		@mdlines.push NEWLINE + HEADER2 + 'Methods' + NEWLINE
 
 		if isMethod
 			@mdlines.push NEWLINE + METHOD_HEADER + TABLE_2ND_LINE 

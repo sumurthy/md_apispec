@@ -12,6 +12,7 @@ Represents the title of a chart axis.
 | Relationship | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |format|[ChartAxisTitleFormat](chartaxistitleformat.md)|Represents the formatting of chart axis title. Read-only.||
+
 ## Methods
 None
 

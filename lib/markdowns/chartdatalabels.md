@@ -18,6 +18,7 @@ Represents a collection of all the data labels on a chart point.
 | Relationship | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |format|[ChartDataLabelFormat](chartdatalabelformat.md)|Represents the format of chart data labels, which includes fill and font formatting. Read-only.||
+
 ## Methods
 None
 

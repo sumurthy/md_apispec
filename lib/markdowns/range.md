@@ -23,9 +23,10 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |:---------------|:--------|:----------|:-----|
 |format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.||
 |worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.||
+
 ## Methods
 
-| Methos           | Return Type    |Description|Notes |
+| Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.||
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.||
