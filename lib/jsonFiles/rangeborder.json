@@ -44,7 +44,7 @@
     {
       "name": "weight",
       "dataType": "string",
-      "description": "BorderWeight value that specifies the weight of the border around a range.",
+      "description": "Specifies the weight of the border around a range.",
       "isReadOnly": false,
       "enumNameJs": "Excel.BorderWeight",
       "isCollection": false,
