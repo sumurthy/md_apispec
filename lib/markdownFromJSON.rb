@@ -330,7 +330,9 @@ module SpecMaker
 		end	
 
 		# Add each API method details.	
-		@mdlines.push NEWLINE + HEADER2 + 'API Specification' + TWONEWLINES
+		if isMethod || (@gsType != 'none' && @gsType != '') 
+			@mdlines.push NEWLINE + HEADER2 + 'API Specification' + TWONEWLINES
+		end	
 
 		if isMethod
 			methods.each do |mtd|
