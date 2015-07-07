@@ -9,8 +9,9 @@ Represents the title of a chart axis.
 |visible|bool|A boolean that specifies the visibility of an axis title.||
 
 ## Relationships
-None
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartAxisTitleFormat](chartaxistitleformat.md)|Represents the formatting of chart axis title. Read-only.||
 ## Methods
 None
 
@@ -41,4 +42,5 @@ ctx.executeAsync().then(function () {
 		Console.log("Axis Title Added ");
 });
 ```
+
 [Back](#properties)

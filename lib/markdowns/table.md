@@ -12,16 +12,19 @@ Represents an Excel table.
 |style|string|Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.||
 
 ## Relationships
-None
-
-## Methods
-| Methos           | Type    |Description|Notes |
+| Relationship | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|delete()|void|Deletes the table.||
-|getDataBodyRange()|[Range](range.md)|Gets the range object associated with the data body of the table.||
-|getHeaderRowRange()|[Range](range.md)|Gets the range object associated with header row of the table.||
-|getRange()|[Range](range.md)|Gets the range object associated with the entire table.||
-|getTotalRowRange()|[Range](range.md)|Gets the range object associated with totals row of the table.||
+|columns|[TableColumnCollection](tablecolumncollection.md)|Represents a collection of all the columns in the table. Read-only.||
+|rows|[TableRowCollection](tablerowcollection.md)|Represents a collection of all the rows in the table. Read-only.||
+## Methods
+
+| Methos           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[delete()](#delete)|void|Deletes the table.||
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Gets the range object associated with the data body of the table.||
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Gets the range object associated with header row of the table.||
+|[getRange()](#getrange)|[Range](range.md)|Gets the range object associated with the entire table.||
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Gets the range object associated with totals row of the table.||
 
 ## API Specification
 
@@ -33,6 +36,9 @@ tableObject.delete();
 
 #### Parameters
 None
+
+#### Returns
+void
 
 #### Examples
 ```js
@@ -54,6 +60,9 @@ tableObject.getDataBodyRange();
 #### Parameters
 None
 
+#### Returns
+[Range](range.md)
+
 #### Examples
 ```js
 var tableName = 'Table1';
@@ -74,6 +83,9 @@ tableObject.getHeaderRowRange();
 
 #### Parameters
 None
+
+#### Returns
+[Range](range.md)
 
 #### Examples
 ```js
@@ -97,6 +109,9 @@ tableObject.getRange();
 #### Parameters
 None
 
+#### Returns
+[Range](range.md)
+
 #### Examples
 ```js
 var tableName = 'Table1';
@@ -118,6 +133,9 @@ tableObject.getTotalRowRange();
 
 #### Parameters
 None
+
+#### Returns
+[Range](range.md)
 
 #### Examples
 ```js
@@ -169,4 +187,5 @@ ctx.load(table);
 ctx.executeAsync().then(function () {
 		Console.log(table.tableStyle);
 });
-```[Back](#properties)
+```
+[Back](#properties)

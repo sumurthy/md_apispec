@@ -11,9 +11,10 @@ Represents the background of a range object.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|clear()|void|Resets the range background.||
+|[clear()](#clear)|void|Resets the range background.||
 
 ## API Specification
 
@@ -25,6 +26,9 @@ rangeFillObject.clear();
 
 #### Parameters
 None
+
+#### Returns
+void
 
 #### Examples
 
@@ -64,4 +68,5 @@ var rangeAddress = "F:G";
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.format.fill.color = '0000FF';
 ctx.executeAsync().then();
-```[Back](#properties)
+```
+[Back](#properties)

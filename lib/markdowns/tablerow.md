@@ -12,10 +12,11 @@ Represents a row in a table.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|delete()|void|Deletes the row from the table.||
-|getRange()|[Range](range.md)|Returns the range object associated with the entire row.||
+|[delete()](#delete)|void|Deletes the row from the table.||
+|[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.||
 
 ## API Specification
 
@@ -27,6 +28,9 @@ tableRowObject.delete();
 
 #### Parameters
 None
+
+#### Returns
+void
 
 #### Examples
 
@@ -48,6 +52,9 @@ tableRowObject.getRange();
 
 #### Parameters
 None
+
+#### Returns
+[Range](range.md)
 
 #### Examples
 
@@ -86,4 +93,5 @@ ctx.load(row);
 ctx.executeAsync().then(function () {
 	Console.log(row.values);
 });
-```[Back](#properties)
+```
+[Back](#properties)

@@ -9,7 +9,7 @@ require 'json'
 module SpecMaker
 
 	# Iterate over all the resource JSON files.
-	LOG_FILE = 'logs/genMdFiles_log.txt'
+	LOG_FILE = '../../logs/genMdFiles_log.txt'
 	begin
 		File.delete(LOG_FILE)
 	rescue => err
@@ -41,8 +41,8 @@ module SpecMaker
 	GETTER = 'Getter Examples'
 	SETTER = 'Setter Examples'
 	BACKTOMETHOD = '[Back](#methods)'
-	BACKTOPROPERTY = '[Back](#properties)'
 	NEWLINE = "\n"
+	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
 	PIPE = '|'
 	TWONEWLINES = "\n\n"
 	PROPERTY_HEADER = "| Property       | Type    |Description|Notes |" + NEWLINE
@@ -51,7 +51,7 @@ module SpecMaker
 	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
 
 	RELATIONSHIP_HEADER = "| Relationship | Type    |Description|Notes |" + NEWLINE
-	METHOD_HEADER = "| Methos           | Type    |Description|Notes |" + NEWLINE
+	METHOD_HEADER = "| Methos           | Return Type    |Description|Notes |" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void]
 	
 	def self.uncapitalize (str="")
@@ -78,12 +78,12 @@ module SpecMaker
 		end
 		# If the type is of	an object, then provide markdown link.
 		if SIMPLETYPES.include? prop[:dataType] 	
-			dataTypeLink = prop[:dataType] 	
+			dataTypePlusLink = prop[:dataType] 	
 		else			
-			dataTypeLink = "[" + prop[:dataType] + "](" + prop[:dataType].downcase + ".md)"
+			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].downcase + ".md)"
 		end
 
-		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypeLink + PIPE + finalDesc + PIPE + PIPE) + NEWLINE
+		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + PIPE) + NEWLINE
 	end
 
 	# Write methods to the final array.
@@ -91,12 +91,16 @@ module SpecMaker
 
 		# If the type is of	an object, then provide markdown link.
 		if SIMPLETYPES.include? method[:returnType]
-			dataTypeLink = method[:returnType]
+			dataTypePlusLink = method[:returnType]
 		else			
-			dataTypeLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
+			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
 		end
-
-		@mdlines.push (PIPE + method[:signature] + PIPE + dataTypeLink + PIPE + method[:description] + PIPE+PIPE) + NEWLINE
+		# Add anchor links to method. 
+		str = method[:signature].strip
+		replacements = [ [" ", "-"], ["[", ""], ["]", ""],["(", ""], [")", ""], [",", ""], [":", ""] ]				
+		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
+		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
+		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE+PIPE) + NEWLINE
 	end
 
 	# Write methods details and parameters to the final array.	
@@ -113,7 +117,7 @@ module SpecMaker
 			@mdlines.push PARAM_HEADER + TABLE_2ND_LINE_PARAM 
 			method[:parameters].each do |param|
 				# Append optional and enum possible values (if applicable).
-				finalPDesc = param[:isRequired] ? 'Optional. ' + param[:description] : param[:description]
+				finalPDesc = param[:isRequired] ? param[:description] : 'Optional. ' + param[:description]
 				appendEnum = ''
 				if (param[:enumNameJs] != nil) && (@enumHash.has_key? param[:enumNameJs])
 
@@ -129,6 +133,16 @@ module SpecMaker
 		else
 			@mdlines.push "None"  + NEWLINE
 		end
+
+		@mdlines.push NEWLINE + HEADER4 + "Returns" + NEWLINE
+
+		if SIMPLETYPES.include? method[:returnType]
+			dataTypePlusLink = method[:returnType]
+		else			
+			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
+		end
+		@mdlines.push dataTypePlusLink + NEWLINE
+		
 
 		@mdlines.push NEWLINE + HEADER4 + 'Examples' + NEWLINE
 		# 
@@ -207,8 +221,8 @@ module SpecMaker
 		@jsonHash = JSON.parse(item, {:symbolize_names => true})
 		# Obtain the resource name. Read the examples file, if it exists. 
 		@resource = uncapitalize(@jsonHash[:name])
-#		@logger.debug(".")	
-#		@logger.debug("...............Report for: #{@resource}...........")	
+		@logger.debug(".")	
+		@logger.debug("...............Report for: #{@resource}...........")	
 
 		example_lines = ''
 		@gsType = ''
@@ -221,7 +235,7 @@ module SpecMaker
 			@logger.error("....Example File does not exist for: #{@current_object}")
 		end
 
-#		@logger.debug("....Example Staus: Found example for #{@gsType}....")	
+		@logger.debug("....Example Staus: Found example for #{@gsType}....")	
 		if @gsType != 'getterandsetter' 
 			@logger.warn("....Either Getter or Setter or both not found : [#{@gsType} found] for #{@resource}  ") 
 		end
@@ -242,10 +256,13 @@ module SpecMaker
 
 		if propreties != nil
 			propreties.each do |prop|
+				
 				if !prop[:isRelationship]
 				   isProperty = true
 				end
-				if prop[:isrelationship]
+
+#				puts " #{@resource}..... #{prop[:name]} ..  #{prop["isrelationship"]}... #{prop[:isCollection]} .. #{prop[:description]}"
+				if prop[:isRelationship]			  
 				   isRelation = true
 				end
 			end
@@ -255,7 +272,7 @@ module SpecMaker
 			isMethod = true
 		end
 
-#		@logger.debug("....Is there: property: #{isProperty}, relationship: #{isRelation}, method: #{isMethod} ..........")	
+		@logger.debug("....Is there: property: #{isProperty}, relationship: #{isRelation}, method: #{isMethod} ..........")	
 
 		# Add property table. 	
 
@@ -274,7 +291,7 @@ module SpecMaker
 			@mdlines.push PROPERTY_HEADER + TABLE_2ND_LINE 
 			propreties.each do |prop|
 				if !prop[:isRelationship]
-#					@logger.debug("....Processing property: #{prop[:name]} ..........")	
+					@logger.debug("....Processing property: #{prop[:name]} ..........")	
 				   push_property prop
 				end
 			end
@@ -286,11 +303,12 @@ module SpecMaker
 		@mdlines.push NEWLINE
 		@mdlines.push HEADER2 + 'Relationships' + NEWLINE
 
+
 		if isRelation
 			@mdlines.push RELATIONSHIP_HEADER + TABLE_2ND_LINE 
 			propreties.each do |prop|
 				if prop[:isRelationship]
-#					@logger.debug("....Processing relationship: #{prop[:name]} ..........")		
+					@logger.debug("....Processing relationship: #{prop[:name]} ..........")		
 				   push_property prop
 				end
 			end
@@ -302,9 +320,9 @@ module SpecMaker
 		@mdlines.push HEADER2 + 'Methods' + NEWLINE
 
 		if isMethod
-			@mdlines.push METHOD_HEADER + TABLE_2ND_LINE 
+			@mdlines.push NEWLINE + METHOD_HEADER + TABLE_2ND_LINE 
 			methods.each do |mtd|
-#				@logger.debug("....Processing method: #{mtd[:name]} ..........")						
+				@logger.debug("....Processing method: #{mtd[:name]} ..........")						
 				push_method mtd
 			end
 		else

@@ -8,7 +8,7 @@ require 'json'
 
 module SpecMaker
 	begin
-		File.delete('logs/validateComments_log.txt')
+		File.delete('../../logs/validateComments_log.txt')
 		File.delete(EXCELAPI_FILE_TRANSIT)
 	rescue => err
 	    #Ignore this error

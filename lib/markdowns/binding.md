@@ -12,11 +12,12 @@ Represents an Office.js binding that is defined in the workbook.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getRange()|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.||
-|getTable()|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.||
-|getText()|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.||
+|[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.||
+|[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.||
+|[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.||
 
 ## API Specification
 
@@ -28,6 +29,9 @@ bindingObject.getRange();
 
 #### Parameters
 None
+
+#### Returns
+[Range](range.md)
 
 #### Examples
 Below example uses binding object to get the associated range.
@@ -41,6 +45,7 @@ ctx.executeAsync().then(function() {
 });
 ```
 
+
 [Back](#methods)
 
 ### getTable()
@@ -52,6 +57,9 @@ bindingObject.getTable();
 #### Parameters
 None
 
+#### Returns
+[Table](table.md)
+
 #### Examples
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -61,6 +69,8 @@ ctx.load(table);
 ctx.executeAsync().then(function () {
 		Console.log(table.name);
 });
+```
+
 
 [Back](#methods)
 
@@ -72,6 +82,9 @@ bindingObject.getText();
 
 #### Parameters
 None
+
+#### Returns
+string
 
 #### Examples
 
@@ -96,4 +109,5 @@ ctx.load(binding);
 ctx.executeAsync().then(function() {
 	Console.log(binding.type);
 });
-```[Back](#properties)
+```
+[Back](#properties)

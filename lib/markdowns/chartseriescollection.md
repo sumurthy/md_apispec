@@ -12,9 +12,10 @@ Represents a collection of chart series.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getItemAt(index: number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection||
+|[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Retrieves a series based on its position in the collection||
 
 ## API Specification
 
@@ -27,7 +28,10 @@ chartSeriesCollectionObject.getItemAt(index);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+|index|number|Index value of the object to be retrieved. Zero-indexed.|
+
+#### Returns
+[ChartSeries](chartseries.md)
 
 #### Examples
 
@@ -70,5 +74,6 @@ ctx.executeAsync().then(function () {
 });
 
 ```
+
 
 [Back](#properties)

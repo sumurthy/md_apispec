@@ -11,9 +11,10 @@ A collection of all the nameditem objects that are part of the workbook.
 None
 
 ## Methods
-| Methos           | Type    |Description|Notes |
+
+| Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getItem(name: string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name||
+|[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name||
 
 ## API Specification
 
@@ -26,7 +27,10 @@ namedItemCollectionObject.getItem(name);
 #### Parameters
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
-|name|string|Optional. nameditem name.|
+|name|string|nameditem name.|
+
+#### Returns
+[NamedItem](nameditem.md)
 
 #### Examples
 
@@ -66,5 +70,6 @@ ctx.executeAsync().then(function () {
 });
 
 ```
+
 
 [Back](#properties)

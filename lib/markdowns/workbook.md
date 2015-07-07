@@ -6,12 +6,18 @@ Workbook is the top level object which contains related workbook objects such as
 None
 
 ## Relationships
-None
-
-## Methods
-| Methos           | Type    |Description|Notes |
+| Relationship | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|getSelectedRange()|[Range](range.md)|Gets the currently selected range from the workbook.||
+|application|[Application](application.md)|Represents Excel application instance that contains this workbook. Read-only.||
+|bindings|[BindingCollection](bindingcollection.md)|Represents a collection of bindings that are part of the workbook. Read-only.||
+|names|[NamedItemCollection](nameditemcollection.md)|Represents a collection of workbook scoped named items (named ranges and constants). Read-only.||
+|tables|[TableCollection](tablecollection.md)|Represents a collection of tables associated with the workbook. Read-only.||
+|worksheets|[WorksheetCollection](worksheetcollection.md)|Represents a collection of worksheets associated with the workbook. Read-only.||
+## Methods
+
+| Methos           | Return Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|[getSelectedRange()](#getselectedrange)|[Range](range.md)|Gets the currently selected range from the workbook.||
 
 ## API Specification
 
@@ -23,6 +29,9 @@ workbookObject.getSelectedRange();
 
 #### Parameters
 None
+
+#### Returns
+[Range](range.md)
 
 #### Examples
 
