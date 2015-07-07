@@ -361,6 +361,8 @@ module SpecMaker
 		if File.file?(fullpath)
 			convert_to_spec File.read(fullpath)
 		end
-	end
 
+		
+	end
+	puts "*** Run Completed ***"
 end
