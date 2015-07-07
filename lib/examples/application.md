@@ -11,5 +11,5 @@ ctx.executeAsync().then(function() {
 ```js
 var ctx = new Excel.ExcelClientContext();
 ctx.workbook.application.calculate('Full');
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```

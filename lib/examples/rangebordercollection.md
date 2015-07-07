@@ -59,5 +59,5 @@ range.format.borders.getItem('EdgeBottom').style = 'Continuous';
 range.format.borders.getItem('EdgeLeft').style = 'Continuous';
 range.format.borders.getItem('EdgeRight').style = 'Continuous';
 range.format.borders.getItem('EdgeTop').style = 'Continuous';
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```

@@ -6,7 +6,7 @@ var tableName = 'Table1';
 var ctx = new Excel.ExcelClientContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
 column.delete();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 ### getDataBodyRange() 

@@ -10,7 +10,7 @@ var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.clear();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 ### delete(shift: string)
@@ -21,7 +21,7 @@ var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.delete();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 ### getCell(row: number, column: number)
@@ -155,7 +155,7 @@ var rangeAddress = "F5:F10";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.insert();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 ### select()
@@ -166,7 +166,7 @@ var rangeAddress = "F5:F10";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.select();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 ### Getter and setter 

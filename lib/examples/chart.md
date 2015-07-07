@@ -19,7 +19,7 @@ var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
 var sourceData = "A1:B4";
 
 chart.setData(sourceData, "Columns");
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 ### Getter setter
 
@@ -44,7 +44,7 @@ chart.top = 100;
 chart.left = 100;
 chart.height = 200;
 chart.weight = 200;
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 Rename the chart to new name, resize the chart to 200 points in both height and weight. Move Chart1 to 100 points to the top and left. 
 
@@ -57,5 +57,5 @@ chart.top = 100;
 chart.left = 100;
 chart.height =200;
 chart.width =200;
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```

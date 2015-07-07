@@ -7,7 +7,7 @@ var ctx = new Excel.ExcelClientContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 worksheet.activate();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 ### delete()
@@ -17,7 +17,7 @@ var wSheetName = 'Sheet1';
 var ctx = new Excel.ExcelClientContext();
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 worksheet.delete();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 ### getCell(row: number, column: number)
@@ -93,7 +93,7 @@ var ctx = new Excel.ExcelClientContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 worksheet.position = 0;
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
