@@ -1,6 +1,6 @@
 ###
 # This program reads the .CS metadata file and inserts the comments from the JSON specification files.
-# Location: https://github.com/sumurthy/IntellisenseFromMarkdown
+# Location: https://github.com/sumurthy/md_apispec
 ###
 
 require 'logger'
@@ -22,8 +22,8 @@ module SpecMaker
 	EXCELAPI_FILE_SOURCE = '../../data/ExcelAPI.cs'
 	EXCELAPI_FILE_TRANSIT = '../../data/ExcelAPI_transit.cs'
 	EXCELAPI_WITH_COMMENTS = '../../data//ExcelAPI_out.cs'
-	#RESOURCE_FOLDER = 'jsonFiles/'
-	RESOURCE_FOLDER = 'C:/Users/suramam/git/wip/lib/jsonFiles/'
+	
+	RESOURCE_FOLDER = 'jsonFiles/'
 
 	@csarray = []
 	@csarray_pure = []
