@@ -103,7 +103,7 @@ module SpecMaker
 
 		puts "#{method[:signature].strip}, == , #{methodPlusLink}"
 
-		@mdlines.push (PIPE + method[:signature] + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE+PIPE) + NEWLINE
+		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE+PIPE) + NEWLINE
 	end
 
 	# Write methods details and parameters to the final array.	
@@ -137,7 +137,7 @@ module SpecMaker
 			@mdlines.push "None"  + NEWLINE
 		end
 
-		@mdlines.push HEADER4 + "Returns" + NEWLINE
+		@mdlines.push NEWLINE + HEADER4 + "Returns" + NEWLINE
 
 		if SIMPLETYPES.include? method[:returnType]
 			dataTypePlusLink = method[:returnType]
