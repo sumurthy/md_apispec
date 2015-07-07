@@ -10,8 +10,11 @@ This library provides:
 
 * Install Ruby v > 2.0. 
 * Clone the repository. 
-* Fill out the JSON template, examples (if required) in the correct locations. 
+* Fill out the JSON source files, enums JSON file, and examples .md files (if required) in the correct locations. 
+* Create directory/folder named `logs` at the same level as the repository. 
+* Change directory to lib/ (inside repository folder)
 * Run the command `genMarkdown` at the command prompt (Windows OS) or `ruby markdownFromJSON.rb` (*nix). 
+* Find the markdowns in markdowns/ folder. 
 
 ## Version
 0.9
