@@ -11,6 +11,7 @@ ctx.executeAsync().then(function() {
 	Console.log(range.cellCount);
 });
 ```
+
 ### getTable()
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -21,6 +22,8 @@ ctx.load(table);
 ctx.executeAsync().then(function () {
 		Console.log(table.name);
 });
+```
+
 ### getText()
 
 ```js

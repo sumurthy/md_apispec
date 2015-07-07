@@ -30,6 +30,8 @@ tableRowCollectionObject.add(index, values);
 |:---------------|:--------|:----------|
 |index|number|Specifies the relative position of the new row. If null, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
 |values|object[][]|A 2-dimensional array of unformatted values of the table row.|
+#### Returns
+#### [TableRow](tablerow.md)
 
 #### Examples
 ```js
@@ -48,6 +50,8 @@ tableRowCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+#### Returns
+#### [TableRow](tablerow.md)
 
 #### Examples
 

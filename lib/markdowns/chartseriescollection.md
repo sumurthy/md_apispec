@@ -28,6 +28,8 @@ chartSeriesCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+#### Returns
+#### [ChartSeries](chartseries.md)
 
 #### Examples
 

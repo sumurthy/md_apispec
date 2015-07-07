@@ -50,6 +50,8 @@ rangeObject.clear(applyTo);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |applyTo|string|Determines the type of clear action. Possible values are: All (default option), Format, and Content. Possible values are: `All` Default-option,`Formats` ,`Contents` |
+#### Returns
+#### void
 
 #### Examples
 
@@ -77,6 +79,8 @@ rangeObject.delete(shift);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |shift|string|Optional. Specifies which way to shift the cells. Possible values are: Up (default option) or Left.  Possible values are: Up, Left|
+#### Returns
+#### void
 
 #### Examples
 
@@ -102,6 +106,8 @@ rangeObject.getBoundingRect(anotherRange);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |anotherRange|object|Optional. The range object or address or range name.|
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 
@@ -131,6 +137,8 @@ rangeObject.getCell(row, column);
 |:---------------|:--------|:----------|
 |row|number|Optional. Row number of the cell to be retrieved. Zero-indexed.|
 |column|number|Optional. Column number of the cell to be retrieved. Zero-indexed.|
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 
@@ -160,6 +168,8 @@ rangeObject.getColumn(column);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |column|number|Optional. Column number of the range to be retrieved. Zero-indexed.|
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 ```js
@@ -176,6 +186,8 @@ rangeObject.getEntireColumn();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 
@@ -202,6 +214,8 @@ rangeObject.getEntireRow();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 ctx.load(rangeER);
@@ -237,6 +251,8 @@ rangeObject.getIntersection(anotherRange);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |anotherRange|object|Optional. The range object or range address that will be used to determine the intersection of ranges.|
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 ```js
@@ -256,6 +272,8 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 |:---------------|:--------|:----------|
 |rowOffset|number|Optional. The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.|
 |columnOffset|number|Optional. The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.|
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 ```js
@@ -274,6 +292,8 @@ rangeObject.getRow(row);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |row|number|Optional. Row number of the range to be retrieved. Zero-indexed.|
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 ```js
@@ -290,6 +310,8 @@ rangeObject.getUsedRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 
@@ -317,6 +339,8 @@ rangeObject.insert(shift);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |shift|string|Optional. Specifies which way to shift the cells. Can be one of the following: Down (default option) or Right.  Possible values are: Down, Right|
+#### Returns
+#### void
 
 #### Examples
 
@@ -340,6 +364,8 @@ rangeObject.select();
 
 #### Parameters
 None
+#### Returns
+#### void
 
 #### Examples
 

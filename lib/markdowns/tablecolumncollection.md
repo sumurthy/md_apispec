@@ -31,6 +31,8 @@ tableColumnCollectionObject.add(index, values);
 |:---------------|:--------|:----------|
 |index|number|Optional. Specifies the relative position of the new column. The previous column at this position is shifted to the right. The index value should be equal to or less than the last column's index value, so it cannot be used to append a column at the end of the table. Zero-indexed.|
 |values|object[][]|A 2-dimensional array of unformatted values of the table column.|
+#### Returns
+#### [TableColumn](tablecolumn.md)
 
 #### Examples
 ```js
@@ -49,6 +51,8 @@ tableColumnCollectionObject.getItem(id);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |id|object|Optional.  Column Name or ID.|
+#### Returns
+#### [TableColumn](tablecolumn.md)
 
 #### Examples
 ```js
@@ -67,6 +71,8 @@ tableColumnCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+#### Returns
+#### [TableColumn](tablecolumn.md)
 
 #### Examples
 ```js

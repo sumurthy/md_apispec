@@ -32,6 +32,8 @@ tableColumnObject.delete();
 
 #### Parameters
 None
+#### Returns
+#### void
 
 #### Examples
 
@@ -53,6 +55,8 @@ tableColumnObject.getDataBodyRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 
@@ -77,6 +81,8 @@ tableColumnObject.getHeaderRowRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 
@@ -100,6 +106,8 @@ tableColumnObject.getRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 
@@ -124,6 +132,8 @@ tableColumnObject.getTotalRowRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 

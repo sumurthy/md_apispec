@@ -25,6 +25,8 @@ chartLineFormatObject.clear();
 
 #### Parameters
 None
+#### Returns
+#### void
 
 #### Examples
 

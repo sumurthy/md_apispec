@@ -27,6 +27,8 @@ applicationObject.calculate(calculationType);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |calculationType|string|Optional. Specifies the calculation type to use. Possible values are: `Recalculate` Default-option. Performs normal calculation by calculating all the formulas in the workbook.,`Full` Forces a full calculation of the data.,`FullRebuild`  Forces a full calculation of the data and rebuilds the dependencies.|
+#### Returns
+#### void
 
 #### Examples
 ```js

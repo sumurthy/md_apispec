@@ -27,6 +27,8 @@ namedItemCollectionObject.getItem(name);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |name|string|Optional. nameditem name.|
+#### Returns
+#### [NamedItem](nameditem.md)
 
 #### Examples
 

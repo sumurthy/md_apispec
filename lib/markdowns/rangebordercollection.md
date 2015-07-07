@@ -29,6 +29,8 @@ rangeBorderCollectionObject.getItem(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|string|Optional. Index value of the border object to be retrieved.  Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp|
+#### Returns
+#### [RangeBorder](rangeborder.md)
 
 #### Examples
 ```js
@@ -47,6 +49,8 @@ rangeBorderCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+#### Returns
+#### [RangeBorder](rangeborder.md)
 
 #### Examples
 ```js

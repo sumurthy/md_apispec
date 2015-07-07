@@ -23,6 +23,8 @@ workbookObject.getSelectedRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 

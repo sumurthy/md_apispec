@@ -28,6 +28,8 @@ namedItemObject.getRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 

@@ -78,12 +78,12 @@ module SpecMaker
 		end
 		# If the type is of	an object, then provide markdown link.
 		if SIMPLETYPES.include? prop[:dataType] 	
-			dataTypeLink = prop[:dataType] 	
+			dataTypePlusLink = prop[:dataType] 	
 		else			
-			dataTypeLink = "[" + prop[:dataType] + "](" + prop[:dataType].downcase + ".md)"
+			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].downcase + ".md)"
 		end
 
-		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypeLink + PIPE + finalDesc + PIPE + PIPE) + NEWLINE
+		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + PIPE) + NEWLINE
 	end
 
 	# Write methods to the final array.
@@ -91,12 +91,19 @@ module SpecMaker
 
 		# If the type is of	an object, then provide markdown link.
 		if SIMPLETYPES.include? method[:returnType]
-			dataTypeLink = method[:returnType]
+			dataTypePlusLink = method[:returnType]
 		else			
-			dataTypeLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
+			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
 		end
+		# Add anchor links to method. 
+		str = method[:signature].strip
+		replacements = [ [" ", "-"], ["[", ""], ["]", ""],["(", ""], [")", ""], [",", ""], [":", ""] ]				
+		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
+		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
 
-		@mdlines.push (PIPE + method[:signature] + PIPE + dataTypeLink + PIPE + method[:description] + PIPE+PIPE) + NEWLINE
+		puts "#{method[:signature].strip}, == , #{methodPlusLink}"
+
+		@mdlines.push (PIPE + method[:signature] + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE+PIPE) + NEWLINE
 	end
 
 	# Write methods details and parameters to the final array.	
@@ -129,6 +136,16 @@ module SpecMaker
 		else
 			@mdlines.push "None"  + NEWLINE
 		end
+
+		@mdlines.push HEADER4 + "Returns" + NEWLINE
+
+		if SIMPLETYPES.include? method[:returnType]
+			dataTypePlusLink = method[:returnType]
+		else			
+			dataTypePlusLink = "[" + method[:returnType] + "](" + method[:returnType].downcase + ".md)"
+		end
+		@mdlines.push HEADER4 + dataTypePlusLink + NEWLINE
+		
 
 		@mdlines.push NEWLINE + HEADER4 + 'Examples' + NEWLINE
 		# 

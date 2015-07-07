@@ -29,6 +29,8 @@ bindingCollectionObject.getItem(id);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |id|string|Optional. Id of the binding object to be retrieved. Zero-indexed.|
+#### Returns
+#### [Binding](binding.md)
 
 #### Examples
 ```js
@@ -47,6 +49,8 @@ bindingCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+#### Returns
+#### [Binding](binding.md)
 
 #### Examples
 ```js

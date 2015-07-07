@@ -33,6 +33,8 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 |type|string|Optional. Represents the type of a chart.  Possible values are: Invalid, ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, PieExploded, BarOfPie, XYScatterSmooth, XYScatterSmoothNoMarkers, XYScatterLines, XYScatterLinesNoMarkers, AreaStacked, AreaStacked100, DoughnutExploded, RadarMarkers, RadarFilled, Surface, SurfaceWireframe, SurfaceTopView, SurfaceTopViewWireframe, Bubble, Bubble3DEffect, StockHLC, StockOHLC, StockVHLC, StockVOHLC, CylinderColClustered, CylinderColStacked, CylinderColStacked100, CylinderBarClustered, CylinderBarStacked, CylinderBarStacked100, CylinderCol, ConeColClustered, ConeColStacked, ConeColStacked100, ConeBarClustered, ConeBarStacked, ConeBarStacked100, ConeCol, PyramidColClustered, PyramidColStacked, PyramidColStacked100, PyramidBarClustered, PyramidBarStacked, PyramidBarStacked100, PyramidCol, Line, Pie, XYScatter, Area, Doughnut, Radar|
 |sourceData|string|Optional. The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
 |seriesBy|string|Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
+#### Returns
+#### [Chart](chart.md)
 
 #### Examples
 
@@ -61,6 +63,8 @@ chartCollectionObject.getItem(id);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |id|string|Optional. Id of the chart to be retrieved.|
+#### Returns
+#### [Chart](chart.md)
 
 #### Examples
 ```js
@@ -79,6 +83,8 @@ chartCollectionObject.getItem(name);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |name|string|Optional. Name of the chart to be retrieved.|
+#### Returns
+#### [Chart](chart.md)
 
 #### Examples
 
@@ -103,6 +109,8 @@ chartCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+#### Returns
+#### [Chart](chart.md)
 
 #### Examples
 

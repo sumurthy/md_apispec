@@ -29,6 +29,8 @@ worksheetCollectionObject.add(name);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |name|string|The name of the worksheet to be added. If specified, name should be unqiue. If not specified, Excel determines the name of the new worksheet.|
+#### Returns
+#### [Worksheet](worksheet.md)
 
 #### Examples
 
@@ -53,6 +55,8 @@ worksheetCollectionObject.getActiveWorksheet();
 
 #### Parameters
 None
+#### Returns
+#### [Worksheet](worksheet.md)
 
 #### Examples
 
@@ -77,6 +81,8 @@ worksheetCollectionObject.getItem(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|string|Optional. The Name or ID of the worksheet.|
+#### Returns
+#### [Worksheet](worksheet.md)
 
 #### Examples
 ```js

@@ -31,6 +31,8 @@ tableCollectionObject.add(address, hasHeaders);
 |:---------------|:--------|:----------|
 |address|string|Optional. Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.|
 |hasHeaders|bool|Optional. Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.|
+#### Returns
+#### [Table](table.md)
 
 #### Examples
 
@@ -56,6 +58,8 @@ tableCollectionObject.getItem(id);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |id|object|Optional. Name or ID of the table to be retrieved.|
+#### Returns
+#### [Table](table.md)
 
 #### Examples
 ```js
@@ -74,6 +78,8 @@ tableCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+#### Returns
+#### [Table](table.md)
 
 #### Examples
 

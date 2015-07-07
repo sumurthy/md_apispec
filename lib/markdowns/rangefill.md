@@ -25,6 +25,8 @@ rangeFillObject.clear();
 
 #### Parameters
 None
+#### Returns
+#### void
 
 #### Examples
 

@@ -28,6 +28,8 @@ chartPointsCollectionObject.getItemAt(index);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Index value of the object to be retrieved. Zero-indexed.|
+#### Returns
+#### [ChartPoint](chartpoint.md)
 
 #### Examples
 Set the border color for the first points in the points collection

@@ -31,6 +31,8 @@ worksheetObject.activate();
 
 #### Parameters
 None
+#### Returns
+#### void
 
 #### Examples
 
@@ -52,6 +54,8 @@ worksheetObject.delete();
 
 #### Parameters
 None
+#### Returns
+#### void
 
 #### Examples
 
@@ -76,6 +80,8 @@ worksheetObject.getCell(row, column);
 |:---------------|:--------|:----------|
 |row|number|Optional. The row number of the cell to be retrieved. Zero-indexed.|
 |column|number|Optional. the column number of the cell to be retrieved. Zero-indexed.|
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 
@@ -104,6 +110,8 @@ worksheetObject.getRange(address);
 | Parameter       | Type    |Description|
 |:---------------|:--------|:----------|
 |address|string|The address or the name of the range. If not specified, the entire worksheet range is returned.|
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 Below example uses range address to get the range object.
@@ -155,6 +163,8 @@ worksheetObject.getUsedRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 

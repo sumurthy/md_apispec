@@ -30,6 +30,8 @@ chartObject.delete();
 
 #### Parameters
 None
+#### Returns
+#### void
 
 #### Examples
 ```js
@@ -54,6 +56,8 @@ chartObject.setData(sourceData, seriesBy);
 |:---------------|:--------|:----------|
 |sourceData|string|Optional. The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
 |seriesBy|string|Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
+#### Returns
+#### void
 
 #### Examples
 

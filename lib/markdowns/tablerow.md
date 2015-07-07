@@ -27,6 +27,8 @@ tableRowObject.delete();
 
 #### Parameters
 None
+#### Returns
+#### void
 
 #### Examples
 
@@ -48,6 +50,8 @@ tableRowObject.getRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 

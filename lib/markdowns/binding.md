@@ -28,6 +28,8 @@ bindingObject.getRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 Below example uses binding object to get the associated range.
@@ -41,6 +43,7 @@ ctx.executeAsync().then(function() {
 });
 ```
 
+
 [Back](#methods)
 
 ### getTable()
@@ -51,6 +54,8 @@ bindingObject.getTable();
 
 #### Parameters
 None
+#### Returns
+#### [Table](table.md)
 
 #### Examples
 ```js
@@ -61,6 +66,8 @@ ctx.load(table);
 ctx.executeAsync().then(function () {
 		Console.log(table.name);
 });
+```
+
 
 [Back](#methods)
 
@@ -72,6 +79,8 @@ bindingObject.getText();
 
 #### Parameters
 None
+#### Returns
+#### string
 
 #### Examples
 

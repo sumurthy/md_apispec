@@ -33,6 +33,8 @@ tableObject.delete();
 
 #### Parameters
 None
+#### Returns
+#### void
 
 #### Examples
 ```js
@@ -53,6 +55,8 @@ tableObject.getDataBodyRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 ```js
@@ -74,6 +78,8 @@ tableObject.getHeaderRowRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 ```js
@@ -96,6 +102,8 @@ tableObject.getRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 ```js
@@ -118,6 +126,8 @@ tableObject.getTotalRowRange();
 
 #### Parameters
 None
+#### Returns
+#### [Range](range.md)
 
 #### Examples
 ```js
