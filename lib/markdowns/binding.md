@@ -25,7 +25,8 @@ None
 Returns the range represented by the binding. Will throw an error if binding is not of the correct type.
 
 #### Syntax
-bindingObject.getRange();
+```jsbindingObject.getRange();
+```
 
 #### Parameters
 None
@@ -52,7 +53,8 @@ ctx.executeAsync().then(function() {
 Returns the table represented by the binding. Will throw an error if binding is not of the correct type.
 
 #### Syntax
-bindingObject.getTable();
+```jsbindingObject.getTable();
+```
 
 #### Parameters
 None
@@ -78,7 +80,8 @@ ctx.executeAsync().then(function () {
 Returns the text represented by the binding. Will throw an error if binding is not of the correct type.
 
 #### Syntax
-bindingObject.getText();
+```jsbindingObject.getText();
+```
 
 #### Parameters
 None

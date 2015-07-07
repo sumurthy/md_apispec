@@ -25,7 +25,8 @@ None
 Adds a new column to the table.
 
 #### Syntax
-tableColumnCollectionObject.add(index, values);
+```jstableColumnCollectionObject.add(index, values);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -47,7 +48,8 @@ tableColumnCollectionObject.add(index, values);
 Gets a column object by Name or ID.
 
 #### Syntax
-tableColumnCollectionObject.getItem(id);
+```jstableColumnCollectionObject.getItem(id);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -68,7 +70,8 @@ tableColumnCollectionObject.getItem(id);
 Gets a column based on its position in the collection.
 
 #### Syntax
-tableColumnCollectionObject.getItemAt(index);
+```jstableColumnCollectionObject.getItemAt(index);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|

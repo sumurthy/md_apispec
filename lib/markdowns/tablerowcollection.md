@@ -24,7 +24,8 @@ None
 Adds a new row to the table.
 
 #### Syntax
-tableRowCollectionObject.add(index, values);
+```jstableRowCollectionObject.add(index, values);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -46,7 +47,8 @@ tableRowCollectionObject.add(index, values);
 Gets a row based on its position in the collection.
 
 #### Syntax
-tableRowCollectionObject.getItemAt(index);
+```jstableRowCollectionObject.getItemAt(index);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|

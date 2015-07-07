@@ -108,8 +108,8 @@ module SpecMaker
 
 		@mdlines.push HEADER3 + method[:signature] + NEWLINE	
 		@mdlines.push method[:description] + TWONEWLINES	
-		@mdlines.push HEADER4 + "Syntax" + NEWLINE
-		@mdlines.push method[:syntax] + TWONEWLINES
+		@mdlines.push HEADER4 + "Syntax" + NEWLINE + '```js'
+		@mdlines.push method[:syntax] + NEWLINE + '```' + TWONEWLINES
 		@mdlines.push HEADER4 + "Parameters" + NEWLINE
 
 		if method[:parameters] !=nil  			

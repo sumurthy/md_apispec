@@ -30,7 +30,8 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 Activate the worksheet in the Excel UI.
 
 #### Syntax
-worksheetObject.activate();
+```jsworksheetObject.activate();
+```
 
 #### Parameters
 None
@@ -54,7 +55,8 @@ ctx.executeAsync().then();
 Deletes the worksheet from the workbook.
 
 #### Syntax
-worksheetObject.delete();
+```jsworksheetObject.delete();
+```
 
 #### Parameters
 None
@@ -78,7 +80,8 @@ ctx.executeAsync().then();
 Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid.
 
 #### Syntax
-worksheetObject.getCell(row, column);
+```jsworksheetObject.getCell(row, column);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -110,7 +113,8 @@ ctx.executeAsync().then(function() {
 Gets the range object specified by the address or name.
 
 #### Syntax
-worksheetObject.getRange(address);
+```jsworksheetObject.getRange(address);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -166,7 +170,8 @@ ctx.executeAsync().then(function() {
 The used range is the smallest range than encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.
 
 #### Syntax
-worksheetObject.getUsedRange();
+```jsworksheetObject.getUsedRange();
+```
 
 #### Parameters
 None

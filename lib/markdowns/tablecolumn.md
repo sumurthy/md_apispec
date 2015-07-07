@@ -29,7 +29,8 @@ None
 Deletes the column from the table.
 
 #### Syntax
-tableColumnObject.delete();
+```jstableColumnObject.delete();
+```
 
 #### Parameters
 None
@@ -53,7 +54,8 @@ ctx.executeAsync().then();
 Gets the range object associated with the data body of the column.
 
 #### Syntax
-tableColumnObject.getDataBodyRange();
+```jstableColumnObject.getDataBodyRange();
+```
 
 #### Parameters
 None
@@ -80,7 +82,8 @@ ctx.executeAsync().then(function () {
 Gets the range object associated with the header row of the column.
 
 #### Syntax
-tableColumnObject.getHeaderRowRange();
+```jstableColumnObject.getHeaderRowRange();
+```
 
 #### Parameters
 None
@@ -106,7 +109,8 @@ ctx.executeAsync().then(function () {
 Gets the range object associated with the entire column.
 
 #### Syntax
-tableColumnObject.getRange();
+```jstableColumnObject.getRange();
+```
 
 #### Parameters
 None
@@ -133,7 +137,8 @@ ctx.executeAsync().then(function () {
 Gets the range object associated with the totals row of the column.
 
 #### Syntax
-tableColumnObject.getTotalRowRange();
+```jstableColumnObject.getTotalRowRange();
+```
 
 #### Parameters
 None

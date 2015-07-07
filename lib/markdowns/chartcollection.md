@@ -26,7 +26,8 @@ None
 Creates a new chart.
 
 #### Syntax
-chartCollectionObject.add(type, sourceData, seriesBy);
+```jschartCollectionObject.add(type, sourceData, seriesBy);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -59,7 +60,8 @@ ctx.executeAsync().then(function () {
 Gets a chart using its ID.
 
 #### Syntax
-chartCollectionObject.getItem(id);
+```jschartCollectionObject.getItem(id);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -80,7 +82,8 @@ chartCollectionObject.getItem(id);
 Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.
 
 #### Syntax
-chartCollectionObject.getItem(name);
+```jschartCollectionObject.getItem(name);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -107,7 +110,8 @@ ctx.executeAsync().then(function () {
 Gets a chart based on its position in the collection.
 
 #### Syntax
-chartCollectionObject.getItemAt(index);
+```jschartCollectionObject.getItemAt(index);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|

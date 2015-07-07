@@ -47,7 +47,8 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 Clear range values, format, fill, border, etc.
 
 #### Syntax
-rangeObject.clear(applyTo);
+```jsrangeObject.clear(applyTo);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -77,7 +78,8 @@ ctx.executeAsync().then();
 Deletes the cells associated with the range.
 
 #### Syntax
-rangeObject.delete(shift);
+```jsrangeObject.delete(shift);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -105,7 +107,8 @@ ctx.executeAsync().then();
 Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".
 
 #### Syntax
-rangeObject.getBoundingRect(anotherRange);
+```jsrangeObject.getBoundingRect(anotherRange);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -136,7 +139,8 @@ ctx.executeAsync().then(function() {
 Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.
 
 #### Syntax
-rangeObject.getCell(row, column);
+```jsrangeObject.getCell(row, column);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -169,7 +173,8 @@ ctx.executeAsync().then(function() {
 Gets a column contained in the range.
 
 #### Syntax
-rangeObject.getColumn(column);
+```jsrangeObject.getColumn(column);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -190,7 +195,8 @@ rangeObject.getColumn(column);
 Gets an object that represents the entire column of the range.
 
 #### Syntax
-rangeObject.getEntireColumn();
+```jsrangeObject.getEntireColumn();
+```
 
 #### Parameters
 None
@@ -219,7 +225,8 @@ ctx.executeAsync().then(function() {
 Gets an object that represents the entire row of the range.
 
 #### Syntax
-rangeObject.getEntireRow();
+```jsrangeObject.getEntireRow();
+```
 
 #### Parameters
 None
@@ -255,7 +262,8 @@ ctx.executeAsync().then(function() {
 Gets the range object that represents the rectangular intersection of the given ranges.
 
 #### Syntax
-rangeObject.getIntersection(anotherRange);
+```jsrangeObject.getIntersection(anotherRange);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -276,7 +284,8 @@ rangeObject.getIntersection(anotherRange);
 Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.
 
 #### Syntax
-rangeObject.getOffsetRange(rowOffset, columnOffset);
+```jsrangeObject.getOffsetRange(rowOffset, columnOffset);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -298,7 +307,8 @@ rangeObject.getOffsetRange(rowOffset, columnOffset);
 Gets a row contained in the range.
 
 #### Syntax
-rangeObject.getRow(row);
+```jsrangeObject.getRow(row);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -319,7 +329,8 @@ rangeObject.getRow(row);
 Returns the used range of the given range object.
 
 #### Syntax
-rangeObject.getUsedRange();
+```jsrangeObject.getUsedRange();
+```
 
 #### Parameters
 None
@@ -347,7 +358,8 @@ ctx.executeAsync().then(function() {
 Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space.
 
 #### Syntax
-rangeObject.insert(shift);
+```jsrangeObject.insert(shift);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -375,7 +387,8 @@ ctx.executeAsync().then();
 Selects the specified range in the Excel UI.
 
 #### Syntax
-rangeObject.select();
+```jsrangeObject.select();
+```
 
 #### Parameters
 None

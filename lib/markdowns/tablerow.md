@@ -24,7 +24,8 @@ None
 Deletes the row from the table.
 
 #### Syntax
-tableRowObject.delete();
+```jstableRowObject.delete();
+```
 
 #### Parameters
 None
@@ -48,7 +49,8 @@ ctx.executeAsync().then();
 Returns the range object associated with the entire row.
 
 #### Syntax
-tableRowObject.getRange();
+```jstableRowObject.getRange();
+```
 
 #### Parameters
 None

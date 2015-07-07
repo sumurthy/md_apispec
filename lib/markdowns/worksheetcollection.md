@@ -24,7 +24,8 @@ None
 Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.
 
 #### Syntax
-worksheetCollectionObject.add(name);
+```jsworksheetCollectionObject.add(name);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
@@ -53,7 +54,8 @@ ctx.executeAsync().then(function () {
 Gets the currently active worksheet in the workbook.
 
 #### Syntax
-worksheetCollectionObject.getActiveWorksheet();
+```jsworksheetCollectionObject.getActiveWorksheet();
+```
 
 #### Parameters
 None
@@ -78,7 +80,8 @@ ctx.executeAsync().then(function () {
 Gets a worksheet object using its Name or ID.
 
 #### Syntax
-worksheetCollectionObject.getItem(index);
+```jsworksheetCollectionObject.getItem(index);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|

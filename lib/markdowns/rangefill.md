@@ -22,7 +22,8 @@ None
 Resets the range background.
 
 #### Syntax
-rangeFillObject.clear();
+```jsrangeFillObject.clear();
+```
 
 #### Parameters
 None

@@ -23,7 +23,8 @@ None
 Retrieve a point based on its position within the series.
 
 #### Syntax
-chartPointsCollectionObject.getItemAt(index);
+```jschartPointsCollectionObject.getItemAt(index);
+```
 
 #### Parameters
 | Parameter       | Type    |Description|
