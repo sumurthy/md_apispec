@@ -12,6 +12,7 @@ Represents an Office.js binding that is defined in the workbook.
 None
 
 ## Methods
+
 | Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.||

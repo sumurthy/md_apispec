@@ -12,6 +12,7 @@ Represents a collection of all the columns that are part of the table.
 None
 
 ## Methods
+
 | Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[add(index: number, values: object[][])](#addindex-number-values-object)|[TableColumn](tablecolumn.md)|Adds a new column to the table.||

@@ -12,6 +12,7 @@ Represents the border objects that make up range border.
 None
 
 ## Methods
+
 | Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name||

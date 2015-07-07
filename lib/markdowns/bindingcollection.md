@@ -12,6 +12,7 @@ Represents the collection of all the binding objects that are part of the workbo
 None
 
 ## Methods
+
 | Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.||

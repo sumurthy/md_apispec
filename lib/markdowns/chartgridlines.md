@@ -8,8 +8,9 @@ Represents major or minor gridlines on a chart axis.
 |visible|bool|Boolean value representing if the axis gridlines are visible or not.||
 
 ## Relationships
-None
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartGridlinesFormat](chartgridlinesformat.md)|Represents the formatting of chart gridlines. Read-only.||
 ## Methods
 None
 

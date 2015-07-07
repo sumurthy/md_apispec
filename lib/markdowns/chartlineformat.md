@@ -11,6 +11,7 @@ Enapsulates the formatting options for line elements.
 None
 
 ## Methods
+
 | Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear()](#clear)|void|Clear the line format of a chart element.||

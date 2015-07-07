@@ -12,9 +12,16 @@ Represents a chart object in a workbook.
 |width|double|Represents the width, in points, of the chart object.||
 
 ## Relationships
-None
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|axes|[ChartAxes](chartaxes.md)|Represents chart axes. Read-only.||
+|dataLabels|[ChartDataLabels](chartdatalabels.md)|Represents the datalabels on the chart. Read-only.||
+|format|[ChartAreaFormat](chartareaformat.md)|Encapsulates the format properties for the chart area.||
+|legend|[ChartLegend](chartlegend.md)|Represents the legend for the chart. Read-only.||
+|series|[ChartSeriesCollection](chartseriescollection.md)|Represents either a single series or collection of series in the chart. Read-only.||
+|title|[ChartTitle](charttitle.md)|Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.||
 ## Methods
+
 | Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[delete()](#delete)|void|Deletes the chart object.||

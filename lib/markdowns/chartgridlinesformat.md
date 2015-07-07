@@ -6,8 +6,9 @@ Encapsulates the format properties for chart gridlines.
 None
 
 ## Relationships
-None
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|line|[ChartLineFormat](chartlineformat.md)|Represents chart line formatting. Read-only.||
 ## Methods
 None
 

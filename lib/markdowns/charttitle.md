@@ -10,8 +10,9 @@ Represents a chart title object of a chart.
 |visible|bool|A boolean value the represents the visibility of a chart title object.||
 
 ## Relationships
-None
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartTitleFormat](charttitleformat.md)|Represents the formatting of a chart title, which includes fill and font formatting. Read-only.||
 ## Methods
 None
 

@@ -11,6 +11,7 @@ Represents the background of a range object.
 None
 
 ## Methods
+
 | Methos           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[clear()](#clear)|void|Resets the range background.||

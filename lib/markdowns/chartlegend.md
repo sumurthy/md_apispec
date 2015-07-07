@@ -10,8 +10,9 @@ Represents the legend in a chart.
 |visible|bool|A boolean value the represents the visibility of a ChartLegend object.||
 
 ## Relationships
-None
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartLegendFormat](chartlegendformat.md)|Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.||
 ## Methods
 None
 

@@ -8,8 +8,10 @@ Represents a series in a chart.
 |name|string|Represents the name of a series in a chart.||
 
 ## Relationships
-None
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartSeriesFormat](chartseriesformat.md)|Represents the formatting of a chart series, which includes fill and line formatting. Read-only.||
+|points|[ChartPointsCollection](chartpointscollection.md)|Represents a collection of all points in the series. Read-only.||
 ## Methods
 None
 

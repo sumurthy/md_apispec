@@ -8,8 +8,9 @@ Represents a point of a series in a chart.
 |value|object|Returns the value of a chart point. Read-only.||
 
 ## Relationships
-None
-
+| Relationship | Type    |Description|Notes |
+|:---------------|:--------|:----------|:-----|
+|format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point.||
 ## Methods
 None
 
