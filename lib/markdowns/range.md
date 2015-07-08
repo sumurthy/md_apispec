@@ -70,7 +70,7 @@ var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.clear();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -100,7 +100,7 @@ var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.delete();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -228,6 +228,7 @@ var sheetName = "Sheet1";
 var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var rangeEC = range.getEntireColumn();
 ctx.load(rangeEC);
 ctx.executeAsync().then(function() {
 	Console.log(rangeEC.address);
@@ -256,6 +257,7 @@ var sheetName = "Sheet1";
 var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var rangeER = range.getEntireRow();
 ctx.load(rangeER);
 ctx.executeAsync().then(function() {
 	Console.log(rangeER.address);
@@ -384,6 +386,7 @@ var sheetName = "Sheet1";
 var rangeAddress = "D:F";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+var rangeUR = range.getUsedRange();
 ctx.load(rangeUR);
 ctx.executeAsync().then(function() {
 	Console.log(rangeUR.address);
@@ -417,7 +420,7 @@ var rangeAddress = "F5:F10";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.insert();
-ctx.executeAsync().then();
+ctx.executeAsync();
 ```
 
 
@@ -444,7 +447,8 @@ var sheetName = "Sheet1";
 var rangeAddress = "F5:F10";
 var ctx = new Excel.ExcelClientContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-ctx.executeAsync().then();
+range.select();
+ctx.executeAsync();
 ```
 
 

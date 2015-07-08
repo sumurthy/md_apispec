@@ -150,8 +150,8 @@ module SpecMaker
 		if	@exampleFileFound == true
 			exampleFound	 = false
 			examples.each_with_index do |exampleLine, i|
-				if exampleLine.chomp.strip.include? method[:signature]
-					exampleFound	 = true			
+				if (exampleLine.chomp.strip.include? method[:signature]) && (exampleLine.chomp.strip.include?('###'))
+					exampleFound = true
 					next
 				end
 				if exampleFound && exampleLine.include?('#')
