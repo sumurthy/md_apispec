@@ -18,6 +18,7 @@ None
 |:---------------|:--------|:----------|:-----|
 |[delete()](#delete)|void|Deletes the row from the table.||
 |[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -39,7 +40,7 @@ void
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
 row.delete();
 ctx.executeAsync();
@@ -66,7 +67,7 @@ None
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
 var rowRange = row.getRange();
 ctx.load(rowRange);
@@ -78,11 +79,34 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter and Setter Examples
 
 ```js
 var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
 ctx.load(row);
 ctx.executeAsync().then(function () {
@@ -91,7 +115,7 @@ ctx.executeAsync().then(function () {
 ```
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 var newValues = [["New", "Values", "For", "New", "Row"]];
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);

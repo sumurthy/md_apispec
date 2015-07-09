@@ -7,7 +7,7 @@ This example resets the range background.
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F:G";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var rangeFill = ramge.format.fill;
@@ -19,7 +19,7 @@ ctx.executeAsync();
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F:G";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var rangeFill = ramge.format.fill;

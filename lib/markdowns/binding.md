@@ -19,6 +19,7 @@ None
 |[getRange()](#getrange)|[Range](range.md)|Returns the range represented by the binding. Will throw an error if binding is not of the correct type.||
 |[getTable()](#gettable)|[Table](table.md)|Returns the table represented by the binding. Will throw an error if binding is not of the correct type.||
 |[getText()](#gettext)|string|Returns the text represented by the binding. Will throw an error if binding is not of the correct type.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -40,7 +41,7 @@ None
 Below example uses binding object to get the associated range.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
 var range = binding.getRange();
 ctx.load(range);
@@ -68,7 +69,7 @@ None
 
 #### Examples
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 
 var binding = ctx.workbook.bindings.getItemAt(0);
 var table = binding.getTable();
@@ -98,7 +99,7 @@ string
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
 var text = binding.getText();
 ctx.load(text);
@@ -110,10 +111,33 @@ ctx.executeAsync().then(function() {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
 ctx.load(binding);
 ctx.executeAsync().then(function() {

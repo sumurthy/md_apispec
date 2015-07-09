@@ -6,7 +6,7 @@ Represents the border objects that make up range border.
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |count|int|Number of border objects in the collection. Read-only.||
-|items|[RangeBorderCollection](rangebordercollection.md)|A collection of rangeBorder objects. Read-only.||
+|items|[RangeBorder[]](rangeborder.md)|A collection of rangeBorder objects. Read-only.||
 
 ## Relationships
 None
@@ -18,6 +18,7 @@ None
 |:---------------|:--------|:----------|:-----|
 |[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Gets a border object using its name||
 |[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Gets a border object using its index||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -41,7 +42,7 @@ rangeBorderCollectionObject.getItem(index);
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var borderName = 'EdgeTop';
@@ -75,7 +76,7 @@ rangeBorderCollectionObject.getItemAt(index);
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var border = ctx.workbook.borders.getItemAt(0);
@@ -88,12 +89,35 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter and Setter Examples
 
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var borders = range.format.borders;

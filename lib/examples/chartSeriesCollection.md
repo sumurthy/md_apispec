@@ -4,7 +4,7 @@
 Getting the names of series in the series collection.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var seriesCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
 ctx.load(seriesCollection);
 ctx.executeAsync().then(function () {
@@ -18,7 +18,7 @@ ctx.executeAsync().then(function () {
 Get the number of chart series in collection.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var seriesCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
 ctx.load(seriesCollection);
 ctx.executeAsync().then(function () {
@@ -31,7 +31,7 @@ ctx.executeAsync().then(function () {
 
 Get the name of the first series in the series collection.
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var seriesCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
 ctx.load(seriesCollection);
 ctx.executeAsync().then(function () {

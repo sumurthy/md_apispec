@@ -4,7 +4,7 @@ A collection of all the nameditem objects that are part of the workbook.
 ### Getter 
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var nameditems = ctx.workbook.names;
 ctx.load(nameditems);
 ctx.executeAsync().then(function () {
@@ -19,7 +19,7 @@ ctx.executeAsync().then(function () {
 Get the number of nameditems.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var nameditems = ctx.workbook.names;
 ctx.load(tables);
 ctx.executeAsync().then(function () {
@@ -31,7 +31,7 @@ ctx.executeAsync().then(function () {
 ### getItem(name: string)
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var nameditem = ctx.workbook.names.getItem(wSheetName);
 ctx.executeAsync().then(function () {
 		Console.log(nameditem.type);
@@ -40,7 +40,7 @@ ctx.executeAsync().then(function () {
 ### getItemAt(index: number)
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var nameditem = ctx.workbook.names.getItemAt(0);
 ctx.executeAsync().then(function () {
 		Console.log(nameditem.name);

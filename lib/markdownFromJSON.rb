@@ -29,8 +29,8 @@ module SpecMaker
 	@enumHash = {}
 	@enumHash = JSON.parse File.read(ENUMS)
 	@gsType = ''
-	JSON_SOURCE_FOLDER = "jsonFiles"
-	###JSON_SOURCE_FOLDER = 'C:\Users\suramam\Git\wip\lib\jsonFiles'
+	#JSON_SOURCE_FOLDER = "jsonFiles"
+	JSON_SOURCE_FOLDER = 'C:\Users\suramam\Git\wip\lib\jsonFiles'
 	MARKDOWN_OUTPUT_FOLDER = "markdowns/"
 	EXAMPLES_FOLDER = "examples/"
 	HEADER1 = '# '
@@ -84,6 +84,10 @@ module SpecMaker
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].downcase + ".md)"
 		end
 
+		if prop[:isCollection] 
+			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].chomp('[]').downcase + ".md)"
+		end
+			
 		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + PIPE) + NEWLINE
 	end
 

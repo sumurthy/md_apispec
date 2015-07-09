@@ -24,6 +24,7 @@ An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid.||
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Gets the range object specified by the address or name.||
 |[getUsedRange()](#getusedrange)|[Range](range.md)|The used range is the smallest range than encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 
 ## API Specification
 
@@ -44,7 +45,7 @@ void
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 worksheet.activate();
@@ -72,7 +73,7 @@ void
 
 ```js
 var wSheetName = 'Sheet1';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 worksheet.delete();
 ctx.executeAsync();
@@ -103,7 +104,7 @@ worksheetObject.getCell(row, column);
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var cell = worksheet.getCell(0,0);
 ctx.load(cell);
@@ -137,7 +138,7 @@ Below example uses range address to get the range object.
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 ctx.load(range);
@@ -151,7 +152,7 @@ Below example uses a named-range to get the range object.
 ```js
 var sheetName = "Sheet1";
 var rangeName = 'MyRange';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeName);
 ctx.load(range);
 ctx.executeAsync().then(function() {
@@ -178,7 +179,7 @@ None
 #### Examples
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 var usedRange = worksheet.getUsedRange();
@@ -191,11 +192,34 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
+```
+
+[Back](#methods)
+
 #### Getter and Setter Examples
 
 Get worksheet properties based on sheet name.
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 ctx.executeAsync().then(function () {
@@ -206,7 +230,7 @@ ctx.executeAsync().then(function () {
 Set worksheet position. 
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 worksheet.position = 0;

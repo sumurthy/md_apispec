@@ -3,7 +3,7 @@
 Below example uses binding object to get the associated range.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
 var range = binding.getRange();
 ctx.load(range);
@@ -14,7 +14,7 @@ ctx.executeAsync().then(function() {
 
 ### getTable()
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 
 var binding = ctx.workbook.bindings.getItemAt(0);
 var table = binding.getTable();
@@ -27,7 +27,7 @@ ctx.executeAsync().then(function () {
 ### getText()
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
 var text = binding.getText();
 ctx.load(text);
@@ -39,7 +39,7 @@ ctx.executeAsync().then(function() {
 ### Getter 
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var binding = ctx.workbook.bindings.getItemAt(0);
 ctx.load(binding);
 ctx.executeAsync().then(function() {

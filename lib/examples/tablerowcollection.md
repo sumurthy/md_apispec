@@ -3,7 +3,7 @@
 ### add(index: number, values: object[][])
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample", "Values", "For", "New", "Row"]];
 var row = tables.getItem("Table1").rows.add(null, values);
@@ -15,7 +15,7 @@ ctx.executeAsync().then(function () {
 ### getItemAt(index: number)
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tablerow = ctx.workbook.tables.getItem('Table1').rows.getItemAt(0);
 ctx.load(tablerow);
 ctx.executeAsync().then(function () {
@@ -25,7 +25,7 @@ ctx.executeAsync().then(function () {
 ### Getter tablerow Collection
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var tablerows = ctx.workbook.tables.getItem('Table1').rows;
 ctx.load(tablerows);
 ctx.executeAsync().then(function () {

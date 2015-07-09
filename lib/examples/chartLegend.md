@@ -4,7 +4,7 @@
 Get the `position` of Chart Legend from Chart1
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var legend = chart.legend;
@@ -17,7 +17,7 @@ ctx.executeAsync().then(function () {
 Set to show legend of Chart1 and make it on top of the chart.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.legend.visible = true;

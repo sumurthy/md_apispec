@@ -26,6 +26,7 @@ Represents a chart object in a workbook.
 | Method           | Return Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |[delete()](#delete)|void|Deletes the chart object.||
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
 |[setData(sourceData: string, seriesBy: string)](#setdatasourcedata-string-seriesby-string)|void|Resets the source data for the chart.||
 
 ## API Specification
@@ -46,13 +47,36 @@ void
 
 #### Examples
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.delete();
 ctx.executeAsync().then(function () {
 		Console.log"Chart Deleted");
 });
+```
+
+[Back](#methods)
+
+### load(param: object)
+Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
+
+#### Syntax
+```js
+object.load(param);
+```
+
+#### Parameters
+| Parameter       | Type    |Description|
+|:---------------|:--------|:----------|
+|param|object|Optional. Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.|
+
+#### Returns
+void
+
+#### Examples
+```js
+
 ```
 
 [Back](#methods)
@@ -79,7 +103,7 @@ void
 Set the `sourceData` to be "A1:B4" and `seriesBy` to be "Columns"
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 var sourceData = "A1:B4";
 
@@ -94,7 +118,7 @@ ctx.executeAsync();
 Get a chart named "Chart1"
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 ctx.load(chart);
 ctx.executeAsync().then(function () {
@@ -105,7 +129,7 @@ ctx.executeAsync().then(function () {
 Update a chart including renaming, positioning and resizing.
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 chart.name="New Name";
 chart.top = 100;
@@ -117,7 +141,7 @@ ctx.executeAsync();
 Rename the chart to new name, resize the chart to 200 points in both height and weight. Move Chart1 to 100 points to the top and left. 
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
 
 chart.name="New Name";	

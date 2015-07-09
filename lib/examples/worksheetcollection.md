@@ -4,7 +4,7 @@
 
 ```js
 var wSheetName = 'Sample Name';
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.add(wSheetName);
 ctx.load(worksheet);
 ctx.executeAsync().then(function () {
@@ -16,7 +16,7 @@ ctx.executeAsync().then(function () {
 
 ```js
 hellow!!!
-var ctx = new Excel.ExcelClientContext(); 
+var ctx = new Excel.RequestContext(); 
 var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
 ctx.load(activeWorksheet);
 ctx.executeAsync().then(function () {
@@ -27,7 +27,7 @@ ctx.executeAsync().then(function () {
 ### getItem(index: string)
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var wSheetName = 'Sheet1'; 
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 ctx.load(worksheet);
@@ -40,7 +40,7 @@ ctx.executeAsync().then(function () {
 
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheets = ctx.workbook.worksheets;
 ctx.load(worksheets);
 ctx.executeAsync().then(function () {
@@ -54,7 +54,7 @@ ctx.executeAsync().then(function () {
 ##### Getting the number of worksheets
 
 ```js
-var ctx = new Excel.ExcelClientContext();
+var ctx = new Excel.RequestContext();
 var worksheets = ctx.workbook.worksheets;
 ctx.load(tables);
 ctx.executeAsync().then(function () {
