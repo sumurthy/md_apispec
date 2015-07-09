@@ -183,11 +183,11 @@ module SpecMaker
 			if (exampleLine.chomp.strip.downcase.include? "getter") || (exampleLine.chomp.strip.downcase.include? "setter")
 				getterOrSetterFound = true
 					if (exampleLine.chomp.strip.downcase.include? "getter") && (exampleLine.chomp.strip.downcase.include? "setter")
-						@mdlines.push HEADER4 + GETTERSETTER + NEWLINE 
+						@mdlines.push HEADER3 + GETTERSETTER + NEWLINE 
 					elsif (exampleLine.chomp.strip.downcase.include? "getter") 
-						@mdlines.push HEADER4 + GETTER + NEWLINE
+						@mdlines.push HEADER3 + GETTER + NEWLINE
 					else
-						@mdlines.push HEADER4 + SETTER + NEWLINE
+						@mdlines.push HEADER3 + SETTER + NEWLINE
 					end
 				next
 			end
