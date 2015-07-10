@@ -8,31 +8,11 @@ require 'json'
 
 module SpecMaker
 
-	# Iterate over all the resource JSON files.
-	LOG_FILE = '../../logs/genMdFiles_log.txt'
-	begin
-		File.delete(LOG_FILE)
-	rescue => err
-	    #Ignore this error
-	end
-	@mdlines = []
-
-	@logger = Logger.new(LOG_FILE)
-	@logger.level = Logger::DEBUG
-	@resource = ''
-
-	ENUMS = 'jsonFiles/enums/enums.json'
-
-	### 
-	# Load up all the known existing enums.
-	##
-	@enumHash = {}
-	@enumHash = JSON.parse File.read(ENUMS)
-	@gsType = ''
-	#JSON_SOURCE_FOLDER = "jsonFiles"
-	JSON_SOURCE_FOLDER = 'C:\Users\suramam\Git\wip\lib\jsonFiles'
-	MARKDOWN_OUTPUT_FOLDER = "markdowns/"
-	EXAMPLES_FOLDER = "examples/"
+	# Initialize 
+	JSON_SOURCE_FOLDER = "../../inputJsonFiles"	
+	ENUMS = JSON_SOURCE_FOLDER + '/enums/enums.json'
+	MARKDOWN_OUTPUT_FOLDER = "../../outputMarkdowns/"
+	EXAMPLES_FOLDER = "../../api-examples-to-merge/"
 	HEADER1 = '# '
 	HEADER2 = '## '
 	HEADER3 = '### '
@@ -46,21 +26,58 @@ module SpecMaker
 	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
 	PIPE = '|'
 	TWONEWLINES = "\n\n"
-	PROPERTY_HEADER = "| Property       | Type    |Description|Notes |" + NEWLINE
+	PROPERTY_HEADER = "| Property	   | Type	|Description|Notes |" + NEWLINE
 	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|:-----|" + NEWLINE
-	PARAM_HEADER = "| Parameter       | Type    |Description|" + NEWLINE
+	PARAM_HEADER = "| Parameter	   | Type	|Description|" + NEWLINE
 	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
 
-	RELATIONSHIP_HEADER = "| Relationship | Type    |Description|Notes |" + NEWLINE
-	METHOD_HEADER = "| Method           | Return Type    |Description|Notes |" + NEWLINE
-	SIMPLETYPES = %w[int string object object[][] double bool number void]
-	
+	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|Notes |" + NEWLINE
+	METHOD_HEADER = "| Method		   | Return Type	|Description|Notes |" + NEWLINE
+	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
+
+	# Log file
+	LOG_FOLDER = '../../logs'
+	Dir.mkdir(LOG_FOLDER) unless File.exists?(LOG_FOLDER)
+
+	if File.exists?("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
+		File.delete("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
+	end
+	@logger = Logger.new("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
+	@logger.level = Logger::DEBUG
+	# End log file
+
+	# Create markdown folder if it doesn't already exist
+	Dir.mkdir(MARKDOWN_OUTPUT_FOLDER) unless File.exists?(MARKDOWN_OUTPUT_FOLDER)	
+
+	if !File.exists?(JSON_SOURCE_FOLDER)
+		@logger.fatal("JSON Resource File folder does not exist. Aborting")
+		abort("*** FATAL ERROR *** Input JSON resource folder: #{JSON_SOURCE_FOLDER} doesn't exist. Correct and re-run." )
+	end
+
+	if !File.exists?(EXAMPLES_FOLDER)
+		@logger.warn("API examples folder does not exist")
+	end		
+
+	## 
+	# Load up all the known existing enums.
+	###
+	@enumHash = {}
+	begin
+		@enumHash = JSON.parse File.read(ENUMS)
+	rescue => err
+		@logger.warn("JSON Enumeration input file doesn't exist: #{@current_object}")
+	end
+
+	@mdlines = []
+	@resource = ''
+	@gsType = ''
+
 	def self.uncapitalize (str="")
 		if str.length > 0
-	    	str[0, 1].downcase + str[1..-1]
-	    else
-	    	str
-	    end
+			str[0, 1].downcase + str[1..-1]
+		else
+			str
+		end
 	end
 
 	# Write properties and methods to the final array.
@@ -226,7 +243,7 @@ module SpecMaker
 		@jsonHash = JSON.parse(item, {:symbolize_names => true})
 		# Obtain the resource name. Read the examples file, if it exists. 
 		@resource = uncapitalize(@jsonHash[:name])
-		@logger.debug(".")	
+		@logger.debug("")	
 		@logger.debug("...............Report for: #{@resource}...........")	
 
 		example_lines = ''
@@ -237,7 +254,7 @@ module SpecMaker
 			@gsType = determine_getter_setter_type example_lines
 			@exampleFileFound = true
 		rescue => err
-			@logger.error("....Example File does not exist for: #{@current_object}")
+			@logger.error("....Example File does not exist for: #{@resource}")
 		end
 
 		@logger.debug("....Example Staus: Found example for #{@gsType}....")	
@@ -277,7 +294,7 @@ module SpecMaker
 			isMethod = true
 		end
 
-		@logger.debug("....Is there: property: #{isProperty}, relationship: #{isRelation}, method: #{isMethod} ..........")	
+		@logger.debug("....Is there: property?: #{isProperty}, relationship?: #{isRelation}, method?: #{isMethod} ..........")	
 
 		# Add property table. 	
 
@@ -343,7 +360,7 @@ module SpecMaker
 			methods.each do |mtd|
 				push_method_details mtd, example_lines
 			end
-	        
+			
 		end
 		if @gsType != 'none' && @gsType != '' 
 			push_getter_setters example_lines
@@ -358,15 +375,16 @@ module SpecMaker
 	end
 
 	# Main loop. 
+	processed_files = 0
 	Dir.foreach(JSON_SOURCE_FOLDER) do |item|
 		next if item == '.' or item == '..'
 		fullpath = JSON_SOURCE_FOLDER + '/' + item.downcase
 
 		if File.file?(fullpath)
 			convert_to_spec File.read(fullpath)
+			processed_files = processed_files + 1
 		end
-
-		
 	end
-	puts "*** Run Completed ***"
+	puts ""
+	puts "*** OK. Processed #{processed_files} input files. Check #{File.expand_path(LOG_FOLDER)} folder for results. ***"
 end
