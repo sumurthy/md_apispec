@@ -32,6 +32,9 @@ Output files location with relation to the program file:
 
 * Fill out the JSON source files, enums JSON file, and examples .md files in the correct locations. 
 * Change directory to lib/ (inside repository folder)
+
+### Step-4: Run and examine output
+
 * Run the command `genMarkdown` at the command prompt (Windows OS) or `ruby markdownFromJSON.rb` (*nix). 
 * Examine the output folder.
 
