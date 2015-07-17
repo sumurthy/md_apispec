@@ -10,7 +10,7 @@ This library provides:
 
 ### Step-1: Copy the repository
 * Install Ruby v > 2.0. 
-* Clone the repository. 
+* Fork and clone the repository. 
 
 ### Step-2: Know the input and output location
 
