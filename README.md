@@ -15,7 +15,7 @@ This library provides:
 ### Step-2: Know the input and output location
 
 Program name: 
-* `{local_directory}/md_apispec/lib/markdownFromJSON.rb` 
+* `{local_directory}/md_apispec/lib/jsMarkdownFromJSON.rb` 
 
 Input files location with relation to the program file: 
 
@@ -35,7 +35,7 @@ Output files location with relation to the program file:
 
 ### Step-4: Run and examine output
 
-* Run the command `genMarkdown` at the command prompt (Windows OS) or `ruby markdownFromJSON.rb` (*nix). 
+* Run the command `generateJsMarkdowns` at the command prompt (Windows OS) or `ruby jsMarkdownFromJSON.rb` (*nix). 
 * Examine the output folder.
 
 ## Version
