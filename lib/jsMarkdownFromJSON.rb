@@ -258,20 +258,17 @@ module SpecMaker
 			@logger.error("....Example File does not exist for: #{@resource}")
 		end
 
-		@logger.debug("....Example Staus: Found example for #{@gsType}....")	
-		if @gsType != 'getterandsetter' 
-			@logger.warn("....Either Getter or Setter or both not found : [#{@gsType} found] for #{@resource}  ") 
-		end
 		propreties = @jsonHash[:properties]
-
-		if propreties != nil && propreties.length > 1 
+		if propreties 
 			propreties = propreties.sort_by { |v| v[:name] }
 		end
+
 		methods = @jsonHash[:methods]
-		if methods != nil && methods.length > 1 
+		if methods 
 			methods = methods.sort_by { |v| v[:name] }
 		end
 
+		header_name = @jsonHash[:isCollection] ? "List #{@jsonHash[:collectionOf]}" : "Get #{@jsonHash[:name]}"
 		@mdlines.push HEADER1 + @jsonHash[:name] + TWONEWLINES
 		@mdlines.push @jsonHash[:description] + TWONEWLINES
 
