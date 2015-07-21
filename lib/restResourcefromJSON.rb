@@ -12,7 +12,8 @@ module SpecMaker
 	# JSON_SOURCE_FOLDER = "../../inputJsonFiles"	
 	JSON_SOURCE_FOLDER = "c:/Users/suramam/git/wip/lib/jsonFiles"
 	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
-	MARKDOWN_OUTPUT_FOLDER = "../../outputMarkdownsRest/resources/"
+	MARKDOWN_RESOURCE_FOLDER = "../../outputMarkdownsRest/resources/"
+	MARKDOWN_API_FOLDER = "../../outputMarkdownsRest/api/"
 	EXAMPLES_FOLDER = "../../rest-api-examples-to-merge/"
 	HEADER1 = '# '
 	HEADER2 = '## '
@@ -32,8 +33,13 @@ module SpecMaker
 	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|" + NEWLINE
 	TASKS_HEADER = "| Task		   | Return Type	|Description|" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
-
 	SKIP_TASKS = %w[getItem getItemAt load]
+
+	@resources_files_created = 0
+	@get_list_files_created = 0
+	@patch_files_created = 0
+	@method_files_created = 0
+
 	# Log file
 	LOG_FOLDER = '../../logs'
 	Dir.mkdir(LOG_FOLDER) unless File.exists?(LOG_FOLDER)
@@ -46,7 +52,7 @@ module SpecMaker
 	# End log file
 
 	# Create markdown folder if it doesn't already exist
-	Dir.mkdir(MARKDOWN_OUTPUT_FOLDER) unless File.exists?(MARKDOWN_OUTPUT_FOLDER)	
+	Dir.mkdir(MARKDOWN_RESOURCE_FOLDER) unless File.exists?(MARKDOWN_RESOURCE_FOLDER)	
 
 	if !File.exists?(JSON_SOURCE_FOLDER)
 		@logger.fatal("JSON Resource File folder does not exist. Aborting")
@@ -87,9 +93,9 @@ module SpecMaker
 		appendEnum = ''
 		if (prop[:enumNameJs] != nil) && (@enumHash.has_key? prop[:enumNameJs])
 			if @enumHash[prop[:enumNameJs]].values[0] == "" || @enumHash[prop[:enumNameJs]].values[0] == nil
-				appendEnum = " Possible values are: " + @enumHash[prop[:enumNameJs]].keys.join(', ') + "."
+				appendEnum = " Possible values are: `" + @enumHash[prop[:enumNameJs]].keys.join('`, `') + "`."
 			else
-				appendEnum = " Possible values are: " + @enumHash[prop[:enumNameJs]].map{|k,v| "`#{k}` #{v}"}.join(',') 
+				appendEnum = " Possible values are: `" + @enumHash[prop[:enumNameJs]].map{|k,v| "`#{k}` #{v}"}.join(',') 
 			end
 			finalDesc = finalDesc + appendEnum
 		end
@@ -123,12 +129,130 @@ module SpecMaker
 		dataTypePlusLink = (dataTypePlusLink == 'void') ? 'None' : dataTypePlusLink
 
 		# Add anchor links to method. 
-		str = method[:signature].strip
-		replacements = [ [" ", "-"], ["[", ""], ["]", ""],["(", ""], [")", ""], [",", ""], [":", ""] ]				
-		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
-		restfulTask = method[:name].start_with?('get') ? ('Get ' + method[:restfulName]) : method[:name]
-		methodPlusLink = "[" + restfulTask.strip.capitalize + "](#" + str.downcase + ")"
+		restfulTask = method[:name].start_with?('get') ? ('Get ' + method[:restfulName]) : method[:name].capitalize
+		methodPlusLink = "[" + restfulTask.strip + "](" + @jsonHash[:name].downcase + "_" + method[:name].downcase + ".md)"
 		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE) + NEWLINE
+	end
+
+	def self.create_get_method
+		getMethodLines = []
+		# Header and description
+		realHeader = @jsonHash[:isCollection] ? ('List ' + @jsonHash[:collectionOf]) : ('Get ' + @jsonHash[:name])
+		getMethodLines.push HEADER1 + realHeader + TWONEWLINES
+
+		if @jsonHash[:isCollection] 
+			getMethodLines.push "Retrieve a list of #{@jsonHash[:collectionOf].downcase} objects."  + NEWLINE
+		else
+			getMethodLines.push "Retrieve the properties and relationships of #{@jsonHash[:name].downcase} object."  + NEWLINE
+		end
+
+		# HTTP request
+		getMethodLines.push HEADER2 + "HTTP request" + NEWLINE
+		getMethodLines.push '```http' + NEWLINE
+		httpGetArray = @jsonHash[:restPath].map {|a| "GET " + a}
+		getMethodLines.push httpGetArray.join("\n") + NEWLINE
+		getMethodLines.push  '```' + TWONEWLINES
+
+		#Query parameters 
+		getMethodLines.push HEADER2 + "Optional query parameters" + NEWLINE
+		getMethodLines.push "You can use the OData query parameters to restrict the shape of the objects returned from this call." + NEWLINE
+
+		#Optional request headers  
+		getMethodLines.push HEADER2 + "Optional request headers" + NEWLINE
+		getMethodLines.push "| Name       | Type | Description|" + NEWLINE
+		getMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
+		getMethodLines.push "| if-none-match | etag  | If this request header is included and the eTag provided matches the current tag on the file, an `HTTP 304 Not Modified` response is returned. |"
+
+		#Request body
+		getMethodLines.push HEADER2 + "Request body" + NEWLINE
+		getMethodLines.push "Do not supply a request body for this method." + NEWLINE
+
+		#Respone body
+		getMethodLines.push HEADER2 + "Response" + NEWLINE
+		if @jsonHash[:isCollection] 
+			getMethodLines.push "This method returns collection of [#{@jsonHash[:collectionOf]}](../resources/#{@jsonHash[:collectionOf].downcase}.md) objects in the response body."  + NEWLINE
+		else
+			getMethodLines.push "This method returns [#{@jsonHash[:name]}](../resources/#{@jsonHash[:name].downcase}.md) object in the response body."  + NEWLINE
+		end
+
+		#Example
+		getMethodLines.push HEADER2 + "Example" + NEWLINE
+		getMethodLines.push HEADER3 + "HTTP request" + NEWLINE
+		getMethodLines.push HEADER3 + "Response" + NEWLINE
+
+		# Write the output file. 
+		fileName = @jsonHash[:isCollection] ? "#{@jsonHash[:name].downcase}_list.md" : "#{@jsonHash[:name].downcase}_get.md"
+		outfile = MARKDOWN_API_FOLDER + fileName
+		file=File.new(outfile,'w')
+		getMethodLines.each do |line|
+			file.write line
+		end
+		@get_list_files_created = @get_list_files_created + 1
+	end
+
+	def self.create_patch_method (propreties=[])
+		patchMethodLines = []
+		# Header and description
+	
+		patchMethodLines.push HEADER1 + "Update #{@jsonHash[:name]}"  + TWONEWLINES
+		patchMethodLines.push "Update the properties of #{@jsonHash[:name].downcase} object."  + NEWLINE
+
+		# HTTP request
+		patchMethodLines.push HEADER2 + "HTTP request" + NEWLINE
+		patchMethodLines.push '```http' + NEWLINE
+		httpPatchArray = @jsonHash[:restPath].map {|a| "PATCH " + a}
+		patchMethodLines.push httpPatchArray.join("\n") + NEWLINE
+		patchMethodLines.push  '```' + TWONEWLINES
+
+		#Request headers  
+		patchMethodLines.push HEADER2 + "Optional request headers" + NEWLINE
+		patchMethodLines.push "| Name       | Type | Description|" + NEWLINE
+		patchMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
+		patchMethodLines.push "| if-match   | etag  | If this request header is included and the eTag provided does not match the current eTag on the folder, a `412 Precondition Failed` response is returned. Send '*' to by-pass the check.|" + NEWLINE
+		patchMethodLines.push "| x-session-token   | string  | The edit session token required to join the edit session maintained by Excel server. Refer to session management API for details.|" + NEWLINE
+		patchMethodLines.push NEWLINE
+		
+		#Request body
+		patchMethodLines.push HEADER2 + "Request body" + NEWLINE
+		patchMethodLines.push "In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed." + NEWLINE
+		patchMethodLines.push NEWLINE
+
+		patchMethodLines.push PROPERTY_HEADER + TABLE_2ND_LINE 
+		propreties.each do |prop|
+			if !prop[:isReadOnly]
+		   		finalDesc = prop[:description]
+				appendEnum = ''
+				if (prop[:enumNameJs] != nil) && (@enumHash.has_key? prop[:enumNameJs])
+					if @enumHash[prop[:enumNameJs]].values[0] == "" || @enumHash[prop[:enumNameJs]].values[0] == nil
+						appendEnum = " Possible values are: `" + @enumHash[prop[:enumNameJs]].keys.join('`, `') + "`."
+					else
+						appendEnum = " Possible values are: " + @enumHash[prop[:enumNameJs]].map{|k,v| "`#{k}` #{v}"}.join(',') 
+					end
+					finalDesc = finalDesc + appendEnum
+				end				
+				patchMethodLines.push (PIPE + prop[:name] + PIPE + prop[:dataType]  + PIPE + finalDesc + PIPE ) + NEWLINE
+			end
+		end
+		patchMethodLines.push NEWLINE
+
+		#Respone body
+		patchMethodLines.push HEADER2 + "Response" + NEWLINE
+		patchMethodLines.push "This method returns updated [#{@jsonHash[:name]}](../resources/#{@jsonHash[:name].downcase}.md) object in the response body."  + NEWLINE
+
+		#Example
+		patchMethodLines.push HEADER2 + "Example" + NEWLINE
+		patchMethodLines.push HEADER3 + "HTTP request" + NEWLINE
+		patchMethodLines.push HEADER3 + "Response" + NEWLINE
+
+		# Write the output file. 
+		fileName = "#{@jsonHash[:name].downcase}_update.md"  
+		outfile = MARKDOWN_API_FOLDER + fileName
+		file=File.new(outfile,'w')
+		patchMethodLines.each do |line|
+			file.write line
+		end
+		@patch_files_created = @patch_files_created + 1
+
 	end
 
 	# Conversion to specification 
@@ -217,19 +341,22 @@ module SpecMaker
 			@mdlines.push NEWLINE + TASKS_HEADER + TABLE_2ND_LINE 
 			if isProperty
 				if @jsonHash[:isCollection]
-					@mdlines.push "| List | #{@jsonHash[:collectionOf]}[]|Get #{uncapitalize @jsonHash[:collectionOf]} object collection. |" + NEWLINE
+					@mdlines.push "| [List](../api/#{@jsonHash[:name].downcase}_list.md) | #{@jsonHash[:collectionOf]}[]|Get #{uncapitalize @jsonHash[:collectionOf]} object collection. |" + NEWLINE
 				else
-					@mdlines.push "| Get metadata | #{@jsonHash[:name]} |Read properties and relationships of #{uncapitalize @jsonHash[:name]} object.|" + NEWLINE
+					@mdlines.push "| [Get metadata](../api/#{@jsonHash[:name].downcase}_get.md) | #{@jsonHash[:name]} |Read properties and relationships of #{uncapitalize @jsonHash[:name]} object.|" + NEWLINE
 				end
+				create_get_method
 			end
+
 			if patchable
-				@mdlines.push "| Update | #{@jsonHash[:name]}	|Update #{uncapitalize @jsonHash[:name]} object. |" + NEWLINE
+				@mdlines.push "| [Update](../api/#{@jsonHash[:name].downcase}_update.md) | #{@jsonHash[:name]}	|Update #{uncapitalize @jsonHash[:name]} object. |" + NEWLINE
+				create_patch_method propreties
 			end
 		end
 
 		if isMethod
 			methods.each do |mtd|
-				@logger.debug("....Processing method: #{mtd[:name]} ..........")						
+				@logger.debug("....Processing method: #{mtd[:name]} ..........")					
 				push_method mtd
 			end
 		else
@@ -237,11 +364,12 @@ module SpecMaker
 		end	
 
 		# Write the output file. 
-		outfile = MARKDOWN_OUTPUT_FOLDER + @resource.downcase + '.md'
+		outfile = MARKDOWN_RESOURCE_FOLDER + @resource.downcase + '.md'
 		file=File.new(outfile,'w')
 		@mdlines.each do |line|
 			file.write line
 		end
+		@resources_files_created = @resources_files_created + 1
 	end
 
 	# Main loop. 
@@ -257,4 +385,9 @@ module SpecMaker
 	end
 	puts ""
 	puts "*** OK. Processed #{processed_files} input files. Check #{File.expand_path(LOG_FOLDER)} folder for results. ***"
+	puts "*** @resources_files_created #{@resources_files_created}"
+	puts "*** @get_list_files_created #{@get_list_files_created} "
+	puts "*** @patch_files_created #{@patch_files_created}"
+	puts "*** @method_files_created #{@method_files_created}"
+
 end
