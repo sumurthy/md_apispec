@@ -19,14 +19,14 @@ Program name:
 
 Input files location with relation to the program file: 
 
-* `{local_directory}/inputJsonFiles/*.json` (Required. One JSON file per resource. Refer to inputJsonFiles for a sample.)
-* `{local_directory}/inputJsonFiles/enums/enums.json` (optiional. Needed for enum value expansion the description and data-type override for enum parameters/properties.)
-* `{local_directory}/api-examples-to-merge/*.md` (optional. The file name (not the extension) should match the resource file name. Example: worksheet.json and worksheet.md)
+* `{local_directory}/md_apispec/inputJsonFiles/*.json` (Required. One JSON file per resource. Refer to inputJsonFiles for a sample.)
+* `{local_directory}/md_apispec/inputJsonFiles/settings/enums.json` (optiional. Needed for enum value expansion the description and data-type override for enum parameters/properties.)
+* `{local_directory}/md_apispec/js-api-examples-to-merge/*.md` (optional. The file name (not the extension) should match the resource file name. Example: worksheet.json and worksheet.md)
 
 Output files location with relation to the program file: 
 
-* `{local_directory}/outputMarkdowns` (this is where the output markdown spec is generated. The output file name matches the resource name. Example: worksheet.md)
-* `{local_directory}/logs/*_log.txt` (single log file with warning, debug and error messages. File name matches the program name.)
+* `{local_directory}/md_apispec/outputMarkdowns` (this is where the output markdown spec is generated. The output file name matches the resource name. Example: worksheet.md)
+* `{local_directory}/md_apispec/logs/*_log.txt` (single log file with warning, debug and error messages. File name matches the program name.)
 
 ### Step-3: Provide input files
 
