@@ -1,0 +1,172 @@
+{
+  "name": "Table",
+  "description": "Represents an Excel table.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": [
+    "/workbook/bindings/{id}/table",
+    "/workbook/tables/{id|name}",
+    "/workbook/worksheets/{id|name}/tables/{id|name}"
+  ],
+  "info": {
+    "version": "1.0",
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API for June fork"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "int",
+      "description": "Returns a value that uniquely identifies the table in a given workbook. The value of the identifier remains the same even when the table is renamed.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Name of the table.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showHeaders",
+      "dataType": "bool",
+      "description": "Indicates whether the header row is visible or not. This value can be set to show or remove the header row.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "showTotals",
+      "dataType": "bool",
+      "description": "Indicates whether the total row is visible or not. This value can be set to show or remove the total row.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "style",
+      "dataType": "string",
+      "description": "Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "columns",
+      "dataType": "TableColumnCollection",
+      "description": "Represents a collection of all the columns in the table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "rows",
+      "dataType": "TableRowCollection",
+      "description": "Represents a collection of all the rows in the table.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getRange",
+      "returnType": "Range",
+      "description": "Gets the range object associated with the entire table.",
+      "syntax": "tableObject.getRange();",
+      "signature": "getRange()",
+      "restfulName": "Range",
+      "notes": null,
+      "restReturnCode": "200",
+      "parameters": null
+    },
+    {
+      "name": "getHeaderRowRange",
+      "returnType": "Range",
+      "description": "Gets the range object associated with header row of the table.",
+      "syntax": "tableObject.getHeaderRowRange();",
+      "signature": "getHeaderRowRange()",
+      "restfulName": "HeaderRowRange",
+      "notes": null,
+      "restReturnCode": "200",
+      "parameters": null
+    },
+    {
+      "name": "getDataBodyRange",
+      "returnType": "Range",
+      "description": "Gets the range object associated with the data body of the table.",
+      "syntax": "tableObject.getDataBodyRange();",
+      "signature": "getDataBodyRange()",
+      "restfulName": "DataBodyRange",
+      "notes": null,
+      "restReturnCode": "200",
+      "parameters": null
+    },
+    {
+      "name": "getTotalRowRange",
+      "returnType": "Range",
+      "description": "Gets the range object associated with totals row of the table.",
+      "syntax": "tableObject.getTotalRowRange();",
+      "signature": "getTotalRowRange()",
+      "restfulName": "TotalRowRange",
+      "notes": null,
+      "restReturnCode": "200",
+      "parameters": null
+    },
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the table.",
+      "syntax": "tableObject.delete();",
+      "signature": "delete()",
+      "restfulName": "Delete",
+      "notes": null,
+      "restReturnCode": "204",
+      "parameters": null
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

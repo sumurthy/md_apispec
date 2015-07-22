@@ -28,7 +28,7 @@ module SpecMaker
 	PROPERTY_HEADER = "| Property	   | Type	|Description|" + NEWLINE
 	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|" + NEWLINE
 	PARAM_HEADER = "| Parameter	   | Type	|Description|" + NEWLINE
-	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|" + NEWLINE
+	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:-----------|" + NEWLINE
 
 	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|" + NEWLINE
 	TASKS_HEADER = "| Task		   | Return Type	|Description|" + NEWLINE
@@ -114,7 +114,7 @@ module SpecMaker
 		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE ) + NEWLINE
 	end
 
-	# Write methods to the final array.
+	# Write methods to the final array (in resource file).
 	def self.push_method (method = {})
 		# Skip JS methods
 		if SKIP_TASKS.include? method[:name] 	
@@ -130,8 +130,101 @@ module SpecMaker
 
 		# Add anchor links to method. 
 		restfulTask = method[:name].start_with?('get') ? ('Get ' + method[:restfulName]) : method[:name].capitalize
-		methodPlusLink = "[" + restfulTask.strip + "](" + @jsonHash[:name].downcase + "_" + method[:name].downcase + ".md)"
+		methodPlusLink = "[" + restfulTask.strip + "](../api/" + @jsonHash[:name].downcase + "_" + method[:name].downcase + ".md)"
 		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE) + NEWLINE
+		create_action_and_function method
+	end
+
+	# Create separate actions and functions file 
+	def self.create_action_and_function (method = {})
+		actionLines = []
+		
+		# Header and description	
+		actionLines.push HEADER1 + "#{@jsonHash[:name]}: #{method[:restfulName]}"  + TWONEWLINES
+		actionLines.push "#{method[:description]}"  + NEWLINE
+
+		# HTTP request
+		actionLines.push HEADER2 + "HTTP request" + NEWLINE
+		actionLines.push '```http' + NEWLINE
+		if method[:name].start_with?('get')
+			httpActionArray = @jsonHash[:restPath].map {|a| "GET " + a + "/#{method[:name]}"}
+		else
+			if method[:name] == 'delete' && !method[:parameters]  
+				puts "#{method[:name]} -- #{method[:parameters]} #{@jsonHash[:name]}"
+				httpActionArray = @jsonHash[:restPath].map {|a| "DELETE " + a + "/#{method[:name]}"}
+			else
+				httpActionArray = @jsonHash[:restPath].map {|a| "POST " + a + "/#{method[:name]}"}				
+			end
+		end
+		actionLines.push httpActionArray.join("\n") + NEWLINE
+		actionLines.push  '```' + TWONEWLINES
+
+		#Request headers  
+		if method[:name].start_with?('get')
+		else
+			actionLines.push HEADER2 + "Optional request headers" + NEWLINE
+			actionLines.push "| Name       | Type | Description|" + NEWLINE
+			actionLines.push "|:-----------|:------|:----------|" + NEWLINE
+			actionLines.push "| x-session-token   | string  | The edit session token required to join the edit session maintained by Excel server. Refer to session management API for details.|" + NEWLINE
+		end
+		actionLines.push NEWLINE
+		
+		#Request body
+		actionLines.push HEADER2 + "Request body" + NEWLINE
+	
+		# Provide parameters: 
+		if method[:parameters] !=nil  			
+			actionLines.push "In the request body, provide a JSON object that with the following parameters." + TWONEWLINES
+			actionLines.push PARAM_HEADER + TABLE_2ND_LINE_PARAM 
+			method[:parameters].each do |param|
+				# Append optional and enum possible values (if applicable).
+				finalPDesc = param[:isRequired] ? param[:description] : 'Optional. ' + param[:description]
+				appendEnum = ''
+				if (param[:enumNameJs] != nil) && (@enumHash.has_key? param[:enumNameJs])
+
+					if @enumHash[param[:enumNameJs]].values[0] == "" || @enumHash[param[:enumNameJs]].values[0] == nil
+						appendEnum = " " + " Possible values are: " + @enumHash[param[:enumNameJs]].keys.join(', ')  
+					else
+						appendEnum = " Possible values are: " + @enumHash[param[:enumNameJs]].map{|k,v| "`#{k}` #{v}"}.join(',')
+					end
+					finalPDesc = finalPDesc + appendEnum
+				end
+				actionLines.push (PIPE + param[:name] + PIPE + param[:dataType] + PIPE + finalPDesc + PIPE) + NEWLINE	
+			end
+		else
+			actionLines.push "Do not supply a request body for this method." + NEWLINE
+			actionLines.push NEWLINE
+		end
+
+		actionLines.push NEWLINE
+
+		#Respone body
+		actionLines.push HEADER2 + "Response" + NEWLINE
+
+		if SIMPLETYPES.include? method[:returnType]
+			dataTypePlusLink = method[:returnType]
+		else			
+			dataTypePlusLink = "[" + method[:returnType] + "](../resources/" + method[:returnType].downcase + ".md)"
+		end
+		if method[:returnType] == 'void'
+			actionLines.push "This method does not return anything in the response body."  + NEWLINE
+		else
+			actionLines.push "This method returns #{dataTypePlusLink} object in the response body."  + NEWLINE
+		end
+		#Example
+		actionLines.push HEADER2 + "Example" + NEWLINE
+		actionLines.push HEADER3 + "HTTP request" + NEWLINE
+		actionLines.push HEADER3 + "Response" + NEWLINE
+
+		# Write the output file. 
+		fileName = "#{@jsonHash[:name].downcase}_#{method[:name].downcase}.md"
+		outfile = MARKDOWN_API_FOLDER + fileName
+
+		file=File.new(outfile,'w')
+		actionLines.each do |line|
+			file.write line
+		end		
+		@method_files_created = @method_files_created + 1
 	end
 
 	def self.create_get_method
@@ -157,11 +250,11 @@ module SpecMaker
 		getMethodLines.push HEADER2 + "Optional query parameters" + NEWLINE
 		getMethodLines.push "You can use the OData query parameters to restrict the shape of the objects returned from this call." + NEWLINE
 
-		#Optional request headers  
-		getMethodLines.push HEADER2 + "Optional request headers" + NEWLINE
-		getMethodLines.push "| Name       | Type | Description|" + NEWLINE
-		getMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
-		getMethodLines.push "| if-none-match | etag  | If this request header is included and the eTag provided matches the current tag on the file, an `HTTP 304 Not Modified` response is returned. |"
+		# #Optional request headers  
+		# getMethodLines.push HEADER2 + "Optional request headers" + NEWLINE
+		# getMethodLines.push "| Name       | Type | Description|" + NEWLINE
+		# getMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
+		# getMethodLines.push "| if-none-match | etag  | If this request header is included and the eTag provided matches the current tag on the file, an `HTTP 304 Not Modified` response is returned. |" + NEWLINE
 
 		#Request body
 		getMethodLines.push HEADER2 + "Request body" + NEWLINE
@@ -192,8 +285,8 @@ module SpecMaker
 
 	def self.create_patch_method (propreties=[])
 		patchMethodLines = []
-		# Header and description
-	
+
+		# Header and description	
 		patchMethodLines.push HEADER1 + "Update #{@jsonHash[:name]}"  + TWONEWLINES
 		patchMethodLines.push "Update the properties of #{@jsonHash[:name].downcase} object."  + NEWLINE
 
@@ -208,7 +301,6 @@ module SpecMaker
 		patchMethodLines.push HEADER2 + "Optional request headers" + NEWLINE
 		patchMethodLines.push "| Name       | Type | Description|" + NEWLINE
 		patchMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
-		patchMethodLines.push "| if-match   | etag  | If this request header is included and the eTag provided does not match the current eTag on the folder, a `412 Precondition Failed` response is returned. Send '*' to by-pass the check.|" + NEWLINE
 		patchMethodLines.push "| x-session-token   | string  | The edit session token required to join the edit session maintained by Excel server. Refer to session management API for details.|" + NEWLINE
 		patchMethodLines.push NEWLINE
 		
@@ -302,9 +394,8 @@ module SpecMaker
 		@logger.debug("....Is there: property?: #{isProperty}, relationship?: #{isRelation}, method?: #{isMethod} ..........")	
 
 		# Add property table. 	
+		@mdlines.push HEADER2 + 'Properties' + NEWLINE
 		if isProperty
-			@mdlines.push HEADER2 + 'Properties' + NEWLINE
-			
 			@mdlines.push PROPERTY_HEADER + TABLE_2ND_LINE 
 			propreties.each do |prop|
 				if !prop[:isRelationship]
@@ -319,8 +410,6 @@ module SpecMaker
 		# Add Relationship table. 
 		@mdlines.push NEWLINE
 		@mdlines.push HEADER2 + 'Relationships' + NEWLINE
-
-
 		if isRelation
 			@mdlines.push RELATIONSHIP_HEADER + TABLE_2ND_LINE 
 			propreties.each do |prop|
