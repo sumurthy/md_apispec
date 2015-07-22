@@ -6,16 +6,16 @@ Encapsulates the format properties for the chart data labels.
 None
 
 ## Relationships
-| Relationship | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|fill|[ChartFill](chartfill.md)|Represents the fill format of the current chart data label. Read-only.||
-|font|[ChartFont](chartfont.md)|Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.||
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|fill|[ChartFill](chartfill.md)|Represents the fill format of the current chart data label. Read-only.|
+|font|[ChartFont](chartfont.md)|Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 

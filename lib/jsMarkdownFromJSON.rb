@@ -27,13 +27,13 @@ module SpecMaker
 	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
 	PIPE = '|'
 	TWONEWLINES = "\n\n"
-	PROPERTY_HEADER = "| Property	   | Type	|Description|Notes |" + NEWLINE
-	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|:-----|" + NEWLINE
+	PROPERTY_HEADER = "| Property	   | Type	|Description" + NEWLINE
+	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|" + NEWLINE
 	PARAM_HEADER = "| Parameter	   | Type	|Description|" + NEWLINE
 	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:----------|" + NEWLINE
 
-	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|Notes |" + NEWLINE
-	METHOD_HEADER = "| Method		   | Return Type	|Description|Notes |" + NEWLINE
+	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|" + NEWLINE
+	METHOD_HEADER = "| Method		   | Return Type	|Description|" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
 
 	# Log file
@@ -106,7 +106,7 @@ module SpecMaker
 			dataTypePlusLink = "[" + prop[:dataType] + "](" + prop[:dataType].chomp('[]').downcase + ".md)"
 		end
 			
-		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE + PIPE) + NEWLINE
+		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE) + NEWLINE
 	end
 
 	# Write methods to the final array.
@@ -123,7 +123,7 @@ module SpecMaker
 		replacements = [ [" ", "-"], ["[", ""], ["]", ""],["(", ""], [")", ""], [",", ""], [":", ""] ]				
 		replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}
 		methodPlusLink = "[" + method[:signature].strip + "](#" + str.downcase + ")"
-		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE+PIPE) + NEWLINE
+		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE) + NEWLINE
 	end
 
 	# Write methods details and parameters to the final array.	

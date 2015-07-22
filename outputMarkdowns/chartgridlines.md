@@ -3,20 +3,20 @@
 Represents major or minor gridlines on a chart axis.
 
 ## [Properties](#getter-and-setter-examples)
-| Property	   | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|visible|bool|Boolean value representing if the axis gridlines are visible or not.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|visible|bool|Boolean value representing if the axis gridlines are visible or not.|
 
 ## Relationships
-| Relationship | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|format|[ChartGridlinesFormat](chartgridlinesformat.md)|Represents the formatting of chart gridlines. Read-only.||
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|format|[ChartGridlinesFormat](chartgridlinesformat.md)|Represents the formatting of chart gridlines. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 

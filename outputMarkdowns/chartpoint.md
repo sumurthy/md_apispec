@@ -3,20 +3,20 @@
 Represents a point of a series in a chart.
 
 ## Properties
-| Property	   | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|value|object|Returns the value of a chart point. Read-only.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|value|object|Returns the value of a chart point. Read-only.|
 
 ## Relationships
-| Relationship | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point. Read-only.||
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|format|[ChartPointFormat](chartpointformat.md)|Encapsulates the format properties chart point. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 

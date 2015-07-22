@@ -3,10 +3,10 @@
 A collection of all the chart objects on a worksheet.
 
 ## [Properties](#getter-examples)
-| Property	   | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|count|int|Returns the number of charts in the worksheet. Read-only.||
-|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|count|int|Returns the number of charts in the worksheet. Read-only.|
+|items|[Chart[]](chart.md)|A collection of chart objects. Read-only.|
 
 ## Relationships
 None
@@ -14,13 +14,13 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)|[Chart](chart.md)|Creates a new chart.||
-|[getItem(id: string)](#getitemid-string)|[Chart](chart.md)|Gets a chart using its ID.||
-|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.||
-|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)|[Chart](chart.md)|Creates a new chart.|
+|[getItem(id: string)](#getitemid-string)|[Chart](chart.md)|Gets a chart using its ID.|
+|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|
+|[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 

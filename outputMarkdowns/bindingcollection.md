@@ -3,10 +3,10 @@
 Represents the collection of all the binding objects that are part of the workbook.
 
 ## [Properties](#getter-examples)
-| Property	   | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|count|int|Returns the number of bindings in the collection. Read-only.||
-|items|[Binding[]](binding.md)|A collection of binding objects. Read-only.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|count|int|Returns the number of bindings in the collection. Read-only.|
+|items|[Binding[]](binding.md)|A collection of binding objects. Read-only.|
 
 ## Relationships
 None
@@ -14,11 +14,11 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.||
-|[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Gets a binding object by ID.|
+|[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Gets a binding object based on its position in the items array.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 

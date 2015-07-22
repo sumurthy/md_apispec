@@ -6,15 +6,15 @@ Encapsulates the format properties for chart gridlines.
 None
 
 ## Relationships
-| Relationship | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|line|[ChartLineFormat](chartlineformat.md)|Represents chart line formatting. Read-only.||
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|line|[ChartLineFormat](chartlineformat.md)|Represents chart line formatting. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 

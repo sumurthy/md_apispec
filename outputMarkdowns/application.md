@@ -3,9 +3,9 @@
 Represents the Excel application that manages the workbook.
 
 ## [Properties](#getter-examples)
-| Property	   | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation.,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation.,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|
 
 ## Relationships
 None
@@ -13,10 +13,10 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalculate all currently opened workbooks in Excel.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
@@ -42,6 +42,8 @@ var ctx = new Excel.RequestContext();
 ctx.workbook.application.calculate('Full');
 ctx.executeAsync();
 ```
+
+
 [Back](#methods)
 
 ### load(param: object)

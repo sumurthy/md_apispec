@@ -3,10 +3,10 @@
 Represents a collection of all the columns that are part of the table.
 
 ## [Properties](#getter-examples)
-| Property	   | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|count|int|Returns the number of columns in the table. Read-only.||
-|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|count|int|Returns the number of columns in the table. Read-only.|
+|items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.|
 
 ## Relationships
 None
@@ -14,12 +14,12 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableColumn](tablecolumn.md)|Adds a new column to the table.||
-|[getItem(id: object)](#getitemid-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.||
-|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|
+|[getItem(id: object)](#getitemid-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|
+|[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 

@@ -6,15 +6,15 @@ Represents formatting object for chart points.
 None
 
 ## Relationships
-| Relationship | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|fill|[ChartFill](chartfill.md)|Represents the fill format of a chart, which includes interiorbackground formating information. Read-only.||
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|fill|[ChartFill](chartfill.md)|Represents the fill format of a chart, which includes interiorbackground formating information. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 

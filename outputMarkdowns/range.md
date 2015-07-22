@@ -3,45 +3,45 @@
 Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 
 ## [Properties](#getter-and-setter-examples)
-| Property	   | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.||
-|addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.||
-|cellCount|int|Number of cells in the range. Read-only.||
-|columnCount|int|Represents the total number of columns in the range. Read-only.||
-|columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.||
-|formulas|object[][]|Represents the formula in A1-style notation.||
-|formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.||
-|numberFormat|object[][]|Represents Excel's number format code for the given cell.||
-|rowCount|int|Returns the total number of rows in the range. Read-only.||
-|rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.||
-|text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.||
-|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.||
+| Property	   | Type	|Description
+|:---------------|:--------|:----------|
+|address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.|
+|addressLocal|string|Represents range reference for the specified range in the language of the user. Read-only.|
+|cellCount|int|Number of cells in the range. Read-only.|
+|columnCount|int|Represents the total number of columns in the range. Read-only.|
+|columnIndex|int|Represents the column number of the first cell in the range. Zero-indexed. Read-only.|
+|formulas|object[][]|Represents the formula in A1-style notation.|
+|formulasLocal|object[][]|Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English "=SUM(A1, 1.5)" formula would become "=SUMME(A1; 1,5)" in German.|
+|numberFormat|object[][]|Represents Excel's number format code for the given cell.|
+|rowCount|int|Returns the total number of rows in the range. Read-only.|
+|rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.|
+|text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|
+|values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|
 
 ## Relationships
-| Relationship | Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.||
-|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.||
+| Relationship | Type	|Description|
+|:---------------|:--------|:----------|
+|format|[RangeFormat](rangeformat.md)|Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties. Read-only.|
+|worksheet|[Worksheet](worksheet.md)|The worksheet containing the current range. Read-only.|
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.||
-|[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.||
-|[getBoundingRect(anotherRange: object)](#getboundingrectanotherrange-object)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".||
-|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.||
-|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.||
-|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range.||
-|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range.||
-|[getIntersection(anotherRange: object)](#getintersectionanotherrange-object)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.||
-|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.||
-|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.||
-|[getUsedRange()](#getusedrange)|[Range](range.md)|Returns the used range of the given range object.||
-|[insert(shift: string)](#insertshift-string)|void|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space.||
-|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.||
-|[select()](#select)|void|Selects the specified range in the Excel UI.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|
+|[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|
+|[getBoundingRect(anotherRange: object)](#getboundingrectanotherrange-object)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|
+|[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.|
+|[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.|
+|[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range.|
+|[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range.|
+|[getIntersection(anotherRange: object)](#getintersectionanotherrange-object)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.|
+|[getOffsetRange(rowOffset: number, columnOffset: number)](#getoffsetrangerowoffset-number-columnoffset-number)|[Range](range.md)|Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.|
+|[getRow(row: number)](#getrowrow-number)|[Range](range.md)|Gets a row contained in the range.|
+|[getUsedRange()](#getusedrange)|[Range](range.md)|Returns the used range of the given range object.|
+|[insert(shift: string)](#insertshift-string)|void|Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space.|
+|[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
+|[select()](#select)|void|Selects the specified range in the Excel UI.|
 
 ## API Specification
 

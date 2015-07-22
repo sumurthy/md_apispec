@@ -11,10 +11,10 @@ None
 
 ## Methods
 
-| Method		   | Return Type	|Description|Notes |
-|:---------------|:--------|:----------|:-----|
-|[clear()](#clear)|void|Clear the fill color of a chart element.||
-|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.||
+| Method		   | Return Type	|Description|
+|:---------------|:--------|:----------|
+|[clear()](#clear)|void|Clear the fill color of a chart element.|
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Sets the fill formatting of a chart element to a uniform color.|
 
 ## API Specification
 
