@@ -143,7 +143,7 @@
       "signature": "delete()",
       "restfulName": "Delete",
       "notes": null,
-      "restReturnCode": "204",
+      "httpSuccessResponse": "204 No Content",
       "parameters": null
     },
     {
@@ -154,7 +154,7 @@
       "signature": "setData(sourceData: string, seriesBy: string)",
       "restfulName": "SetData",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "sourceData",
@@ -167,7 +167,7 @@
         {
           "name": "seriesBy",
           "dataType": "string",
-          "description": "Specifies the way columns or rows are used as data series on the chart.",
+          "description": "Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.",
           "isRequired": false,
           "enumNameJs": "Excel.ChartSeriesBy",
           "notes": null

@@ -44,7 +44,7 @@
       "signature": "getItem(id: string)",
       "restfulName": "Item",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "id",
@@ -64,7 +64,7 @@
       "signature": "getItemAt(index: number)",
       "restfulName": "ItemAt",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "index",

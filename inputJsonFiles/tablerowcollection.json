@@ -46,7 +46,7 @@
       "signature": "getItemAt(index: number)",
       "restfulName": "ItemAt",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "index",
@@ -66,7 +66,7 @@
       "signature": "add(index: number, values: object[][])",
       "restfulName": "Add",
       "notes": null,
-      "restReturnCode": "201",
+      "httpSuccessResponse": "201 Created",
       "parameters": [
         {
           "name": "index",

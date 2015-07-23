@@ -12,7 +12,7 @@ module SpecMaker
 	JSON_SOURCE_FOLDER = "../inputJsonFiles"	
 	## JSON_SOURCE_FOLDER =  "C:/Users/suramam/Git/wip/lib/jsonFiles"
 	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
-	MARKDOWN_OUTPUT_FOLDER = "../outputMarkdowns/"
+	MARKDOWN_OUTPUT_FOLDER = "../jsOutputMarkdowns/"
 	EXAMPLES_FOLDER = "../js-api-examples-to-merge/"
 	HEADER1 = '# '
 	HEADER2 = '## '
@@ -37,7 +37,7 @@ module SpecMaker
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
 
 	# Log file
-	LOG_FOLDER = '../logs'
+	LOG_FOLDER = '../../logs'
 	Dir.mkdir(LOG_FOLDER) unless File.exists?(LOG_FOLDER)
 
 	if File.exists?("#{LOG_FOLDER}/#{$PROGRAM_NAME.chomp('.rb')}.txt")
@@ -176,7 +176,7 @@ module SpecMaker
 					exampleFound = true
 					next
 				end
-				if exampleFound && exampleLine.include?('#')
+				if exampleFound && exampleLine.start_with?('#')
 					break
 				end
 				if exampleFound	 

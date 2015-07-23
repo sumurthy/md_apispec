@@ -79,6 +79,17 @@
       "notes": null
     },
     {
+      "name": "valueTypes",
+      "dataType": "string",
+      "description": "Represents the type of data of each cell.",
+      "isReadOnly": true,
+      "enumNameJs": "Excel.RangeValueType",
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
       "name": "format",
       "dataType": "RangeFormat",
       "description": "Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties.",
@@ -187,12 +198,12 @@
       "signature": "clear(applyTo: string)",
       "restfulName": "Clear",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "applyTo",
           "dataType": "string",
-          "description": "Determines the type of clear action. Possible values are: All (default option), Format, and Content.",
+          "description": "Determines the type of clear action.",
           "isRequired": false,
           "enumNameJs": "Excel.ClearApplyTo",
           "notes": null
@@ -207,12 +218,12 @@
       "signature": "delete(shift: string)",
       "restfulName": "Delete",
       "notes": null,
-      "restReturnCode": "204",
+      "httpSuccessResponse": "204 No Content",
       "parameters": [
         {
           "name": "shift",
           "dataType": "string",
-          "description": "Specifies which way to shift the cells. Possible values are: Up (default option) or Left.",
+          "description": "Specifies which way to shift the cells.",
           "isRequired": true,
           "enumNameJs": "Excel.DeleteShiftDirection",
           "notes": null
@@ -227,7 +238,7 @@
       "signature": "getEntireColumn()",
       "restfulName": "EntireColumn",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": null
     },
     {
@@ -238,7 +249,7 @@
       "signature": "getEntireRow()",
       "restfulName": "EntireRow",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": null
     },
     {
@@ -249,7 +260,7 @@
       "signature": "getBoundingRect(anotherRange: object)",
       "restfulName": "BoundingRect",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "anotherRange",
@@ -269,7 +280,7 @@
       "signature": "getCell(row: number, column: number)",
       "restfulName": "Cell",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "row",
@@ -297,7 +308,7 @@
       "signature": "getColumn(column: number)",
       "restfulName": "Column",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "column",
@@ -317,7 +328,7 @@
       "signature": "getIntersection(anotherRange: object)",
       "restfulName": "Intersection",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "anotherRange",
@@ -330,6 +341,39 @@
       ]
     },
     {
+      "name": "getLastCell",
+      "returnType": "Range",
+      "description": "Gets the last cell within the range. For example, the last cell of \"B2:D5\" is \"D5\".",
+      "syntax": "rangeObject.getLastCell();",
+      "signature": "getLastCell()",
+      "restfulName": "LastCell",
+      "notes": null,
+      "httpSuccessResponse": "200 OK",
+      "parameters": null
+    },
+    {
+      "name": "getLastColumn",
+      "returnType": "Range",
+      "description": "Gets the last column within the range. For example, the last column of \"B2:D5\" is \"D2:D5\".",
+      "syntax": "rangeObject.getLastColumn();",
+      "signature": "getLastColumn()",
+      "restfulName": "LastColumn",
+      "notes": null,
+      "httpSuccessResponse": "200 OK",
+      "parameters": null
+    },
+    {
+      "name": "getLastRow",
+      "returnType": "Range",
+      "description": "Gets the last row within the range. For example, the last row of \"B2:D5\" is \"B5:D5\".",
+      "syntax": "rangeObject.getLastRow();",
+      "signature": "getLastRow()",
+      "restfulName": "LastRow",
+      "notes": null,
+      "httpSuccessResponse": "200 OK",
+      "parameters": null
+    },
+    {
       "name": "getOffsetRange",
       "returnType": "Range",
       "description": "Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.",
@@ -337,7 +381,7 @@
       "signature": "getOffsetRange(rowOffset: number, columnOffset: number)",
       "restfulName": "OffsetRange",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "rowOffset",
@@ -365,7 +409,7 @@
       "signature": "getRow(row: number)",
       "restfulName": "Row",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "row",
@@ -379,18 +423,18 @@
     },
     {
       "name": "insert",
-      "returnType": "void",
-      "description": "Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space.",
+      "returnType": "Range",
+      "description": "Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.",
       "syntax": "rangeObject.insert(shift);",
       "signature": "insert(shift: string)",
       "restfulName": "Insert",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "shift",
           "dataType": "string",
-          "description": "Specifies which way to shift the cells. Can be one of the following: Down (default option) or Right.",
+          "description": "Specifies which way to shift the cells.",
           "isRequired": true,
           "enumNameJs": "Excel.InsertShiftDirection",
           "notes": null
@@ -405,7 +449,7 @@
       "signature": "select()",
       "restfulName": "Select",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": null
     },
     {
@@ -416,7 +460,7 @@
       "signature": "getUsedRange()",
       "restfulName": "UsedRange",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": null
     },
     {

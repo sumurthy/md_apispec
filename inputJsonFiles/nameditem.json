@@ -66,7 +66,7 @@
       "signature": "getRange()",
       "restfulName": "Range",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": null
     },
     {

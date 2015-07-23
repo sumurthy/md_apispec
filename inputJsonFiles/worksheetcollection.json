@@ -33,7 +33,7 @@
       "signature": "getActiveWorksheet()",
       "restfulName": "ActiveWorksheet",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": null
     },
     {
@@ -44,7 +44,7 @@
       "signature": "getItem(index: string)",
       "restfulName": "Item",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "index",
@@ -64,7 +64,7 @@
       "signature": "add(name: string)",
       "restfulName": "Add",
       "notes": null,
-      "restReturnCode": "201",
+      "httpSuccessResponse": "201 Created",
       "parameters": [
         {
           "name": "name",

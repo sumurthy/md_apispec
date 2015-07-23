@@ -39,32 +39,12 @@
     {
       "name": "getItem",
       "returnType": "Chart",
-      "description": "Gets a chart using its ID.",
-      "syntax": "chartCollectionObject.getItem(id);",
-      "signature": "getItem(id: string)",
-      "restfulName": "Item",
-      "notes": null,
-      "restReturnCode": "200",
-      "parameters": [
-        {
-          "name": "id",
-          "dataType": "string",
-          "description": "Id of the chart to be retrieved.",
-          "isRequired": true,
-          "enumNameJs": null,
-          "notes": null
-        }
-      ]
-    },
-    {
-      "name": "getItem",
-      "returnType": "Chart",
       "description": "Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.",
       "syntax": "chartCollectionObject.getItem(name);",
       "signature": "getItem(name: string)",
       "restfulName": "Item",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "name",
@@ -84,7 +64,7 @@
       "signature": "add(type: string, sourceData: string, seriesBy: string)",
       "restfulName": "Add",
       "notes": null,
-      "restReturnCode": "201",
+      "httpSuccessResponse": "201 Created",
       "parameters": [
         {
           "name": "type",
@@ -105,7 +85,7 @@
         {
           "name": "seriesBy",
           "dataType": "string",
-          "description": "Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.",
+          "description": "Specifies the way columns or rows are used as data series on the chart.",
           "isRequired": false,
           "enumNameJs": "Excel.ChartSeriesBy",
           "notes": null
@@ -120,7 +100,7 @@
       "signature": "getItemAt(index: number)",
       "restfulName": "ItemAt",
       "notes": null,
-      "restReturnCode": "200",
+      "httpSuccessResponse": "200 OK",
       "parameters": [
         {
           "name": "index",
