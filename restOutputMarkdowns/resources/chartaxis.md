@@ -22,5 +22,5 @@ Represents a single axis in a chart.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chartaxis_get.md) | ChartAxis |Read properties and relationships of chartAxis object.|
-| [Update](../api/chartaxis_update.md) | ChartAxis	|Update chartAxis object. |
+|[Get metadata](../api/chartaxis_get.md) | ChartAxis |Read properties and relationships of chartAxis object.|
+|[Update](../api/chartaxis_update.md) | ChartAxis	|Update chartAxis object. |

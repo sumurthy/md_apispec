@@ -12,8 +12,8 @@ module SpecMaker
 	# JSON_SOURCE_FOLDER = "../../inputJsonFiles"	
 	JSON_SOURCE_FOLDER = "c:/Users/suramam/git/wip/lib/jsonFiles"
 	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
-	MARKDOWN_RESOURCE_FOLDER = "../restOutputMarkdowns/resources/"
-	MARKDOWN_API_FOLDER = "../restOutputMarkdowns/api/"
+	MARKDOWN_RESOURCE_FOLDER = "../../outputMarkdownsRest/resources/"
+	MARKDOWN_API_FOLDER = "../../outputMarkdownsRest/api/"
 	EXAMPLES_FOLDER = "../../rest-api-examples-to-merge/"
 	HEADER1 = '# '
 	HEADER2 = '## '
@@ -28,13 +28,12 @@ module SpecMaker
 	PROPERTY_HEADER = "| Property	   | Type	|Description|" + NEWLINE
 	TABLE_2ND_LINE =  "|:---------------|:--------|:----------|" + NEWLINE
 	PARAM_HEADER = "| Parameter	   | Type	|Description|" + NEWLINE
-	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|:-----------|" + NEWLINE
+	TABLE_2ND_LINE_PARAM =  "|:---------------|:--------|" + NEWLINE
 
 	RELATIONSHIP_HEADER = "| Relationship | Type	|Description|" + NEWLINE
 	TASKS_HEADER = "| Task		   | Return Type	|Description|" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
 	SKIP_TASKS = %w[getItem getItemAt load]
-	SESSION_TOKEN_ROW = "| X-Session-Token   | string  | The Excel workbook session token required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|"
 
 	@resources_files_created = 0
 	@get_list_files_created = 0
@@ -115,7 +114,7 @@ module SpecMaker
 		@mdlines.push (PIPE + prop[:name] + PIPE + dataTypePlusLink + PIPE + finalDesc + PIPE ) + NEWLINE
 	end
 
-	# Write methods to the final array (in resource file).
+	# Write methods to the final array.
 	def self.push_method (method = {})
 		# Skip JS methods
 		if SKIP_TASKS.include? method[:name] 	
@@ -131,104 +130,8 @@ module SpecMaker
 
 		# Add anchor links to method. 
 		restfulTask = method[:name].start_with?('get') ? ('Get ' + method[:restfulName]) : method[:name].capitalize
-		methodPlusLink = "[" + restfulTask.strip + "](../api/" + @jsonHash[:name].downcase + "_" + method[:name].downcase + ".md)"
+		methodPlusLink = "[" + restfulTask.strip + "](" + @jsonHash[:name].downcase + "_" + method[:name].downcase + ".md)"
 		@mdlines.push (PIPE + methodPlusLink + PIPE + dataTypePlusLink + PIPE + method[:description] + PIPE) + NEWLINE
-		create_action_and_function method
-	end
-
-	# Create separate actions and functions file 
-	def self.create_action_and_function (method = {})
-		actionLines = []
-		
-		# Header and description	
-		actionLines.push HEADER1 + "#{@jsonHash[:name]}: #{method[:restfulName]}"  + TWONEWLINES
-		actionLines.push "#{method[:description]}"  + NEWLINE
-
-		# HTTP request
-		actionLines.push HEADER2 + "HTTP request" + NEWLINE
-		actionLines.push '```http' + NEWLINE
-		if method[:name].start_with?('get')
-			httpActionArray = @jsonHash[:restPath].map {|a| "GET " + a + "/#{method[:name]}"}
-		else
-			if method[:name] == 'delete' && !method[:parameters]  
-				httpActionArray = @jsonHash[:restPath].map {|a| "DELETE " + a }
-			else
-				httpActionArray = @jsonHash[:restPath].map {|a| "POST " + a + "/#{method[:name]}"}				
-			end
-		end
-		actionLines.push httpActionArray.join("\n") + NEWLINE
-		actionLines.push  '```' + NEWLINE
-
-		#Query parameters 
-		if method[:name].start_with?('get')
-			actionLines.push HEADER2 + "Optional query parameters" + NEWLINE
-			actionLines.push "You can use the [OData query parameters](odata-optional-query-parameters.md) to restrict the shape of the objects returned from this call." + NEWLINE
-		end
-
-		#Request headers  
-		actionLines.push HEADER2 + "Request headers" + NEWLINE
-		actionLines.push "| Name       | Type | Description|" + NEWLINE
-		actionLines.push "|:-----------|:------|:----------|" + NEWLINE
-		actionLines.push SESSION_TOKEN_ROW + NEWLINE
-		actionLines.push NEWLINE
-		
-		#Request body
-		actionLines.push HEADER2 + "Request body" + NEWLINE
-	
-		# Provide parameters: 
-		if method[:parameters] !=nil  			
-			actionLines.push "In the request body, provide a JSON object that with the following parameters." + TWONEWLINES
-			actionLines.push PARAM_HEADER + TABLE_2ND_LINE_PARAM 
-			method[:parameters].each do |param|
-				# Append optional and enum possible values (if applicable).
-				finalPDesc = param[:isRequired] ? param[:description] : 'Optional. ' + param[:description]
-				appendEnum = ''
-				if (param[:enumNameJs] != nil) && (@enumHash.has_key? param[:enumNameJs])
-
-					if @enumHash[param[:enumNameJs]].values[0] == "" || @enumHash[param[:enumNameJs]].values[0] == nil
-						appendEnum = " " + " Possible values are: " + @enumHash[param[:enumNameJs]].keys.join(', ')  
-					else
-						appendEnum = " Possible values are: " + @enumHash[param[:enumNameJs]].map{|k,v| "`#{k}` #{v}"}.join(',')
-					end
-					finalPDesc = finalPDesc + appendEnum
-				end
-				actionLines.push (PIPE + param[:name] + PIPE + param[:dataType] + PIPE + finalPDesc + PIPE) + NEWLINE	
-			end
-		else
-			actionLines.push "Do not supply a request body for this method." + NEWLINE
-			actionLines.push NEWLINE
-		end
-
-		actionLines.push NEWLINE
-
-		#Response body
-		actionLines.push HEADER2 + "Response" + NEWLINE
-
-		if SIMPLETYPES.include? method[:returnType]
-			dataTypePlusLink = method[:returnType]
-		else			
-			dataTypePlusLink = "[" + method[:returnType] + "](../resources/" + method[:returnType].downcase + ".md)"
-		end
-		if method[:returnType] == 'void'
-			actionLines.push "If successful, this method returns a `#{method[:httpSuccessResponse]}` response code. It does not return anything in the response body."  + NEWLINE
-		else
-			actionLines.push "If successful, this method returns a `#{method[:httpSuccessResponse]}` response code and #{dataTypePlusLink} object in the response body."  + NEWLINE
-		end
-
-		#Example
-		actionLines.push HEADER2 + "Example" + NEWLINE
-		actionLines.push HEADER3 + "HTTP request" + NEWLINE
-		actionLines.push HEADER3 + "Response" + NEWLINE
-
-		# Write the output file. 
-		fileName = "#{@jsonHash[:name].downcase}_#{method[:name].downcase}.md"
-		outfile = MARKDOWN_API_FOLDER + fileName
-
-		file=File.new(outfile,'w')
-		actionLines.each do |line|
-			file.write line
-		end		
-		@method_files_created = @method_files_created + 1
 	end
 
 	def self.create_get_method
@@ -252,24 +155,24 @@ module SpecMaker
 
 		#Query parameters 
 		getMethodLines.push HEADER2 + "Optional query parameters" + NEWLINE
-		getMethodLines.push "You can use the [OData query parameters](odata-optional-query-parameters.md) to restrict the shape of the objects returned from this call." + NEWLINE
+		getMethodLines.push "You can use the OData query parameters to restrict the shape of the objects returned from this call." + NEWLINE
 
-		# #Optional request headers  
-		# getMethodLines.push HEADER2 + "Optional request headers" + NEWLINE
-		# getMethodLines.push "| Name       | Type | Description|" + NEWLINE
-		# getMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
-		# getMethodLines.push "| if-none-match | etag  | If this request header is included and the eTag provided matches the current tag on the file, an `HTTP 304 Not Modified` response is returned. |" + NEWLINE
+		#Optional request headers  
+		getMethodLines.push HEADER2 + "Optional request headers" + NEWLINE
+		getMethodLines.push "| Name       | Type | Description|" + NEWLINE
+		getMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
+		getMethodLines.push "| if-none-match | etag  | If this request header is included and the eTag provided matches the current tag on the file, an `HTTP 304 Not Modified` response is returned. |"
 
 		#Request body
 		getMethodLines.push HEADER2 + "Request body" + NEWLINE
 		getMethodLines.push "Do not supply a request body for this method." + NEWLINE
 
-		#Response body
+		#Respone body
 		getMethodLines.push HEADER2 + "Response" + NEWLINE
 		if @jsonHash[:isCollection] 
-			getMethodLines.push "If successful, this method returns a `200 OK` response code and collection of [#{@jsonHash[:collectionOf]}](../resources/#{@jsonHash[:collectionOf].downcase}.md) objects in the response body."  + NEWLINE
+			getMethodLines.push "This method returns collection of [#{@jsonHash[:collectionOf]}](../resources/#{@jsonHash[:collectionOf].downcase}.md) objects in the response body."  + NEWLINE
 		else
-			getMethodLines.push "If successful, this method returns a `200 OK` response code and [#{@jsonHash[:name]}](../resources/#{@jsonHash[:name].downcase}.md) object in the response body."  + NEWLINE
+			getMethodLines.push "This method returns [#{@jsonHash[:name]}](../resources/#{@jsonHash[:name].downcase}.md) object in the response body."  + NEWLINE
 		end
 
 		#Example
@@ -289,8 +192,8 @@ module SpecMaker
 
 	def self.create_patch_method (propreties=[])
 		patchMethodLines = []
-
-		# Header and description	
+		# Header and description
+	
 		patchMethodLines.push HEADER1 + "Update #{@jsonHash[:name]}"  + TWONEWLINES
 		patchMethodLines.push "Update the properties of #{@jsonHash[:name].downcase} object."  + NEWLINE
 
@@ -305,7 +208,8 @@ module SpecMaker
 		patchMethodLines.push HEADER2 + "Optional request headers" + NEWLINE
 		patchMethodLines.push "| Name       | Type | Description|" + NEWLINE
 		patchMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
-		patchMethodLines.push SESSION_TOKEN_ROW  + NEWLINE
+		patchMethodLines.push "| if-match   | etag  | If this request header is included and the eTag provided does not match the current eTag on the folder, a `412 Precondition Failed` response is returned. Send '*' to by-pass the check.|" + NEWLINE
+		patchMethodLines.push "| x-session-token   | string  | The edit session token required to join the edit session maintained by Excel server. Refer to session management API for details.|" + NEWLINE
 		patchMethodLines.push NEWLINE
 		
 		#Request body
@@ -331,9 +235,9 @@ module SpecMaker
 		end
 		patchMethodLines.push NEWLINE
 
-		#Response body
+		#Respone body
 		patchMethodLines.push HEADER2 + "Response" + NEWLINE
-		patchMethodLines.push "If successful, this method returns a `200 OK` response code and updated [#{@jsonHash[:name]}](../resources/#{@jsonHash[:name].downcase}.md) object in the response body."  + NEWLINE
+		patchMethodLines.push "This method returns updated [#{@jsonHash[:name]}](../resources/#{@jsonHash[:name].downcase}.md) object in the response body."  + NEWLINE
 
 		#Example
 		patchMethodLines.push HEADER2 + "Example" + NEWLINE
@@ -398,8 +302,9 @@ module SpecMaker
 		@logger.debug("....Is there: property?: #{isProperty}, relationship?: #{isRelation}, method?: #{isMethod} ..........")	
 
 		# Add property table. 	
-		@mdlines.push HEADER2 + 'Properties' + NEWLINE
 		if isProperty
+			@mdlines.push HEADER2 + 'Properties' + NEWLINE
+			
 			@mdlines.push PROPERTY_HEADER + TABLE_2ND_LINE 
 			propreties.each do |prop|
 				if !prop[:isRelationship]
@@ -414,6 +319,8 @@ module SpecMaker
 		# Add Relationship table. 
 		@mdlines.push NEWLINE
 		@mdlines.push HEADER2 + 'Relationships' + NEWLINE
+
+
 		if isRelation
 			@mdlines.push RELATIONSHIP_HEADER + TABLE_2ND_LINE 
 			propreties.each do |prop|
@@ -434,15 +341,15 @@ module SpecMaker
 			@mdlines.push NEWLINE + TASKS_HEADER + TABLE_2ND_LINE 
 			if isProperty
 				if @jsonHash[:isCollection]
-					@mdlines.push "|[List](../api/#{@jsonHash[:name].downcase}_list.md) | #{@jsonHash[:collectionOf]}[]|Get #{uncapitalize @jsonHash[:collectionOf]} object collection. |" + NEWLINE
+					@mdlines.push "| [List](../api/#{@jsonHash[:name].downcase}_list.md) | #{@jsonHash[:collectionOf]}[]|Get #{uncapitalize @jsonHash[:collectionOf]} object collection. |" + NEWLINE
 				else
-					@mdlines.push "|[Get metadata](../api/#{@jsonHash[:name].downcase}_get.md) | #{@jsonHash[:name]} |Read properties and relationships of #{uncapitalize @jsonHash[:name]} object.|" + NEWLINE
+					@mdlines.push "| [Get metadata](../api/#{@jsonHash[:name].downcase}_get.md) | #{@jsonHash[:name]} |Read properties and relationships of #{uncapitalize @jsonHash[:name]} object.|" + NEWLINE
 				end
 				create_get_method
 			end
 
 			if patchable
-				@mdlines.push "|[Update](../api/#{@jsonHash[:name].downcase}_update.md) | #{@jsonHash[:name]}	|Update #{uncapitalize @jsonHash[:name]} object. |" + NEWLINE
+				@mdlines.push "| [Update](../api/#{@jsonHash[:name].downcase}_update.md) | #{@jsonHash[:name]}	|Update #{uncapitalize @jsonHash[:name]} object. |" + NEWLINE
 				create_patch_method propreties
 			end
 		end

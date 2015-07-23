@@ -16,4 +16,4 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [List](../api/chartseriescollection_list.md) | ChartSeries[]|Get chartSeries object collection. |
+|[List](../api/chartseriescollection_list.md) | ChartSeries[]|Get chartSeries object collection. |

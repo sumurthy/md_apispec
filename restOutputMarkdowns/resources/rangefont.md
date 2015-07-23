@@ -20,5 +20,5 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/rangefont_get.md) | RangeFont |Read properties and relationships of rangeFont object.|
-| [Update](../api/rangefont_update.md) | RangeFont	|Update rangeFont object. |
+|[Get metadata](../api/rangefont_get.md) | RangeFont |Read properties and relationships of rangeFont object.|
+|[Update](../api/rangefont_update.md) | RangeFont	|Update rangeFont object. |

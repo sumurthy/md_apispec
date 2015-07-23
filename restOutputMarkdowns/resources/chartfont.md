@@ -20,5 +20,5 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chartfont_get.md) | ChartFont |Read properties and relationships of chartFont object.|
-| [Update](../api/chartfont_update.md) | ChartFont	|Update chartFont object. |
+|[Get metadata](../api/chartfont_get.md) | ChartFont |Read properties and relationships of chartFont object.|
+|[Update](../api/chartfont_update.md) | ChartFont	|Update chartFont object. |

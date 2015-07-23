@@ -3,14 +3,14 @@
 Deletes the column from the table.
 ## HTTP request
 ```http
-DELETE /workbook/bindings/{id}/table/columns/{id|name}/delete
-DELETE /workbook/tables/{id|name}/columns/{id|name}/delete
-DELETE /workbook/worksheets/{id|name}/tables/{id|name}/columns/{id|name}/delete
+DELETE /workbook/bindings/{id}/table/columns/{id|name}
+DELETE /workbook/tables/{id|name}/columns/{id|name}
+DELETE /workbook/worksheets/{id|name}/tables/{id|name}/columns/{id|name}
 ```
-## Optional request headers
+## Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| x-session-token   | string  | The edit session token required to join the edit session maintained by Excel server. Refer to session management API for details.|
+| X-Session-Token   | string  | The Excel workbook session token required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|
 
 ## Request body
 Do not supply a request body for this method.

@@ -18,5 +18,5 @@ Represents a chart title object of a chart.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/charttitle_get.md) | ChartTitle |Read properties and relationships of chartTitle object.|
-| [Update](../api/charttitle_update.md) | ChartTitle	|Update chartTitle object. |
+|[Get metadata](../api/charttitle_get.md) | ChartTitle |Read properties and relationships of chartTitle object.|
+|[Update](../api/charttitle_update.md) | ChartTitle	|Update chartTitle object. |

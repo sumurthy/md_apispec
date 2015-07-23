@@ -18,8 +18,8 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/tablecolumn_get.md) | TableColumn |Read properties and relationships of tableColumn object.|
-| [Update](../api/tablecolumn_update.md) | TableColumn	|Update tableColumn object. |
+|[Get metadata](../api/tablecolumn_get.md) | TableColumn |Read properties and relationships of tableColumn object.|
+|[Update](../api/tablecolumn_update.md) | TableColumn	|Update tableColumn object. |
 |[Delete](../api/tablecolumn_delete.md)|None|Deletes the column from the table.|
 |[Get DataBodyRange](../api/tablecolumn_getdatabodyrange.md)|[Range](range.md)|Gets the range object associated with the data body of the column.|
 |[Get HeaderRowRange](../api/tablecolumn_getheaderrowrange.md)|[Range](range.md)|Gets the range object associated with the header row of the column.|

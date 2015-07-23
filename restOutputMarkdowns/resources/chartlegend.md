@@ -18,5 +18,5 @@ Represents the legend in a chart.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chartlegend_get.md) | ChartLegend |Read properties and relationships of chartLegend object.|
-| [Update](../api/chartlegend_update.md) | ChartLegend	|Update chartLegend object. |
+|[Get metadata](../api/chartlegend_get.md) | ChartLegend |Read properties and relationships of chartLegend object.|
+|[Update](../api/chartlegend_update.md) | ChartLegend	|Update chartLegend object. |

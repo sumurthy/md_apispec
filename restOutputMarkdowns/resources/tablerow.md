@@ -16,7 +16,7 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/tablerow_get.md) | TableRow |Read properties and relationships of tableRow object.|
-| [Update](../api/tablerow_update.md) | TableRow	|Update tableRow object. |
+|[Get metadata](../api/tablerow_get.md) | TableRow |Read properties and relationships of tableRow object.|
+|[Update](../api/tablerow_update.md) | TableRow	|Update tableRow object. |
 |[Delete](../api/tablerow_delete.md)|None|Deletes the row from the table.|
 |[Get Range](../api/tablerow_getrange.md)|[Range](range.md)|Returns the range object associated with the entire row.|

@@ -16,4 +16,4 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [List](../api/rangebordercollection_list.md) | RangeBorder[]|Get rangeBorder object collection. |
+|[List](../api/rangebordercollection_list.md) | RangeBorder[]|Get rangeBorder object collection. |

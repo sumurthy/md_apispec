@@ -29,8 +29,8 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/range_get.md) | Range |Read properties and relationships of range object.|
-| [Update](../api/range_update.md) | Range	|Update range object. |
+|[Get metadata](../api/range_get.md) | Range |Read properties and relationships of range object.|
+|[Update](../api/range_update.md) | Range	|Update range object. |
 |[Clear](../api/range_clear.md)|None|Clear range values, format, fill, border, etc.|
 |[Delete](../api/range_delete.md)|None|Deletes the cells associated with the range.|
 |[Get BoundingRect](../api/range_getboundingrect.md)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|

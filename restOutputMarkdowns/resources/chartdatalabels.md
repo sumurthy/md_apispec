@@ -23,5 +23,5 @@ Represents a collection of all the data labels on a chart point.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chartdatalabels_get.md) | ChartDataLabels |Read properties and relationships of chartDataLabels object.|
-| [Update](../api/chartdatalabels_update.md) | ChartDataLabels	|Update chartDataLabels object. |
+|[Get metadata](../api/chartdatalabels_get.md) | ChartDataLabels |Read properties and relationships of chartDataLabels object.|
+|[Update](../api/chartdatalabels_update.md) | ChartDataLabels	|Update chartDataLabels object. |

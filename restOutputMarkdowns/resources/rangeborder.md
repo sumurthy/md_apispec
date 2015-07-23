@@ -18,5 +18,5 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/rangeborder_get.md) | RangeBorder |Read properties and relationships of rangeBorder object.|
-| [Update](../api/rangeborder_update.md) | RangeBorder	|Update rangeBorder object. |
+|[Get metadata](../api/rangeborder_get.md) | RangeBorder |Read properties and relationships of rangeBorder object.|
+|[Update](../api/rangeborder_update.md) | RangeBorder	|Update rangeBorder object. |

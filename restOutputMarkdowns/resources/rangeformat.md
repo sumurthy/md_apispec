@@ -20,5 +20,5 @@ A format object encapsulating the range's font, fill, borders, alignment, and ot
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/rangeformat_get.md) | RangeFormat |Read properties and relationships of rangeFormat object.|
-| [Update](../api/rangeformat_update.md) | RangeFormat	|Update rangeFormat object. |
+|[Get metadata](../api/rangeformat_get.md) | RangeFormat |Read properties and relationships of rangeFormat object.|
+|[Update](../api/rangeformat_update.md) | RangeFormat	|Update rangeFormat object. |

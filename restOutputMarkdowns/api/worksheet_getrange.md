@@ -7,6 +7,10 @@ GET /workbook/worksheets/{id|name}/getRange
 ```
 ## Optional query parameters
 You can use the [OData query parameters](odata-optional-query-parameters.md) to restrict the shape of the objects returned from this call.
+## Request headers
+| Name       | Type | Description|
+|:-----------|:------|:----------|
+| X-Session-Token   | string  | The Excel workbook session token required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|
 
 ## Request body
 In the request body, provide a JSON object that with the following parameters.

@@ -17,5 +17,5 @@ Represents a series in a chart.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chartseries_get.md) | ChartSeries |Read properties and relationships of chartSeries object.|
-| [Update](../api/chartseries_update.md) | ChartSeries	|Update chartSeries object. |
+|[Get metadata](../api/chartseries_get.md) | ChartSeries |Read properties and relationships of chartSeries object.|
+|[Update](../api/chartseries_update.md) | ChartSeries	|Update chartSeries object. |

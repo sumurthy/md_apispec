@@ -15,5 +15,5 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/application_get.md) | Application |Read properties and relationships of application object.|
+|[Get metadata](../api/application_get.md) | Application |Read properties and relationships of application object.|
 |[Calculate](../api/application_calculate.md)|None|Recalculate all currently opened workbooks in Excel.|

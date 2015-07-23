@@ -16,4 +16,4 @@ Represents a point of a series in a chart.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chartpoint_get.md) | ChartPoint |Read properties and relationships of chartPoint object.|
+|[Get metadata](../api/chartpoint_get.md) | ChartPoint |Read properties and relationships of chartPoint object.|

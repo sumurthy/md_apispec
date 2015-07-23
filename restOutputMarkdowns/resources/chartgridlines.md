@@ -16,5 +16,5 @@ Represents major or minor gridlines on a chart axis.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chartgridlines_get.md) | ChartGridlines |Read properties and relationships of chartGridlines object.|
-| [Update](../api/chartgridlines_update.md) | ChartGridlines	|Update chartGridlines object. |
+|[Get metadata](../api/chartgridlines_get.md) | ChartGridlines |Read properties and relationships of chartGridlines object.|
+|[Update](../api/chartgridlines_update.md) | ChartGridlines	|Update chartGridlines object. |

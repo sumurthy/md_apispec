@@ -18,6 +18,6 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/nameditem_get.md) | NamedItem |Read properties and relationships of namedItem object.|
-| [Update](../api/nameditem_update.md) | NamedItem	|Update namedItem object. |
+|[Get metadata](../api/nameditem_get.md) | NamedItem |Read properties and relationships of namedItem object.|
+|[Update](../api/nameditem_update.md) | NamedItem	|Update namedItem object. |
 |[Get Range](../api/nameditem_getrange.md)|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.|

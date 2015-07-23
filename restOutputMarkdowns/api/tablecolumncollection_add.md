@@ -7,10 +7,10 @@ POST /workbook/bindings/{id}/table/columns/add
 POST /workbook/tables/{id|name}/columns/add
 POST /workbook/worksheets/{id|name}/tables/{id|name}/columns/add
 ```
-## Optional request headers
+## Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| x-session-token   | string  | The edit session token required to join the edit session maintained by Excel server. Refer to session management API for details.|
+| X-Session-Token   | string  | The Excel workbook session token required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|
 
 ## Request body
 In the request body, provide a JSON object that with the following parameters.

@@ -21,8 +21,8 @@ Represents an Excel table.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/table_get.md) | Table |Read properties and relationships of table object.|
-| [Update](../api/table_update.md) | Table	|Update table object. |
+|[Get metadata](../api/table_get.md) | Table |Read properties and relationships of table object.|
+|[Update](../api/table_update.md) | Table	|Update table object. |
 |[Delete](../api/table_delete.md)|None|Deletes the table.|
 |[Get DataBodyRange](../api/table_getdatabodyrange.md)|[Range](range.md)|Gets the range object associated with the data body of the table.|
 |[Get HeaderRowRange](../api/table_getheaderrowrange.md)|[Range](range.md)|Gets the range object associated with header row of the table.|

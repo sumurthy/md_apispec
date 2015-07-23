@@ -16,5 +16,5 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [List](../api/tablerowcollection_list.md) | TableRow[]|Get tableRow object collection. |
+|[List](../api/tablerowcollection_list.md) | TableRow[]|Get tableRow object collection. |
 |[Add](../api/tablerowcollection_add.md)|[TableRow](tablerow.md)|Adds a new row to the table.|

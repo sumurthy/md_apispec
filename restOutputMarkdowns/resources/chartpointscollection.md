@@ -16,4 +16,4 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [List](../api/chartpointscollection_list.md) | ChartPoint[]|Get chartPoint object collection. |
+|[List](../api/chartpointscollection_list.md) | ChartPoint[]|Get chartPoint object collection. |

@@ -16,5 +16,5 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [List](../api/chartcollection_list.md) | Chart[]|Get chart object collection. |
+|[List](../api/chartcollection_list.md) | Chart[]|Get chart object collection. |
 |[Add](../api/chartcollection_add.md)|[Chart](chart.md)|Creates a new chart.|

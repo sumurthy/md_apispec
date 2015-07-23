@@ -16,4 +16,4 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [List](../api/bindingcollection_list.md) | Binding[]|Get binding object collection. |
+|[List](../api/bindingcollection_list.md) | Binding[]|Get binding object collection. |

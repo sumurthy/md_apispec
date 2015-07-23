@@ -17,5 +17,5 @@ Represents the title of a chart axis.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chartaxistitle_get.md) | ChartAxisTitle |Read properties and relationships of chartAxisTitle object.|
-| [Update](../api/chartaxistitle_update.md) | ChartAxisTitle	|Update chartAxisTitle object. |
+|[Get metadata](../api/chartaxistitle_get.md) | ChartAxisTitle |Read properties and relationships of chartAxisTitle object.|
+|[Update](../api/chartaxistitle_update.md) | ChartAxisTitle	|Update chartAxisTitle object. |

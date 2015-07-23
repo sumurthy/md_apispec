@@ -15,6 +15,6 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chartlineformat_get.md) | ChartLineFormat |Read properties and relationships of chartLineFormat object.|
-| [Update](../api/chartlineformat_update.md) | ChartLineFormat	|Update chartLineFormat object. |
+|[Get metadata](../api/chartlineformat_get.md) | ChartLineFormat |Read properties and relationships of chartLineFormat object.|
+|[Update](../api/chartlineformat_update.md) | ChartLineFormat	|Update chartLineFormat object. |
 |[Clear](../api/chartlineformat_clear.md)|None|Clear the line format of a chart element.|

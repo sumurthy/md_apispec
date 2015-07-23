@@ -15,4 +15,4 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [List](../api/nameditemcollection_list.md) | NamedItem[]|Get namedItem object collection. |
+|[List](../api/nameditemcollection_list.md) | NamedItem[]|Get namedItem object collection. |

@@ -15,6 +15,6 @@ None
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/rangefill_get.md) | RangeFill |Read properties and relationships of rangeFill object.|
-| [Update](../api/rangefill_update.md) | RangeFill	|Update rangeFill object. |
+|[Get metadata](../api/rangefill_get.md) | RangeFill |Read properties and relationships of rangeFill object.|
+|[Update](../api/rangefill_update.md) | RangeFill	|Update rangeFill object. |
 |[Clear](../api/rangefill_clear.md)|None|Resets the range background.|

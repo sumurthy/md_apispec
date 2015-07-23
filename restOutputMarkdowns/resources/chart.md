@@ -25,7 +25,7 @@ Represents a chart object in a workbook.
 
 | Task		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-| [Get metadata](../api/chart_get.md) | Chart |Read properties and relationships of chart object.|
-| [Update](../api/chart_update.md) | Chart	|Update chart object. |
+|[Get metadata](../api/chart_get.md) | Chart |Read properties and relationships of chart object.|
+|[Update](../api/chart_update.md) | Chart	|Update chart object. |
 |[Delete](../api/chart_delete.md)|None|Deletes the chart object.|
 |[Setdata](../api/chart_setdata.md)|None|Resets the source data for the chart.|
