@@ -16,13 +16,13 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableRow](tablerow.md)|Adds a new row to the table.|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Adds a new row to the table.|
 |[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Gets a row based on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
-### add(index: number, values: object[][])
+### add(index: number, values: (boolean or string or number)[][])
 Adds a new row to the table.
 
 #### Syntax
@@ -34,7 +34,7 @@ tableRowCollectionObject.add(index, values);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Optional. Specifies the relative position of the new row. If null, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.|
-|values|object[][]|Optional. A 2-dimensional array of unformatted values of the table row.|
+|values|(boolean or string or number)[][]|Optional. A 2-dimensional array of unformatted values of the table row.|
 
 #### Returns
 [TableRow](tablerow.md)
@@ -46,7 +46,7 @@ var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample", "Values", "For", "New", "Row"]];
 var row = tables.getItem("Table1").rows.add(null, values);
-ctx.load(row);
+row.load(index);
 ctx.executeAsync().then(function () {
 	Console.log(row.index);
 });
@@ -75,7 +75,7 @@ tableRowCollectionObject.getItemAt(index);
 ```js
 var ctx = new Excel.RequestContext();
 var tablerow = ctx.workbook.tables.getItem('Table1').rows.getItemAt(0);
-ctx.load(tablerow);
+tablerow.load(name);
 ctx.executeAsync().then(function () {
 		Console.log(tablerow.name);
 });
@@ -111,7 +111,7 @@ void
 ```js
 var ctx = new Excel.RequestContext();
 var tablerows = ctx.workbook.tables.getItem('Table1').rows;
-ctx.load(tablerows);
+tablerows.load(items);
 ctx.executeAsync().then(function () {
 	Console.log("tablerows Count: " + tablerows.count);
 	for (var i = 0; i < tablerows.items.length; i++)

@@ -3,14 +3,14 @@
 Adds a new row to the table.
 ## HTTP request
 ```http
-POST /workbook/bindings/{id}/table/rows/add
-POST /workbook/tables/{id|name}/rows/add
-POST /workbook/worksheets/{id|name}/tables/{id|name}/rows/add
+POST /workbook/bindings/{id}/table/rows
+POST /workbook/tables/{id|name}/rows
+POST /workbook/worksheets/{id|name}/tables/{id|name}/rows
 ```
 ## Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Session-Token   | string  | The Excel workbook session token required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|
+| X-Session-Id   | string  | The Excel workbook session id required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|
 
 ## Request body
 In the request body, provide a JSON object that with the following parameters.

@@ -47,9 +47,22 @@ var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var borderName = 'EdgeTop';
 var border = range.format.borders.getItem(borderName);
-ctx.load(border);
+border.load(style);
 ctx.executeAsync().then(function () {
 		Console.log(border.style);
+});
+```
+
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.RequestContext();
+var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+var range = worksheet.getRange(rangeAddress);
+var border = ctx.workbook.borders.getItemAt(0);
+border.load(sideIndex);
+ctx.executeAsync().then(function () {
+		Console.log(border.sideIndex);
 });
 ```
 
@@ -80,7 +93,7 @@ var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var border = ctx.workbook.borders.getItemAt(0);
-ctx.load(border);
+border.load(sideIndex);
 ctx.executeAsync().then(function () {
 		Console.log(border.sideIndex);
 });
@@ -121,7 +134,7 @@ var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var borders = range.format.borders;
-ctx.load(borders);
+border.load(items);
 ctx.executeAsync().then(function () {
 	Console.log(borders.count);
 	for (var i = 0; i < borders.items.length; i++)

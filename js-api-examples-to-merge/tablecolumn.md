@@ -16,7 +16,7 @@ var tableName = 'Table1';
 var ctx = new Excel.RequestContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 var dataBodyRange = column.getDataBodyRange();
-ctx.load(dataBodyRange);
+dataBodyRange.load(address);
 ctx.executeAsync().then(function () {
 	Console.log(dataBodyRange.address);
 });
@@ -29,7 +29,7 @@ var tableName = 'Table1';
 var ctx = new Excel.RequestContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 var headerRowRange = columns.getHeaderRowRange();
-ctx.load(headerRowRange);
+headerRowRange.load(address);
 ctx.executeAsync().then(function () {
 	Console.log(headerRowRange.address);
 });
@@ -41,9 +41,9 @@ var tableName = 'Table1';
 var ctx = new Excel.RequestContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 var columnRange = columns.getRange();
-ctx.load(range);
+columnRange.load(address);
 ctx.executeAsync().then(function () {
-	Console.log(range.columnRange);
+	Console.log(columnRange.address);
 });
 ```
 
@@ -54,7 +54,7 @@ var tableName = 'Table1';
 var ctx = new Excel.RequestContext();
 var columns = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(0);
 var totalRowRange = columns.getTotalRowRange();
-ctx.load(totalRowRange);
+totalRowRange.load(address);
 ctx.executeAsync().then(function () {
 	Console.log(totalRowRange.address);
 });
@@ -66,7 +66,7 @@ ctx.executeAsync().then(function () {
 var tableName = 'Table1';
 var ctx = new Excel.RequestContext();
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItem(0);
-ctx.load(column);
+column.load(index);
 ctx.executeAsync().then(function () {
 	Console.log(column.index);
 });
@@ -78,7 +78,7 @@ var tables = ctx.workbook.tables;
 var newValues = [["New"], ["Values"], ["For"], ["New"], ["Column"]];
 var column = ctx.workbook.tables.getItem(tableName).tableColumns.getItemAt(2);
 column.values = newValues;
-ctx.load(column);
+column.load(values);
 ctx.executeAsync().then(function () {
 	Console.log(column.values);
 });

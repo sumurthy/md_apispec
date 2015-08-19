@@ -31,12 +31,12 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |:---------------|:--------|:----------|
 |[clear(applyTo: string)](#clearapplyto-string)|void|Clear range values, format, fill, border, etc.|
 |[delete(shift: string)](#deleteshift-string)|void|Deletes the cells associated with the range.|
-|[getBoundingRect(anotherRange: object)](#getboundingrectanotherrange-object)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|
+|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.|
 |[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Gets a column contained in the range.|
 |[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Gets an object that represents the entire column of the range.|
 |[getEntireRow()](#getentirerow)|[Range](range.md)|Gets an object that represents the entire row of the range.|
-|[getIntersection(anotherRange: object)](#getintersectionanotherrange-object)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.|
+|[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Gets the range object that represents the rectangular intersection of the given ranges.|
 |[getLastCell()](#getlastcell)|[Range](range.md)|Gets the last cell within the range. For example, the last cell of "B2:D5" is "D5".|
 |[getLastColumn()](#getlastcolumn)|[Range](range.md)|Gets the last column within the range. For example, the last column of "B2:D5" is "D2:D5".|
 |[getLastRow()](#getlastrow)|[Range](range.md)|Gets the last row within the range. For example, the last row of "B2:D5" is "B5:D5".|
@@ -111,7 +111,7 @@ ctx.executeAsync();
 
 [Back](#methods)
 
-### getBoundingRect(anotherRange: object)
+### getBoundingRect(anotherRange: Range or string)
 Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of "B2:C5" and "D10:E15" is "B2:E16".
 
 #### Syntax
@@ -122,7 +122,7 @@ rangeObject.getBoundingRect(anotherRange);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|anotherRange|object|The range object or address or range name.|
+|anotherRange|Range or string|The range object or address or range name.|
 
 #### Returns
 [Range](range.md)
@@ -135,7 +135,7 @@ var rangeAddress = "D4:G6";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 var range = range.getBoundingRect("G4:H8");
-ctx.load(range);
+range.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(range.address); // Prints Sheet1!D4:H8
 });
@@ -170,7 +170,7 @@ var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var cell = range.cell(0,0);
-ctx.load(cell);
+cell.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(cell.address);
 });
@@ -198,15 +198,16 @@ rangeObject.getColumn(column);
 #### Examples
 
 ```js
-var sheetName = "Sheet1";
+var sheetName = "Sheet19";
 var rangeAddress = "A1:F8";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getColumn(1);
-ctx.load(range);
+range.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(range.address); // prints Sheet1!B1:B8
 });
 ```
+
 
 [Back](#methods)
 
@@ -234,7 +235,7 @@ var rangeAddress = "D:F";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 var rangeEC = range.getEntireColumn();
-ctx.load(rangeEC);
+rangeEC.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(rangeEC.address);
 });
@@ -263,7 +264,7 @@ var rangeAddress = "D:F";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 var rangeER = range.getEntireRow();
-ctx.load(rangeER);
+rangeER.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(rangeER.address);
 });
@@ -273,7 +274,7 @@ The grid properties of the Range (values, numberFormat, formula) contains `null`
 
 [Back](#methods)
 
-### getIntersection(anotherRange: object)
+### getIntersection(anotherRange: Range or string)
 Gets the range object that represents the rectangular intersection of the given ranges.
 
 #### Syntax
@@ -284,7 +285,7 @@ rangeObject.getIntersection(anotherRange);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|anotherRange|object|The range object or range address that will be used to determine the intersection of ranges.|
+|anotherRange|Range or string|The range object or range address that will be used to determine the intersection of ranges.|
 
 #### Returns
 [Range](range.md)
@@ -296,7 +297,7 @@ var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getIntersection("D4:G6");
-ctx.load(range);
+range.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(range.address); // prints Sheet1!D4:F6
 });
@@ -320,9 +321,18 @@ None
 [Range](range.md)
 
 #### Examples
-```js
 
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.RequestContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastCell();
+range.load(address);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!F8
+});
 ```
+
 
 [Back](#methods)
 
@@ -341,9 +351,18 @@ None
 [Range](range.md)
 
 #### Examples
-```js
 
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.RequestContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastColumn();
+range.load(address);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!F1:F8
+});
 ```
+
 
 [Back](#methods)
 
@@ -362,9 +381,19 @@ None
 [Range](range.md)
 
 #### Examples
-```js
 
+```js
+var sheetName = "Sheet1";
+var rangeAddress = "A1:F8";
+var ctx = new Excel.RequestContext();
+var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getLastRow();
+range.load(address);
+ctx.executeAsync().then(function() {
+	Console.log(range.address); // prints Sheet1!A8:F8
+});
 ```
+
+
 
 [Back](#methods)
 
@@ -392,7 +421,7 @@ var sheetName = "Sheet1";
 var rangeAddress = "D4:F6";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getOffsetRange(-1,4);
-ctx.load(range);
+range.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(range.address); // prints Sheet1!H3:K5
 });
@@ -424,7 +453,7 @@ var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress).getRow(1);
-ctx.load(range);
+range.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(range.address); // prints Sheet1!A2:F2
 });
@@ -455,7 +484,7 @@ var rangeAddress = "D:F";
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 var rangeUR = range.getUsedRange();
-ctx.load(rangeUR);
+rangeUR.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(rangeUR.address);
 });
@@ -555,7 +584,7 @@ var rangeAddress = "A1:F8";
 var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
-ctx.load(range);
+range.load(cellCount);
 ctx.executeAsync().then(function() {
 	Console.log(range.cellCount);
 });
@@ -567,7 +596,7 @@ Below example uses a named-range to get the range object.
 var rangeName = 'MyRange';
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.names.getItem(rangeName).range;
-ctx.load(range);
+range.load(cellCount);
 ctx.executeAsync().then(function() {
 	Console.log(range.cellCount);
 });
@@ -586,7 +615,7 @@ var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.numberFormat = numberFormat;
 range.values = values;
 range.formula = formula;
-ctx.load(range);
+range.load(text);
 ctx.executeAsync().then(function() {
 	Console.log(range.text);
 });
@@ -599,7 +628,7 @@ var names = ctx.workbook.names;
 var namedItem = names.getItem('MyRange');
 range = namedItem.range;
 var rangeWorksheet = range.worksheet;
-load(rangeWorksheet)
+rangeWorksheet.load(name);
 ctx.executeAsync().then(function () {
 		Console.log(rangeWorksheet.name);
 });

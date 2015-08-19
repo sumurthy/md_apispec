@@ -17,7 +17,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|
-|[getItem(id: object)](#getitemid-object)|[Table](table.md)|Gets a table by Name or ID.|
+|[getItem(id: number or string)](#getitemid-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
@@ -45,7 +45,7 @@ tableCollectionObject.add(address, hasHeaders);
 ```js
 var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
-ctx.load(table);
+table.load(name);
 ctx.executeAsync().then(function () {
 	Console.log(table.name);
 });
@@ -54,7 +54,7 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
-### getItem(id: object)
+### getItem(id: number or string)
 Gets a table by Name or ID.
 
 #### Syntax
@@ -65,7 +65,7 @@ tableCollectionObject.getItem(id);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|id|object|Name or ID of the table to be retrieved.|
+|id|number or string|Name or ID of the table to be retrieved.|
 
 #### Returns
 [Table](table.md)
@@ -78,6 +78,15 @@ var tableName = 'Table1';
 var table = ctx.workbook.tables.getItem(tableName);
 ctx.executeAsync().then(function () {
 		Console.log(table.index);
+});
+```
+
+
+```js
+var ctx = new Excel.RequestContext();
+var table = ctx.workbook.tables.getItemAt(0);
+ctx.executeAsync().then(function () {
+		Console.log(table.name);
 });
 ```
 
@@ -141,7 +150,7 @@ void
 ```js
 var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
-ctx.load(tables);
+tables.load(items);
 ctx.executeAsync().then(function () {
 	Console.log("tables Count: " + tables.count);
 	for (var i = 0; i < tables.items.length; i++)
@@ -156,9 +165,9 @@ Get the number of tables
 ```js
 var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
-ctx.load(tables);
+tables.load(count);
 ctx.executeAsync().then(function () {
-	
+	Console.log(tables.count);
 });
 
 ```

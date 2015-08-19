@@ -44,7 +44,7 @@ worksheetCollectionObject.add(name);
 var wSheetName = 'Sample Name';
 var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.add(wSheetName);
-ctx.load(worksheet);
+worksheet.load(name);
 ctx.executeAsync().then(function () {
 	Console.log(worksheet.name);
 });
@@ -73,7 +73,7 @@ None
 hellow!!!
 var ctx = new Excel.RequestContext(); 
 var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
-ctx.load(activeWorksheet);
+activeWorksheet.load(name);
 ctx.executeAsync().then(function () {
 		Console.log(activeWorksheet.name);
 });
@@ -104,7 +104,7 @@ worksheetCollectionObject.getItem(index);
 var ctx = new Excel.RequestContext();
 var wSheetName = 'Sheet1'; 
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-ctx.load(worksheet);
+worksheet.load(index);
 ctx.executeAsync().then(function () {
 		Console.log(worksheet.index);
 });
@@ -142,7 +142,7 @@ void
 ```js
 var ctx = new Excel.RequestContext();
 var worksheets = ctx.workbook.worksheets;
-ctx.load(worksheets);
+worksheets.load(items);
 ctx.executeAsync().then(function () {
 	for (var i = 0; i < worksheets.items.length; i++)
 	{

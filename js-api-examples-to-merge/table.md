@@ -85,7 +85,7 @@ var table = ctx.workbook.tables.getItem(tableName);
 table.name = 'Table1-Renamed';
 table.showTotals = false;
 table.tableStyle = 'TableStyleMedium2';
-ctx.load(table);
+table.load(tableStyle);
 ctx.executeAsync().then(function () {
 		Console.log(table.tableStyle);
 });

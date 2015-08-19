@@ -9,8 +9,8 @@ require 'json'
 module SpecMaker
 
 	# Initialize 
-	JSON_SOURCE_FOLDER = "../inputJsonFiles"	
-	## JSON_SOURCE_FOLDER =  "C:/Users/suramam/Git/wip/lib/jsonFiles"
+	#JSON_SOURCE_FOLDER = "../inputJsonFiles"	
+	JSON_SOURCE_FOLDER =  "C:/Users/suramam/git/wip/lib/jsonFiles"
 	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
 	MARKDOWN_OUTPUT_FOLDER = "../jsOutputMarkdowns/"
 	EXAMPLES_FOLDER = "../js-api-examples-to-merge/"
@@ -172,7 +172,7 @@ module SpecMaker
 		if	@exampleFileFound == true
 			exampleFound	 = false
 			examples.each_with_index do |exampleLine, i|
-				if (exampleLine.chomp.strip.include? method[:signature]) && (exampleLine.chomp.strip.include?('###'))
+				if (exampleLine.chomp.strip.include? method[:name]) && (exampleLine.chomp.strip.include?('###'))
 					exampleFound = true
 					next
 				end

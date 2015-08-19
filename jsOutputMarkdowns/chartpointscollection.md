@@ -79,7 +79,7 @@ Get the names of points in the points collection
 ```js
 var ctx = new Excel.RequestContext();
 var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
-ctx.load(pointsCollection);
+pointsCollection.load(items);
 ctx.executeAsync().then(function () {
 	Console.log("Points Collection loaded");
 });
@@ -90,7 +90,7 @@ Get the number of points
 ```js
 var ctx = new Excel.RequestContext();
 var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
-ctx.load(pointsCollection);
+pointsCollection.load(count);
 ctx.executeAsync().then(function () {
 	Console.log("points: Count= " + pointsCollection.count);
 });

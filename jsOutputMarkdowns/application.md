@@ -73,7 +73,7 @@ void
 ```js
 var ctx = new Excel.RequestContext();
 var application = ctx.workbook.application;
-ctx.load(application);
+application.load(calculationMode);
 ctx.executeAsync().then(function() {
 	Console.log(application.calculationMode);
 });

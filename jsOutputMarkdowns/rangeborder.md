@@ -54,7 +54,7 @@ var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var borders = range.format.borders;
-ctx.load(borders);
+borders.load(items);
 ctx.executeAsync().then(function () {
 	Console.log(borders.count);
 	for (var i = 0; i < borders.items.length; i++)

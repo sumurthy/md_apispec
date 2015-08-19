@@ -56,7 +56,7 @@ var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var rangeFont = ramge.format.font;
-ctx.load(rangeFont);
+rangeFont.load(name);
 ctx.executeAsync().then(function() {
 	Console.log(rangeFont.name);
 });

@@ -14,7 +14,7 @@ module SpecMaker
 	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
 	MARKDOWN_RESOURCE_FOLDER = "../restOutputMarkdowns/resources/"
 	MARKDOWN_API_FOLDER = "../restOutputMarkdowns/api/"
-	EXAMPLES_FOLDER = "../../rest-api-examples-to-merge/"
+	EXAMPLES_FOLDER = "../rest-api-examples-to-merge/"
 	HEADER1 = '# '
 	HEADER2 = '## '
 	HEADER3 = '### '
@@ -34,7 +34,7 @@ module SpecMaker
 	TASKS_HEADER = "| Task		   | Return Type	|Description|" + NEWLINE
 	SIMPLETYPES = %w[int string object object[][] double bool number void object[]]
 	SKIP_TASKS = %w[getItem getItemAt load]
-	SESSION_TOKEN_ROW = "| X-Session-Token   | string  | The Excel workbook session token required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|"
+	SESSION_TOKEN_ROW = "| X-Session-Id   | string  | The Excel workbook session id required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|"
 
 	@resources_files_created = 0
 	@get_list_files_created = 0
@@ -153,7 +153,11 @@ module SpecMaker
 			if method[:name] == 'delete' && !method[:parameters]  
 				httpActionArray = @jsonHash[:restPath].map {|a| "DELETE " + a }
 			else
-				httpActionArray = @jsonHash[:restPath].map {|a| "POST " + a + "/#{method[:name]}"}				
+				if method[:name] == 'add'
+					httpActionArray = @jsonHash[:restPath].map {|a| "POST " + a}				
+				else
+					httpActionArray = @jsonHash[:restPath].map {|a| "POST " + a + "/#{method[:name]}"}				
+				end
 			end
 		end
 		actionLines.push httpActionArray.join("\n") + NEWLINE
@@ -254,11 +258,12 @@ module SpecMaker
 		getMethodLines.push HEADER2 + "Optional query parameters" + NEWLINE
 		getMethodLines.push "You can use the [OData query parameters](odata-optional-query-parameters.md) to restrict the shape of the objects returned from this call." + NEWLINE
 
-		# #Optional request headers  
-		# getMethodLines.push HEADER2 + "Optional request headers" + NEWLINE
-		# getMethodLines.push "| Name       | Type | Description|" + NEWLINE
-		# getMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
-		# getMethodLines.push "| if-none-match | etag  | If this request header is included and the eTag provided matches the current tag on the file, an `HTTP 304 Not Modified` response is returned. |" + NEWLINE
+		#Request headers  
+		getMethodLines.push HEADER2 + "Request headers" + NEWLINE
+		getMethodLines.push "| Name       | Type | Description|" + NEWLINE
+		getMethodLines.push "|:-----------|:------|:----------|" + NEWLINE
+		getMethodLines.push SESSION_TOKEN_ROW + NEWLINE
+		getMethodLines.push NEWLINE
 
 		#Request body
 		getMethodLines.push HEADER2 + "Request body" + NEWLINE

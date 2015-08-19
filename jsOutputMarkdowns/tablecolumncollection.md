@@ -16,14 +16,14 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[add(index: number, values: object[][])](#addindex-number-values-object)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|
-|[getItem(id: object)](#getitemid-object)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|
+|[getItem(id: number or string)](#getitemid-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
-### add(index: number, values: object[][])
+### add(index: number, values: (boolean or string or number)[][])
 Adds a new column to the table.
 
 #### Syntax
@@ -35,7 +35,7 @@ tableColumnCollectionObject.add(index, values);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |index|number|Specifies the relative position of the new column. The previous column at this position is shifted to the right. The index value should be equal to or less than the last column's index value, so it cannot be used to append a column at the end of the table. Zero-indexed.|
-|values|object[][]|Optional. A 2-dimensional array of unformatted values of the table column.|
+|values|(boolean or string or number)[][]|Optional. A 2-dimensional array of unformatted values of the table column.|
 
 #### Returns
 [TableColumn](tablecolumn.md)
@@ -47,7 +47,7 @@ var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
 var column = tables.getItem("Table1").columns.add(null, values);
-ctx.load(column);
+column.load(name);
 ctx.executeAsync().then(function () {
 	Console.log(column.name);
 });
@@ -56,7 +56,7 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
-### getItem(id: object)
+### getItem(id: number or string)
 Gets a column object by Name or ID.
 
 #### Syntax
@@ -67,7 +67,7 @@ tableColumnCollectionObject.getItem(id);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|id|object| Column Name or ID.|
+|id|number or string| Column Name or ID.|
 
 #### Returns
 [TableColumn](tablecolumn.md)
@@ -77,12 +77,20 @@ tableColumnCollectionObject.getItem(id);
 ```js
 var ctx = new Excel.RequestContext();
 var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
-ctx.load(tablecolumn)
+tablecolumn.load(name);
 ctx.executeAsync().then(function () {
 		Console.log(tablecolumn.name);
 });
 ```
 
+```js
+var ctx = new Excel.RequestContext();
+var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
+tablecolumn.load(name);
+ctx.executeAsync().then(function () {
+		Console.log(tablecolumn.name);
+});
+```
 
 [Back](#methods)
 
@@ -106,7 +114,7 @@ tableColumnCollectionObject.getItemAt(index);
 ```js
 var ctx = new Excel.RequestContext();
 var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
-ctx.load(tablecolumn)
+tablecolumn.load(name);
 ctx.executeAsync().then(function () {
 		Console.log(tablecolumn.name);
 });
@@ -142,7 +150,7 @@ void
 ```js
 var ctx = new Excel.RequestContext();
 var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
-ctx.load(tablecolumns);
+tablecolumns.load(items);
 ctx.executeAsync().then(function () {
 	Console.log("tablecolumns Count: " + tablecolumns.count);
 	for (var i = 0; i < tablecolumns.items.length; i++)

@@ -8,7 +8,7 @@ var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var legend = chart.legend;
-ctx.load(legend);
+legend.load(position);
 ctx.executeAsync().then(function () {
 		Console.log(legend.position);
 });

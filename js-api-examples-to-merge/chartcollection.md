@@ -5,7 +5,7 @@
 ```js
 var ctx = new Excel.RequestContext();
 var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
-ctx.load(charts);
+charts.load(items);
 ctx.executeAsync().then(function () {
 	for (var i = 0; i < charts.items.length; i++)
 	{
@@ -20,7 +20,7 @@ Get the number of charts
 ```js
 var ctx = new Excel.RequestContext();
 var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
-ctx.load(charts);
+charts.load(count);
 ctx.executeAsync().then(function () {
 	Console.log("charts: Count= " + charts.count);
 });

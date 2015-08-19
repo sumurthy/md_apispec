@@ -45,7 +45,7 @@ Returns the Range object that is associated with the name. `null` if the name is
 var ctx = new Excel.RequestContext();
 var names = ctx.workbook.names;
 var range = names.getItem('MyRange').getRange();
-ctx.load(range);
+range.load(address);
 ctx.executeAsync().then(function () {
 		Console.log(range.address);
 });
@@ -83,7 +83,7 @@ void
 var ctx = new Excel.RequestContext();
 var names = ctx.workbook.names;
 var namedItem = names.getItem('MyRange');
-ctx.load(namedItem);
+namedItem.load(type);
 ctx.executeAsync().then(function () {
 		Console.log(namedItem.type);
 });

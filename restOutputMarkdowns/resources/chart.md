@@ -29,3 +29,4 @@ Represents a chart object in a workbook.
 |[Update](../api/chart_update.md) | Chart	|Update chart object. |
 |[Delete](../api/chart_delete.md)|None|Deletes the chart object.|
 |[Setdata](../api/chart_setdata.md)|None|Resets the source data for the chart.|
+|[Setposition](../api/chart_setposition.md)|None|Positions the chart relative to cells on the worksheet.|

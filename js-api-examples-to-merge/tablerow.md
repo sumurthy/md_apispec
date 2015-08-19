@@ -16,7 +16,7 @@ var tableName = 'Table1';
 var ctx = new Excel.RequestContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
 var rowRange = row.getRange();
-ctx.load(rowRange);
+rowRange.load(address);
 ctx.executeAsync().then(function () {
 	Console.log(rowRange.address);
 });
@@ -28,7 +28,7 @@ ctx.executeAsync().then(function () {
 var tableName = 'Table1';
 var ctx = new Excel.RequestContext();
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
-ctx.load(row);
+row.load(index);
 ctx.executeAsync().then(function () {
 	Console.log(row.index);
 });
@@ -40,7 +40,7 @@ var tables = ctx.workbook.tables;
 var newValues = [["New", "Values", "For", "New", "Row"]];
 var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
 row.values = newValues;
-ctx.load(row);
+row.load(values);
 ctx.executeAsync().then(function () {
 	Console.log(row.values);
 });

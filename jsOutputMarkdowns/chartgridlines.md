@@ -51,7 +51,7 @@ var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var majGridlines = chart.axes.valueaxis.majorGridlines;
-ctx.load(majGridlines);
+majGridlines.load(visible);
 ctx.executeAsync().then(function () {
 		Console.log(majGridlines.visible);
 });

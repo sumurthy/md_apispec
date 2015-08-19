@@ -27,7 +27,8 @@ Represents a chart object in a workbook.
 |:---------------|:--------|:----------|
 |[delete()](#delete)|void|Deletes the chart object.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
-|[setData(sourceData: string, seriesBy: string)](#setdatasourcedata-string-seriesby-string)|void|Resets the source data for the chart.|
+|[setData(sourceData: Range or string, seriesBy: string)](#setdatasourcedata-range-or-string-seriesby-string)|void|Resets the source data for the chart.|
+|[setPosition(startCell: Range or string, endCell: Range or string)](#setpositionstartcell-range-or-string-endcell-range-or-string)|void|Positions the chart relative to cells on the worksheet.|
 
 ## API Specification
 
@@ -81,7 +82,7 @@ void
 
 [Back](#methods)
 
-### setData(sourceData: string, seriesBy: string)
+### setData(sourceData: Range or string, seriesBy: string)
 Resets the source data for the chart.
 
 #### Syntax
@@ -92,7 +93,7 @@ chartObject.setData(sourceData, seriesBy);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|sourceData|string|The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
+|sourceData|Range or string|The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
 |seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart. Can be one of the following: Auto (default), Rows, Columns.  Possible values are: Auto, Columns, Rows|
 
 #### Returns
@@ -111,6 +112,40 @@ chart.setData(sourceData, "Columns");
 ctx.executeAsync();
 ```
 
+
+[Back](#methods)
+
+### setPosition(startCell: Range or string, endCell: Range or string)
+Positions the chart relative to cells on the worksheet.
+
+#### Syntax
+```js
+chartObject.setPosition(startCell, endCell);
+```
+
+#### Parameters
+| Parameter	   | Type	|Description|
+|:---------------|:--------|:----------|
+|startCell|Range or string|The start cell. This is where the chart will be moved to. The start cell is the top-left or top-right cell, depending on the user's right-to-left display settings.|
+|endCell|Range or string|Optional. (Optional) The end cell. If specified, the chart's width and height will be set to fully cover up this cell/range.|
+
+#### Returns
+void
+
+#### Examples
+
+```js
+var sheetName = "Charts";
+var sourceData = sheetName + "!" + "A1:B4";
+var ctx = new Excel.RequestContext();
+var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("pie", sourceData, "auto");
+chart.width = 500;
+chart.height = 300;
+chart.setPosition("C2", null);
+ctx.executeAsync();
+```
+
+
 [Back](#methods)
 
 ### Getter and Setter Examples
@@ -120,9 +155,9 @@ Get a chart named "Chart1"
 ```js
 var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
-ctx.load(chart);
+chart.load(name);
 ctx.executeAsync().then(function () {
-		Console.log("Chart1 Loaded");
+		Console.log(chart.name);
 });
 ```
 

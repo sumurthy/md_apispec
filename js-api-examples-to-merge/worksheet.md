@@ -28,7 +28,7 @@ var rangeAddress = "A1:F8";
 var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var cell = worksheet.getCell(0,0);
-ctx.load(cell);
+cell.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(cell.address);
 });
@@ -43,7 +43,7 @@ var rangeAddress = "A1:F8";
 var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
-ctx.load(range);
+range.load(cellCount);
 ctx.executeAsync().then(function() {
 	Console.log(range.cellCount);
 });
@@ -56,7 +56,7 @@ var sheetName = "Sheet1";
 var rangeName = 'MyRange';
 var ctx = new Excel.RequestContext();
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeName);
-ctx.load(range);
+range.load(address);
 ctx.executeAsync().then(function() {
 	Console.log(range.address);
 });
@@ -68,7 +68,7 @@ var ctx = new Excel.RequestContext();
 var wSheetName = 'Sheet1';
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 var usedRange = worksheet.getUsedRange();
-ctx.load(usedRange);
+usedRange.load(address);
 ctx.executeAsync().then(function () {
 		Console.log(usedRange.address);
 });

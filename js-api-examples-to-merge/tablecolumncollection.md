@@ -7,7 +7,7 @@ var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
 var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
 var column = tables.getItem("Table1").columns.add(null, values);
-ctx.load(column);
+column.load(name);
 ctx.executeAsync().then(function () {
 	Console.log(column.name);
 });
@@ -18,7 +18,7 @@ ctx.executeAsync().then(function () {
 ```js
 var ctx = new Excel.RequestContext();
 var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
-ctx.load(tablecolumn)
+tablecolumn.load(name);
 ctx.executeAsync().then(function () {
 		Console.log(tablecolumn.name);
 });
@@ -28,7 +28,7 @@ ctx.executeAsync().then(function () {
 ```js
 var ctx = new Excel.RequestContext();
 var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
-ctx.load(tablecolumn)
+tablecolumn.load(name);
 ctx.executeAsync().then(function () {
 		Console.log(tablecolumn.name);
 });
@@ -38,7 +38,7 @@ ctx.executeAsync().then(function () {
 ```js
 var ctx = new Excel.RequestContext();
 var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
-ctx.load(tablecolumns);
+tablecolumns.load(items);
 ctx.executeAsync().then(function () {
 	Console.log("tablecolumns Count: " + tablecolumns.count);
 	for (var i = 0; i < tablecolumns.items.length; i++)

@@ -5,7 +5,7 @@
 ```js
 var ctx = new Excel.RequestContext();
 var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
-ctx.load(table);
+table.load(name);
 ctx.executeAsync().then(function () {
 	Console.log(table.name);
 });
@@ -37,7 +37,7 @@ ctx.executeAsync().then(function () {
 ```js
 var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
-ctx.load(tables);
+tables.load(items);
 ctx.executeAsync().then(function () {
 	Console.log("tables Count: " + tables.count);
 	for (var i = 0; i < tables.items.length; i++)
@@ -52,9 +52,9 @@ Get the number of tables
 ```js
 var ctx = new Excel.RequestContext();
 var tables = ctx.workbook.tables;
-ctx.load(tables);
+tables.load(count);
 ctx.executeAsync().then(function () {
-	
+	Console.log(tables.count);
 });
 
 ```

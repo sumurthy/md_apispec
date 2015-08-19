@@ -54,7 +54,7 @@ var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var title = chart.title;
-ctx.load(title);
+title.load(text);
 ctx.executeAsync().then(function () {
 		Console.log(title.text);
 });

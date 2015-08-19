@@ -23,7 +23,7 @@ var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var rangeFill = ramge.format.fill;
-ctx.load(rangeFill);
+rangeFill.load(color);
 ctx.executeAsync().then(function() {
 	Console.log(rangeFill.color);
 });

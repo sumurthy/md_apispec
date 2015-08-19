@@ -19,7 +19,7 @@ POST /workbook/names/{name}/range/clear
 ## Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Session-Token   | string  | The Excel workbook session token required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|
+| X-Session-Id   | string  | The Excel workbook session id required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|
 
 ## Request body
 In the request body, provide a JSON object that with the following parameters.

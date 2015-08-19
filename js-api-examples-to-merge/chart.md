@@ -21,6 +21,20 @@ var sourceData = "A1:B4";
 chart.setData(sourceData, "Columns");
 ctx.executeAsync();
 ```
+
+### setPosition(startCell: object, endCell: object)
+
+```js
+var sheetName = "Charts";
+var sourceData = sheetName + "!" + "A1:B4";
+var ctx = new Excel.RequestContext();
+var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("pie", sourceData, "auto");
+chart.width = 500;
+chart.height = 300;
+chart.setPosition("C2", null);
+ctx.executeAsync();
+```
+
 ### Getter setter
 
 Get a chart named "Chart1"
@@ -28,9 +42,9 @@ Get a chart named "Chart1"
 ```js
 var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
-ctx.load(chart);
+chart.load(name);
 ctx.executeAsync().then(function () {
-		Console.log("Chart1 Loaded");
+		Console.log(chart.name);
 });
 ```
 

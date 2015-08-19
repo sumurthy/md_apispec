@@ -16,14 +16,14 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)|[Chart](chart.md)|Creates a new chart.|
+|[add(type: string, sourceData: Range or string, seriesBy: string)](#addtype-string-sourcedata-range-or-string-seriesby-string)|[Chart](chart.md)|Creates a new chart.|
 |[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.|
 |[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Gets a chart based on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
 
-### add(type: string, sourceData: string, seriesBy: string)
+### add(type: string, sourceData: Range or string, seriesBy: string)
 Creates a new chart.
 
 #### Syntax
@@ -35,7 +35,7 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
 |type|string|Represents the type of a chart.  Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc.|
-|sourceData|string|The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
+|sourceData|Range or string|The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
 |seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart.  Possible values are: Auto, Columns, Rows|
 
 #### Returns
@@ -82,6 +82,27 @@ var chartname = 'Chart1';
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
 ctx.executeAsync().then(function () {
 		Console.log(chart.height);
+});
+```
+
+
+```js
+var ctx = new Excel.RequestContext();
+var chartId = 'SamplChartId';
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartId);
+ctx.executeAsync().then(function () {
+		Console.log(chart.height);
+});
+```
+
+
+
+```js
+var ctx = new Excel.RequestContext();
+var lastPosition = ctx.workbook.worksheets.getItem("Sheet1").charts.count - 1;
+var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItemAt(lastPosition);
+ctx.executeAsync().then(function () {
+		Console.log(chart.name);
 });
 ```
 
@@ -146,7 +167,7 @@ void
 ```js
 var ctx = new Excel.RequestContext();
 var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
-ctx.load(charts);
+charts.load(items);
 ctx.executeAsync().then(function () {
 	for (var i = 0; i < charts.items.length; i++)
 	{
@@ -161,7 +182,7 @@ Get the number of charts
 ```js
 var ctx = new Excel.RequestContext();
 var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
-ctx.load(charts);
+charts.load(count);
 ctx.executeAsync().then(function () {
 	Console.log("charts: Count= " + charts.count);
 });

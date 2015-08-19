@@ -7,7 +7,7 @@ var ctx = new Excel.RequestContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var axis = chart.axes.valueaxis;
-ctx.load(axis);
+axis.load(maximum);
 ctx.executeAsync().then(function () {
 		Console.log(axis.maximum);
 });

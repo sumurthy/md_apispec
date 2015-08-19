@@ -57,12 +57,12 @@ var rangeAddress = "F:G";
 var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
-ctx.load(range, {expand: "fill, borders, font"} );
+range.load(format, format/fill, format/borders, format/font);
 ctx.executeAsync().then(function() {
 	Console.log(range.format.wrapText);
 	Console.log(range.format.fill.color);
 	Console.log(range.format.font.name);
-	Console.log(range.format.borders.getItem('InsideHorizontal').lineStyle;	
+
 });
 ```
 

@@ -3,13 +3,13 @@
 Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.
 ## HTTP request
 ```http
-POST /workbook/tables/add
-POST /workbook/worksheets/{id|name}/tables/add
+POST /workbook/tables
+POST /workbook/worksheets/{id|name}/tables
 ```
 ## Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Session-Token   | string  | The Excel workbook session token required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|
+| X-Session-Id   | string  | The Excel workbook session id required to join the session managed by the server. If the session token has expired or is invalid, an error is returned.|
 
 ## Request body
 In the request body, provide a JSON object that with the following parameters.

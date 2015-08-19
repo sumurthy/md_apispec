@@ -6,7 +6,7 @@
 var wSheetName = 'Sample Name';
 var ctx = new Excel.RequestContext();
 var worksheet = ctx.workbook.worksheets.add(wSheetName);
-ctx.load(worksheet);
+worksheet.load(name);
 ctx.executeAsync().then(function () {
 	Console.log(worksheet.name);
 });
@@ -18,7 +18,7 @@ ctx.executeAsync().then(function () {
 hellow!!!
 var ctx = new Excel.RequestContext(); 
 var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
-ctx.load(activeWorksheet);
+activeWorksheet.load(name);
 ctx.executeAsync().then(function () {
 		Console.log(activeWorksheet.name);
 });
@@ -30,7 +30,7 @@ ctx.executeAsync().then(function () {
 var ctx = new Excel.RequestContext();
 var wSheetName = 'Sheet1'; 
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-ctx.load(worksheet);
+worksheet.load(index);
 ctx.executeAsync().then(function () {
 		Console.log(worksheet.index);
 });
@@ -42,7 +42,7 @@ ctx.executeAsync().then(function () {
 ```js
 var ctx = new Excel.RequestContext();
 var worksheets = ctx.workbook.worksheets;
-ctx.load(worksheets);
+worksheets.load(items);
 ctx.executeAsync().then(function () {
 	for (var i = 0; i < worksheets.items.length; i++)
 	{
@@ -56,7 +56,7 @@ ctx.executeAsync().then(function () {
 ```js
 var ctx = new Excel.RequestContext();
 var worksheets = ctx.workbook.worksheets;
-ctx.load(tables);
+tables.load(count);
 ctx.executeAsync().then(function () {
 	Console.log("Worksheets: Count= " + worksheets.count);
 });
