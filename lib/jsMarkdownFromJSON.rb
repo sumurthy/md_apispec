@@ -9,8 +9,8 @@ require 'json'
 module SpecMaker
 
 	# Initialize 
-	#JSON_SOURCE_FOLDER = "../inputJsonFiles"	
-	JSON_SOURCE_FOLDER =  "C:/Users/suramam/git/wip/lib/jsonFiles"
+	JSON_SOURCE_FOLDER = "../jsonFiles"	
+	#JSON_SOURCE_FOLDER =  "C:/Users/suramam/git/wip/lib/jsonFiles"
 	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
 	MARKDOWN_OUTPUT_FOLDER = "../jsOutputMarkdowns/"
 	EXAMPLES_FOLDER = "../js-api-examples-to-merge/"

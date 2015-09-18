@@ -1,0 +1,138 @@
+{
+  "name": "TableCollection",
+  "description": "Represents a collection of all the tables that are part of the workbook.",
+  "isCollection": true,
+  "collectionOf": "Table",
+  "restPath": [
+    "/workbook/tables",
+    "/workbook/worksheets/{id|name}/tables"
+  ],
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Content",
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API for June fork"
+  },
+  "properties": [
+    {
+      "name": "count",
+      "dataType": "int",
+      "description": "Returns the number of tables in the workbook.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "items",
+      "dataType": "Table[]",
+      "description": "A collection of table objects.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "getItem",
+      "returnType": "Table",
+      "description": "Gets a table by Name or ID.",
+      "syntax": "tableCollectionObject.getItem(key);",
+      "signature": "getItem(key: number or string)",
+      "restfulName": "Item",
+      "notes": null,
+      "httpSuccessResponse": "200 OK",
+      "parameters": [
+        {
+          "name": "key",
+          "dataType": "number or string",
+          "description": "Name or ID of the table to be retrieved.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "getItemAt",
+      "returnType": "Table",
+      "description": "Gets a table based on its position in the collection.",
+      "syntax": "tableCollectionObject.getItemAt(index);",
+      "signature": "getItemAt(index: number)",
+      "restfulName": "ItemAt",
+      "notes": null,
+      "httpSuccessResponse": "200 OK",
+      "parameters": [
+        {
+          "name": "index",
+          "dataType": "number",
+          "description": "Index value of the object to be retrieved. Zero-indexed.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "add",
+      "returnType": "Table",
+      "description": "Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.",
+      "syntax": "tableCollectionObject.add(address, hasHeaders);",
+      "signature": "add(address: string, hasHeaders: bool)",
+      "restfulName": "Add",
+      "notes": null,
+      "httpSuccessResponse": "201 Created",
+      "parameters": [
+        {
+          "name": "address",
+          "dataType": "string",
+          "description": "Address or name of the range object representing the data source. If the address does not contain a sheet name, the currently-active sheet is used.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        },
+        {
+          "name": "hasHeaders",
+          "dataType": "bool",
+          "description": "Boolean value that indicates whether the data being imported has column labels. If the source does not contain headers (i.e,. when this property set to false), Excel will automatically generate header shifting the data down by one row.",
+          "isRequired": true,
+          "enumNameJs": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

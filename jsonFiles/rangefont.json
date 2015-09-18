@@ -1,0 +1,124 @@
+{
+  "name": "RangeFont",
+  "description": "This object represents the font attributes (font name, font size, color, etc.) for an object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": [
+    "/workbook/bindings/{id}/table/range/format/font",
+    "/workbook/tables/{id|name}/range/format/font",
+    "/workbook/worksheets/{id|name}/tables/{id|name}/range/format/font",
+    "/workbook/bindings/{id}/table/rows/{index}/range/format/font",
+    "/workbook/tables/{id|name}/rows/{index}/range/format/font",
+    "/workbook/worksheets/{id|name}/tables/{id|name}/rows/{index}/range/format/font",
+    "/workbook/bindings/{id}/table/columns/{id|name}/range/format/font",
+    "/workbook/tables/{id|name}/columns/{id|name}/range/format/font",
+    "/workbook/worksheets/{id|name}/tables/{id|name}/columns/{id|name}/range/format/font",
+    "/workbook/bindings/{id}/range/format/font",
+    "/workbook/worksheets/{id|name}/range({address})/format/font",
+    "/workbook/names/{name}/range/format/font"
+  ],
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Content",
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API for June fork"
+  },
+  "properties": [
+    {
+      "name": "bold",
+      "dataType": "bool",
+      "description": "Represents the bold status of font.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "color",
+      "dataType": "string",
+      "description": "HTML color code representation of the text color. E.g. #FF0000 represents Red.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "italic",
+      "dataType": "bool",
+      "description": "Represents the italic status of the font.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "description": "Font name (e.g. \"Calibri\")",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "size",
+      "dataType": "double",
+      "description": "Font size.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "underline",
+      "dataType": "string",
+      "description": "Type of underline applied to the font.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.RangeUnderlineStyle",
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

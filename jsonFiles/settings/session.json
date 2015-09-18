@@ -1,0 +1,60 @@
+{
+  "name": "Session",
+  "description": "Represents the Excel workbook sessions. It is a good practice to create workbook session and pass it along with the request as part of the request header as it allows the server to link the API request to an existing in-memory copy of the file on the server. If a session ID is not provided, the server dynamically creates a session behind the scene. However, this requires additional server side processing and could add to the latency of the response. Session ID has a life span which gets extended with each usage or regresh. Once a session ID has expired, a new session session ID needs to be created. If an expired or invalid session token is provided as part of the request, the API will return an error indicating that the session ID is not valid.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": [
+    "/workbook/sessions/{id}"
+  ],
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Content",
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API for June fork"
+  },
+  "properties": [
+    {
+      "name": "id",
+      "dataType": "string",
+      "description": "Excel workbook view or edit session ID.",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": true,
+      "notes": null
+    },
+    {
+      "name": "type",
+      "dataType": "string",
+      "description": "Session Type. Possible values are: Edit or View",
+      "isReadOnly": true,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "delete",
+      "returnType": "void",
+      "description": "Deletes the session ID sent along with the api request.",
+      "syntax": null,
+      "signature": null,
+      "restfulName": "Delete",
+      "notes": null,
+      "httpSuccessResponse": "204 No Content",
+      "parameters": null
+    }  
+  ]
+}
