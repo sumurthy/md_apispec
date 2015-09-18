@@ -17,7 +17,7 @@ None
 |:---------------|:--------|:----------|
 |[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.|
 |[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Gets the currently active worksheet in the workbook.|
-|[getItem(index: string)](#getitemindex-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID.|
+|[getItem(key: string)](#getitemkey-string)|[Worksheet](worksheet.md)|Gets a worksheet object using its Name or ID.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## API Specification
@@ -82,18 +82,18 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
-### getItem(index: string)
+### getItem(key: string)
 Gets a worksheet object using its Name or ID.
 
 #### Syntax
 ```js
-worksheetCollectionObject.getItem(index);
+worksheetCollectionObject.getItem(key);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|string|The Name or ID of the worksheet.|
+|key|string|The Name or ID of the worksheet.|
 
 #### Returns
 [Worksheet](worksheet.md)

@@ -17,7 +17,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|Adds a new column to the table.|
-|[getItem(id: number or string)](#getitemid-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Gets a column object by Name or ID.|
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
@@ -56,18 +56,18 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
-### getItem(id: number or string)
+### getItem(key: number or string)
 Gets a column object by Name or ID.
 
 #### Syntax
 ```js
-tableColumnCollectionObject.getItem(id);
+tableColumnCollectionObject.getItem(key);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|id|number or string| Column Name or ID.|
+|key|number or string| Column Name or ID.|
 
 #### Returns
 [TableColumn](tablecolumn.md)

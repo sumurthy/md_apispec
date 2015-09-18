@@ -17,7 +17,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.|
-|[getItem(id: number or string)](#getitemid-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Gets a table by Name or ID.|
 |[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Gets a table based on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
@@ -54,18 +54,18 @@ ctx.executeAsync().then(function () {
 
 [Back](#methods)
 
-### getItem(id: number or string)
+### getItem(key: number or string)
 Gets a table by Name or ID.
 
 #### Syntax
 ```js
-tableCollectionObject.getItem(id);
+tableCollectionObject.getItem(key);
 ```
 
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|id|number or string|Name or ID of the table to be retrieved.|
+|key|number or string|Name or ID of the table to be retrieved.|
 
 #### Returns
 [Table](table.md)
