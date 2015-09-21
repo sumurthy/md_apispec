@@ -4,9 +4,8 @@ Create a table binding to monitor data changes in the table. When data is change
 
 ```js
 function addEventHandler() {
-
     //Create Table1
-    var ctx = new Excel.RequestContext();
+    Excel.run(function (ctx) { 
     ctx.workbook.tables.add("Sheet1!A1:C4", true);
     ctx.executeAsync()
          .then(function () {
@@ -15,7 +14,6 @@ function addEventHandler() {
          .catch(function (error) {
              console.log(JSON.stringify(error));
          });
-
     //Create a new table binding for Table1
     Office.context.document.bindings.addFromNamedItemAsync("Table1", Office.CoercionType.Table, { id: "myBinding" }, function (asyncResult) {
         if (asyncResult.status == "failed") {
@@ -30,7 +28,7 @@ function addEventHandler() {
 
 // when data in the table is changed, this event will be triggered.
 function onBindingDataChanged(eventArgs) {
-    var ctx = new Excel.RequestContext();
+    Excel.run(function (ctx) { 
     // highlight the table in orange to indicate data has been changed.
     ctx.workbook.bindings.getItem(eventArgs.binding.id).getTable().getDataBodyRange().format.fill.color = "Orange";
     ctx.executeAsync()
@@ -47,10 +45,10 @@ function onBindingDataChanged(eventArgs) {
 
 ### getItemAt(index: number)
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var lastPosition = ctx.workbook.bindings.count - 1;
 var binding = ctx.workbook.bindings.getItemAt(lastPosition);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(binding.type); 
 });
 ```
@@ -58,10 +56,10 @@ ctx.executeAsync().then(function () {
 ### Getter 
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var bindings = ctx.workbook.bindings;
 bindings.load(items);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	for (var i = 0; i < bindings.items.length; i++)
 	{
 		Console.log(bindings.items[i].id);
@@ -72,10 +70,10 @@ ctx.executeAsync().then(function () {
 Get the number of bindings
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var bindings = ctx.workbook.bindings;
 bindings.load(count);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	Console.log("Bindings: Count= " + bindings.count);
 });
 

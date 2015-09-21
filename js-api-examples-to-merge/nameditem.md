@@ -5,11 +5,11 @@
 Returns the Range object that is associated with the name. `null` if the name is not of the type `Range`. Note: This API currently supports only the Workbook scoped items.**
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var names = ctx.workbook.names;
 var range = names.getItem('MyRange').getRange();
 range.load(address);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(range.address);
 });
 ```
@@ -17,11 +17,11 @@ ctx.executeAsync().then(function () {
 ### Getter 
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var names = ctx.workbook.names;
 var namedItem = names.getItem('MyRange');
 namedItem.load(type);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(namedItem.type);
 });
 ```

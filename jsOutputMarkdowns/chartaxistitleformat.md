@@ -1,8 +1,9 @@
-# ChartAxisTitleFormat
+# ChartAxisTitleFormat Object (JavaScript API for Office 2016)
 
 Represents the chart axis title formatting.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

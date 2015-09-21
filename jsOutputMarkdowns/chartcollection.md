@@ -1,12 +1,15 @@
-# ChartCollection
+# ChartCollection Object (JavaScript API for Office 2016)
 
 A collection of all the chart objects on a worksheet.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of charts in the worksheet. Read-only.|
 |items|[Chart[]](chart.md)|A collection of chart objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -162,7 +165,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 
 ```js
 var ctx = new Excel.RequestContext();

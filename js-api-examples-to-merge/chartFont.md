@@ -16,7 +16,7 @@ chartObject.title.format.font.underline = false;
 Set chart title to be Calbri, size 10, bold and in red. 
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var title = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").title;
 
 title.format.font.name = "Calibri";
@@ -26,7 +26,7 @@ title.format.font.italic =  false;
 title.format.font.bold = true;
 title.format.font.underline = false;
 
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log("Chart Title Font Updated");
 });
 ```

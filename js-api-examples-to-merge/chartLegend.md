@@ -4,12 +4,12 @@
 Get the `position` of Chart Legend from Chart1
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var legend = chart.legend;
 legend.load(position);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(legend.position);
 });
 ```
@@ -17,13 +17,13 @@ ctx.executeAsync().then(function () {
 Set to show legend of Chart1 and make it on top of the chart.
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.legend.visible = true;
 chart.legend.position = "top"; 
 chart.legend.overlay = false; 
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log("Legend Shown ");
 });
 ``` 

@@ -1,8 +1,9 @@
-# Workbook
+# Workbook Object (JavaScript API for Office 2016)
 
 Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

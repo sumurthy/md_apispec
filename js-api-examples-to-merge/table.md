@@ -2,53 +2,56 @@
 
 ### delete()
 ```js
-var tableName = 'Table1';
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.getItem(tableName);
-table.delete();
-ctx.executeAsync();
-```
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	table.delete();
+	return ctx.sync(); 
+}); 
 
 ### getDataBodyRange()
 ```js
-var tableName = 'Table1';
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.getItem(tableName);
-var tableDataRange = table.getDataBodyRange();
-ctx.executeAsync().then(function () {
-		Console.log(tableDataRange.address);
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	var tableDataRange = table.getDataBodyRange();
+	return ctx.sync().then(function() {
+			Console.log(tableDataRange.address);
+	});
 });
 ```
 ### getHeaderRowRange()
 ```js
-var tableName = 'Table1';
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.getItem(tableName);
-var tableHeaderRange = table.getHeaderRowRange();
-ctx.executeAsync().then(function () {
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	var tableHeaderRange = table.getHeaderRowRange();
+	return ctx.sync().then(function() {
 		Console.log(tableHeaderRange.address);
+	});
 });
 ```
 
 ### getRange()
 ```js
-var tableName = 'Table1';
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.getItem(tableName);
-var tableRange = table.getRange();
-ctx.executeAsync().then(function () {
-		Console.log(tableRange.address);
+Excel.run(function (ctx) { 
+	var table = ctx.workbook.tables.getItem(tableName);
+	var tableRange = table.getRange();
+	return ctx.sync().then(function() {
+			Console.log(tableRange.address);
+	});
 });
 ```
 
 ### getTotalRowRange()
 ```js
-var tableName = 'Table1';
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.getItem(tableName);
-var tableTotalsRange = table.getTotalRowRange();
-ctx.executeAsync().then(function () {
-		Console.log(tableTotalsRange.address);
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	var tableTotalsRange = table.getTotalRowRange();
+	return ctx.sync().then(function() {
+			Console.log(tableTotalsRange.address);
+	});
 });
 ```
 
@@ -57,36 +60,39 @@ ctx.executeAsync().then(function () {
 Get a table by name. 
 
 ```js
-var ctx = new Excel.RequestContext();
-var tableName = 'Table1';
-var table = ctx.workbook.tables.getItem(tableName);
-ctx.executeAsync().then(function () {
-		Console.log(table.index);
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	return ctx.sync().then(function() {
+			Console.log(table.index);
+	});
 });
 ```
 
 Get a table by index.
 
 ```js
-var ctx = new Excel.RequestContext();
-var index = 0;
-var table = ctx.workbook.tables.getItemAt(0);
-ctx.executeAsync().then(function () {
-		Console.log(table.name);
+Excel.run(function (ctx) { 
+	var index = 0;
+	var table = ctx.workbook.tables.getItemAt(0);
+	return ctx.sync().then(function() {
+			Console.log(table.name);
+	});
 });
 ```
 
 Set table style. 
 
 ```js
-var tableName = 'Table1';
-var ctx = new Excel.RequestContext();
-var table = ctx.workbook.tables.getItem(tableName);
-table.name = 'Table1-Renamed';
-table.showTotals = false;
-table.tableStyle = 'TableStyleMedium2';
-table.load(tableStyle);
-ctx.executeAsync().then(function () {
-		Console.log(table.tableStyle);
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	table.name = 'Table1-Renamed';
+	table.showTotals = false;
+	table.tableStyle = 'TableStyleMedium2';
+	table.load(tableStyle);
+	return ctx.sync().then(function() {
+			Console.log(table.tableStyle);
+	});
 });
 ```

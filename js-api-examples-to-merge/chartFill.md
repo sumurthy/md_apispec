@@ -3,12 +3,12 @@
 
 Set BackGround Color of Chart1 to be red.
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.format.fill.setSolidColor("#FF0000");
 
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log("Chart1 Background Color Changed.");
 });
 ```
@@ -17,11 +17,11 @@ ctx.executeAsync().then(function () {
 Clear the line format of the major Gridlines on value axis of the Chart named "Chart1"
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
 
 gridlines.format.line.clear();
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log"Chart Major Gridlines Format Cleared");
 });
 ```

@@ -1,11 +1,14 @@
-# ChartGridlines
+# ChartGridlines Object (JavaScript API for Office 2016)
 
 Represents major or minor gridlines on a chart axis.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |visible|bool|Boolean value representing if the axis gridlines are visible or not.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -43,7 +46,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 Get the `visible` of Major Gridlines on value axis of Chart1
 ```js

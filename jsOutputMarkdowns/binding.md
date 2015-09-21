@@ -1,12 +1,15 @@
-# Binding
+# Binding Object (JavaScript API for Office 2016)
 
 Represents an Office.js binding that is defined in the workbook.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|string|Represents binding identifier. Read-only.|
 |type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -134,7 +137,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 
 ```js
 var ctx = new Excel.RequestContext();

@@ -1,8 +1,9 @@
-# ChartLegendFormat
+# ChartLegendFormat Object (JavaScript API for Office 2016)
 
 Encapsulates the format properties of a chart legend.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

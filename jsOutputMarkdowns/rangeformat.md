@@ -1,13 +1,16 @@
-# RangeFormat
+# RangeFormat Object (JavaScript API for Office 2016)
 
 A format object encapsulating the range's font, fill, borders, alignment, and other properties.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|
 |verticalAlignment|string|Represents the vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.|
 |wrapText|bool|Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -47,7 +50,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 Below example selects all of the Range's format properties. 
 

@@ -1,8 +1,9 @@
-# ChartAxes
+# ChartAxes Object (JavaScript API for Office 2016)
 
 Represents the chart axes.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

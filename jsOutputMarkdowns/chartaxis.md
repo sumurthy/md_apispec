@@ -1,14 +1,17 @@
-# ChartAxis
+# ChartAxis Object (JavaScript API for Office 2016)
 
 Represents a single axis in a chart.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |majorUnit|object|Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.|
 |maximum|object|Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.|
 |minimum|object|Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.|
 |minorUnit|object|Represents the interval between two minor tick marks. "Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -49,7 +52,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 Get the `maximum` of Chart Axis from Chart1
 ```js
 var ctx = new Excel.RequestContext();

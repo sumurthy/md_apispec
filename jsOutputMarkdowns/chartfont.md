@@ -1,8 +1,9 @@
-# ChartFont
+# ChartFont Object (JavaScript API for Office 2016)
 
 This object represents the font attributes (font name, font size, color, etc.) for a chart object.
 
-## [Properties](#setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |bold|bool|Represents the bold status of font.|
@@ -11,6 +12,8 @@ This object represents the font attributes (font name, font size, color, etc.) f
 |name|string|Font name (e.g. "Calibri")|
 |size|double|Size of the font (e.g. 11)|
 |underline|string|Type of underline applied to the font. Possible values are: None, Single.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -47,7 +50,7 @@ void
 
 [Back](#methods)
 
-### Setter Examples
+### Property access examples
 
 Use chart title as an example.
 

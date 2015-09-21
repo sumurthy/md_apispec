@@ -1,8 +1,9 @@
-# ChartAxisFormat
+# ChartAxisFormat Object (JavaScript API for Office 2016)
 
 Encapsulates the format properties for the chart axis.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

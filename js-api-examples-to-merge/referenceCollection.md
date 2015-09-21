@@ -3,15 +3,15 @@
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:B2";
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 ctx.references.add(range);
 range.load(address);
 
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
-	ctx.executeAsync();
+	return ctx.sync();
 });
 ```
 
@@ -20,15 +20,15 @@ ctx.executeAsync().then(function () {
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:B2";
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 ctx.references.add(range);
 range.load(address);
 
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	range.insert("Down");
 	Console.log(range.address); // Address should be updated to A3:B4
 	ctx.references.remove(range); 
-	ctx.executeAsync();
+	return ctx.sync();
 });
 ```

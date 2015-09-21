@@ -1,12 +1,15 @@
-# TableColumnCollection
+# TableColumnCollection Object (JavaScript API for Office 2016)
 
 Represents a collection of all the columns that are part of the table.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of columns in the table. Read-only.|
 |items|[TableColumn[]](tablecolumn.md)|A collection of tableColumn objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -145,7 +148,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 
 ```js
 var ctx = new Excel.RequestContext();

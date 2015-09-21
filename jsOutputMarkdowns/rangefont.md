@@ -1,8 +1,9 @@
-# RangeFont
+# RangeFont Object (JavaScript API for Office 2016)
 
 This object represents the font attributes (font name, font size, color, etc.) for an object.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |bold|bool|Represents the bold status of font.|
@@ -11,6 +12,8 @@ This object represents the font attributes (font name, font size, color, etc.) f
 |name|string|Font name (e.g. "Calibri")|
 |size|double|Font size.|
 |underline|string|Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -47,7 +50,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 ```js
 var sheetName = "Sheet1";

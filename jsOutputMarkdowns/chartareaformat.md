@@ -1,8 +1,9 @@
-# ChartAreaFormat
+# ChartAreaFormat Object (JavaScript API for Office 2016)
 
 Encapsulates the format properties for the overall chart area.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

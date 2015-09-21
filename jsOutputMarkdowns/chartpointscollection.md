@@ -1,12 +1,15 @@
-# ChartPointsCollection
+# ChartPointsCollection Object (JavaScript API for Office 2016)
 
 A collection of all the chart points within a series inside a chart.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of chart points in the collection. Read-only.|
 |items|[ChartPoint[]](chartpoint.md)|A collection of chartPoints objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -73,7 +76,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 
 Get the names of points in the points collection
 ```js

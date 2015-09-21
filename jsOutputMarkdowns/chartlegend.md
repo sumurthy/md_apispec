@@ -1,13 +1,16 @@
-# ChartLegend
+# ChartLegend Object (JavaScript API for Office 2016)
 
 Represents the legend in a chart.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |overlay|bool|Boolean value for whether the chart legend should overlap with the main body of the chart.|
 |position|string|Represents the position of the legend on the chart. Possible values are: Top, Bottom, Left, Right, Corner, Custom.|
 |visible|bool|A boolean value the represents the visibility of a ChartLegend object.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -45,7 +48,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 Get the `position` of Chart Legend from Chart1
 

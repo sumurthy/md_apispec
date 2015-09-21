@@ -1,8 +1,9 @@
-# Range
+# Range Object (JavaScript API for Office 2016)
 
 Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |address|string|Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.|
@@ -18,6 +19,8 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|
 |valueTypes|string|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|
 |values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -574,7 +577,7 @@ ctx.executeAsync();
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 Below example uses range address to get the range object.
 

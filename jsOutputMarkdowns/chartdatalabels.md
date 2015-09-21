@@ -1,8 +1,9 @@
-# ChartDataLabels
+# ChartDataLabels Object (JavaScript API for Office 2016)
 
 Represents a collection of all the data labels on a chart point.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |position|string|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.|
@@ -13,6 +14,8 @@ Represents a collection of all the data labels on a chart point.
 |showPercentage|bool|Boolean value representing if the data label percentage is visible or not.|
 |showSeriesName|bool|Boolean value representing if the data label series name is visible or not.|
 |showValue|bool|Boolean value representing if the data label value is visible or not.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -50,7 +53,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 Make Series Name shown in Datalabels and set the `position` of datalabels to be "top";
 ```js
 var ctx = new Excel.RequestContext();

@@ -14,14 +14,17 @@ module SpecMaker
 	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
 	MARKDOWN_OUTPUT_FOLDER = "../jsOutputMarkdowns/"
 	EXAMPLES_FOLDER = "../js-api-examples-to-merge/"
+	HEADERQUALIFIER = " Object (JavaScript API for Excel)"
+	APPLIESTO = "_Applies to: Office 2016_"
 	HEADER1 = '# '
 	HEADER2 = '## '
 	HEADER3 = '### '
 	HEADER4 = '#### '
 	HEADER5 = '##### '
-	GETTERSETTER = 'Getter and Setter Examples'
-	GETTER = 'Getter Examples'
-	SETTER = 'Setter Examples'
+	GETTERSETTERLINK = '_See property access [examples.](#property-access-examples)_'
+	GETTERSETTER = 'Property access examples'
+	# GETTER = 'Getter Examples'
+	# SETTER = 'Setter Examples'
 	BACKTOMETHOD = '[Back](#methods)'
 	NEWLINE = "\n"
 	BACKTOPROPERTY = NEWLINE + '[Back](#properties)'
@@ -189,7 +192,7 @@ module SpecMaker
 				@logger.error("....Example not found for method: #{method[:signature]}, #{@resource}  ") 
 			end
 		end
-		@mdlines.push NEWLINE + BACKTOMETHOD + TWONEWLINES 
+		#@mdlines.push NEWLINE + BACKTOMETHOD + TWONEWLINES 
 		
 	end
 
@@ -200,13 +203,7 @@ module SpecMaker
 		examples.each_with_index do |exampleLine, i|
 			if (exampleLine.chomp.strip.downcase.include? "getter") || (exampleLine.chomp.strip.downcase.include? "setter")
 				getterOrSetterFound = true
-					if (exampleLine.chomp.strip.downcase.include? "getter") && (exampleLine.chomp.strip.downcase.include? "setter")
-						@mdlines.push HEADER3 + GETTERSETTER + NEWLINE 
-					elsif (exampleLine.chomp.strip.downcase.include? "getter") 
-						@mdlines.push HEADER3 + GETTER + NEWLINE
-					else
-						@mdlines.push HEADER3 + SETTER + NEWLINE
-					end
+					@mdlines.push HEADER3 + GETTERSETTER + NEWLINE 
 				next
 			end
 			if getterOrSetterFound && exampleLine.include?('#')
@@ -216,9 +213,9 @@ module SpecMaker
 				@mdlines.push exampleLine
 			end
 		end
-		if getterOrSetterFound 
-			@mdlines.push BACKTOPROPERTY + NEWLINE
-		end
+		# if getterOrSetterFound 
+		# 	@mdlines.push BACKTOPROPERTY + NEWLINE
+		# end
 	end
 
 	# Determine the type getter and setter links to be used. 
@@ -269,9 +266,9 @@ module SpecMaker
 		end
 
 		header_name = @jsonHash[:isCollection] ? "List #{@jsonHash[:collectionOf]}" : "Get #{@jsonHash[:name]}"
-		@mdlines.push HEADER1 + @jsonHash[:name] + TWONEWLINES
+		@mdlines.push HEADER1 + @jsonHash[:name] + HEADERQUALIFIER + TWONEWLINES
 		@mdlines.push @jsonHash[:description] + TWONEWLINES
-
+		@mdlines.push  APPLIESTO + TWONEWLINES
 		isRelation, isProperty, isMethod = false, false, false 
 
 		if propreties != nil
@@ -296,17 +293,6 @@ module SpecMaker
 
 		# Add property table. 	
 
-		case @gsType
-		when 'getter'
-			@mdlines.push HEADER2 + '[Properties](#getter-examples)' + NEWLINE
-		when 'setter'
-			@mdlines.push HEADER2 + '[Properties](#setter-examples)' + NEWLINE
-		when 'getterandsetter'
-			@mdlines.push HEADER2 + '[Properties](#getter-and-setter-examples)' + NEWLINE
-		else	
-			@mdlines.push HEADER2 + 'Properties' + NEWLINE
-		end	
-
 		if isProperty
 			@mdlines.push PROPERTY_HEADER + TABLE_2ND_LINE 
 			propreties.each do |prop|
@@ -315,6 +301,11 @@ module SpecMaker
 				   push_property prop
 				end
 			end
+			# Sep-20, Property read-write example addition
+			if @gsType != 'none'
+				@mdlines.push NEWLINE + GETTERSETTERLINK + NEWLINE
+			end
+
 		else
 			@mdlines.push "None"  + NEWLINE
 		end		
@@ -351,7 +342,7 @@ module SpecMaker
 
 		# Add each API method details.	
 		if isMethod || (@gsType != 'none' && @gsType != '') 
-			@mdlines.push NEWLINE + HEADER2 + 'API Specification' + TWONEWLINES
+			@mdlines.push NEWLINE + HEADER2 + 'Method Details' + TWONEWLINES
 		end	
 
 		if isMethod

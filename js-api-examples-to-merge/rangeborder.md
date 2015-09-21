@@ -5,12 +5,12 @@
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "A1:F8";
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var borders = range.format.borders;
 borders.load(items);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	Console.log(borders.count);
 	for (var i = 0; i < borders.items.length; i++)
 	{
@@ -30,7 +30,7 @@ range.format.borders.getItem('EdgeBottom').style = 'Continuous';
 range.format.borders.getItem('EdgeLeft').style = 'Continuous';
 range.format.borders.getItem('EdgeRight').style = 'Continuous';
 range.format.borders.getItem('EdgeTop').style = 'Continuous';
-ctx.executeAsync();
-```
+return ctx.sync(); 
+}); 
 
 

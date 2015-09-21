@@ -1,8 +1,9 @@
-# ChartFill
+# ChartFill Object (JavaScript API for Office 2016)
 
 Represents the fill formatting for a chart element.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

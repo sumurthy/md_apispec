@@ -1,11 +1,14 @@
-# ChartLineFormat
+# ChartLineFormat Object (JavaScript API for Office 2016)
 
 Enapsulates the formatting options for line elements.
 
-## [Properties](#setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |color|string|HTML color code representing the color of lines in the chart.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -73,7 +76,7 @@ void
 
 [Back](#methods)
 
-### Setter Examples
+### Property access examples
 
 Set chart major gridlines on value axis to be red.
 ```js

@@ -1,8 +1,9 @@
-# ChartTitleFormat
+# ChartTitleFormat Object (JavaScript API for Office 2016)
 
 Provides access to the office art formatting for chart title.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

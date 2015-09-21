@@ -1,8 +1,9 @@
-# ChartPointFormat
+# ChartPointFormat Object (JavaScript API for Office 2016)
 
 Represents formatting object for chart points.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

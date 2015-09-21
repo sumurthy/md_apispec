@@ -1,11 +1,14 @@
-# WorksheetCollection
+# WorksheetCollection Object (JavaScript API for Office 2016)
 
 Represents a collection of worksheet objects that are part of the workbook.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[Worksheet[]](worksheet.md)|A collection of worksheet objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -136,7 +139,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 
 
 ```js

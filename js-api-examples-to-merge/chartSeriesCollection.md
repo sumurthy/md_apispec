@@ -4,10 +4,10 @@
 Getting the names of series in the series collection.
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var seriesCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
 seriesCollection.load(items);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	for (var i = 0; i < seriesCollection.items.length; i++)
 	{
 		Console.log(seriesCollection.items[i].name);
@@ -18,10 +18,10 @@ ctx.executeAsync().then(function () {
 Get the number of chart series in collection.
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var seriesCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
 seriesCollection.load(count);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	Console.log("series: Count= " + seriesCollection.count);
 });
 
@@ -31,10 +31,10 @@ ctx.executeAsync().then(function () {
 
 Get the name of the first series in the series collection.
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var seriesCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series;
 seriesCollection.load(items);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	Console.log(seriesCollection.items[0].name);
 });
 ```

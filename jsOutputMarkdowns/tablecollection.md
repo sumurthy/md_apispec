@@ -1,12 +1,15 @@
-# TableCollection
+# TableCollection Object (JavaScript API for Office 2016)
 
 Represents a collection of all the tables that are part of the workbook.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of tables in the workbook. Read-only.|
 |items|[Table[]](table.md)|A collection of table objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -145,7 +148,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 
 ```js
 var ctx = new Excel.RequestContext();

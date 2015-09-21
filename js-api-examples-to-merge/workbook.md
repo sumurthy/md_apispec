@@ -3,9 +3,9 @@
 ### getSelectedRange()
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var selectedRange = ctx.workbook.getSelectedRange();
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(selectedRange.address);
 });
 ```

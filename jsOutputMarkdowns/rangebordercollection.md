@@ -1,12 +1,15 @@
-# RangeBorderCollection
+# RangeBorderCollection Object (JavaScript API for Office 2016)
 
 Represents the border objects that make up range border.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Number of border objects in the collection. Read-only.|
 |items|[RangeBorder[]](rangeborder.md)|A collection of rangeBorder objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -125,7 +128,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 ```js
 var sheetName = "Sheet1";

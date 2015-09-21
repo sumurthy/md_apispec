@@ -1,14 +1,17 @@
-# Worksheet
+# Worksheet Object (JavaScript API for Office 2016)
 
 An Excel worksheet is a grid of cells. It can contain data, tables, charts, etc.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|string|Returns a value that uniquely identifies the worksheet in a given workbook. The value of the identifier remains the same even when the worksheet is renamed or moved. Read-only.|
 |name|string|The display name of the worksheet.|
 |position|int|The zero-based position of the worksheet within the workbook.|
 |visibility|string|The Visibility of the worksheet, Read-only. Possible values are: Visible, Hidden, VeryHidden.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -216,7 +219,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 Get worksheet properties based on sheet name.
 ```js

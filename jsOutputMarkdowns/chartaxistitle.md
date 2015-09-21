@@ -1,12 +1,15 @@
-# ChartAxisTitle
+# ChartAxisTitle Object (JavaScript API for Office 2016)
 
 Represents the title of a chart axis.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |text|string|Represents the axis title.|
 |visible|bool|A boolean that specifies the visibility of an axis title.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -44,7 +47,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 Get the `text` of Chart Axis Title from the value axis of Chart1.
 
 ```js

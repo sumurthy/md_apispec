@@ -1,8 +1,9 @@
-# ChartSeriesFormat
+# ChartSeriesFormat Object (JavaScript API for Office 2016)
 
 encapsulates the format properties for the chart series
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

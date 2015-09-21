@@ -4,7 +4,7 @@
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F:G";
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 var range = worksheet.getRange(rangeAddress);
 var rangeFont = ramge.format.font;
@@ -20,5 +20,5 @@ var sheetName = "Sheet1";
 var rangeAddress = "F:G";
 var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 range.format.font.name = 'Times New Roman';
-ctx.executeAsync();
-```
+return ctx.sync(); 
+}); 

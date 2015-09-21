@@ -1,11 +1,14 @@
-# ChartSeries
+# ChartSeries Object (JavaScript API for Office 2016)
 
 Represents a series in a chart.
 
-## [Properties](#setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |name|string|Represents the name of a series in a chart.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -44,7 +47,7 @@ void
 
 [Back](#methods)
 
-### Setter Examples
+### Property access examples
 
 Rename the 1st series of Chart1 to "New Series Name"
 

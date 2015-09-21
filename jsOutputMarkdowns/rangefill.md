@@ -1,11 +1,14 @@
-# RangeFill
+# RangeFill Object (JavaScript API for Office 2016)
 
 Represents the background of a range object.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |color|string|HTML color code representing the color of the border line, of the form #RRGGBB (e.g. "FFA500") or as a named HTML color (e.g. "orange")|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -75,7 +78,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 ```js
 var sheetName = "Sheet1";
 var rangeAddress = "F:G";

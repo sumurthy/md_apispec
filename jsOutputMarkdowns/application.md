@@ -1,11 +1,14 @@
-# Application
+# Application Object (JavaScript API for Office 2016)
 
 Represents the Excel application that manages the workbook.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation.,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -69,7 +72,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 ```js
 var ctx = new Excel.RequestContext();
 var application = ctx.workbook.application;

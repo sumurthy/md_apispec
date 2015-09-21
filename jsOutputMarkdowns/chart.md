@@ -1,8 +1,9 @@
-# Chart
+# Chart Object (JavaScript API for Office 2016)
 
 Represents a chart object in a workbook.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |height|double|Represents the height, in points, of the chart object.|
@@ -10,6 +11,8 @@ Represents a chart object in a workbook.
 |name|string|Represents the name of a chart object.|
 |top|double|Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|
 |width|double|Represents the width, in points, of the chart object.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -148,7 +151,7 @@ ctx.executeAsync();
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 Get a chart named "Chart1"
 

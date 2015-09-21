@@ -1,14 +1,17 @@
-# TableColumn
+# TableColumn Object (JavaScript API for Office 2016)
 
 Represents a column in a table.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|int|Returns a unique key that identifies the column within the table. Read-only.|
 |index|int|Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.|
 |name|string|Returns the name of the table column. Read-only.|
 |values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -196,7 +199,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 ```js
 var tableName = 'Table1';

@@ -3,10 +3,10 @@
 ### add(address: string, hasHeaders: bool)
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
 table.load(name);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	Console.log(table.name);
 });
 
@@ -14,10 +14,10 @@ ctx.executeAsync().then(function () {
 ### getItem(id: object)
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var tableName = 'Table1';
 var table = ctx.workbook.tables.getItem(tableName);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(table.index);
 });
 ```
@@ -25,9 +25,9 @@ ctx.executeAsync().then(function () {
 ### getItemAt(index: number)
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var table = ctx.workbook.tables.getItemAt(0);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(table.name);
 });
 ```
@@ -35,10 +35,10 @@ ctx.executeAsync().then(function () {
 ### Getter 
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var tables = ctx.workbook.tables;
 tables.load(items);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	Console.log("tables Count: " + tables.count);
 	for (var i = 0; i < tables.items.length; i++)
 	{
@@ -50,10 +50,10 @@ ctx.executeAsync().then(function () {
 Get the number of tables
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var tables = ctx.workbook.tables;
 tables.load(count);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	Console.log(tables.count);
 });
 

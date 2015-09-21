@@ -1,8 +1,9 @@
-# ChartPoint
+# ChartPoint Object (JavaScript API for Office 2016)
 
 Represents a point of a series in a chart.
 
-## Properties
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |value|object|Returns the value of a chart point. Read-only.|

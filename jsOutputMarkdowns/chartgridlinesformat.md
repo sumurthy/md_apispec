@@ -1,8 +1,9 @@
-# ChartGridlinesFormat
+# ChartGridlinesFormat Object (JavaScript API for Office 2016)
 
 Encapsulates the format properties for chart gridlines.
 
-## Properties
+_Applies to: Office 2016_
+
 None
 
 ## Relationships

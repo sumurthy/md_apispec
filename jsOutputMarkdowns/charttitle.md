@@ -1,13 +1,16 @@
-# ChartTitle
+# ChartTitle Object (JavaScript API for Office 2016)
 
 Represents a chart title object of a chart.
 
-## [Properties](#getter-and-setter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |overlay|bool|Boolean value representing if the chart title will overlay the chart or not.|
 |text|string|Represents the title text of a chart.|
 |visible|bool|A boolean value the represents the visibility of a chart title object.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 | Relationship | Type	|Description|
@@ -45,7 +48,7 @@ void
 
 [Back](#methods)
 
-### Getter and Setter Examples
+### Property access examples
 
 Get the `text` of Chart Title from Chart1.
 

@@ -1,12 +1,15 @@
-# ChartSeriesCollection
+# ChartSeriesCollection Object (JavaScript API for Office 2016)
 
 Represents a collection of chart series.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of series in the collection. Read-only.|
 |items|[ChartSeries[]](chartseries.md)|A collection of chartSeries objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -75,7 +78,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 Getting the names of series in the series collection.
 
 ```js

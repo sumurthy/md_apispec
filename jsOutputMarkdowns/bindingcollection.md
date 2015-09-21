@@ -1,12 +1,15 @@
-# BindingCollection
+# BindingCollection Object (JavaScript API for Office 2016)
 
 Represents the collection of all the binding objects that are part of the workbook.
 
-## [Properties](#getter-examples)
+_Applies to: Office 2016_
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of bindings in the collection. Read-only.|
 |items|[Binding[]](binding.md)|A collection of binding objects. Read-only.|
+
+_See property access [examples.](#property-access-examples)_
 
 ## Relationships
 None
@@ -149,7 +152,7 @@ void
 
 [Back](#methods)
 
-### Getter Examples
+### Property access examples
 
 ```js
 var ctx = new Excel.RequestContext();

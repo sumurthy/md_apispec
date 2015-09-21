@@ -4,10 +4,10 @@
 
 ```js
 var wSheetName = 'Sample Name';
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var worksheet = ctx.workbook.worksheets.add(wSheetName);
 worksheet.load(name);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	Console.log(worksheet.name);
 });
 ```
@@ -16,10 +16,10 @@ ctx.executeAsync().then(function () {
 
 ```js
 hellow!!!
-var ctx = new Excel.RequestContext(); 
+Excel.run(function (ctx) {  
 var activeWorksheet = ctx.workbook.worksheets.getActiveWorksheet();
 activeWorksheet.load(name);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(activeWorksheet.name);
 });
 ```
@@ -27,11 +27,11 @@ ctx.executeAsync().then(function () {
 ### getItem(index: string)
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var wSheetName = 'Sheet1'; 
 var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 worksheet.load(index);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(worksheet.index);
 });
 ```
@@ -40,10 +40,10 @@ ctx.executeAsync().then(function () {
 
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var worksheets = ctx.workbook.worksheets;
 worksheets.load(items);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	for (var i = 0; i < worksheets.items.length; i++)
 	{
 		Console.log(worksheets.items[i].name);
@@ -54,10 +54,10 @@ ctx.executeAsync().then(function () {
 ##### Getting the number of worksheets
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var worksheets = ctx.workbook.worksheets;
 tables.load(count);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 	Console.log("Worksheets: Count= " + worksheets.count);
 });
 
