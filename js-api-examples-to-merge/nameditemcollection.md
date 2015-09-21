@@ -5,14 +5,15 @@ A collection of all the nameditem objects that are part of the workbook.
 
 ```js
 Excel.run(function (ctx) { 
-var nameditems = ctx.workbook.names;
-nameditems.load(items);
-return ctx.sync().then(function() {
-	for (var i = 0; i < nameditems.items.length; i++)
-	{
-		Console.log(nameditems.items[i].name);
-		Console.log(nameditems.items[i].index);
-	}
+	var nameditems = ctx.workbook.names;
+	nameditems.load(items);
+	return ctx.sync().then(function() {
+		for (var i = 0; i < nameditems.items.length; i++)
+		{
+			Console.log(nameditems.items[i].name);
+			Console.log(nameditems.items[i].index);
+		}
+	});
 });
 ```
 
@@ -20,10 +21,11 @@ Get the number of nameditems.
 
 ```js
 Excel.run(function (ctx) { 
-var nameditems = ctx.workbook.names;
-nameditems.load(count);
-return ctx.sync().then(function() {
-	Console.log("nameditems: Count= " + nameditems.count);
+	var nameditems = ctx.workbook.names;
+	nameditems.load(count);
+	return ctx.sync().then(function() {
+		Console.log("nameditems: Count= " + nameditems.count);
+	});
 });
 
 ```
@@ -32,19 +34,21 @@ return ctx.sync().then(function() {
 
 ```js
 Excel.run(function (ctx) { 
-var nameditem = ctx.workbook.names.getItem(wSheetName);
-nameditem.load(type);
-return ctx.sync().then(function() {
-		Console.log(nameditem.type);
+	var nameditem = ctx.workbook.names.getItem(wSheetName);
+	nameditem.load(type);
+	return ctx.sync().then(function() {
+			Console.log(nameditem.type);
+	});
 });
 ```
 ### getItemAt(index: number)
 
 ```js
 Excel.run(function (ctx) { 
-var nameditem = ctx.workbook.names.getItemAt(0);
-nameditem.load(name);
-return ctx.sync().then(function() {
-		Console.log(nameditem.name);
+	var nameditem = ctx.workbook.names.getItemAt(0);
+	nameditem.load(name);
+	return ctx.sync().then(function() {
+			Console.log(nameditem.name);
+	});
 });
 ```

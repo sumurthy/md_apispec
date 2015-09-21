@@ -3,7 +3,7 @@
 Excel.run(function (ctx) { 
 	var application = ctx.workbook.application;
 	application.load(calculationMode);
-	ctx.executeAsync().then(function() {
+	return ctx.sync().then(function() {
 		Console.log(application.calculationMode);
 	});
 });

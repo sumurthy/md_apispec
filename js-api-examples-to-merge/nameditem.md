@@ -6,11 +6,12 @@ Returns the Range object that is associated with the name. `null` if the name is
 
 ```js
 Excel.run(function (ctx) { 
-var names = ctx.workbook.names;
-var range = names.getItem('MyRange').getRange();
-range.load(address);
-return ctx.sync().then(function() {
-		Console.log(range.address);
+	var names = ctx.workbook.names;
+	var range = names.getItem('MyRange').getRange();
+	range.load(address);
+	return ctx.sync().then(function() {
+			Console.log(range.address);
+	});
 });
 ```
 
@@ -18,10 +19,11 @@ return ctx.sync().then(function() {
 
 ```js
 Excel.run(function (ctx) { 
-var names = ctx.workbook.names;
-var namedItem = names.getItem('MyRange');
-namedItem.load(type);
-return ctx.sync().then(function() {
-		Console.log(namedItem.type);
+	var names = ctx.workbook.names;
+	var namedItem = names.getItem('MyRange');
+	namedItem.load(type);
+	return ctx.sync().then(function() {
+			Console.log(namedItem.type);
+	});
 });
 ```
