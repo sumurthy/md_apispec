@@ -1,8 +1,8 @@
-# RangeFont Object (JavaScript API for Office 2016)
+# RangeFont Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 This object represents the font attributes (font name, font size, color, etc.) for an object.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -25,7 +25,7 @@ None
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -43,35 +43,30 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 ```js
-var sheetName = "Sheet1";
-var rangeAddress = "F:G";
-var ctx = new Excel.RequestContext();
-var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-var range = worksheet.getRange(rangeAddress);
-var rangeFont = ramge.format.font;
-rangeFont.load(name);
-ctx.executeAsync().then(function() {
-	Console.log(rangeFont.name);
-});
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F:G";
+	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+	var range = worksheet.getRange(rangeAddress);
+	var rangeFont = ramge.format.font;
+	rangeFont.load(name);
+	return ctx.sync().then(function() {
+		Console.log(rangeFont.name);
+	});
+}); 
 ```
 The example below sets font name. 
 
 ```js
-var sheetName = "Sheet1";
-var rangeAddress = "F:G";
-var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-range.format.font.name = 'Times New Roman';
-ctx.executeAsync();
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F:G";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.format.font.name = 'Times New Roman';
+	return ctx.sync(); 
+}); 
 ```
-
-[Back](#properties)

@@ -1,8 +1,8 @@
-# TableRow Object (JavaScript API for Office 2016)
+# TableRow Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents a row in a table.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -23,7 +23,7 @@ None
 |[getRange()](#getrange)|[Range](range.md)|Returns the range object associated with the entire row.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### delete()
 Deletes the row from the table.
@@ -42,15 +42,14 @@ void
 #### Examples
 
 ```js
-var tableName = 'Table1';
-var ctx = new Excel.RequestContext();
-var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
-row.delete();
-ctx.executeAsync();
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+	row.delete();
+	return ctx.sync(); 
+	}); 
+}); 
 ```
-
-
-[Back](#methods)
 
 ### getRange()
 Returns the range object associated with the entire row.
@@ -69,18 +68,16 @@ None
 #### Examples
 
 ```js
-var tableName = 'Table1';
-var ctx = new Excel.RequestContext();
-var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
-var rowRange = row.getRange();
-rowRange.load(address);
-ctx.executeAsync().then(function () {
-	Console.log(rowRange.address);
-});
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
+	var rowRange = row.getRange();
+	rowRange.load(address);
+	return ctx.sync().then(function() {
+		Console.log(rowRange.address);
+	});
+}); 
 ```
-
-
-[Back](#methods)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -98,34 +95,29 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 ```js
-var tableName = 'Table1';
-var ctx = new Excel.RequestContext();
-var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
-row.load(index);
-ctx.executeAsync().then(function () {
-	Console.log(row.index);
-});
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
+	row.load(index);
+	return ctx.sync().then(function() {
+		Console.log(row.index);
+	});
+}); 
 ```
 
 ```js
-var ctx = new Excel.RequestContext();
-var tables = ctx.workbook.tables;
-var newValues = [["New", "Values", "For", "New", "Row"]];
-var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
-row.values = newValues;
-row.load(values);
-ctx.executeAsync().then(function () {
-	Console.log(row.values);
-});
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	var newValues = [["New", "Values", "For", "New", "Row"]];
+	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+	row.values = newValues;
+	row.load(values);
+	return ctx.sync().then(function() {
+		Console.log(row.values);
+	});
+}); 
 ```
-[Back](#properties)

@@ -1,8 +1,8 @@
-# ChartLineFormat Object (JavaScript API for Office 2016)
+# ChartLineFormat Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Enapsulates the formatting options for line elements.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -21,7 +21,7 @@ None
 |[clear()](#clear)|void|Clear the line format of a chart element.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### clear()
 Clear the line format of a chart element.
@@ -42,17 +42,14 @@ void
 Clear the line format of the major gridlines on value axis of the Chart named "Chart1"
 
 ```js
-var ctx = new Excel.RequestContext();
-var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
-
-gridlines.format.line.clear();
-ctx.executeAsync().then(function () {
-		Console.log"Chart Major Gridlines Format Cleared");
+Excel.run(function (ctx) { 
+	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
+	gridlines.format.line.clear();
+	return ctx.sync().then(function() {
+			Console.log"Chart Major Gridlines Format Cleared");
+	});
 });
 ```
-
-[Back](#methods)
-
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -69,19 +66,11 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 Set chart major gridlines on value axis to be red.
+
 ```js
-var ctx = new Excel.RequestContext();
-var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.axes.valueaxis.majorGridlines;
-
-
-[Back](#properties)
+Excel.run(function (ctx) { 
+	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.axes.valueaxis.majorGridlines;

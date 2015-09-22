@@ -1,8 +1,8 @@
-# RangeBorder Object (JavaScript API for Office 2016)
+# RangeBorder Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents the border of an object.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -23,7 +23,7 @@ None
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -41,46 +41,40 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 ```js
-var sheetName = "Sheet1";
-var rangeAddress = "A1:F8";
-var ctx = new Excel.RequestContext();
-var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-var range = worksheet.getRange(rangeAddress);
-var borders = range.format.borders;
-borders.load(items);
-ctx.executeAsync().then(function () {
-	Console.log(borders.count);
-	for (var i = 0; i < borders.items.length; i++)
-	{
-		Console.log(borders.items[i].sideIndex);
-	}
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+	var range = worksheet.getRange(rangeAddress);
+	var borders = range.format.borders;
+	borders.load(items);
+	return ctx.sync().then(function() {
+		Console.log(borders.count);
+		for (var i = 0; i < borders.items.length; i++)
+		{
+			Console.log(borders.items[i].sideIndex);
+		}
+	});
 });
 ```
 The example below adds grid border around the range.
 
 ```js
-var sheetName = "Sheet1";
-var rangeAddress = "A1:F8";
-var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-range.format.borders.getItem('InsideHorizontal').style = 'Continuous';
-range.format.borders.getItem('InsideVertical').style = 'Continuous';
-range.format.borders.getItem('EdgeBottom').style = 'Continuous';
-range.format.borders.getItem('EdgeLeft').style = 'Continuous';
-range.format.borders.getItem('EdgeRight').style = 'Continuous';
-range.format.borders.getItem('EdgeTop').style = 'Continuous';
-ctx.executeAsync();
-```
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:F8";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.format.borders.getItem('InsideHorizontal').style = 'Continuous';
+	range.format.borders.getItem('InsideVertical').style = 'Continuous';
+	range.format.borders.getItem('EdgeBottom').style = 'Continuous';
+	range.format.borders.getItem('EdgeLeft').style = 'Continuous';
+	range.format.borders.getItem('EdgeRight').style = 'Continuous';
+	range.format.borders.getItem('EdgeTop').style = 'Continuous';
+	return ctx.sync(); 
+}); 
 
 
-
-[Back](#properties)

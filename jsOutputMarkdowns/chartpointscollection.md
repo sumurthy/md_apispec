@@ -1,8 +1,8 @@
-# ChartPointsCollection Object (JavaScript API for Office 2016)
+# ChartPointsCollection Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 A collection of all the chart points within a series inside a chart.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -22,7 +22,7 @@ None
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Retrieve a point based on its position within the series.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### getItemAt(index: number)
 Retrieve a point based on its position within the series.
@@ -44,16 +44,14 @@ chartPointsCollectionObject.getItemAt(index);
 Set the border color for the first points in the points collection
 
 ```js
-var ctx = new Excel.RequestContext();
-var point = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series.getItemAt(0).points;
-points.getItemAt(0).format.fill.setSolidColor("8FBC8F");
-ctx.executeAsync().then(function () {
-	Console.log("Point Border Color Changed");
+Excel.run(function (ctx) { 
+	var point = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series.getItemAt(0).points;
+	points.getItemAt(0).format.fill.setSolidColor("8FBC8F");
+	return ctx.sync().then(function() {
+		Console.log("Point Border Color Changed");
+	});
 });
-```
-[Back](#methods)
-
-### load(param: object)
+```### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
@@ -69,35 +67,29 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 Get the names of points in the points collection
+
 ```js
-var ctx = new Excel.RequestContext();
-var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
-pointsCollection.load(items);
-ctx.executeAsync().then(function () {
-	Console.log("Points Collection loaded");
+Excel.run(function (ctx) { 
+	var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
+	pointsCollection.load(items);
+	return ctx.sync().then(function() {
+		Console.log("Points Collection loaded");
+	});
 });
 ```
 
 Get the number of points
 
 ```js
-var ctx = new Excel.RequestContext();
-var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
-pointsCollection.load(count);
-ctx.executeAsync().then(function () {
-	Console.log("points: Count= " + pointsCollection.count);
+Excel.run(function (ctx) { 
+	var pointsCollection = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").points;
+	pointsCollection.load(count);
+	return ctx.sync().then(function() {
+		Console.log("points: Count= " + pointsCollection.count);
+	});
 });
-
 ```
-
-[Back](#properties)

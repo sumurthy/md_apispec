@@ -1,8 +1,8 @@
-# ChartAxis Object (JavaScript API for Office 2016)
+# ChartAxis Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents a single axis in a chart.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -27,7 +27,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -45,40 +45,32 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 Get the `maximum` of Chart Axis from Chart1
-```js
-var ctx = new Excel.RequestContext();
-var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
-var axis = chart.axes.valueaxis;
-axis.load(maximum);
-ctx.executeAsync().then(function () {
-		Console.log(axis.maximum);
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	var axis = chart.axes.valueaxis;
+	axis.load(maximum);
+	return ctx.sync().then(function() {
+			Console.log(axis.maximum);
+	});
 });
 ```
 
 Set the  `maximum`,  `minimum`,  `majorunit`, `minorunit` of valueaxis. 
 
 ```js
-var ctx = new Excel.RequestContext();
-var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
-
-chart.axes.valueaxis.maximum = 5;
-chart.axes.valueaxis.minimum = 0;
-chart.axes.valueaxis.majorunit = 1;
-chart.axes.valueaxis.minorunit = 0.2;
-
-ctx.executeAsync().then(function () {
-		Console.log("Axis Settings Changed");
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	chart.axes.valueaxis.maximum = 5;
+	chart.axes.valueaxis.minimum = 0;
+	chart.axes.valueaxis.majorunit = 1;
+	chart.axes.valueaxis.minorunit = 0.2;
+	return ctx.sync().then(function() {
+			Console.log("Axis Settings Changed");
+	});
 });
 ```
-
-[Back](#properties)

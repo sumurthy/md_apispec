@@ -1,8 +1,8 @@
-# ChartDataLabels Object (JavaScript API for Office 2016)
+# ChartDataLabels Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the data labels on a chart point.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -28,7 +28,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -46,26 +46,20 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
+
 Make Series Name shown in Datalabels and set the `position` of datalabels to be "top";
+
 ```js
-var ctx = new Excel.RequestContext();
-var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
-
-chart.datalabels.visible = true;
-chart.datalabels.position = "top";
-chart.datalabels.ShowSeriesName = true;
-
-ctx.executeAsync().then(function () {
-		Console.log("Datalabels Shown");
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	chart.datalabels.visible = true;
+	chart.datalabels.position = "top";
+	chart.datalabels.ShowSeriesName = true;
+	return ctx.sync().then(function() {
+			Console.log("Datalabels Shown");
+	});
 });
-```
 
-[Back](#properties)
+```

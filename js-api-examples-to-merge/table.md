@@ -8,6 +8,7 @@ Excel.run(function (ctx) {
 	table.delete();
 	return ctx.sync(); 
 }); 
+```
 
 ### getDataBodyRange()
 ```js

@@ -1,8 +1,8 @@
-# NamedItem Object (JavaScript API for Office 2016)
+# NamedItem Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents a defined name for a range of cells or value. Names can be primitive named objects (as seen in the type below), range object, reference to a range. This object can be used to obtain range object associated with names.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -24,7 +24,7 @@ None
 |[getRange()](#getrange)|[Range](range.md)|Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### getRange()
 Returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.
@@ -45,17 +45,15 @@ None
 Returns the Range object that is associated with the name. `null` if the name is not of the type `Range`. Note: This API currently supports only the Workbook scoped items.**
 
 ```js
-var ctx = new Excel.RequestContext();
-var names = ctx.workbook.names;
-var range = names.getItem('MyRange').getRange();
-range.load(address);
-ctx.executeAsync().then(function () {
-		Console.log(range.address);
+Excel.run(function (ctx) { 
+	var names = ctx.workbook.names;
+	var range = names.getItem('MyRange').getRange();
+	range.load(address);
+	return ctx.sync().then(function() {
+			Console.log(range.address);
+	});
 });
 ```
-
-
-[Back](#methods)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -73,23 +71,16 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var names = ctx.workbook.names;
-var namedItem = names.getItem('MyRange');
-namedItem.load(type);
-ctx.executeAsync().then(function () {
-		Console.log(namedItem.type);
+Excel.run(function (ctx) { 
+	var names = ctx.workbook.names;
+	var namedItem = names.getItem('MyRange');
+	namedItem.load(type);
+	return ctx.sync().then(function() {
+			Console.log(namedItem.type);
+	});
 });
 ```
-
-[Back](#properties)

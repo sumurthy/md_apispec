@@ -1,8 +1,8 @@
-# RangeFill Object (JavaScript API for Office 2016)
+# RangeFill Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents the background of a range object.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -21,7 +21,7 @@ None
 |[clear()](#clear)|void|Resets the range background.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### clear()
 Resets the range background.
@@ -42,18 +42,16 @@ void
 This example resets the range background.
 
 ```js
-var sheetName = "Sheet1";
-var rangeAddress = "F:G";
-var ctx = new Excel.RequestContext();
-var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-var range = worksheet.getRange(rangeAddress);
-var rangeFill = ramge.format.fill;
-rangeFill.clear();
-ctx.executeAsync();
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F:G";
+	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+	var range = worksheet.getRange(rangeAddress);
+	var rangeFill = ramge.format.fill;
+	rangeFill.clear();
+	return ctx.sync(); 
+}); 
 ```
-
-
-[Back](#methods)
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -71,33 +69,30 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 ```js
-var sheetName = "Sheet1";
-var rangeAddress = "F:G";
-var ctx = new Excel.RequestContext();
-var worksheet = ctx.workbook.worksheets.getItem(sheetName);
-var range = worksheet.getRange(rangeAddress);
-var rangeFill = ramge.format.fill;
-rangeFill.load(color);
-ctx.executeAsync().then(function() {
-	Console.log(rangeFill.color);
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F:G";
+	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
+	var range = worksheet.getRange(rangeAddress);
+	var rangeFill = ramge.format.fill;
+	rangeFill.load(color);
+	return ctx.sync().then(function() {
+		Console.log(rangeFill.color);
+	});
 });
+
 ```
 The example below sets fill color. 
 
 ```js
-var sheetName = "Sheet1";
-var rangeAddress = "F:G";
-var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
-range.format.fill.color = '0000FF';
-ctx.executeAsync();
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "F:G";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.format.fill.color = '0000FF';
+	return ctx.sync(); 
+}); 
 ```
-[Back](#properties)

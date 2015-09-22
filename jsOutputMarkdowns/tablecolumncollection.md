@@ -1,8 +1,8 @@
-# TableColumnCollection Object (JavaScript API for Office 2016)
+# TableColumnCollection Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the columns that are part of the table.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -24,7 +24,7 @@ None
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Gets a column based on its position in the collection.|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### add(index: number, values: (boolean or string or number)[][])
 Adds a new column to the table.
@@ -46,18 +46,16 @@ tableColumnCollectionObject.add(index, values);
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var tables = ctx.workbook.tables;
-var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
-var column = tables.getItem("Table1").columns.add(null, values);
-column.load(name);
-ctx.executeAsync().then(function () {
-	Console.log(column.name);
+Excel.run(function (ctx) { 
+	var tables = ctx.workbook.tables;
+	var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
+	var column = tables.getItem("Table1").columns.add(null, values);
+	column.load(name);
+	return ctx.sync().then(function() {
+		Console.log(column.name);
+	});
 });
 ```
-
-
-[Back](#methods)
 
 ### getItem(key: number or string)
 Gets a column object by Name or ID.
@@ -78,25 +76,24 @@ tableColumnCollectionObject.getItem(key);
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
-tablecolumn.load(name);
-ctx.executeAsync().then(function () {
-		Console.log(tablecolumn.name);
+Excel.run(function (ctx) { 
+	var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
+	tablecolumn.load(name);
+	return ctx.sync().then(function() {
+			Console.log(tablecolumn.name);
+	});
 });
 ```
 
 ```js
-var ctx = new Excel.RequestContext();
-var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
-tablecolumn.load(name);
-ctx.executeAsync().then(function () {
-		Console.log(tablecolumn.name);
+Excel.run(function (ctx) { 
+	var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
+	tablecolumn.load(name);
+	return ctx.sync().then(function() {
+			Console.log(tablecolumn.name);
+	});
 });
 ```
-
-[Back](#methods)
-
 ### getItemAt(index: number)
 Gets a column based on its position in the collection.
 
@@ -115,16 +112,14 @@ tableColumnCollectionObject.getItemAt(index);
 
 #### Examples
 ```js
-var ctx = new Excel.RequestContext();
-var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
-tablecolumn.load(name);
-ctx.executeAsync().then(function () {
-		Console.log(tablecolumn.name);
+Excel.run(function (ctx) { 
+	var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
+	tablecolumn.load(name);
+	return ctx.sync().then(function() {
+			Console.log(tablecolumn.name);
+	});
 });
 ```
-
-[Back](#methods)
-
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -141,25 +136,19 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
-tablecolumns.load(items);
-ctx.executeAsync().then(function () {
-	Console.log("tablecolumns Count: " + tablecolumns.count);
-	for (var i = 0; i < tablecolumns.items.length; i++)
-	{
-		Console.log(tablecolumns.items[i].name);
-	}
+Excel.run(function (ctx) { 
+	var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
+	tablecolumns.load(items);
+	return ctx.sync().then(function() {
+		Console.log("tablecolumns Count: " + tablecolumns.count);
+		for (var i = 0; i < tablecolumns.items.length; i++)
+		{
+			Console.log(tablecolumns.items[i].name);
+		}
+	});
 });
 ```
-[Back](#properties)

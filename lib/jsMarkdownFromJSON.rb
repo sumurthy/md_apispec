@@ -15,7 +15,7 @@ module SpecMaker
 	MARKDOWN_OUTPUT_FOLDER = "../jsOutputMarkdowns/"
 	EXAMPLES_FOLDER = "../js-api-examples-to-merge/"
 	HEADERQUALIFIER = " Object (JavaScript API for Excel)"
-	APPLIESTO = "_Applies to: Office 2016_"
+	APPLIESTO = "_Applies to: Excel 2016, Office 2016_"
 	HEADER1 = '# '
 	HEADER2 = '## '
 	HEADER3 = '### '
@@ -267,8 +267,9 @@ module SpecMaker
 
 		header_name = @jsonHash[:isCollection] ? "List #{@jsonHash[:collectionOf]}" : "Get #{@jsonHash[:name]}"
 		@mdlines.push HEADER1 + @jsonHash[:name] + HEADERQUALIFIER + TWONEWLINES
-		@mdlines.push @jsonHash[:description] + TWONEWLINES
 		@mdlines.push  APPLIESTO + TWONEWLINES
+		@mdlines.push @jsonHash[:description] + TWONEWLINES
+
 		isRelation, isProperty, isMethod = false, false, false 
 
 		if propreties != nil

@@ -31,6 +31,7 @@ Excel.run(function (ctx) {
 	range.format.fill.color = '0000FF';
 	return ctx.sync(); 
 }); 
+```
 
 The example below adds grid border around the range.
 
@@ -47,3 +48,4 @@ Excel.run(function (ctx) {
 	range.format.borders('EdgeTop').lineStyle = 'Continuous';
 	return ctx.sync(); 
 }); 
+```

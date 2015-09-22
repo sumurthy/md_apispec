@@ -18,8 +18,10 @@ Excel.run(function (ctx) {
 	chart.setData(sourceData, "Columns");
 	return ctx.sync(); 
 }); 
+```
 
 ### setPosition(startCell: object, endCell: object)
+
 
 ```js
 Excel.run(function (ctx) { 
@@ -31,6 +33,7 @@ Excel.run(function (ctx) {
 	chart.setPosition("C2", null);
 	return ctx.sync(); 
 }); 
+```
 
 ### Getter setter
 
@@ -58,6 +61,7 @@ Excel.run(function (ctx) {
 	chart.weight = 200;
 	return ctx.sync(); 
 }); 
+```
 
 Rename the chart to new name, resize the chart to 200 points in both height and weight. Move Chart1 to 100 points to the top and left. 
 
@@ -71,3 +75,4 @@ Excel.run(function (ctx) {
 	chart.width =200;
 	return ctx.sync(); 
 }); 
+```

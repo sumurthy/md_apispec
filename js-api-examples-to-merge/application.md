@@ -8,10 +8,12 @@ Excel.run(function (ctx) {
 	});
 });
 ```
+
 ### calculate(calculationType: string)
 ```js
 Excel.run(function (ctx) { 
 	ctx.workbook.application.calculate('Full');
 	return ctx.sync(); 
 }); 
+```
 

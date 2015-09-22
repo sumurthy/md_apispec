@@ -9,6 +9,8 @@ Excel.run(function (ctx) {
 	return ctx.sync(); 
 	}); 
 }); 
+```
+
 ### getRange() 
 
 ```js

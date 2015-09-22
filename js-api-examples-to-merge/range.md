@@ -12,6 +12,7 @@ Excel.run(function (ctx) {
 	range.clear();
 	return ctx.sync(); 
 }); 
+```
 
 ### delete(shift: string)
 
@@ -23,6 +24,7 @@ Excel.run(function (ctx) {
 	range.delete();
 	return ctx.sync(); 
 }); 
+```
 
 ### getCell(row: number, column: number)
 

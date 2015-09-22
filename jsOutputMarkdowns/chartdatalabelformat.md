@@ -1,8 +1,8 @@
-# ChartDataLabelFormat Object (JavaScript API for Office 2016)
+# ChartDataLabelFormat Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Encapsulates the format properties for the chart data labels.
-
-_Applies to: Office 2016_
 
 None
 
@@ -18,7 +18,7 @@ None
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -36,10 +36,4 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	

@@ -1,8 +1,8 @@
-# ChartTitle Object (JavaScript API for Office 2016)
+# ChartTitle Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 Represents a chart title object of a chart.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -23,7 +23,7 @@ _See property access [examples.](#property-access-examples)_
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -41,24 +41,18 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 Get the `text` of Chart Title from Chart1.
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var title = chart.title;
 title.load(text);
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log(title.text);
 });
 ```
@@ -66,16 +60,14 @@ ctx.executeAsync().then(function () {
 Set the `text` of Chart Title to "My Chart" and Make it show on top of the chart without overlaying.
 
 ```js
-var ctx = new Excel.RequestContext();
+Excel.run(function (ctx) { 
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 chart.title.text= "My Chart"; 
 chart.title.visible=true;
 chart.title.overlay=true;
 
-ctx.executeAsync().then(function () {
+return ctx.sync().then(function() {
 		Console.log("Char Title Changed");
 });
 ```
-
-[Back](#properties)

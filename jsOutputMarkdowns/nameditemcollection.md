@@ -1,8 +1,8 @@
-# NamedItemCollection Object (JavaScript API for Office 2016)
+# NamedItemCollection Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 A collection of all the nameditem objects that are part of the workbook.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -21,7 +21,7 @@ None
 |[getItem(name: string)](#getitemname-string)|[NamedItem](nameditem.md)|Gets a nameditem object using its name|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### getItem(name: string)
 Gets a nameditem object using its name
@@ -42,25 +42,24 @@ namedItemCollectionObject.getItem(name);
 #### Examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var nameditem = ctx.workbook.names.getItem(wSheetName);
-nameditem.load(type);
-ctx.executeAsync().then(function () {
-		Console.log(nameditem.type);
+Excel.run(function (ctx) { 
+	var nameditem = ctx.workbook.names.getItem(wSheetName);
+	nameditem.load(type);
+	return ctx.sync().then(function() {
+			Console.log(nameditem.type);
+	});
 });
 ```
 
 ```js
-var ctx = new Excel.RequestContext();
-var nameditem = ctx.workbook.names.getItemAt(0);
-nameditem.load(name);
-ctx.executeAsync().then(function () {
-		Console.log(nameditem.name);
+Excel.run(function (ctx) { 
+	var nameditem = ctx.workbook.names.getItemAt(0);
+	nameditem.load(name);
+	return ctx.sync().then(function() {
+			Console.log(nameditem.name);
+	});
 });
-```
-[Back](#methods)
-
-### load(param: object)
+```### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
@@ -76,39 +75,33 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 ```js
-var ctx = new Excel.RequestContext();
-var nameditems = ctx.workbook.names;
-nameditems.load(items);
-ctx.executeAsync().then(function () {
-	for (var i = 0; i < nameditems.items.length; i++)
-	{
-		Console.log(nameditems.items[i].name);
-		Console.log(nameditems.items[i].index);
-	}
+Excel.run(function (ctx) { 
+	var nameditems = ctx.workbook.names;
+	nameditems.load(items);
+	return ctx.sync().then(function() {
+		for (var i = 0; i < nameditems.items.length; i++)
+		{
+			Console.log(nameditems.items[i].name);
+			Console.log(nameditems.items[i].index);
+		}
+	});
 });
 ```
 
 Get the number of nameditems.
 
 ```js
-var ctx = new Excel.RequestContext();
-var nameditems = ctx.workbook.names;
-nameditems.load(count);
-ctx.executeAsync().then(function () {
-	Console.log("nameditems: Count= " + nameditems.count);
+Excel.run(function (ctx) { 
+	var nameditems = ctx.workbook.names;
+	nameditems.load(count);
+	return ctx.sync().then(function() {
+		Console.log("nameditems: Count= " + nameditems.count);
+	});
 });
 
 ```
 
-
-[Back](#properties)

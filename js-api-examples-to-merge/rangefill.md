@@ -14,6 +14,7 @@ Excel.run(function (ctx) {
 	rangeFill.clear();
 	return ctx.sync(); 
 }); 
+```
 
 ### Getter and setter 
 ```js
@@ -40,3 +41,4 @@ Excel.run(function (ctx) {
 	range.format.fill.color = '0000FF';
 	return ctx.sync(); 
 }); 
+```

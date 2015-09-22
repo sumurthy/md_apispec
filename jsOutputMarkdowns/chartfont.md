@@ -1,8 +1,8 @@
-# ChartFont Object (JavaScript API for Office 2016)
+# ChartFont Object (JavaScript API for Excel)
+
+_Applies to: Excel 2016, Office 2016_
 
 This object represents the font attributes (font name, font size, color, etc.) for a chart object.
-
-_Applies to: Office 2016_
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
@@ -25,7 +25,7 @@ None
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
-## API Specification
+## Method Details
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -43,19 +43,13 @@ object.load(param);
 #### Returns
 void
 
-#### Examples
-```js
-
-```
-
-[Back](#methods)
-
+	
 ### Property access examples
 
 Use chart title as an example.
 
 ```js
-chartObject.title.format.font.name = "Calibri";
-chartObject.title.format.font.size = 12;
-
-[Back](#properties)
+Excel.run(function (ctx) { 
+	var title = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").title;
+	title.format.font.name = "Calibri";
+	title.format.font.size = 12;
