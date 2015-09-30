@@ -8,10 +8,15 @@ Returns the Range object that is associated with the name. `null` if the name is
 Excel.run(function (ctx) { 
 	var names = ctx.workbook.names;
 	var range = names.getItem('MyRange').getRange();
-	range.load(address);
+	range.load('address');
 	return ctx.sync().then(function() {
-			Console.log(range.address);
+			console.log(range.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -21,9 +26,14 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var names = ctx.workbook.names;
 	var namedItem = names.getItem('MyRange');
-	namedItem.load(type);
+	namedItem.load('type');
 	return ctx.sync().then(function() {
-			Console.log(namedItem.type);
+			console.log(namedItem.type);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

@@ -10,8 +10,12 @@ Excel.run(function (ctx) {
 	chart.datalabels.position = "top";
 	chart.datalabels.ShowSeriesName = true;
 	return ctx.sync().then(function() {
-			Console.log("Datalabels Shown");
+			console.log("Datalabels Shown");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```

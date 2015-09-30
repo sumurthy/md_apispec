@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents formatting object for chart points.
 
+## Properties
+
 None
 
 ## Relationships
@@ -18,6 +20,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -34,5 +37,3 @@ object.load(param);
 
 #### Returns
 void
-
-	

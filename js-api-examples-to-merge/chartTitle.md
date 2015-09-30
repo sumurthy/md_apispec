@@ -9,9 +9,14 @@ Excel.run(function (ctx) {
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var title = chart.title;
-title.load(text);
+title.load('text');
 return ctx.sync().then(function() {
-		Console.log(title.text);
+		console.log(title.text);
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -26,6 +31,11 @@ chart.title.visible=true;
 chart.title.overlay=true;
 
 return ctx.sync().then(function() {
-		Console.log("Char Title Changed");
+		console.log("Char Title Changed");
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

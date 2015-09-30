@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.
 
+## Properties
+
 None
 
 ## Relationships
@@ -24,6 +26,7 @@ None
 
 ## Method Details
 
+
 ### getSelectedRange()
 Gets the currently selected range from the workbook.
 
@@ -43,11 +46,18 @@ None
 ```js
 Excel.run(function (ctx) { 
 	var selectedRange = ctx.workbook.getSelectedRange();
+	selectedRange.load('address');
 	return ctx.sync().then(function() {
-			Console.log(selectedRange.address);
+			console.log(selectedRange.address);
 	});
-}); 
-```### load(param: object)
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
@@ -62,5 +72,3 @@ object.load(param);
 
 #### Returns
 void
-
-	

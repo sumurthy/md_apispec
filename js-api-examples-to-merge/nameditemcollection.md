@@ -6,14 +6,19 @@ A collection of all the nameditem objects that are part of the workbook.
 ```js
 Excel.run(function (ctx) { 
 	var nameditems = ctx.workbook.names;
-	nameditems.load(items);
+	nameditems.load('items');
 	return ctx.sync().then(function() {
 		for (var i = 0; i < nameditems.items.length; i++)
 		{
-			Console.log(nameditems.items[i].name);
-			Console.log(nameditems.items[i].index);
+			console.log(nameditems.items[i].name);
+			console.log(nameditems.items[i].index);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -22,12 +27,16 @@ Get the number of nameditems.
 ```js
 Excel.run(function (ctx) { 
 	var nameditems = ctx.workbook.names;
-	nameditems.load(count);
+	nameditems.load('count');
 	return ctx.sync().then(function() {
-		Console.log("nameditems: Count= " + nameditems.count);
+		console.log("nameditems: Count= " + nameditems.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 ### getItem(name: string)
@@ -35,10 +44,15 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var nameditem = ctx.workbook.names.getItem(wSheetName);
-	nameditem.load(type);
+	nameditem.load('type');
 	return ctx.sync().then(function() {
-			Console.log(nameditem.type);
+			console.log(nameditem.type);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 ### getItemAt(index: number)
@@ -46,9 +60,14 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var nameditem = ctx.workbook.names.getItemAt(0);
-	nameditem.load(name);
+	nameditem.load('name');
 	return ctx.sync().then(function() {
-			Console.log(nameditem.name);
+			console.log(nameditem.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the collection of all the binding objects that are part of the workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of bindings in the collection. Read-only.|
@@ -24,6 +26,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### getItem(id: string)
 Gets a binding object by ID.
@@ -86,16 +89,24 @@ Excel.run(function (ctx) {
 ```
 
 
+
+#### Examples
 ```js
 Excel.run(function (ctx) { 
 	var lastPosition = ctx.workbook.bindings.count - 1;
 	var binding = ctx.workbook.bindings.getItemAt(lastPosition);
+	binding.load('type')
 	return ctx.sync().then(function() {
-			Console.log(binding.type); 
+			console.log(binding.type); 
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
+
 
 ### getItemAt(index: number)
 Gets a binding object based on its position in the items array.
@@ -118,12 +129,18 @@ bindingCollectionObject.getItemAt(index);
 Excel.run(function (ctx) { 
 	var lastPosition = ctx.workbook.bindings.count - 1;
 	var binding = ctx.workbook.bindings.getItemAt(lastPosition);
+	binding.load('type')
 	return ctx.sync().then(function() {
-			Console.log(binding.type); 
+			console.log(binding.type); 
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -140,21 +157,24 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 ```js
 Excel.run(function (ctx) { 
 	var bindings = ctx.workbook.bindings;
-	bindings.load(items);
+	bindings.load('items');
 	return ctx.sync().then(function() {
 		for (var i = 0; i < bindings.items.length; i++)
 		{
-			Console.log(bindings.items[i].id);
-			Console.log(bindings.items[i].index);
+			console.log(bindings.items[i].id);
+			console.log(bindings.items[i].index);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 Get the number of bindings
@@ -162,10 +182,14 @@ Get the number of bindings
 ```js
 Excel.run(function (ctx) { 
 	var bindings = ctx.workbook.bindings;
-	bindings.load(count);
+	bindings.load('count');
 	return ctx.sync().then(function() {
-		Console.log("Bindings: Count= " + bindings.count);
+		console.log("Bindings: Count= " + bindings.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents major or minor gridlines on a chart axis.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |visible|bool|Boolean value representing if the axis gridlines are visible or not.|
@@ -23,6 +25,7 @@ _See property access [examples.](#property-access-examples)_
 
 ## Method Details
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -38,8 +41,6 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 Get the `visible` of Major Gridlines on value axis of Chart1
@@ -48,12 +49,16 @@ Get the `visible` of Major Gridlines on value axis of Chart1
 Excel.run(function (ctx) { 
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	var majGridlines = chart.axes.valueaxis.majorGridlines;
-	majGridlines.load(visible);
+	majGridlines.load('visible');
 	return ctx.sync().then(function() {
-			Console.log(majGridlines.visible);
+			console.log(majGridlines.visible);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 Set to show major gridlines on valueAxis of Chart1
@@ -63,7 +68,12 @@ Excel.run(function (ctx) {
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	chart.axes.valueaxis.majorgridlines.visible = true;
 	return ctx.sync().then(function() {
-			Console.log("Axis Gridlines Added ");
+			console.log("Axis Gridlines Added ");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

@@ -1,0 +1,95 @@
+{
+  "DisplaySettings": {
+    "isExclusive": false,
+    "options": {
+      "None": {
+        "value": "0",
+        "description": ""
+      },
+      "Today": {
+        "value": "1",
+        "description": ""
+      },
+      "TimeScale": {
+        "value": "2",
+        "description": ""
+      },
+      "TaskDate": {
+        "value": "4",
+        "description": ""
+      },
+      "All": {
+        "value": "7",
+        "description": ""
+      }
+    }
+  },
+  "DrawingStyle": {
+    "isExclusive": true,
+    "options": {
+      "Bar": {
+        "value": "0",
+        "description": ""
+      },
+      "Callout": {
+        "value": "1",
+        "description": ""
+      }
+    }
+  },
+  "AnchorPosition": {
+    "isExclusive": true,
+    "options": {
+      "Top": {
+        "value": "0",
+        "description": ""
+      },
+      "Bottom": {
+        "value": "1",
+        "description": ""
+      }
+    }
+  },
+  "TaskBoardType": {
+    "isExclusive": true,
+    "options": {
+      "Status": {
+        "value": "0",
+        "description": ""
+      },
+      "AssignedTo": {
+        "value": "1",
+        "description": ""
+      },
+      "Bucket": {
+        "value": "2",
+        "description": ""
+      }
+    }
+  },
+  "PreviewType": {
+    "isExclusive": true,
+    "options": {
+      "Automatic": {
+        "value": "0",
+        "description": ""
+      },
+      "NoPreview": {
+        "value": "1",
+        "description": ""
+      },
+      "CheckList": {
+        "value": "2",
+        "description": ""
+      },
+      "Notes": {
+        "value": "3",
+        "description": ""
+      },
+      "Reference": {
+        "value": "4",
+        "description": ""
+      }
+    }
+  }
+}

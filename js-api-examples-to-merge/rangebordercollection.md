@@ -9,12 +9,16 @@ Excel.run(function (ctx) {
 	var range = worksheet.getRange(rangeAddress);
 	var borderName = 'EdgeTop';
 	var border = range.format.borders.getItem(borderName);
-	border.load(style);
+	border.load('style');
 	return ctx.sync().then(function() {
-			Console.log(border.style);
+			console.log(border.style);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 ### getItemAt(index: number)
@@ -26,12 +30,16 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	var border = ctx.workbook.borders.getItemAt(0);
-	border.load(sideIndex);
+	border.load('sideIndex');
 	return ctx.sync().then(function() {
-			Console.log(border.sideIndex);
+			console.log(border.sideIndex);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 ### Getter and setter
@@ -43,16 +51,20 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	var borders = range.format.borders;
-	border.load(items);
+	border.load('items');
 	return ctx.sync().then(function() {
-		Console.log(borders.count);
+		console.log(borders.count);
 		for (var i = 0; i < borders.items.length; i++)
 		{
-			Console.log(borders.items[i].sideIndex);
+			console.log(borders.items[i].sideIndex);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 The example below adds grid border around the range.
 
@@ -68,4 +80,10 @@ Excel.run(function (ctx) {
 	range.format.borders.getItem('EdgeRight').style = 'Continuous';
 	range.format.borders.getItem('EdgeTop').style = 'Continuous';
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

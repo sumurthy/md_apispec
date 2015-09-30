@@ -6,10 +6,15 @@ Below example uses binding object to get the associated range.
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var range = binding.getRange();
-	range.load(cellCount);
+	range.load('cellCount');
 	return ctx.sync().then(function() {
-		Console.log(range.cellCount);
+		console.log(range.cellCount);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -18,10 +23,15 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var table = binding.getTable();
-	table.load(name);
+	table.load('name');
 	return ctx.sync().then(function() {
-			Console.log(table.name);
+			console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -31,10 +41,15 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var text = binding.getText();
-	ctx.load(text);
+	ctx.load('text');
 	return ctx.sync().then(function() {
-		Console.log(text);
+		console.log(text);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -43,9 +58,14 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
-	binding.load(type);
+	binding.load('type');
 	return ctx.sync().then(function() {
-		Console.log(binding.type);
+		console.log(binding.type);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

@@ -1,0 +1,80 @@
+{
+  "name": "TaskDetails",
+  "description": null,
+  "collectionOf": null,
+  "isComplexType": null,
+  "isOdataOpenType": null,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "restPath": [
+
+  ],
+  "info": null,
+  "properties": [
+    {
+      "name": "notes",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "previewType",
+      "dataType": "PreviewType",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": "PreviewType",
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "completedBy",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "references",
+      "dataType": "ExternalReferenceCollection",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "id",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": true
+    },
+    {
+      "name": "version",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    }
+  ],
+  "methods": [
+
+  ]
+}

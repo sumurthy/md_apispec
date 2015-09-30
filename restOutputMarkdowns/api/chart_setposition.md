@@ -15,8 +15,8 @@ In the request body, provide a JSON object that with the following parameters.
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:-----------|
-|startCell|object|The start cell. This is where the chart will be moved to. The start cell is the top-left or top-right cell, depending on the user's right-to-left display settings.|
-|endCell|object|Optional. The end cell. If specified, the chart's width and height will be set to fully cover up this cell/range.|
+|startCell|Range or string|The start cell. This is where the chart will be moved to. The start cell is the top-left or top-right cell, depending on the user's right-to-left display settings.|
+|endCell|Range or string|Optional. (Optional) The end cell. If specified, the chart's width and height will be set to fully cover up this cell/range.|
 
 ## Response
 If successful, this method returns a `200 OK` response code. It does not return anything in the response body.

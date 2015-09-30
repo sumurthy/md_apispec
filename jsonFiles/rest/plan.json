@@ -1,0 +1,90 @@
+{
+  "name": "Plan",
+  "description": null,
+  "collectionOf": null,
+  "isComplexType": null,
+  "isOdataOpenType": null,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "restPath": [
+
+  ],
+  "info": null,
+  "properties": [
+    {
+      "name": "createdBy",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "owner",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "title",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "totalTasks",
+      "dataType": "Int32",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "activeTasks",
+      "dataType": "Int32",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "id",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": true
+    },
+    {
+      "name": "version",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    }
+  ],
+  "methods": [
+
+  ]
+}

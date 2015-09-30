@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 This object represents the font attributes (font name, font size, color, etc.) for an object.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |bold|bool|Represents the bold status of font.|
@@ -27,6 +29,7 @@ None
 
 ## Method Details
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -42,8 +45,6 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 ```js
@@ -52,12 +53,17 @@ Excel.run(function (ctx) {
 	var rangeAddress = "F:G";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var rangeFont = ramge.format.font;
-	rangeFont.load(name);
+	var rangeFont = range.format.font;
+	rangeFont.load('name');
 	return ctx.sync().then(function() {
-		Console.log(rangeFont.name);
+		console.log(rangeFont.name);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 The example below sets font name. 
 
@@ -68,5 +74,10 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.format.font.name = 'Times New Roman';
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```

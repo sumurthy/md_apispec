@@ -1,0 +1,30 @@
+{
+  "property": {
+	  "name": null,
+	  "dataType": null,
+	  "description": null,
+	  "isReadOnly": null,
+	  "enumNameJs": null,
+	  "isCollection": null,
+	  "isRelationship": null,
+	  "isKey": null
+	},
+  "method":
+	{
+	  "name": null,
+	  "returnType": null,
+	  "description": null,
+	  "syntax": null,
+	  "httpSuccessResponseCode": null,
+	  "parameters" :null
+	},
+  "parameter":	
+  	{
+	  "name": null,
+	  "dataType": null,
+	  "description": null,
+	  "isRequired": true,
+	  "enumNameJs": null,
+	  "notes": null
+	}
+}

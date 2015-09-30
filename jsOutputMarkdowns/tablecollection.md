@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the tables that are part of the workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of tables in the workbook. Read-only.|
@@ -25,6 +27,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### add(address: string, hasHeaders: bool)
 Create a new table. The range source address determines the worksheet under which the table will be added. If the table cannot be added (e.g., because the address is invalid, or the table would overlap with another table), an error will be thrown.
@@ -48,13 +51,18 @@ tableCollectionObject.add(address, hasHeaders);
 ```js
 Excel.run(function (ctx) { 
 	var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
-	table.load(name);
+	table.load('name');
 	return ctx.sync().then(function() {
-		Console.log(table.name);
+		console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
+
 ### getItem(key: number or string)
 Gets a table by Name or ID.
 
@@ -78,20 +86,33 @@ Excel.run(function (ctx) {
 	var tableName = 'Table1';
 	var table = ctx.workbook.tables.getItem(tableName);
 	return ctx.sync().then(function() {
-			Console.log(table.index);
+			console.log(table.index);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
+
+#### Examples
 
 ```js
 Excel.run(function (ctx) { 
 	var table = ctx.workbook.tables.getItemAt(0);
 	return ctx.sync().then(function() {
-			Console.log(table.name);
+			console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 
 ### getItemAt(index: number)
 Gets a table based on its position in the collection.
@@ -115,10 +136,16 @@ tableCollectionObject.getItemAt(index);
 Excel.run(function (ctx) { 
 	var table = ctx.workbook.tables.getItemAt(0);
 	return ctx.sync().then(function() {
-			Console.log(table.name);
+			console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -135,21 +162,24 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 ```js
 Excel.run(function (ctx) { 
 	var tables = ctx.workbook.tables;
-	tables.load(items);
+	tables.load('items');
 	return ctx.sync().then(function() {
-		Console.log("tables Count: " + tables.count);
+		console.log("tables Count: " + tables.count);
 		for (var i = 0; i < tables.items.length; i++)
 		{
-			Console.log(tables.items[i].name);
+			console.log(tables.items[i].name);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -158,10 +188,14 @@ Get the number of tables
 ```js
 Excel.run(function (ctx) { 
 	var tables = ctx.workbook.tables;
-	tables.load(count);
+	tables.load('count');
 	return ctx.sync().then(function() {
-		Console.log(tables.count);
+		console.log(tables.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```

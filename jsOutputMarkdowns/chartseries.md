@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a series in a chart.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |name|string|Represents the name of a series in a chart.|
@@ -24,6 +26,7 @@ _See property access [examples.](#property-access-examples)_
 
 ## Method Details
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -39,8 +42,6 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 Rename the 1st series of Chart1 to "New Series Name"
@@ -50,7 +51,12 @@ Excel.run(function (ctx) {
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	chart.series.getItemAt(0).name = "New Series Name";
 	return ctx.sync().then(function() {
-			Console.log("Series1 Renamed");
+			console.log("Series1 Renamed");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

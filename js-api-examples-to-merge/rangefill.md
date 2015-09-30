@@ -10,10 +10,15 @@ Excel.run(function (ctx) {
 	var rangeAddress = "F:G";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var rangeFill = ramge.format.fill;
+	var rangeFill = range.format.fill;
 	rangeFill.clear();
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### Getter and setter 
@@ -23,13 +28,17 @@ Excel.run(function (ctx) {
 	var rangeAddress = "F:G";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	var rangeFill = ramge.format.fill;
-	rangeFill.load(color);
+	var rangeFill = range.format.fill;
+	rangeFill.load('color');
 	return ctx.sync().then(function() {
-		Console.log(rangeFill.color);
+		console.log(rangeFill.color);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 The example below sets fill color. 
 
@@ -40,5 +49,10 @@ Excel.run(function (ctx) {
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 	range.format.fill.color = '0000FF';
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```

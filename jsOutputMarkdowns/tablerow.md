@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a row in a table.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |index|int|Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.|
@@ -24,6 +26,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### delete()
 Deletes the row from the table.
@@ -47,9 +50,15 @@ Excel.run(function (ctx) {
 	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
 	row.delete();
 	return ctx.sync(); 
-	}); 
-}); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
+
 
 ### getRange()
 Returns the range object associated with the entire row.
@@ -72,12 +81,18 @@ Excel.run(function (ctx) {
 	var tableName = 'Table1';
 	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
 	var rowRange = row.getRange();
-	rowRange.load(address);
+	rowRange.load('address');
 	return ctx.sync().then(function() {
-		Console.log(rowRange.address);
+		console.log(rowRange.address);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -94,19 +109,22 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 ```js
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
 	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
-	row.load(index);
+	row.load('index');
 	return ctx.sync().then(function() {
-		Console.log(row.index);
+		console.log(row.index);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ```js
@@ -115,9 +133,14 @@ Excel.run(function (ctx) {
 	var newValues = [["New", "Values", "For", "New", "Row"]];
 	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
 	row.values = newValues;
-	row.load(values);
+	row.load('values');
 	return ctx.sync().then(function() {
-		Console.log(row.values);
+		console.log(row.values);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```

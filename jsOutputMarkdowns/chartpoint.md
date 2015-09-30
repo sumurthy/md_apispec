@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a point of a series in a chart.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |value|object|Returns the value of a chart point. Read-only.|
@@ -21,6 +23,7 @@ Represents a point of a series in a chart.
 
 ## Method Details
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -36,5 +39,3 @@ object.load(param);
 
 #### Returns
 void
-
-	

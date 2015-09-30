@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 A collection of all the chart objects on a worksheet.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of charts in the worksheet. Read-only.|
@@ -25,6 +27,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### add(type: string, sourceData: Range, seriesBy: string)
 Creates a new chart.
@@ -54,11 +57,16 @@ Excel.run(function (ctx) {
 	var sourceData = sheetName + "!" + "A1:B4";
 	var chart = ctx.workbook.worksheets.getItem(sheetName).charts.add("ColumnClustered", sourceData, "auto");
 	return ctx.sync().then(function() {
-			Console.log("New Chart Added");
+			console.log("New Chart Added");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
+
 
 ### getItem(name: string)
 Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.
@@ -83,34 +91,53 @@ Excel.run(function (ctx) {
 	var chartname = 'Chart1';
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartname);
 	return ctx.sync().then(function() {
-			Console.log(chart.height);
+			console.log(chart.height);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
+
+#### Examples
 
 ```js
 Excel.run(function (ctx) { 
 	var chartId = 'SamplChartId';
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem(chartId);
 	return ctx.sync().then(function() {
-			Console.log(chart.height);
+			console.log(chart.height);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
 
+
+#### Examples
 
 ```js
 Excel.run(function (ctx) { 
 	var lastPosition = ctx.workbook.worksheets.getItem("Sheet1").charts.count - 1;
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItemAt(lastPosition);
 	return ctx.sync().then(function() {
-			Console.log(chart.name);
+			console.log(chart.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 
 ### getItemAt(index: number)
 Gets a chart based on its position in the collection.
@@ -135,10 +162,16 @@ Excel.run(function (ctx) {
 	var lastPosition = ctx.workbook.worksheets.getItem("Sheet1").charts.count - 1;
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItemAt(lastPosition);
 	return ctx.sync().then(function() {
-			Console.log(chart.name);
+			console.log(chart.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -155,23 +188,25 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 ```js
 Excel.run(function (ctx) { 
 	var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
-	charts.load(items);
+	charts.load('items');
 	return ctx.sync().then(function() {
 		for (var i = 0; i < charts.items.length; i++)
 		{
-			Console.log(charts.items[i].name);
-			Console.log(charts.items[i].index);
+			console.log(charts.items[i].name);
+			console.log(charts.items[i].index);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 Get the number of charts
@@ -179,11 +214,15 @@ Get the number of charts
 ```js
 Excel.run(function (ctx) { 
 	var charts = ctx.workbook.worksheets.getItem("Sheet1").charts;
-	charts.load(count);
+	charts.load('count');
 	return ctx.sync().then(function() {
-		Console.log("charts: Count= " + charts.count);
+		console.log("charts: Count= " + charts.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 

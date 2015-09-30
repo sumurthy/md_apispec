@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the border objects that make up range border.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Number of border objects in the collection. Read-only.|
@@ -24,6 +26,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### getItem(index: string)
 Gets a border object using its name
@@ -50,14 +53,20 @@ Excel.run(function (ctx) {
 	var range = worksheet.getRange(rangeAddress);
 	var borderName = 'EdgeTop';
 	var border = range.format.borders.getItem(borderName);
-	border.load(style);
+	border.load('style');
 	return ctx.sync().then(function() {
-			Console.log(border.style);
+			console.log(border.style);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
+
+#### Examples
 ```js
 
 Excel.run(function (ctx) { 
@@ -66,13 +75,18 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	var border = ctx.workbook.borders.getItemAt(0);
-	border.load(sideIndex);
+	border.load('sideIndex');
 	return ctx.sync().then(function() {
-			Console.log(border.sideIndex);
+			console.log(border.sideIndex);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
+
 
 ### getItemAt(index: number)
 Gets a border object using its index
@@ -99,13 +113,18 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	var border = ctx.workbook.borders.getItemAt(0);
-	border.load(sideIndex);
+	border.load('sideIndex');
 	return ctx.sync().then(function() {
-			Console.log(border.sideIndex);
+			console.log(border.sideIndex);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -122,8 +141,6 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 ```js
@@ -133,16 +150,20 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	var borders = range.format.borders;
-	border.load(items);
+	border.load('items');
 	return ctx.sync().then(function() {
-		Console.log(borders.count);
+		console.log(borders.count);
 		for (var i = 0; i < borders.items.length; i++)
 		{
-			Console.log(borders.items[i].sideIndex);
+			console.log(borders.items[i].sideIndex);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 The example below adds grid border around the range.
 
@@ -158,4 +179,10 @@ Excel.run(function (ctx) {
 	range.format.borders.getItem('EdgeRight').style = 'Continuous';
 	range.format.borders.getItem('EdgeTop').style = 'Continuous';
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```

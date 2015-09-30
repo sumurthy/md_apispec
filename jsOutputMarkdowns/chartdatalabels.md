@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the data labels on a chart point.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |position|string|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.|
@@ -30,6 +32,7 @@ _See property access [examples.](#property-access-examples)_
 
 ## Method Details
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -45,8 +48,6 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 Make Series Name shown in Datalabels and set the `position` of datalabels to be "top";
@@ -58,8 +59,12 @@ Excel.run(function (ctx) {
 	chart.datalabels.position = "top";
 	chart.datalabels.ShowSeriesName = true;
 	return ctx.sync().then(function() {
-			Console.log("Datalabels Shown");
+			console.log("Datalabels Shown");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```

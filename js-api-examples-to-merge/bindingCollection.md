@@ -48,11 +48,16 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var lastPosition = ctx.workbook.bindings.count - 1;
 	var binding = ctx.workbook.bindings.getItemAt(lastPosition);
+	binding.load('type')
 	return ctx.sync().then(function() {
-			Console.log(binding.type); 
+			console.log(binding.type); 
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 
 ### Getter 
@@ -60,14 +65,19 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var bindings = ctx.workbook.bindings;
-	bindings.load(items);
+	bindings.load('items');
 	return ctx.sync().then(function() {
 		for (var i = 0; i < bindings.items.length; i++)
 		{
-			Console.log(bindings.items[i].id);
-			Console.log(bindings.items[i].index);
+			console.log(bindings.items[i].id);
+			console.log(bindings.items[i].index);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 Get the number of bindings
@@ -75,10 +85,14 @@ Get the number of bindings
 ```js
 Excel.run(function (ctx) { 
 	var bindings = ctx.workbook.bindings;
-	bindings.load(count);
+	bindings.load('count');
 	return ctx.sync().then(function() {
-		Console.log("Bindings: Count= " + bindings.count);
+		console.log("Bindings: Count= " + bindings.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```

@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 A collection of all the nameditem objects that are part of the workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |items|[NamedItem[]](nameditem.md)|A collection of namedItem objects. Read-only.|
@@ -22,6 +24,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### getItem(name: string)
 Gets a nameditem object using its name
@@ -44,22 +47,35 @@ namedItemCollectionObject.getItem(name);
 ```js
 Excel.run(function (ctx) { 
 	var nameditem = ctx.workbook.names.getItem(wSheetName);
-	nameditem.load(type);
+	nameditem.load('type');
 	return ctx.sync().then(function() {
-			Console.log(nameditem.type);
+			console.log(nameditem.type);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
+#### Examples
 
 ```js
 Excel.run(function (ctx) { 
 	var nameditem = ctx.workbook.names.getItemAt(0);
-	nameditem.load(name);
+	nameditem.load('name');
 	return ctx.sync().then(function() {
-			Console.log(nameditem.name);
+			console.log(nameditem.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-```### load(param: object)
+```
+### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
 #### Syntax
@@ -74,21 +90,24 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 ```js
 Excel.run(function (ctx) { 
 	var nameditems = ctx.workbook.names;
-	nameditems.load(items);
+	nameditems.load('items');
 	return ctx.sync().then(function() {
 		for (var i = 0; i < nameditems.items.length; i++)
 		{
-			Console.log(nameditems.items[i].name);
-			Console.log(nameditems.items[i].index);
+			console.log(nameditems.items[i].name);
+			console.log(nameditems.items[i].index);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -97,11 +116,15 @@ Get the number of nameditems.
 ```js
 Excel.run(function (ctx) { 
 	var nameditems = ctx.workbook.names;
-	nameditems.load(count);
+	nameditems.load('count');
 	return ctx.sync().then(function() {
-		Console.log("nameditems: Count= " + nameditems.count);
+		console.log("nameditems: Count= " + nameditems.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 

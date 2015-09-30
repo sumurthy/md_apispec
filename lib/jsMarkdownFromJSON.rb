@@ -132,7 +132,7 @@ module SpecMaker
 	# Write methods details and parameters to the final array.	
 	def self.push_method_details (method = {}, examples = [])
 
-		@mdlines.push HEADER3 + method[:signature] + NEWLINE	
+		@mdlines.push NEWLINE + HEADER3 + method[:signature] + NEWLINE	
 		@mdlines.push method[:description] + TWONEWLINES	
 		@mdlines.push HEADER4 + "Syntax" + NEWLINE + '```js' + NEWLINE
 		@mdlines.push method[:syntax] + NEWLINE + '```' + TWONEWLINES
@@ -170,27 +170,31 @@ module SpecMaker
 		@mdlines.push dataTypePlusLink + NEWLINE
 		
 
-		@mdlines.push NEWLINE + HEADER4 + 'Examples' + NEWLINE
-		# 
+		# loc:100
 		if	@exampleFileFound == true
 			exampleFound	 = false
 			examples.each_with_index do |exampleLine, i|
 				if (exampleLine.chomp.strip.include? method[:name]) && (exampleLine.chomp.strip.include?('###'))
 					exampleFound = true
+				# moving here from loc:100	
+					@mdlines.push NEWLINE + HEADER4 + 'Examples' + NEWLINE
+				# end move
 					next
 				end
-				if exampleFound && exampleLine.start_with?('#')
+
+				if exampleFound && exampleLine.start_with?('##')
 					break
 				end
 				if exampleFound	 
 					@mdlines.push exampleLine
 				end
 			end
-			if !exampleFound
-				@mdlines.push "```js" + TWONEWLINES
-				@mdlines.push "```" + NEWLINE
-				@logger.error("....Example not found for method: #{method[:signature]}, #{@resource}  ") 
-			end
+			# comment below 5 lines to not print empty example block when the example is not found. 
+			# if !exampleFound
+			# 	@mdlines.push "```js" + TWONEWLINES
+			# 	@mdlines.push "```" + NEWLINE
+			# 	@logger.error("....Example not found for method: #{method[:signature]}, #{@resource}  ") 
+			# end
 		end
 		#@mdlines.push NEWLINE + BACKTOMETHOD + TWONEWLINES 
 		
@@ -206,7 +210,7 @@ module SpecMaker
 					@mdlines.push HEADER3 + GETTERSETTER + NEWLINE 
 				next
 			end
-			if getterOrSetterFound && exampleLine.include?('#')
+			if getterOrSetterFound && exampleLine.include?('##')
 				break
 			end
 			if getterOrSetterFound	 
@@ -294,7 +298,10 @@ module SpecMaker
 
 		# Add property table. 	
 
+		# Add properties header
+		@mdlines.push HEADER2 + 'Properties' + TWONEWLINES
 		if isProperty
+			# add properties table
 			@mdlines.push PROPERTY_HEADER + TABLE_2ND_LINE 
 			propreties.each do |prop|
 				if !prop[:isRelationship]

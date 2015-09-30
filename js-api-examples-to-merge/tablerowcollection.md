@@ -7,35 +7,50 @@ Excel.run(function (ctx) {
 	var tables = ctx.workbook.tables;
 	var values = [["Sample", "Values", "For", "New", "Row"]];
 	var row = tables.getItem("Table1").rows.add(null, values);
-	row.load(index);
+	row.load('index');
 	return ctx.sync().then(function() {
-		Console.log(row.index);
+		console.log(row.index);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 ### getItemAt(index: number)
 
 ```js
 Excel.run(function (ctx) { 
 	var tablerow = ctx.workbook.tables.getItem('Table1').rows.getItemAt(0);
-	tablerow.load(name);
+	tablerow.load('name');
 	return ctx.sync().then(function() {
-			Console.log(tablerow.name);
+			console.log(tablerow.name);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 ### Getter tablerow Collection
 
 ```js
 Excel.run(function (ctx) { 
 	var tablerows = ctx.workbook.tables.getItem('Table1').rows;
-	tablerows.load(items);
+	tablerows.load('items');
 	return ctx.sync().then(function() {
-		Console.log("tablerows Count: " + tablerows.count);
+		console.log("tablerows Count: " + tablerows.count);
 		for (var i = 0; i < tablerows.items.length; i++)
 		{
-			Console.log(tablerows.items[i].index);
+			console.log(tablerows.items[i].index);
 		}
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```

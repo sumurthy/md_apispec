@@ -1,0 +1,110 @@
+{
+  "name": "PlanDetails",
+  "description": null,
+  "collectionOf": null,
+  "isComplexType": null,
+  "isOdataOpenType": null,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "restPath": [
+
+  ],
+  "info": null,
+  "properties": [
+    {
+      "name": "sharedWith",
+      "dataType": "UserIdCollection",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "category0Description",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "category1Description",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "category2Description",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "category3Description",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "category4Description",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "category5Description",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "id",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": true
+    },
+    {
+      "name": "version",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    }
+  ],
+  "methods": [
+
+  ]
+}

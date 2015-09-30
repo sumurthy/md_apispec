@@ -10,7 +10,7 @@ module SpecMaker
 
 	# Initialize 
 	# JSON_SOURCE_FOLDER = "../../inputJsonFiles"	
-	JSON_SOURCE_FOLDER = "c:/Users/suramam/git/wip/lib/jsonFiles"
+	JSON_SOURCE_FOLDER = "../jsonFiles"
 	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
 	MARKDOWN_RESOURCE_FOLDER = "../restOutputMarkdowns/resources/"
 	MARKDOWN_API_FOLDER = "../restOutputMarkdowns/api/"

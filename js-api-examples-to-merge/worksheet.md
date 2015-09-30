@@ -8,8 +8,13 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	worksheet.activate();
 	return ctx.sync(); 
-	}); 
-}); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### delete()
@@ -20,8 +25,13 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	worksheet.delete();
 	return ctx.sync(); 
-	}); 
-}); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### getCell(row: number, column: number)
@@ -32,10 +42,15 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var cell = worksheet.getCell(0,0);
-	cell.load(address);
+	cell.load('address');
 	return ctx.sync().then(function() {
-		Console.log(cell.address);
+		console.log(cell.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -48,10 +63,15 @@ Excel.run(function (ctx) {
 	var rangeAddress = "A1:F8";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	range.load(cellCount);
+	range.load('cellCount');
 	return ctx.sync().then(function() {
-		Console.log(range.cellCount);
+		console.log(range.cellCount);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -63,10 +83,15 @@ Excel.run(function (ctx) {
 	var sheetName = "Sheet1";
 	var rangeName = 'MyRange';
 	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeName);
-	range.load(address);
+	range.load('address');
 	return ctx.sync().then(function() {
-		Console.log(range.address);
+		console.log(range.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 ### getUsedRange()
@@ -76,10 +101,15 @@ Excel.run(function (ctx) {
 	var wSheetName = 'Sheet1';
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
 	var usedRange = worksheet.getUsedRange();
-	usedRange.load(address);
+	usedRange.load('address');
 	return ctx.sync().then(function() {
-			Console.log(usedRange.address);
+			console.log(usedRange.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -91,9 +121,15 @@ Get worksheet properties based on sheet name.
 Excel.run(function (ctx) { 
 	var wSheetName = 'Sheet1';
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
+	worksheet.load('position')
 	return ctx.sync().then(function() {
-			Console.log(worksheet.index);
+			console.log(worksheet.position);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -103,8 +139,13 @@ Set worksheet position.
 Excel.run(function (ctx) { 
 	var wSheetName = 'Sheet1';
 	var worksheet = ctx.workbook.worksheets.getItem(wSheetName);
-	worksheet.position = 0;
+	worksheet.position = 2;
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 

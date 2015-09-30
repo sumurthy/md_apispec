@@ -7,7 +7,12 @@ Excel.run(function (ctx) {
 	var table = ctx.workbook.tables.getItem(tableName);
 	table.delete();
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### getDataBodyRange()
@@ -16,9 +21,15 @@ Excel.run(function (ctx) {
 	var tableName = 'Table1';
 	var table = ctx.workbook.tables.getItem(tableName);
 	var tableDataRange = table.getDataBodyRange();
+	tableDataRange.load('address')
 	return ctx.sync().then(function() {
-			Console.log(tableDataRange.address);
+			console.log(tableDataRange.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 ### getHeaderRowRange()
@@ -27,9 +38,15 @@ Excel.run(function (ctx) {
 	var tableName = 'Table1';
 	var table = ctx.workbook.tables.getItem(tableName);
 	var tableHeaderRange = table.getHeaderRowRange();
+	tableHeaderRange.load('address');
 	return ctx.sync().then(function() {
-		Console.log(tableHeaderRange.address);
+		console.log(tableHeaderRange.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -38,9 +55,15 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var table = ctx.workbook.tables.getItem(tableName);
 	var tableRange = table.getRange();
+	tableRange.load('address');	
 	return ctx.sync().then(function() {
-			Console.log(tableRange.address);
+			console.log(tableRange.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -50,9 +73,15 @@ Excel.run(function (ctx) {
 	var tableName = 'Table1';
 	var table = ctx.workbook.tables.getItem(tableName);
 	var tableTotalsRange = table.getTotalRowRange();
+	tableTotalsRange.load('address');	
 	return ctx.sync().then(function() {
-			Console.log(tableTotalsRange.address);
+			console.log(tableTotalsRange.address);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -64,9 +93,15 @@ Get a table by name.
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
 	var table = ctx.workbook.tables.getItem(tableName);
+	table.load('index')
 	return ctx.sync().then(function() {
-			Console.log(table.index);
+			console.log(table.index);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -76,9 +111,15 @@ Get a table by index.
 Excel.run(function (ctx) { 
 	var index = 0;
 	var table = ctx.workbook.tables.getItemAt(0);
+	table.name('name')
 	return ctx.sync().then(function() {
-			Console.log(table.name);
+			console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -91,9 +132,14 @@ Excel.run(function (ctx) {
 	table.name = 'Table1-Renamed';
 	table.showTotals = false;
 	table.tableStyle = 'TableStyleMedium2';
-	table.load(tableStyle);
+	table.load('tableStyle');
 	return ctx.sync().then(function() {
-			Console.log(table.tableStyle);
+			console.log(table.tableStyle);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

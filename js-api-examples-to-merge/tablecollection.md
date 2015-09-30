@@ -5,12 +5,16 @@
 ```js
 Excel.run(function (ctx) { 
 	var table = ctx.workbook.tables.add('Sheet1!A1:E7', true);
-	table.load(name);
+	table.load('name');
 	return ctx.sync().then(function() {
-		Console.log(table.name);
+		console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```
 ### getItem(id: object)
 
@@ -19,8 +23,13 @@ Excel.run(function (ctx) {
 	var tableName = 'Table1';
 	var table = ctx.workbook.tables.getItem(tableName);
 	return ctx.sync().then(function() {
-			Console.log(table.index);
+			console.log(table.index);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -30,8 +39,13 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var table = ctx.workbook.tables.getItemAt(0);
 	return ctx.sync().then(function() {
-			Console.log(table.name);
+			console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -40,14 +54,19 @@ Excel.run(function (ctx) {
 ```js
 Excel.run(function (ctx) { 
 	var tables = ctx.workbook.tables;
-	tables.load(items);
+	tables.load('items');
 	return ctx.sync().then(function() {
-		Console.log("tables Count: " + tables.count);
+		console.log("tables Count: " + tables.count);
 		for (var i = 0; i < tables.items.length; i++)
 		{
-			Console.log(tables.items[i].name);
+			console.log(tables.items[i].name);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -56,10 +75,14 @@ Get the number of tables
 ```js
 Excel.run(function (ctx) { 
 	var tables = ctx.workbook.tables;
-	tables.load(count);
+	tables.load('count');
 	return ctx.sync().then(function() {
-		Console.log(tables.count);
+		console.log(tables.count);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
-
 ```

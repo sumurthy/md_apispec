@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 A format object encapsulating the range's font, fill, borders, alignment, and other properties.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |horizontalAlignment|string|Represents the horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|
@@ -27,6 +29,7 @@ _See property access [examples.](#property-access-examples)_
 
 ## Method Details
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -42,8 +45,6 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 Below example selects all of the Range's format properties. 
@@ -54,13 +55,18 @@ Excel.run(function (ctx) {
 	var rangeAddress = "F:G";
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
-	range.load(format, format/fill, format/borders, format/font);
+	range.load(["format/*", "format/fill", "format/borders", "format/font"]);
 	return ctx.sync().then(function() {
-		Console.log(range.format.wrapText);
-		Console.log(range.format.fill.color);
-		Console.log(range.format.font.name);
+		console.log(range.format.wrapText);
+		console.log(range.format.fill.color);
+		console.log(range.format.font.name);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 The example below sets font name, fill color and wraps text. 
@@ -74,7 +80,12 @@ Excel.run(function (ctx) {
 	range.format.font.name = 'Times New Roman';
 	range.format.fill.color = '0000FF';
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 The example below adds grid border around the range.
@@ -91,5 +102,10 @@ Excel.run(function (ctx) {
 	range.format.borders('EdgeRight').lineStyle = 'Continuous';
 	range.format.borders('EdgeTop').lineStyle = 'Continuous';
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```

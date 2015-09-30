@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a collection of all the columns that are part of the table.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |count|int|Returns the number of columns in the table. Read-only.|
@@ -25,6 +27,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### add(index: number, values: (boolean or string or number)[][])
 Adds a new column to the table.
@@ -50,12 +53,18 @@ Excel.run(function (ctx) {
 	var tables = ctx.workbook.tables;
 	var values = [["Sample"], ["Values"], ["For"], ["New"], ["Column"]];
 	var column = tables.getItem("Table1").columns.add(null, values);
-	column.load(name);
+	column.load('name');
 	return ctx.sync().then(function() {
-		Console.log(column.name);
+		console.log(column.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 
 ### getItem(key: number or string)
 Gets a column object by Name or ID.
@@ -78,22 +87,35 @@ tableColumnCollectionObject.getItem(key);
 ```js
 Excel.run(function (ctx) { 
 	var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItem(0);
-	tablecolumn.load(name);
+	tablecolumn.load('name');
 	return ctx.sync().then(function() {
-			Console.log(tablecolumn.name);
+			console.log(tablecolumn.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
+
+#### Examples
 ```js
 Excel.run(function (ctx) { 
 	var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
-	tablecolumn.load(name);
+	tablecolumn.load('name');
 	return ctx.sync().then(function() {
-			Console.log(tablecolumn.name);
+			console.log(tablecolumn.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 ### getItemAt(index: number)
 Gets a column based on its position in the collection.
 
@@ -114,12 +136,18 @@ tableColumnCollectionObject.getItemAt(index);
 ```js
 Excel.run(function (ctx) { 
 	var tablecolumn = ctx.workbook.tables.getItem['Table1'].columns.getItemAt(0);
-	tablecolumn.load(name);
+	tablecolumn.load('name');
 	return ctx.sync().then(function() {
-			Console.log(tablecolumn.name);
+			console.log(tablecolumn.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -135,20 +163,23 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 ```js
 Excel.run(function (ctx) { 
 	var tablecolumns = ctx.workbook.tables.getItem['Table1'].columns;
-	tablecolumns.load(items);
+	tablecolumns.load('items');
 	return ctx.sync().then(function() {
-		Console.log("tablecolumns Count: " + tablecolumns.count);
+		console.log("tablecolumns Count: " + tablecolumns.count);
 		for (var i = 0; i < tablecolumns.items.length; i++)
 		{
-			Console.log(tablecolumns.items[i].name);
+			console.log(tablecolumns.items[i].name);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

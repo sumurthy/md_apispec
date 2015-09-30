@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the chart axes.
 
+## Properties
+
 None
 
 ## Relationships
@@ -21,6 +23,7 @@ None
 
 ## Method Details
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -36,5 +39,3 @@ object.load(param);
 
 #### Returns
 void
-
-	

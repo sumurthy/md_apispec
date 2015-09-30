@@ -2,10 +2,15 @@
 ```js
 Excel.run(function (ctx) { 
 	var application = ctx.workbook.application;
-	application.load(calculationMode);
+	application.load('calculationMode');
 	return ctx.sync().then(function() {
-		Console.log(application.calculationMode);
+		console.log(application.calculationMode);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -14,6 +19,11 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	ctx.workbook.application.calculate('Full');
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 

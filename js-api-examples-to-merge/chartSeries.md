@@ -9,7 +9,12 @@ Excel.run(function (ctx) {
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	chart.series.getItemAt(0).name = "New Series Name";
 	return ctx.sync().then(function() {
-			Console.log("Series1 Renamed");
+			console.log("Series1 Renamed");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

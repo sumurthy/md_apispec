@@ -8,8 +8,13 @@ Excel.run(function (ctx) {
 	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;	
 	gridlines.format.line.clear();
 	return ctx.sync().then(function() {
-			Console.log"Chart Major Gridlines Format Cleared");
+			console.log"Chart Major Gridlines Format Cleared");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 ### Setter
@@ -21,7 +26,12 @@ Excel.run(function (ctx) {
 	var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.axes.valueaxis.majorGridlines;
 	gridlines.format.line.color = "#FF0000";
 	return ctx.sync().then(function() {
-			Console.log("Chart Gridlines Color Updated");
+			console.log("Chart Gridlines Color Updated");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

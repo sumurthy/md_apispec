@@ -7,8 +7,13 @@ Excel.run(function (ctx) {
 	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
 	row.delete();
 	return ctx.sync(); 
-	}); 
-}); 
+	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### getRange() 
@@ -18,11 +23,16 @@ Excel.run(function (ctx) {
 	var tableName = 'Table1';
 	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
 	var rowRange = row.getRange();
-	rowRange.load(address);
+	rowRange.load('address');
 	return ctx.sync().then(function() {
-		Console.log(rowRange.address);
+		console.log(rowRange.address);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ### Getter and setter Table Row 
@@ -31,11 +41,16 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
 	var tableName = 'Table1';
 	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
-	row.load(index);
+	row.load('index');
 	return ctx.sync().then(function() {
-		Console.log(row.index);
+		console.log(row.index);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
 
 ```js
@@ -44,9 +59,14 @@ Excel.run(function (ctx) {
 	var newValues = [["New", "Values", "For", "New", "Row"]];
 	var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
 	row.values = newValues;
-	row.load(values);
+	row.load('values');
 	return ctx.sync().then(function() {
-		Console.log(row.values);
+		console.log(row.values);
 	});
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```

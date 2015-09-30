@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents an Office.js binding that is defined in the workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|string|Represents binding identifier. Read-only.|
@@ -26,6 +28,7 @@ None
 
 ## Method Details
 
+
 ### getRange()
 Returns the range represented by the binding. Will throw an error if binding is not of the correct type.
 
@@ -47,12 +50,18 @@ Below example uses binding object to get the associated range.
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var range = binding.getRange();
-	range.load(cellCount);
+	range.load('cellCount');
 	return ctx.sync().then(function() {
-		Console.log(range.cellCount);
+		console.log(range.cellCount);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 
 ### getTable()
 Returns the table represented by the binding. Will throw an error if binding is not of the correct type.
@@ -73,12 +82,18 @@ None
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var table = binding.getTable();
-	table.load(name);
+	table.load('name');
 	return ctx.sync().then(function() {
-			Console.log(table.name);
+			console.log(table.name);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 
 ### getText()
 Returns the text represented by the binding. Will throw an error if binding is not of the correct type.
@@ -100,12 +115,18 @@ string
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
 	var text = binding.getText();
-	ctx.load(text);
+	ctx.load('text');
 	return ctx.sync().then(function() {
-		Console.log(text);
+		console.log(text);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -122,16 +143,19 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 ```js
 Excel.run(function (ctx) { 
 	var binding = ctx.workbook.bindings.getItemAt(0);
-	binding.load(type);
+	binding.load('type');
 	return ctx.sync().then(function() {
-		Console.log(binding.type);
+		console.log(binding.type);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

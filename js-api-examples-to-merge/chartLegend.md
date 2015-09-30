@@ -7,10 +7,15 @@ Get the `position` of Chart Legend from Chart1
 Excel.run(function (ctx) { 
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	var legend = chart.legend;
-	legend.load(position);
+	legend.load('position');
 	return ctx.sync().then(function() {
-			Console.log(legend.position);
+			console.log(legend.position);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -23,7 +28,12 @@ Excel.run(function (ctx) {
 	chart.legend.position = "top"; 
 	chart.legend.overlay = false; 
 	return ctx.sync().then(function() {
-			Console.log("Legend Shown ");
+			console.log("Legend Shown ");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ``` 

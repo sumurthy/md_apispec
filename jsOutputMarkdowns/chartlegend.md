@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the legend in a chart.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |overlay|bool|Boolean value for whether the chart legend should overlap with the main body of the chart.|
@@ -25,6 +27,7 @@ _See property access [examples.](#property-access-examples)_
 
 ## Method Details
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -40,8 +43,6 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 Get the `position` of Chart Legend from Chart1
@@ -50,10 +51,15 @@ Get the `position` of Chart Legend from Chart1
 Excel.run(function (ctx) { 
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	var legend = chart.legend;
-	legend.load(position);
+	legend.load('position');
 	return ctx.sync().then(function() {
-			Console.log(legend.position);
+			console.log(legend.position);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -66,7 +72,12 @@ Excel.run(function (ctx) {
 	chart.legend.position = "top"; 
 	chart.legend.overlay = false; 
 	return ctx.sync().then(function() {
-			Console.log("Legend Shown ");
+			console.log("Legend Shown ");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ``` 

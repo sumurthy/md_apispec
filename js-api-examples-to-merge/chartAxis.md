@@ -7,10 +7,15 @@ Get the `maximum` of Chart Axis from Chart1
 Excel.run(function (ctx) { 
 	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 	var axis = chart.axes.valueaxis;
-	axis.load(maximum);
+	axis.load('maximum');
 	return ctx.sync().then(function() {
-			Console.log(axis.maximum);
+			console.log(axis.maximum);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -24,7 +29,12 @@ Excel.run(function (ctx) {
 	chart.axes.valueaxis.majorunit = 1;
 	chart.axes.valueaxis.minorunit = 0.2;
 	return ctx.sync().then(function() {
-			Console.log("Axis Settings Changed");
+			console.log("Axis Settings Changed");
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

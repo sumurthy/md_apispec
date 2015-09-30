@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents a chart title object of a chart.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |overlay|bool|Boolean value representing if the chart title will overlay the chart or not.|
@@ -25,6 +27,7 @@ _See property access [examples.](#property-access-examples)_
 
 ## Method Details
 
+
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
 
@@ -40,8 +43,6 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 
 Get the `text` of Chart Title from Chart1.
@@ -51,9 +52,14 @@ Excel.run(function (ctx) {
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
 
 var title = chart.title;
-title.load(text);
+title.load('text');
 return ctx.sync().then(function() {
-		Console.log(title.text);
+		console.log(title.text);
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 
@@ -68,6 +74,11 @@ chart.title.visible=true;
 chart.title.overlay=true;
 
 return ctx.sync().then(function() {
-		Console.log("Char Title Changed");
+		console.log("Char Title Changed");
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```

@@ -9,14 +9,19 @@ Excel.run(function (ctx) {
 	var worksheet = ctx.workbook.worksheets.getItem(sheetName);
 	var range = worksheet.getRange(rangeAddress);
 	var borders = range.format.borders;
-	borders.load(items);
+	borders.load('items');
 	return ctx.sync().then(function() {
-		Console.log(borders.count);
+		console.log(borders.count);
 		for (var i = 0; i < borders.items.length; i++)
 		{
-			Console.log(borders.items[i].sideIndex);
+			console.log(borders.items[i].sideIndex);
 		}
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 The example below adds grid border around the range.
@@ -33,6 +38,11 @@ Excel.run(function (ctx) {
 	range.format.borders.getItem('EdgeRight').style = 'Continuous';
 	range.format.borders.getItem('EdgeTop').style = 'Continuous';
 	return ctx.sync(); 
-}); 
-
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
 

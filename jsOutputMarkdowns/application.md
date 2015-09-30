@@ -4,6 +4,8 @@ _Applies to: Excel 2016, Office 2016_
 
 Represents the Excel application that manages the workbook.
 
+## Properties
+
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |calculationMode|string|Returns the calculation mode used in the workbook. Read-only. Possible values are: `Automatic` Excel controls recalculation,`AutomaticExceptTables` Excel controls recalculation but ignores changes in tables.,`Manual` Calculation is done when the user requests it.|
@@ -22,6 +24,7 @@ None
 |[load(param: object)](#loadparam-object)|void|Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.|
 
 ## Method Details
+
 
 ### calculate(calculationType: string)
 Recalculate all currently opened workbooks in Excel.
@@ -44,8 +47,14 @@ void
 Excel.run(function (ctx) { 
 	ctx.workbook.application.calculate('Full');
 	return ctx.sync(); 
-}); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
 ```
+
 
 ### load(param: object)
 Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.
@@ -62,16 +71,19 @@ object.load(param);
 
 #### Returns
 void
-
-	
 ### Property access examples
 ```js
 Excel.run(function (ctx) { 
 	var application = ctx.workbook.application;
-	application.load(calculationMode);
+	application.load('calculationMode');
 	return ctx.sync().then(function() {
-		Console.log(application.calculationMode);
+		console.log(application.calculationMode);
 	});
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
 });
 ```
 

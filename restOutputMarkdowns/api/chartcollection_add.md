@@ -16,7 +16,7 @@ In the request body, provide a JSON object that with the following parameters.
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:-----------|
 |type|string|Represents the type of a chart.  Possible values are: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc.|
-|sourceData|string|The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. "Sheet1!A5:B9"). |
+|sourceData|Range|The range object that contains the source data.|
 |seriesBy|string|Optional. Specifies the way columns or rows are used as data series on the chart.  Possible values are: Auto, Columns, Rows|
 
 ## Response

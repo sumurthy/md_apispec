@@ -28,7 +28,7 @@ In the request body, provide a JSON object that with the following parameters.
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:-----------|
-|anotherRange|object|The range object or address or range name.|
+|anotherRange|Range or string|The range object or address or range name.|
 
 ## Response
 If successful, this method returns a `200 OK` response code and [Range](../resources/range.md) object in the response body.

@@ -1,0 +1,60 @@
+{
+  "name": "PlanTimeline",
+  "description": null,
+  "collectionOf": null,
+  "isComplexType": null,
+  "isOdataOpenType": null,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "restPath": [
+
+  ],
+  "info": null,
+  "properties": [
+    {
+      "name": "displaySettings",
+      "dataType": "DisplaySettings",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": "DisplaySettings",
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    },
+    {
+      "name": "lockedWidth",
+      "dataType": "Int32",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": true
+    },
+    {
+      "name": "id",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": true
+    },
+    {
+      "name": "version",
+      "dataType": "String",
+      "description": null,
+      "isReadOnly": null,
+      "enumNameJs": null,
+      "isCollection": null,
+      "isRelationship": false,
+      "isKey": null
+    }
+  ],
+  "methods": [
+
+  ]
+}
