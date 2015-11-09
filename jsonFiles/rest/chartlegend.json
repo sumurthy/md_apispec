@@ -1,0 +1,90 @@
+{
+  "name": "ChartLegend",
+  "description": "Represents the legend in a chart.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/worksheets/<id|name>/charts/<name>/legend": true
+  },
+  "properties": [
+    {
+      "name": "format",
+      "description": "Represents the formatting of a chart legend, which includes fill and font formatting.",
+      "isKey": null,
+      "dataType": "ChartLegendFormat",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "visible",
+      "description": "A boolean value the represents the visibility of a ChartLegend object.",
+      "isKey": null,
+      "dataType": "bool",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "position",
+      "description": "Represents the position of the legend on the chart.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": false,
+      "enumName": "Excel.ChartLegendPosition",
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "overlay",
+      "description": "Boolean value for whether the chart legend should overlap with the main body of the chart.",
+      "isKey": null,
+      "dataType": "bool",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+
+  ]
+}

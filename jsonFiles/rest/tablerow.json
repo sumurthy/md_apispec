@@ -1,0 +1,103 @@
+{
+  "name": "TableRow",
+  "description": "Represents a row in a table.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/bindings/<id>/table/rows/<index>": true,
+    "/workbook/tables/<id|name>/rows/<index>": true,
+    "/workbook/worksheets/<id|name>/tables/<id|name>/rows/<index>": true
+  },
+  "properties": [
+    {
+      "name": "index",
+      "description": "Returns the index number of the row within the rows collection of the table. Zero-indexed.",
+      "isKey": null,
+      "dataType": "int",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "values",
+      "description": "Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.",
+      "isKey": null,
+      "dataType": "object[][]",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Range",
+      "displayName": "",
+      "description": "Returns the range object associated with the entire row.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "Delete",
+      "displayName": "",
+      "description": "Deletes the row from the table.",
+      "prerequisites": "",
+      "returnType": "void",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    }
+  ]
+}

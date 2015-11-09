@@ -1,0 +1,64 @@
+{
+  "name": "ChartAxisFormat",
+  "description": "Encapsulates the format properties for the chart axis.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/format": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/format": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/format": true
+  },
+  "properties": [
+    {
+      "name": "font",
+      "description": "Represents the font attributes (font name, font size, color, etc.) for a chart axis element.",
+      "isKey": null,
+      "dataType": "ChartFont",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "line",
+      "description": "Represents chart line formatting.",
+      "isKey": null,
+      "dataType": "ChartLineFormat",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "ChartGridlinesFormat",
+  "description": "Encapsulates the format properties for chart gridlines.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/minorgridlines/format": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/minorgridlines/format": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/minorgridlines/format": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/majorgridlines/format": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/majorgridlines/format": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/majorgridlines/format": true
+  },
+  "properties": [
+    {
+      "name": "line",
+      "description": "Represents chart line formatting.",
+      "isKey": null,
+      "dataType": "ChartLineFormat",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+
+  ]
+}

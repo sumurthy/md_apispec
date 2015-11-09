@@ -251,13 +251,13 @@ module SpecMaker
 		example_lines = ''
 		@gsType = ''
 		@exampleFileFound = false
-		begin
-			example_lines = File.readlines(File.join(EXAMPLES_FOLDER, @resource+".md"))
-			@gsType = determine_getter_setter_type example_lines
-			@exampleFileFound = true
-		rescue => err
-			@logger.error("....Example File does not exist for: #{@resource}")
-		end
+		# begin
+		# 	example_lines = File.readlines(File.join(JSON_EXAMPLE_FOLDER + (@resource + '_' + methodName).downcase + ".md".md"))
+		# 	@gsType = determine_getter_setter_type example_lines
+		# 	@exampleFileFound = true
+		# rescue => err
+		# 	@logger.error("....Example File does not exist for: #{@resource}")
+		# end
 
 		propreties = @jsonHash[:properties]
 		if propreties 

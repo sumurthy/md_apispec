@@ -1,22 +1,26 @@
 {
   "property": {
 	  "name": null,
+	  "isKey": false,
 	  "dataType": null,
 	  "description": null,
-	  "isReadOnly": null,
+	  "isReadOnly": false,
 	  "enumNameJs": null,
-	  "isCollection": null,
-	  "isRelationship": null,
-	  "isKey": null
+	  "isCollection": false,
+	  "isRelationship": false,
+	  "isNullable" : true,
+	  "isUnicode" : null
 	},
   "method":
 	{
 	  "name": null,
 	  "returnType": null,
+	  "isReturnNullable" : null,
+	  "isReturnTypeCollection": false,
 	  "description": null,
-	  "syntax": null,
+	  "syntax": null,  
 	  "httpSuccessResponseCode": null,
-	  "parameters" :null
+	  "parameters" : null
 	},
   "parameter":	
   	{
@@ -25,6 +29,7 @@
 	  "description": null,
 	  "isRequired": true,
 	  "enumNameJs": null,
-	  "notes": null
+	  "isNullable" : null,
+	  "isUnicode" : null
 	}
 }

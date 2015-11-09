@@ -1,0 +1,131 @@
+{
+  "name": "TableRowCollection",
+  "description": "Represents a collection of all the rows that are part of the table.",
+  "collectionOf": "TableRow",
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/bindings/<id>/table/rows": true,
+    "/workbook/tables/<id|name>/rows": true,
+    "/workbook/worksheets/<id|name>/tables/<id|name>/rows": true
+  },
+  "properties": [
+    {
+      "name": "count",
+      "description": "Returns the number of rows in the table.",
+      "isKey": null,
+      "dataType": "int",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "items",
+      "description": "A collection of tableRow objects.",
+      "isKey": null,
+      "dataType": "TableRow[]",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "ItemAt",
+      "displayName": "",
+      "description": "Gets a row based on its position in the collection.",
+      "prerequisites": "",
+      "returnType": "TableRow",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "index",
+          "description": "Index value of the object to be retrieved. Zero-indexed.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Add",
+      "displayName": "",
+      "description": "Adds a new row to the table.",
+      "prerequisites": "",
+      "returnType": "TableRow",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "index",
+          "description": "Specifies the relative position of the new row. If null, the addition happens at the end. Any rows below the inserted row are shifted downwards. Zero-indexed.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "values",
+          "description": "A 2-dimensional array of unformatted values of the table row.",
+          "dataType": "(boolean or string or number)[][]",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    }
+  ]
+}

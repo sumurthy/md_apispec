@@ -1,0 +1,78 @@
+{
+  "name": "ChartAxisTitle",
+  "description": "Represents the title of a chart axis.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/title": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/title": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/title": true
+  },
+  "properties": [
+    {
+      "name": "format",
+      "description": "Represents the formatting of chart axis title.",
+      "isKey": null,
+      "dataType": "ChartAxisTitleFormat",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "text",
+      "description": "Represents the axis title.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "visible",
+      "description": "A boolean that specifies the visibility of an axis title.",
+      "isKey": null,
+      "dataType": "bool",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+
+  ]
+}

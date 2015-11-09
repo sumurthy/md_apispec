@@ -1,0 +1,123 @@
+{
+  "name": "Workbook",
+  "description": "Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook": true
+  },
+  "properties": [
+    {
+      "name": "application",
+      "description": "Represents Excel application instance that contains this workbook.",
+      "isKey": null,
+      "dataType": "Application",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "names",
+      "description": "Represents a collection of workbook scoped named items (named ranges and constants).",
+      "isKey": null,
+      "dataType": "NamedItemCollection",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "worksheets",
+      "description": "Represents a collection of worksheets associated with the workbook.",
+      "isKey": null,
+      "dataType": "WorksheetCollection",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "tables",
+      "description": "Represents a collection of tables associated with the workbook.",
+      "isKey": null,
+      "dataType": "TableCollection",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "bindings",
+      "description": "Represents a collection of bindings that are part of the workbook.",
+      "isKey": null,
+      "dataType": "BindingCollection",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": true,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "SelectedRange",
+      "displayName": "",
+      "description": "Gets the currently selected range from the workbook.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "name": "ChartLineFormat",
+  "description": "Enapsulates the formatting options for line elements.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/worksheets/<id|name>/charts/<name>/series/<undefined>/format/line": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/minorgridlines/format/line": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/minorgridlines/format/line": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/minorgridlines/format/line": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/majorgridlines/format/line": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/majorgridlines/format/line": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/majorgridlines/format/line": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/format/line": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/format/line": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/format/line": true
+  },
+  "properties": [
+    {
+      "name": "color",
+      "description": "HTML color code representing the color of lines in the chart.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Clear",
+      "displayName": "",
+      "description": "Clear the line format of a chart element.",
+      "prerequisites": "",
+      "returnType": "void",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    }
+  ]
+}

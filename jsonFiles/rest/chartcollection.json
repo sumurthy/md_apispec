@@ -1,0 +1,168 @@
+{
+  "name": "ChartCollection",
+  "description": "A collection of all the chart objects on a worksheet.",
+  "collectionOf": "Chart",
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/worksheets/<id|name>/charts": true
+  },
+  "properties": [
+    {
+      "name": "count",
+      "description": "Returns the number of charts in the worksheet.",
+      "isKey": null,
+      "dataType": "int",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "items",
+      "description": "A collection of chart objects.",
+      "isKey": null,
+      "dataType": "Chart[]",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": true,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Item",
+      "displayName": "",
+      "description": "Gets a chart using its name. If there are multiple charts with the same name, the first one will be returned.",
+      "prerequisites": "",
+      "returnType": "Chart",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the chart to be retrieved.",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Add",
+      "displayName": "",
+      "description": "Creates a new chart.",
+      "prerequisites": "",
+      "returnType": "Chart",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "type",
+          "description": "Represents the type of a chart.",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": "Excel.ChartType",
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "sourceData",
+          "description": "The range object that contains the source data.",
+          "dataType": "Range",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "seriesBy",
+          "description": "Specifies the way columns or rows are used as data series on the chart.",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": "Excel.ChartSeriesBy",
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "ItemAt",
+      "displayName": "",
+      "description": "Gets a chart based on its position in the collection.",
+      "prerequisites": "",
+      "returnType": "Chart",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "index",
+          "description": "Index value of the object to be retrieved. Zero-indexed.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    }
+  ]
+}

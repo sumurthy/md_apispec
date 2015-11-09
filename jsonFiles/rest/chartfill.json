@@ -1,0 +1,88 @@
+{
+  "name": "ChartFill",
+  "description": "Represents the fill formatting for a chart element.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/worksheets/<id|name>/charts/<name>/format/fill": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/title/format/fill": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/series/<undefined>/points/<undefined>/format/fill": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/series/<undefined>/format/fill": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/legend/format/fill": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/datalabels/format/fill": true
+  },
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "Clear",
+      "displayName": "",
+      "description": "Clear the fill color of a chart element.",
+      "prerequisites": "",
+      "returnType": "void",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "SetSolidColor",
+      "displayName": "",
+      "description": "Sets the fill formatting of a chart element to a uniform color.",
+      "prerequisites": "",
+      "returnType": "void",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "color",
+          "description": "HTML color code representing the color of the border line, of the form #RRGGBB (e.g. \"FFA500\") or as a named HTML color (e.g. \"orange\").",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    }
+  ]
+}

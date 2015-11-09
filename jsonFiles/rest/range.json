@@ -1,0 +1,675 @@
+{
+  "name": "Range",
+  "description": "Range represents a set of one or more contiguous cells such as a cell, a row, a column, block of cells, etc.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/bindings/<id>/table/range": true,
+    "/workbook/tables/<id|name>/range": true,
+    "/workbook/worksheets/<id|name>/tables/<id|name>/range": true,
+    "/workbook/bindings/<id>/table/rows/<index>/range": true,
+    "/workbook/tables/<id|name>/rows/<index>/range": true,
+    "/workbook/worksheets/<id|name>/tables/<id|name>/rows/<index>/range": true,
+    "/workbook/bindings/<id>/table/columns/<id|name>/range": true,
+    "/workbook/tables/<id|name>/columns/<id|name>/range": true,
+    "/workbook/worksheets/<id|name>/tables/<id|name>/columns/<id|name>/range": true,
+    "/workbook/bindings/<id>/range": true,
+    "/workbook/worksheets/<id|name>/range(<address>)": true,
+    "/workbook/names/<name>/range": true
+  },
+  "properties": [
+    {
+      "name": "address",
+      "description": "Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4).",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "addressLocal",
+      "description": "Represents range reference for the specified range in the language of the user.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "cellCount",
+      "description": "Number of cells in the range.",
+      "isKey": null,
+      "dataType": "int",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "columnCount",
+      "description": "Represents the total number of columns in the range.",
+      "isKey": null,
+      "dataType": "int",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "columnIndex",
+      "description": "Represents the column number of the first cell in the range. Zero-indexed.",
+      "isKey": null,
+      "dataType": "int",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "valueTypes",
+      "description": "Represents the type of data of each cell.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": true,
+      "enumName": "Excel.RangeValueType",
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "format",
+      "description": "Returns a format object, encapsulating the range's font, fill, borders, alignment, and other properties.",
+      "isKey": null,
+      "dataType": "RangeFormat",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "formulas",
+      "description": "Represents the formula in A1-style notation.",
+      "isKey": null,
+      "dataType": "object[][]",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "formulasLocal",
+      "description": "Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English \"=SUM(A1, 1.5)\" formula would become \"=SUMME(A1; 1,5)\" in German.",
+      "isKey": null,
+      "dataType": "object[][]",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "numberFormat",
+      "description": "Represents Excel's number format code for the given cell.",
+      "isKey": null,
+      "dataType": "object[][]",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "rowCount",
+      "description": "Returns the total number of rows in the range.",
+      "isKey": null,
+      "dataType": "int",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "rowIndex",
+      "description": "Returns the row number of the first cell in the range. Zero-indexed.",
+      "isKey": null,
+      "dataType": "int",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "text",
+      "description": "Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API.",
+      "isKey": null,
+      "dataType": "object[][]",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "values",
+      "description": "Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.",
+      "isKey": null,
+      "dataType": "object[][]",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "worksheet",
+      "description": "The worksheet containing the current range.",
+      "isKey": null,
+      "dataType": "Worksheet",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Clear",
+      "displayName": "",
+      "description": "Clear range values, format, fill, border, etc.",
+      "prerequisites": "",
+      "returnType": "void",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "applyTo",
+          "description": "Determines the type of clear action.",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": "Excel.ClearApplyTo",
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Delete",
+      "displayName": "",
+      "description": "Deletes the cells associated with the range.",
+      "prerequisites": "",
+      "returnType": "void",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "shift",
+          "description": "Specifies which way to shift the cells.",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": "Excel.DeleteShiftDirection",
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "EntireColumn",
+      "displayName": "",
+      "description": "Gets an object that represents the entire column of the range.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "EntireRow",
+      "displayName": "",
+      "description": "Gets an object that represents the entire row of the range.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "BoundingRect",
+      "displayName": "",
+      "description": "Gets the smallest range object that encompasses the given ranges. For example, the GetBoundingRect of \"B2:C5\" and \"D10:E15\" is \"B2:E16\".",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "anotherRange",
+          "description": "The range object or address or range name.",
+          "dataType": "Range or string",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Cell",
+      "displayName": "",
+      "description": "Gets the range object containing the single cell based on row and column numbers. The cell can be outside the bounds of its parent range, so long as it's stays within the worksheet grid. The returned cell is located relative to the top left cell of the range.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "row",
+          "description": "Row number of the cell to be retrieved. Zero-indexed.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "column",
+          "description": "Column number of the cell to be retrieved. Zero-indexed.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Column",
+      "displayName": "",
+      "description": "Gets a column contained in the range.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "column",
+          "description": "Column number of the range to be retrieved. Zero-indexed.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Intersection",
+      "displayName": "",
+      "description": "Gets the range object that represents the rectangular intersection of the given ranges.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "anotherRange",
+          "description": "The range object or range address that will be used to determine the intersection of ranges.",
+          "dataType": "Range or string",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "LastCell",
+      "displayName": "",
+      "description": "Gets the last cell within the range. For example, the last cell of \"B2:D5\" is \"D5\".",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "LastColumn",
+      "displayName": "",
+      "description": "Gets the last column within the range. For example, the last column of \"B2:D5\" is \"D2:D5\".",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "LastRow",
+      "displayName": "",
+      "description": "Gets the last row within the range. For example, the last row of \"B2:D5\" is \"B5:D5\".",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "OffsetRange",
+      "displayName": "",
+      "description": "Gets an object which represents a range that's offset from the specified range. The dimension of the returned range will match this range. If the resulting range is forced outside the bounds of the worksheet grid, an exception will be thrown.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "rowOffset",
+          "description": "The number of rows (positive, negative, or 0) by which the range is to be offset. Positive values are offset downward, and negative values are offset upward.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "columnOffset",
+          "description": "The number of columns (positive, negative, or 0) by which the range is to be offset. Positive values are offset to the right, and negative values are offset to the left.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Row",
+      "displayName": "",
+      "description": "Gets a row contained in the range.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "row",
+          "description": "Row number of the range to be retrieved. Zero-indexed.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Insert",
+      "displayName": "",
+      "description": "Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "shift",
+          "description": "Specifies which way to shift the cells.",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": "Excel.InsertShiftDirection",
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Select",
+      "displayName": "",
+      "description": "Selects the specified range in the Excel UI.",
+      "prerequisites": "",
+      "returnType": "void",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "UsedRange",
+      "displayName": "",
+      "description": "Returns the used range of the given range object.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": null,
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    }
+  ]
+}

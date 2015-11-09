@@ -1,0 +1,67 @@
+{
+  "name": "ChartGridlines",
+  "description": "Represents major or minor gridlines on a chart axis.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": true,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/minorgridlines": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/minorgridlines": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/minorgridlines": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/majorgridlines": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/majorgridlines": true,
+    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/majorgridlines": true
+  },
+  "properties": [
+    {
+      "name": "visible",
+      "description": "Boolean value representing if the axis gridlines are visible or not.",
+      "isKey": null,
+      "dataType": "bool",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "format",
+      "description": "Represents the formatting of chart gridlines.",
+      "isKey": null,
+      "dataType": "ChartGridlinesFormat",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+
+  ]
+}
