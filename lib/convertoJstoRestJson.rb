@@ -23,19 +23,32 @@ module SpecMaker
 	ENUMS = '../jsonFiles/settings/enums.json'
 	ENUMS_REST = '../jsonFiles/settings/enums_rest.json'
 
-	@enumHash = {}
-	begin
-		@enumHash = JSON.parse File.read(ENUMS)
-	rescue => err
-		@logger.warn("JSON Enumeration input file doesn't exist")
-	end
-
-
 	@iRest = 0
 	# Deep copy	   
 	def self.deep_copy(o)
 	  Marshal.load(Marshal.dump(o))
 	end
+
+	@enumHash = {}
+	@newEnum = {}
+	begin
+		@enumHash = JSON.parse (File.read(ENUMS), {:symbolize_names => true})
+	rescue => err
+		@logger.warn("JSON Enumeration input file doesn't exist")
+	end
+
+	@enumHash.each do |key, item|
+		enum = deep_copy(@enum)
+
+		item.keys.each do |k|			
+			enumval = deep_copy(@enumvalue)
+			enumval[:description] = item["k"]
+			enum[:options] = enumval
+		end
+		@newEnum[key] = enum
+	end
+
+	puts @newEnum
 
 	# Conversion to specification 
 	@jsonHash = nil
