@@ -46,7 +46,7 @@
       "name": "items",
       "description": "A collection of table objects.",
       "isKey": null,
-      "dataType": "Table[]",
+      "dataType": "Table",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,

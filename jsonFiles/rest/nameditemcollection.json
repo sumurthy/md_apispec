@@ -31,7 +31,7 @@
       "name": "items",
       "description": "A collection of namedItem objects.",
       "isKey": null,
-      "dataType": "NamedItem[]",
+      "dataType": "NamedItem",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,

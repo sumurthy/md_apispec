@@ -45,7 +45,7 @@
       "name": "items",
       "description": "A collection of binding objects.",
       "isKey": null,
-      "dataType": "Binding[]",
+      "dataType": "Binding",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,

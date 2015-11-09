@@ -31,7 +31,7 @@
       "name": "items",
       "description": "A collection of worksheet objects.",
       "isKey": null,
-      "dataType": "Worksheet[]",
+      "dataType": "Worksheet",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,

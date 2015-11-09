@@ -1,35 +1,123 @@
 {
+  "serviceSettings" : {
+	  "name": "",
+	  "namespace": "microsoft.graph",
+	  "description": "",
+	  "allowPatch": true,  
+	  "allowUpsert": true,    
+	  "allowPatchCreate": false,
+	  "errorCodes" : []
+	},
+
+  "object" : {
+	  "name": null,
+	  "description": "",
+	  "collectionOf": null,
+	  "isComplexType": false,
+	  "isEntitySet" : false,
+	  "allowPatch": true,  
+	  "allowUpsert": true,    
+	  "allowPatchCreate": true,
+	  "allowDelete": true,  
+	  "isReferenceable": true,
+	  "isExpandable": true,
+	  "isFilterable": true,
+	  "isCountable": true,
+	  "isSelectable": true,
+	  "isSkipSupported": true,
+	  "isTopSupported": true,	  
+	  "info": null,
+	  "propertyNotes" : "",
+	  "relationshipNotes" : "",  
+	  "methodNotes": "",
+	  "listDescription": "",
+	  "createDescription": "",
+	  "updateDescription": "",
+	  "deleteDescription": "",
+	  "restPath": {},		
+	  "properties": [],
+	  "methods": []
+	},	
+
   "property": {
 	  "name": null,
+	  "description": "",
 	  "isKey": false,
 	  "dataType": null,
-	  "description": null,
 	  "isReadOnly": false,
-	  "enumNameJs": null,
+	  "enumName": null,
 	  "isCollection": false,
 	  "isRelationship": false,
-	  "isNullable" : true,
+	  "supportFilter": false,	  	  
+	  "allowPostToCollection": true,	  
+	  "isNullable" : null,
 	  "isUnicode" : null
 	},
+
   "method":
 	{
 	  "name": null,
+	  "displayName": "",
+	  "description": "",
+	  "prerequisites": "",	  	  
 	  "returnType": null,
 	  "isReturnNullable" : null,
 	  "isReturnTypeCollection": false,
-	  "description": null,
-	  "syntax": null,  
-	  "httpSuccessResponseCode": null,
-	  "parameters" : null
+	  "httpSuccessCode": null,
+	  "isFunction" : null,
+	  "scopes" : [],
+	  "errorCodes" : [],
+	  "parameters" : []
 	},
+
   "parameter":	
   	{
 	  "name": null,
+	  "description": "",
 	  "dataType": null,
-	  "description": null,
+	  "isCollection": false,
 	  "isRequired": true,
-	  "enumNameJs": null,
+	  "enumName": null,
 	  "isNullable" : null,
 	  "isUnicode" : null
+	},
+	
+  "enum" : {
+  	"isExclusive": true,
+  	"options": {}
+  	},
+
+  "enumvalue": {
+  	"value": null,
+    "description": ""
+  	},
+
+  "mdresource" : 
+  	{ "blockType": "resource", 
+      "optionalProperties": [] 
+    },
+
+  "mdrequest" : 
+	{ "blockType": "request", 
+	  "name": "" 
+	},
+
+  "mdresponse" : 
+	{ "blockType": "response", 
+	  "truncated": false 
+	},
+	
+  "mdignore" :
+   { 
+   	"blockType": "ignored" 
+	},
+
+  "mdpageannotate" :
+	{
+	  "type": "#page.annotation",
+	  "description": "",
+	  "keywords": "",
+	  "section": "documentation",
+	  "tocPath": ""
 	}
 }

@@ -56,7 +56,7 @@
       "name": "items",
       "description": "A collection of rangeBorder objects.",
       "isKey": null,
-      "dataType": "RangeBorder[]",
+      "dataType": "RangeBorder",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,

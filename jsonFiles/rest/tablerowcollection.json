@@ -47,7 +47,7 @@
       "name": "items",
       "description": "A collection of tableRow objects.",
       "isKey": null,
-      "dataType": "TableRow[]",
+      "dataType": "TableRow",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,

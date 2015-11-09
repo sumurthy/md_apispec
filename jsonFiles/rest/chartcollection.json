@@ -45,7 +45,7 @@
       "name": "items",
       "description": "A collection of chart objects.",
       "isKey": null,
-      "dataType": "Chart[]",
+      "dataType": "Chart",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,

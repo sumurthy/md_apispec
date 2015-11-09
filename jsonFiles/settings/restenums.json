@@ -1,519 +1,516 @@
 {
-  "MeetingMessageType": {
+  "Excel.BindingType": {
     "isExclusive": true,
     "options": {
-      "None": {
-        "value": "0",
+      "Range": {
+        "value": null,
         "description": ""
       },
-      "MeetingRequest": {
-        "value": "1",
+      "Table": {
+        "value": null,
         "description": ""
       },
-      "MeetingCancelled": {
-        "value": "2",
-        "description": ""
-      },
-      "MeetingAccepted": {
-        "value": "3",
-        "description": ""
-      },
-      "MeetingTenativelyAccepted": {
-        "value": "4",
-        "description": ""
-      },
-      "MeetingDeclined": {
-        "value": "5",
-        "description": ""
-      }
-    }
-  },
-  "BodyType": {
-    "isExclusive": true,
-    "options": {
       "Text": {
-        "value": "0",
-        "description": ""
-      },
-      "HTML": {
-        "value": "1",
+        "value": null,
         "description": ""
       }
     }
   },
-  "Importance": {
+  "Excel.BorderIndex": {
     "isExclusive": true,
     "options": {
-      "Low": {
-        "value": "0",
+      "EdgeTop": {
+        "value": null,
         "description": ""
       },
-      "Normal": {
-        "value": "1",
+      "EdgeBottom": {
+        "value": null,
         "description": ""
       },
-      "High": {
-        "value": "2",
+      "EdgeLeft": {
+        "value": null,
+        "description": ""
+      },
+      "EdgeRight": {
+        "value": null,
+        "description": ""
+      },
+      "InsideVertical": {
+        "value": null,
+        "description": ""
+      },
+      "InsideHorizontal": {
+        "value": null,
+        "description": ""
+      },
+      "DiagonalDown": {
+        "value": null,
+        "description": ""
+      },
+      "DiagonalUp": {
+        "value": null,
         "description": ""
       }
     }
   },
-  "CalendarColor": {
-    "isExclusive": true,
-    "options": {
-      "LightBlue": {
-        "value": "0",
-        "description": ""
-      },
-      "LightGreen": {
-        "value": "1",
-        "description": ""
-      },
-      "LightOrange": {
-        "value": "2",
-        "description": ""
-      },
-      "LightGray": {
-        "value": "3",
-        "description": ""
-      },
-      "LightYellow": {
-        "value": "4",
-        "description": ""
-      },
-      "LightTeal": {
-        "value": "5",
-        "description": ""
-      },
-      "LightPink": {
-        "value": "6",
-        "description": ""
-      },
-      "LightBrown": {
-        "value": "7",
-        "description": ""
-      },
-      "LightRed": {
-        "value": "8",
-        "description": ""
-      },
-      "MaxColor": {
-        "value": "9",
-        "description": ""
-      },
-      "Auto": {
-        "value": "-1",
-        "description": ""
-      }
-    }
-  },
-  "FreeBusyStatus": {
-    "isExclusive": true,
-    "options": {
-      "Free": {
-        "value": "0",
-        "description": ""
-      },
-      "Tentative": {
-        "value": "1",
-        "description": ""
-      },
-      "Busy": {
-        "value": "2",
-        "description": ""
-      },
-      "Oof": {
-        "value": "3",
-        "description": ""
-      },
-      "WorkingElsewhere": {
-        "value": "4",
-        "description": ""
-      },
-      "Unknown": {
-        "value": "-1",
-        "description": ""
-      }
-    }
-  },
-  "EventType": {
-    "isExclusive": true,
-    "options": {
-      "SingleInstance": {
-        "value": "0",
-        "description": ""
-      },
-      "Occurrence": {
-        "value": "1",
-        "description": ""
-      },
-      "Exception": {
-        "value": "2",
-        "description": ""
-      },
-      "SeriesMaster": {
-        "value": "3",
-        "description": ""
-      }
-    }
-  },
-  "ResponseType": {
+  "Excel.BorderLineStyle": {
     "isExclusive": true,
     "options": {
       "None": {
-        "value": "0",
+        "value": null,
         "description": ""
       },
-      "Organizer": {
-        "value": "1",
+      "Continuous": {
+        "value": null,
         "description": ""
       },
-      "TentativelyAccepted": {
-        "value": "2",
+      "Dash": {
+        "value": null,
         "description": ""
       },
-      "Accepted": {
-        "value": "3",
+      "DashDot": {
+        "value": null,
         "description": ""
       },
-      "Declined": {
-        "value": "4",
+      "DashDotDot": {
+        "value": null,
         "description": ""
       },
-      "NotResponded": {
-        "value": "5",
+      "Dot": {
+        "value": null,
+        "description": ""
+      },
+      "Double": {
+        "value": null,
+        "description": ""
+      },
+      "SlantDashDot": {
+        "value": null,
         "description": ""
       }
     }
   },
-  "AttendeeType": {
+  "Excel.BorderWeight": {
     "isExclusive": true,
     "options": {
-      "Required": {
-        "value": "0",
+      "Hairline": {
+        "value": null,
         "description": ""
       },
-      "Optional": {
-        "value": "1",
+      "Thin": {
+        "value": null,
         "description": ""
       },
-      "Resource": {
-        "value": "2",
+      "Medium": {
+        "value": null,
+        "description": ""
+      },
+      "Thick": {
+        "value": null,
         "description": ""
       }
     }
   },
-  "RecurrencePatternType": {
-    "isExclusive": true,
-    "options": {
-      "Daily": {
-        "value": "0",
-        "description": ""
-      },
-      "Weekly": {
-        "value": "1",
-        "description": ""
-      },
-      "AbsoluteMonthly": {
-        "value": "2",
-        "description": ""
-      },
-      "RelativeMonthly": {
-        "value": "3",
-        "description": ""
-      },
-      "AbsoluteYearly": {
-        "value": "4",
-        "description": ""
-      },
-      "RelativeYearly": {
-        "value": "5",
-        "description": ""
-      }
-    }
-  },
-  "DayOfWeek": {
-    "isExclusive": true,
-    "options": {
-      "Sunday": {
-        "value": "0",
-        "description": ""
-      },
-      "Monday": {
-        "value": "1",
-        "description": ""
-      },
-      "Tuesday": {
-        "value": "2",
-        "description": ""
-      },
-      "Wednesday": {
-        "value": "3",
-        "description": ""
-      },
-      "Thursday": {
-        "value": "4",
-        "description": ""
-      },
-      "Friday": {
-        "value": "5",
-        "description": ""
-      },
-      "Saturday": {
-        "value": "6",
-        "description": ""
-      }
-    }
-  },
-  "WeekIndex": {
-    "isExclusive": true,
-    "options": {
-      "First": {
-        "value": "0",
-        "description": ""
-      },
-      "Second": {
-        "value": "1",
-        "description": ""
-      },
-      "Third": {
-        "value": "2",
-        "description": ""
-      },
-      "Fourth": {
-        "value": "3",
-        "description": ""
-      },
-      "Last": {
-        "value": "4",
-        "description": ""
-      }
-    }
-  },
-  "RecurrenceRangeType": {
-    "isExclusive": true,
-    "options": {
-      "EndDate": {
-        "value": "0",
-        "description": ""
-      },
-      "NoEnd": {
-        "value": "1",
-        "description": ""
-      },
-      "Numbered": {
-        "value": "2",
-        "description": ""
-      }
-    }
-  },
-  "GroupAccessType": {
-    "isExclusive": true,
-    "options": {
-      "None": {
-        "value": "0",
-        "description": ""
-      },
-      "Private": {
-        "value": "1",
-        "description": ""
-      },
-      "Secret": {
-        "value": "2",
-        "description": ""
-      },
-      "Public": {
-        "value": "3",
-        "description": ""
-      }
-    }
-  },
-  "DisplaySettings": {
-    "isExclusive": false,
-    "options": {
-      "None": {
-        "value": "0",
-        "description": ""
-      },
-      "Today": {
-        "value": "1",
-        "description": ""
-      },
-      "TimeScale": {
-        "value": "2",
-        "description": ""
-      },
-      "TaskDate": {
-        "value": "4",
-        "description": ""
-      },
-      "All": {
-        "value": "7",
-        "description": ""
-      }
-    }
-  },
-  "DrawingStyle": {
-    "isExclusive": true,
-    "options": {
-      "Bar": {
-        "value": "0",
-        "description": ""
-      },
-      "Callout": {
-        "value": "1",
-        "description": ""
-      }
-    }
-  },
-  "AnchorPosition": {
-    "isExclusive": true,
-    "options": {
-      "Top": {
-        "value": "0",
-        "description": ""
-      },
-      "Bottom": {
-        "value": "1",
-        "description": ""
-      }
-    }
-  },
-  "TaskBoardType": {
-    "isExclusive": true,
-    "options": {
-      "Status": {
-        "value": "0",
-        "description": ""
-      },
-      "AssignedTo": {
-        "value": "1",
-        "description": ""
-      },
-      "Bucket": {
-        "value": "2",
-        "description": ""
-      }
-    }
-  },
-  "PreviewType": {
+  "Excel.CalculationMode": {
     "isExclusive": true,
     "options": {
       "Automatic": {
-        "value": "0",
+        "value": null,
+        "description": "Excel controls recalculation"
+      },
+      "AutomaticExceptTables": {
+        "value": null,
+        "description": "Excel controls recalculation but ignores changes in tables."
+      },
+      "Manual": {
+        "value": null,
+        "description": "Calculation is done when the user requests it."
+      }
+    }
+  },
+  "Excel.CalculationType": {
+    "isExclusive": true,
+    "options": {
+      "Recalculate": {
+        "value": null,
+        "description": "Default-option. Performs normal calculation by calculating all the formulas in the workbook"
+      },
+      "Full": {
+        "value": null,
+        "description": "Forces a full calculation of the data"
+      },
+      "FullRebuild": {
+        "value": null,
+        "description": " Forces a full calculation of the data and rebuilds the dependencies."
+      }
+    }
+  },
+  "Excel.ClearApplyTo": {
+    "isExclusive": true,
+    "options": {
+      "All": {
+        "value": null,
+        "description": "Default-option"
+      },
+      "Formats": {
+        "value": null,
         "description": ""
       },
-      "NoPreview": {
-        "value": "1",
-        "description": ""
-      },
-      "CheckList": {
-        "value": "2",
-        "description": ""
-      },
-      "Notes": {
-        "value": "3",
-        "description": ""
-      },
-      "Reference": {
-        "value": "4",
+      "Contents": {
+        "value": null,
         "description": ""
       }
     }
   },
-  "PatchInsertPosition": {
+  "Excel.ChartDataLabelPosition": {
     "isExclusive": true,
     "options": {
-      "After": {
-        "value": "0",
-        "description": ""
-      },
-      "Before": {
-        "value": "1",
-        "description": ""
-      }
-    }
-  },
-  "PatchActionType": {
-    "isExclusive": true,
-    "options": {
-      "Replace": {
-        "value": "0",
-        "description": ""
-      },
-      "Append": {
-        "value": "1",
-        "description": ""
-      },
-      "Delete": {
-        "value": "2",
-        "description": ""
-      },
-      "Insert": {
-        "value": "3",
-        "description": ""
-      },
-      "Prepend": {
-        "value": "4",
-        "description": ""
-      }
-    }
-  },
-  "UserRole": {
-    "isExclusive": true,
-    "options": {
-      "Owner": {
-        "value": "0",
-        "description": ""
-      },
-      "Contributor": {
-        "value": "1",
-        "description": ""
-      },
-      "Reader": {
-        "value": "2",
-        "description": ""
-      },
       "None": {
-        "value": "-1",
-        "description": ""
-      }
-    }
-  },
-  "RoleSummaryStatus": {
-    "isExclusive": true,
-    "options": {
-      "Ok": {
-        "value": "0",
+        "value": null,
         "description": ""
       },
-      "Bad": {
-        "value": "1",
+      "Center": {
+        "value": null,
+        "description": ""
+      },
+      "InsideEnd": {
+        "value": null,
+        "description": ""
+      },
+      "InsideBase": {
+        "value": null,
+        "description": ""
+      },
+      "OutsideEnd": {
+        "value": null,
+        "description": ""
+      },
+      "Left": {
+        "value": null,
+        "description": ""
+      },
+      "Right": {
+        "value": null,
+        "description": ""
+      },
+      "Top": {
+        "value": null,
+        "description": ""
+      },
+      "Bottom": {
+        "value": null,
+        "description": ""
+      },
+      "BestFit": {
+        "value": null,
+        "description": ""
+      },
+      "Callout": {
+        "value": null,
         "description": ""
       }
     }
   },
-  "SetupStatus": {
+  "Excel.ChartLegendPosition": {
+    "isExclusive": true,
+    "options": {
+      "Top": {
+        "value": null,
+        "description": ""
+      },
+      "Bottom": {
+        "value": null,
+        "description": ""
+      },
+      "Left": {
+        "value": null,
+        "description": ""
+      },
+      "Right": {
+        "value": null,
+        "description": ""
+      },
+      "Corner": {
+        "value": null,
+        "description": ""
+      },
+      "Custom": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.ChartSeriesBy": {
+    "isExclusive": true,
+    "options": {
+      "Auto": {
+        "value": null,
+        "description": ""
+      },
+      "Columns": {
+        "value": null,
+        "description": ""
+      },
+      "Rows": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.ChartType": {
+    "isExclusive": true,
+    "options": {
+      "ColumnClustered": {
+        "value": null,
+        "description": ""
+      },
+      "ColumnStacked": {
+        "value": null,
+        "description": ""
+      },
+      "ColumnStacked100": {
+        "value": null,
+        "description": ""
+      },
+      "BarClustered": {
+        "value": null,
+        "description": ""
+      },
+      "BarStacked": {
+        "value": null,
+        "description": ""
+      },
+      "BarStacked100": {
+        "value": null,
+        "description": ""
+      },
+      "LineStacked": {
+        "value": null,
+        "description": ""
+      },
+      "LineStacked100": {
+        "value": null,
+        "description": ""
+      },
+      "LineMarkers": {
+        "value": null,
+        "description": ""
+      },
+      "LineMarkersStacked": {
+        "value": null,
+        "description": ""
+      },
+      "LineMarkersStacked100": {
+        "value": null,
+        "description": ""
+      },
+      "PieOfPie": {
+        "value": null,
+        "description": ""
+      },
+      "etc.": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.ChartUnderlineStyle": {
+    "isExclusive": true,
+    "options": {
+      "None": {
+        "value": null,
+        "description": ""
+      },
+      "Single": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.DeleteShiftDirection": {
+    "isExclusive": true,
+    "options": {
+      "Up": {
+        "value": null,
+        "description": ""
+      },
+      "Left": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.HorizontalAlignment": {
+    "isExclusive": true,
+    "options": {
+      "General": {
+        "value": null,
+        "description": ""
+      },
+      "Left": {
+        "value": null,
+        "description": ""
+      },
+      "Center": {
+        "value": null,
+        "description": ""
+      },
+      "Right": {
+        "value": null,
+        "description": ""
+      },
+      "Fill": {
+        "value": null,
+        "description": ""
+      },
+      "Justify": {
+        "value": null,
+        "description": ""
+      },
+      "CenterAcrossSelection": {
+        "value": null,
+        "description": ""
+      },
+      "Distributed": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.InsertShiftDirection": {
+    "isExclusive": true,
+    "options": {
+      "Down": {
+        "value": null,
+        "description": ""
+      },
+      "Right": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.NamedItemType": {
+    "isExclusive": true,
+    "options": {
+      "String": {
+        "value": null,
+        "description": ""
+      },
+      "Integer": {
+        "value": null,
+        "description": ""
+      },
+      "Double": {
+        "value": null,
+        "description": ""
+      },
+      "Boolean": {
+        "value": null,
+        "description": ""
+      },
+      "Range": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.RangeUnderlineStyle": {
+    "isExclusive": true,
+    "options": {
+      "None": {
+        "value": null,
+        "description": ""
+      },
+      "Single": {
+        "value": null,
+        "description": ""
+      },
+      "Double": {
+        "value": null,
+        "description": ""
+      },
+      "SingleAccountant": {
+        "value": null,
+        "description": ""
+      },
+      "DoubleAccountant": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.SheetVisibility": {
+    "isExclusive": true,
+    "options": {
+      "Visible": {
+        "value": null,
+        "description": ""
+      },
+      "Hidden": {
+        "value": null,
+        "description": ""
+      },
+      "VeryHidden": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.RangeValueType": {
     "isExclusive": true,
     "options": {
       "Unknown": {
-        "value": "0",
+        "value": null,
         "description": ""
       },
-      "NotRegisteredYet": {
-        "value": "1",
+      "Empty": {
+        "value": null,
         "description": ""
       },
-      "RegisteredSetupNotStarted": {
-        "value": "2",
+      "String": {
+        "value": null,
         "description": ""
       },
-      "RegisteredSetupInProgress": {
-        "value": "3",
+      "Integer": {
+        "value": null,
         "description": ""
       },
-      "RegistrationAndSetupCompleted": {
-        "value": "4",
+      "Double": {
+        "value": null,
+        "description": ""
+      },
+      "Boolean": {
+        "value": null,
+        "description": ""
+      },
+      "Error": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.VerticalAlignment": {
+    "isExclusive": true,
+    "options": {
+      "Top": {
+        "value": null,
+        "description": ""
+      },
+      "Center": {
+        "value": null,
+        "description": ""
+      },
+      "Bottom": {
+        "value": null,
+        "description": ""
+      },
+      "Justify": {
+        "value": null,
+        "description": ""
+      },
+      "Distributed": {
+        "value": null,
         "description": ""
       }
     }

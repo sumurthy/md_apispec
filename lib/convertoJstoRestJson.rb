@@ -7,7 +7,7 @@ require 'json'
 module SpecMaker
 
 	# Load the structure
-	JSON_STRUCTURE = "../../rest_spec/jsonFiles/template/restresource_structures.json"
+	JSON_STRUCTURE = "../jsonFiles/template/restresource_structures.json"
 	JSON_SOURCE_FOLDER = "../jsonFiles/js/"
 	REST_SOURCE_FOLDER = "../jsonFiles/rest/"
 
@@ -17,11 +17,11 @@ module SpecMaker
 	@method = @struct[:method]
 	@parameter = @struct[:parameter]
 	@enum = @struct[:enum]
-	@enumvalue = @struct[:enumvalue]
-	
+	@enumvalue = @struct[:enumvalue]	
+
 
 	ENUMS = '../jsonFiles/settings/enums.json'
-	ENUMS_REST = '../jsonFiles/settings/enums_rest.json'
+	ENUMS_REST = '../jsonFiles/settings/restenums.json'
 
 	@iRest = 0
 	# Deep copy	   
@@ -32,7 +32,7 @@ module SpecMaker
 	@enumHash = {}
 	@newEnum = {}
 	begin
-		@enumHash = JSON.parse (File.read(ENUMS), {:symbolize_names => true})
+		@enumHash = JSON.parse(File.read(ENUMS), {:symbolize_names => true})
 	rescue => err
 		@logger.warn("JSON Enumeration input file doesn't exist")
 	end
@@ -42,13 +42,16 @@ module SpecMaker
 
 		item.keys.each do |k|			
 			enumval = deep_copy(@enumvalue)
-			enumval[:description] = item["k"]
-			enum[:options] = enumval
+			enumval[:description] = item[k]
+			enum[:options][k] = enumval
 		end
-		@newEnum[key] = enum
+		@newEnum[key.to_sym] = enum
 	end
 
-	puts @newEnum
+	File.open(ENUMS_REST, "w") do |f|
+		f.write(JSON.pretty_generate @newEnum, :encoding => 'UTF-8')
+	end
+
 
 	# Conversion to specification 
 	@jsonHash = nil
@@ -72,7 +75,7 @@ module SpecMaker
 			@jsHash[:properties].each do |item|
 				restItem = deep_copy(@property)
 				restItem[:name] = item[:name]
-				restItem[:dataType] = item[:dataType]
+				restItem[:dataType] = item[:dataType].chomp('[]')
 				restItem[:description] = item[:description]
 				restItem[:isReadOnly] = item[:isReadOnly]
 				restItem[:enumName] = item[:enumNameJs]
