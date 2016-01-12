@@ -1,5 +1,38 @@
 # Range
 
+### merge(across: bool)
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:C3";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.merge(true);
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+### unmerge()
+```js
+Excel.run(function (ctx) { 
+	var sheetName = "Sheet1";
+	var rangeAddress = "A1:C3";
+	var range = ctx.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+	range.unmerge();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
 ### clear(applyTo: string)
 
 Below example clears format and contents of the range. 
@@ -405,3 +438,4 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+

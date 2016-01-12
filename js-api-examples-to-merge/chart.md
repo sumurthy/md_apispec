@@ -1,3 +1,22 @@
+# Chart
+
+
+### getImage(height: number, width: number, fittingMode: ImageFittingMode)
+```js
+Excel.run(function (ctx) { 
+	var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	
+	var image = chart.getImage();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
+
+
+
 
 ### delete()
 ```js
@@ -106,3 +125,4 @@ Excel.run(function (ctx) {
 		}
 });
 ```
+
