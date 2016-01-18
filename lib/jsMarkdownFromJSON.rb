@@ -11,7 +11,7 @@ module SpecMaker
 	# Initialize 
 	JSON_SOURCE_FOLDER = "../jsonFiles/js"	
 	#JSON_SOURCE_FOLDER =  "C:/Users/suramam/git/wip/lib/jsonFiles"
-	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
+	ENUMS = '../jsonFiles/settings/enums.json'
 	MARKDOWN_OUTPUT_FOLDER = "../jsOutputMarkdowns/"
 	EXAMPLES_FOLDER = "../js-api-examples-to-merge/"
 	HEADERQUALIFIER = " Object (JavaScript API for Excel)"
@@ -251,7 +251,6 @@ module SpecMaker
 		example_lines = ''
 		@gsType = ''
 		@exampleFileFound = false
-
 		begin
 			#example_lines = File.readlines(File.join(JSON_EXAMPLE_FOLDER + @resource.downcase + ".md"))
 			example_lines = File.readlines(EXAMPLES_FOLDER + @resource.downcase + ".md")
