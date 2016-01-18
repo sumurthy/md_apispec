@@ -1,6 +1,6 @@
-# Create ChartSeriesCollection
+# Create ChartSeries
 
-Use this API to create a new ChartSeriesCollection.
+Use this API to create a new ChartSeries.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -16,64 +16,37 @@ POST /workbook/worksheets/<id|name>/charts/<name>/series
 | Workbook-Session-Id  |string |It is recommended to include the workbook session Id along with the request. Optional.|
 
 ### Request body
-In the request body, supply a JSON representation of [ChartSeriesCollection](../resources/chartseriescollection.md) object.
+In the request body, supply a JSON representation of [ChartSeries](../resources/chartseries.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [ChartSeriesCollection](../resources/chartseriescollection.md) object in the response body.
+If successful, this method returns `201, Created` response code and [ChartSeries](../resources/chartseries.md) object in the response body.
 
 ### Example
 ##### Request
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_chartseriescollection_from_chart"
+  "name": "create_chartseries_from_chart"
 }-->
 ```http
 POST https://graph.microsoft.com/beta/workbook/worksheets/<id|name>/charts/<name>
 ```
-In the request body, supply a JSON representation of [ChartSeriesCollection](../resources/chartseriescollection.md) object.
+In the request body, supply a JSON representation of [ChartSeries](../resources/chartseries.md) object.
 ##### Response
 Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": false,
-  "@odata.type": "microsoft.graph.chartseriescollection"
+  "@odata.type": "microsoft.graph.chartseries"
 } -->
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 450
+Content-length: 26
 
 {
-  "count": 99,
-  "items": [
-    {
-      "format": {
-        "fill": {
-        },
-        "line": {
-          "color": "color-value"
-        }
-      },
-      "name": "name-value",
-      "points": [
-        {
-          "count": 99,
-          "items": [
-            {
-              "format": {
-                "fill": {
-                }
-              },
-              "value": {
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  "name": "name-value"
 }
 ```
 
@@ -81,7 +54,7 @@ Content-length: 450
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create ChartSeriesCollection",
+  "description": "Create ChartSeries",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

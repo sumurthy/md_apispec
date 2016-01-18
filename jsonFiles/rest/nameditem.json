@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,7 +24,7 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/names/<name>": true
+    "/workbook/names(<name>)": true
   },
   "properties": [
     {
@@ -73,7 +73,7 @@
       "name": "visible",
       "description": "Specifies whether the object is visible or not.",
       "isKey": null,
-      "dataType": "bool",
+      "dataType": "boolean",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -93,7 +93,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 

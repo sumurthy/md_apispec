@@ -29,15 +29,15 @@ Here is a JSON representation of the resource
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |format|[ChartSeriesFormat](chartseriesformat.md)|Represents the formatting of a chart series, which includes fill and line formatting. Read-only.|
-|points|[ChartPointsCollection](chartpointscollection.md) collection|Represents a collection of all points in the series. Read-only.|
+|points|[ChartPoints](chartpoints.md) collection|Represents a collection of all points in the series. Read-only.|
 
 ### Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get ChartSeries](../api/chartseries_get.md) | [ChartSeries](chartseries.md) |Read properties and relationships of chartSeries object.|
-|[Create ChartPointsCollection](../api/chartseries_post_points.md) |[ChartPointsCollection](chartpointscollection.md)| Create a new ChartPointsCollection by posting to the points collection.|
-|[List points](../api/chartseries_list_points.md) |[ChartPointsCollection](chartpointscollection.md) collection| Get a ChartPointsCollection object collection.|
+|[Create ChartPoints](../api/chartseries_post_points.md) |[ChartPoints](chartpoints.md)| Create a new ChartPoints by posting to the points collection.|
+|[List points](../api/chartseries_list_points.md) |[ChartPoints](chartpoints.md) collection| Get a ChartPoints object collection.|
 |[Update](../api/chartseries_update.md) | [ChartSeries](chartseries.md)	|Update ChartSeries object. |
 |[Delete](../api/chartseries_delete.md) | None |Delete ChartSeries object. |
 

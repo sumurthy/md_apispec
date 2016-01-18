@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,9 +24,9 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/title": true,
-    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/title": true,
-    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/title": true
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes/valueaxis/title": true,
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes/seriesaxis/title": true,
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes/categoryaxis/title": true
   },
   "properties": [
     {
@@ -61,7 +61,7 @@
       "name": "visible",
       "description": "A boolean that specifies the visibility of an axis title.",
       "isKey": null,
-      "dataType": "bool",
+      "dataType": "boolean",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,

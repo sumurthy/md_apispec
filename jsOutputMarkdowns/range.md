@@ -19,7 +19,7 @@ Range represents a set of one or more contiguous cells such as a cell, a row, a 
 |rowCount|int|Returns the total number of rows in the range. Read-only.|
 |rowIndex|int|Returns the row number of the first cell in the range. Zero-indexed. Read-only.|
 |text|object[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.|
-|valueTypes|string|Represents the type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.|
+|valueTypes|string|Represents the type of data of each cell. Read-only.|
 |values|object[][]|Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.|
 
 _See property access [examples.](#property-access-examples)_
@@ -66,7 +66,7 @@ rangeObject.clear(applyTo);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|applyTo|string|Optional. Determines the type of clear action. Possible values are: `All` Default-option,`Formats` ,`Contents` |
+|applyTo|string|Optional. Determines the type of clear action.|
 
 #### Returns
 void
@@ -102,7 +102,7 @@ rangeObject.delete(shift);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|shift|string|Specifies which way to shift the cells.  Possible values are: Up, Left|
+|shift|string|Specifies which way to shift the cells.|
 
 #### Returns
 void
@@ -576,7 +576,7 @@ rangeObject.insert(shift);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|shift|string|Specifies which way to shift the cells.  Possible values are: Down, Right|
+|shift|string|Specifies which way to shift the cells.|
 
 #### Returns
 [Range](range.md)

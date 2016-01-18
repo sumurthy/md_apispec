@@ -1,11 +1,9 @@
 {
-  "name": "Application",
-  "description": "Represents the Excel application that manages the workbook.",
+  "name": "FilterDatetime",
+  "description": "Represents how to filter a date when filtering on values.",
   "isCollection": false,
   "collectionOf": null,
-  "restPath": [
-    "/workbook/application"
-  ],
+  "restPath": null,
   "info": {
     "version": "1.1",
     "addedIn": "1.1",
@@ -22,11 +20,22 @@
   },
   "properties": [
     {
-      "name": "calculationMode",
+      "name": "date",
       "dataType": "string",
-      "description": "Returns the calculation mode used in the workbook.",
-      "isReadOnly": true,
-      "enumNameJs": "Excel.CalculationMode",
+      "description": "The date in ISO8601 format used to filter data.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "specificity",
+      "dataType": "string",
+      "description": "How specific the date should be used to keep data. For example, if the date is 2005-04-02 and the specifity is set to \"month\", the filter operation will keep all rows with a date in the month of april 2009.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.FilterDatetimeSpecificity",
       "isCollection": false,
       "isRelationship": false,
       "isKey": null,
@@ -34,26 +43,6 @@
     }
   ],
   "methods": [
-    {
-      "name": "calculate",
-      "returnType": "void",
-      "description": "Recalculate all currently opened workbooks in Excel.",
-      "syntax": "applicationObject.calculate(calculationType);",
-      "signature": "calculate(calculationType: string)",
-      "restfulName": "Calculate",
-      "notes": null,
-      "httpSuccessResponse": "200 OK",
-      "parameters": [
-        {
-          "name": "calculationType",
-          "dataType": "string",
-          "description": "Specifies the calculation type to use.",
-          "isRequired": true,
-          "enumNameJs": "Excel.CalculationType",
-          "notes": null
-        }
-      ]
-    },
     {
       "name": "load",
       "returnType": "void",

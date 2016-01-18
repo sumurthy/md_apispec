@@ -40,7 +40,7 @@ Here is a JSON representation of the resource
 |dataLabels|[ChartDataLabels](chartdatalabels.md)|Represents the datalabels on the chart. Read-only.|
 |format|[ChartAreaFormat](chartareaformat.md)|Encapsulates the format properties for the chart area. Read-only.|
 |legend|[ChartLegend](chartlegend.md)|Represents the legend for the chart. Read-only.|
-|series|[ChartSeriesCollection](chartseriescollection.md) collection|Represents either a single series or collection of series in the chart. Read-only.|
+|series|[ChartSeries](chartseries.md) collection|Represents either a single series or collection of series in the chart. Read-only.|
 |title|[ChartTitle](charttitle.md)|Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.|
 
 ### Methods
@@ -48,8 +48,8 @@ Here is a JSON representation of the resource
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get Chart](../api/chart_get.md) | [Chart](chart.md) |Read properties and relationships of chart object.|
-|[Create ChartSeriesCollection](../api/chart_post_series.md) |[ChartSeriesCollection](chartseriescollection.md)| Create a new ChartSeriesCollection by posting to the series collection.|
-|[List series](../api/chart_list_series.md) |[ChartSeriesCollection](chartseriescollection.md) collection| Get a ChartSeriesCollection object collection.|
+|[Create ChartSeries](../api/chart_post_series.md) |[ChartSeries](chartseries.md)| Create a new ChartSeries by posting to the series collection.|
+|[List series](../api/chart_list_series.md) |[ChartSeries](chartseries.md) collection| Get a ChartSeries object collection.|
 |[Update](../api/chart_update.md) | [Chart](chart.md)	|Update Chart object. |
 |[Delete](../api/chart_delete.md) | None |Delete Chart object. |
 |[Delete](../api/chart_delete.md)|[void](void.md)|Deletes the chart object.|

@@ -18,7 +18,7 @@ Here is a JSON representation of the resource
 {
   "items": [
     {
-      "@odata.type": "microsoft.graph.nameditem"
+      "@odata.type": "microsoft.graph.nameditem[]"
     }
   ]
 }
@@ -27,7 +27,7 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|items|[NamedItem](nameditem.md) collection|A collection of namedItem objects. Read-only.|
+|items|[NamedItem[]](nameditem[].md) collection|A collection of namedItem objects. Read-only.|
 
 ### Relationships
 None

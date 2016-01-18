@@ -1,6 +1,6 @@
 # List rows
 
-Retrieve a list of tablerowcollection objects.
+Retrieve a list of tablerow objects.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -14,7 +14,7 @@ GET /workbook/worksheets/<id|name>/tables/<id|name>/rows
 |Name|Value|Description|
 |:---------------|:--------|:-------|
 |$count|none|The count of related entities can be requested by specifying the $count query option.|
-|$expand|string|Comma-separated list of relationships to expand and include in the response. See relationships table of [TableRowCollection](../resources/tablerowcollection.md) for supported names. |
+|$expand|string|Comma-separated list of relationships to expand and include in the response. See relationships table of [TableRow](../resources/tablerow.md) for supported names. |
 |$filter|string|Filter string that lets you filter the response based on a set of criteria.|
 |$orderby|string|Comma-separated list of properties that are used to sort the order of items in the response collection.|
 |$select|string|Comma-separated list of properties to include in the response.|
@@ -31,7 +31,7 @@ GET /workbook/worksheets/<id|name>/tables/<id|name>/rows
 ### Request body
 Do not supply a request body for this method.
 ### Response
-If successful, this method returns a `200 OK` response code and collection of [TableRowCollection](../resources/tablerowcollection.md) objects in the response body.
+If successful, this method returns a `200 OK` response code and collection of [TableRow](../resources/tablerow.md) objects in the response body.
 ### Example
 ##### Request
 Here is an example of the request.
@@ -47,25 +47,20 @@ Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": false,
-  "@odata.type": "microsoft.graph.tablerowcollection",
+  "@odata.type": "microsoft.graph.tablerow",
   "isCollection": true
 } -->
 ```http
 HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 153
+Content-length: 77
 
 {
   "value": [
     {
-      "count": 99,
-      "items": [
-        {
-          "index": 99,
-          "values": {
-          }
-        }
-      ]
+      "index": 99,
+      "values": {
+      }
     }
   ]
 }

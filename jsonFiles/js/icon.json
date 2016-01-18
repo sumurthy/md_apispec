@@ -1,0 +1,74 @@
+{
+  "name": "Icon",
+  "description": "Represents a cell icon.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": [
+    "/workbook/bindings({id})/table/sort/fields/icon",
+    "/workbook/tables({id|name})/sort/fields/icon",
+    "/workbook/worksheets({id|name})/tables({id|name})/sort/fields/icon",
+    "/workbook/bindings({id})/table/columns({id|name})/filter/criteria/icon",
+    "/workbook/tables({id|name})/columns({id|name})/filter/criteria/icon",
+    "/workbook/worksheets({id|name})/tables({id|name})/columns({id|name})/filter/criteria/icon"
+  ],
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Content",
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API for June fork"
+  },
+  "properties": [
+    {
+      "name": "set",
+      "dataType": "string",
+      "description": "Represents the set that the icon is part of.",
+      "isReadOnly": false,
+      "enumNameJs": "Excel.IconSet",
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "index",
+      "dataType": "int",
+      "description": "Represents the index of the icon in the given set.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

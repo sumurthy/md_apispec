@@ -270,6 +270,8 @@ module SpecMaker
 		actionLines.push HEADER3 + "HTTP request" + NEWLINE		
 		actionLines.push '<!-- { "blockType": "ignored" } -->' + NEWLINE
 		actionLines.push '```http' + NEWLINE
+
+		puts "--!-- #{method[:name]} #{top_restpath}, #{pathAppend}, #{method}"
 		httpSyntax = get_syntax(method[:name], top_restpath, pathAppend, method)
 		actionLines.push httpSyntax.join("\n") + NEWLINE
 		actionLines.push NEWLINE + '```' + NEWLINE

@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,18 +24,12 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/bindings/<id>/table/range": true,
-    "/workbook/tables/<id|name>/range": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>/range": true,
-    "/workbook/bindings/<id>/table/rows/<index>/range": true,
-    "/workbook/tables/<id|name>/rows/<index>/range": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>/rows/<index>/range": true,
-    "/workbook/bindings/<id>/table/columns/<id|name>/range": true,
-    "/workbook/tables/<id|name>/columns/<id|name>/range": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>/columns/<id|name>/range": true,
-    "/workbook/bindings/<id>/range": true,
-    "/workbook/worksheets/<id|name>/range(<address>)": true,
-    "/workbook/names/<name>/range": true
+    "/workbook/tables(<id|name>)/columns(<id|name>)/range": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/columns(<id|name>)/range": true,
+    "/workbook/worksheets(<id|name>)/range(<address>)": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/range": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/rows(<index>)/range": true,
+    "/workbook/names(<name>)/range": true
   },
   "properties": [
     {
@@ -140,7 +134,7 @@
       "name": "formulas",
       "description": "Represents the formula in A1-style notation.",
       "isKey": null,
-      "dataType": "object[]",
+      "dataType": "json",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -154,7 +148,63 @@
       "name": "formulasLocal",
       "description": "Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English \"=SUM(A1, 1.5)\" formula would become \"=SUMME(A1; 1,5)\" in German.",
       "isKey": null,
-      "dataType": "object[]",
+      "dataType": "json",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "formulasR1C1",
+      "description": "Represents the formula in R1C1-style notation.",
+      "isKey": null,
+      "dataType": "json",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "hidden",
+      "description": "Represents if all cells of the current range are hidden.",
+      "isKey": null,
+      "dataType": "boolean",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "rowHidden",
+      "description": "Represents if all rows of the current range are hidden.",
+      "isKey": null,
+      "dataType": "boolean",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "columnHidden",
+      "description": "Represents if all columns of the current range are hidden.",
+      "isKey": null,
+      "dataType": "boolean",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -168,7 +218,7 @@
       "name": "numberFormat",
       "description": "Represents Excel's number format code for the given cell.",
       "isKey": null,
-      "dataType": "object[]",
+      "dataType": "json",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -210,7 +260,7 @@
       "name": "text",
       "description": "Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API.",
       "isKey": null,
-      "dataType": "object[]",
+      "dataType": "json",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": false,
@@ -224,7 +274,7 @@
       "name": "values",
       "description": "Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.",
       "isKey": null,
-      "dataType": "object[]",
+      "dataType": "json",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -247,18 +297,32 @@
       "allowPostToCollection": true,
       "isNullable": null,
       "isUnicode": null
+    },
+    {
+      "name": "sort",
+      "description": "The worksheet containing the current range.",
+      "isKey": null,
+      "dataType": "RangeSort",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
     }
   ],
   "methods": [
     {
-      "name": "Clear",
+      "name": "clear",
       "displayName": "",
       "description": "Clear range values, format, fill, border, etc.",
       "prerequisites": "",
-      "returnType": "void",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -280,14 +344,14 @@
       ]
     },
     {
-      "name": "Delete",
+      "name": "delete",
       "displayName": "",
       "description": "Deletes the cells associated with the range.",
       "prerequisites": "",
-      "returnType": "void",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -316,7 +380,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -336,7 +400,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -356,7 +420,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -368,7 +432,7 @@
         {
           "name": "anotherRange",
           "description": "The range object or address or range name.",
-          "dataType": "Range or string",
+          "dataType": "string",
           "isCollection": false,
           "isRequired": true,
           "enumName": null,
@@ -385,7 +449,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -424,7 +488,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -453,7 +517,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -465,7 +529,7 @@
         {
           "name": "anotherRange",
           "description": "The range object or range address that will be used to determine the intersection of ranges.",
-          "dataType": "Range or string",
+          "dataType": "string",
           "isCollection": false,
           "isRequired": true,
           "enumName": null,
@@ -482,7 +546,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -502,7 +566,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -522,7 +586,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -542,7 +606,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -581,7 +645,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -603,14 +667,14 @@
       ]
     },
     {
-      "name": "Insert",
+      "name": "insert",
       "displayName": "",
       "description": "Inserts a cell or a range of cells into the worksheet in place of this range, and shifts the other cells to make space. Returns a new Range object at the now blank space.",
       "prerequisites": "",
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -632,14 +696,63 @@
       ]
     },
     {
-      "name": "Select",
+      "name": "merge",
+      "displayName": "",
+      "description": "Merge the range cells into one region in the worksheet.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "across",
+          "description": "Set true to merge cells in each row of the specified range as separate merged cells. The default value is false.",
+          "dataType": "boolean",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "unmerge",
+      "displayName": "",
+      "description": "Unmerge the range cells into separate cells.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "select",
       "displayName": "",
       "description": "Selects the specified range in the Excel UI.",
       "prerequisites": "",
-      "returnType": "void",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -659,7 +772,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -668,7 +781,16 @@
 
       ],
       "parameters": [
-
+        {
+          "name": "valuesOnly",
+          "description": "Considers only cells with values as used cells.",
+          "dataType": "boolean",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
       ]
     }
   ]

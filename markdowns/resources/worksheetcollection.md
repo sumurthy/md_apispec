@@ -18,7 +18,7 @@ Here is a JSON representation of the resource
 {
   "items": [
     {
-      "@odata.type": "microsoft.graph.worksheet"
+      "@odata.type": "microsoft.graph.worksheet[]"
     }
   ]
 }
@@ -27,7 +27,7 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|items|[Worksheet](worksheet.md) collection|A collection of worksheet objects. Read-only.|
+|items|[Worksheet[]](worksheet[].md) collection|A collection of worksheet objects. Read-only.|
 
 ### Relationships
 None

@@ -38,7 +38,7 @@ Here is an example of the request.
 ```http
 POST https://graph.microsoft.com/beta/workbook/worksheets/<id|name>/charts/Add
 Content-type: application/json
-Content-length: 10865
+Content-length: 8673
 
 {
   "type": "type-value",
@@ -55,15 +55,10 @@ Content-length: 10865
       },
       "borders": [
         {
-          "count": 99,
-          "items": [
-            {
-              "color": "color-value",
-              "style": "style-value",
-              "sideIndex": "sideIndex-value",
-              "weight": "weight-value"
-            }
-          ]
+          "color": "color-value",
+          "style": "style-value",
+          "sideIndex": "sideIndex-value",
+          "weight": "weight-value"
         }
       ],
       "font": {
@@ -93,244 +88,45 @@ Content-length: 10865
     "worksheet": {
       "charts": [
         {
-          "count": 99,
-          "items": [
-            {
-              "axes": {
-                "categoryAxis": {
-                  "format": {
-                    "font": {
-                      "bold": true,
-                      "color": "color-value",
-                      "italic": true,
-                      "name": "name-value",
-                      "size": 99,
-                      "underline": "underline-value"
-                    },
-                    "line": {
-                      "color": "color-value"
-                    }
-                  },
-                  "majorGridlines": {
-                    "visible": true,
-                    "format": {
-                      "line": {
-                        "color": "color-value"
-                      }
-                    }
-                  },
-                  "majorUnit": {
-                  },
-                  "maximum": {
-                  },
-                  "minimum": {
-                  },
-                  "minorGridlines": {
-                    "visible": true,
-                    "format": {
-                      "line": {
-                        "color": "color-value"
-                      }
-                    }
-                  },
-                  "minorUnit": {
-                  },
-                  "title": {
-                    "format": {
-                      "font": {
-                        "bold": true,
-                        "color": "color-value",
-                        "italic": true,
-                        "name": "name-value",
-                        "size": 99,
-                        "underline": "underline-value"
-                      }
-                    },
-                    "text": "text-value",
-                    "visible": true
-                  }
+          "axes": {
+            "categoryAxis": {
+              "format": {
+                "font": {
+                  "bold": true,
+                  "color": "color-value",
+                  "italic": true,
+                  "name": "name-value",
+                  "size": 99,
+                  "underline": "underline-value"
                 },
-                "seriesAxis": {
-                  "format": {
-                    "font": {
-                      "bold": true,
-                      "color": "color-value",
-                      "italic": true,
-                      "name": "name-value",
-                      "size": 99,
-                      "underline": "underline-value"
-                    },
-                    "line": {
-                      "color": "color-value"
-                    }
-                  },
-                  "majorGridlines": {
-                    "visible": true,
-                    "format": {
-                      "line": {
-                        "color": "color-value"
-                      }
-                    }
-                  },
-                  "majorUnit": {
-                  },
-                  "maximum": {
-                  },
-                  "minimum": {
-                  },
-                  "minorGridlines": {
-                    "visible": true,
-                    "format": {
-                      "line": {
-                        "color": "color-value"
-                      }
-                    }
-                  },
-                  "minorUnit": {
-                  },
-                  "title": {
-                    "format": {
-                      "font": {
-                        "bold": true,
-                        "color": "color-value",
-                        "italic": true,
-                        "name": "name-value",
-                        "size": 99,
-                        "underline": "underline-value"
-                      }
-                    },
-                    "text": "text-value",
-                    "visible": true
-                  }
-                },
-                "valueAxis": {
-                  "format": {
-                    "font": {
-                      "bold": true,
-                      "color": "color-value",
-                      "italic": true,
-                      "name": "name-value",
-                      "size": 99,
-                      "underline": "underline-value"
-                    },
-                    "line": {
-                      "color": "color-value"
-                    }
-                  },
-                  "majorGridlines": {
-                    "visible": true,
-                    "format": {
-                      "line": {
-                        "color": "color-value"
-                      }
-                    }
-                  },
-                  "majorUnit": {
-                  },
-                  "maximum": {
-                  },
-                  "minimum": {
-                  },
-                  "minorGridlines": {
-                    "visible": true,
-                    "format": {
-                      "line": {
-                        "color": "color-value"
-                      }
-                    }
-                  },
-                  "minorUnit": {
-                  },
-                  "title": {
-                    "format": {
-                      "font": {
-                        "bold": true,
-                        "color": "color-value",
-                        "italic": true,
-                        "name": "name-value",
-                        "size": 99,
-                        "underline": "underline-value"
-                      }
-                    },
-                    "text": "text-value",
-                    "visible": true
-                  }
+                "line": {
+                  "color": "color-value"
                 }
               },
-              "dataLabels": {
-                "format": {
-                  "font": {
-                    "bold": true,
-                    "color": "color-value",
-                    "italic": true,
-                    "name": "name-value",
-                    "size": 99,
-                    "underline": "underline-value"
-                  },
-                  "fill": {
-                  }
-                },
-                "position": "position-value",
-                "showValue": true,
-                "showSeriesName": true,
-                "showCategoryName": true,
-                "showLegendKey": true,
-                "showPercentage": true,
-                "showBubbleSize": true,
-                "separator": "separator-value"
-              },
-              "height": 99,
-              "left": 99,
-              "legend": {
-                "format": {
-                  "font": {
-                    "bold": true,
-                    "color": "color-value",
-                    "italic": true,
-                    "name": "name-value",
-                    "size": 99,
-                    "underline": "underline-value"
-                  },
-                  "fill": {
-                  }
-                },
+              "majorGridlines": {
                 "visible": true,
-                "position": "position-value",
-                "overlay": true
-              },
-              "name": "name-value",
-              "series": [
-                {
-                  "count": 99,
-                  "items": [
-                    {
-                      "format": {
-                        "fill": {
-                        },
-                        "line": {
-                          "color": "color-value"
-                        }
-                      },
-                      "name": "name-value",
-                      "points": [
-                        {
-                          "count": 99,
-                          "items": [
-                            {
-                              "format": {
-                                "fill": {
-                                }
-                              },
-                              "value": {
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
+                "format": {
+                  "line": {
+                    "color": "color-value"
+                  }
                 }
-              ],
+              },
+              "majorUnit": {
+              },
+              "maximum": {
+              },
+              "minimum": {
+              },
+              "minorGridlines": {
+                "visible": true,
+                "format": {
+                  "line": {
+                    "color": "color-value"
+                  }
+                }
+              },
+              "minorUnit": {
+              },
               "title": {
                 "format": {
                   "font": {
@@ -340,19 +136,14 @@ Content-length: 10865
                     "name": "name-value",
                     "size": 99,
                     "underline": "underline-value"
-                  },
-                  "fill": {
                   }
                 },
-                "overlay": true,
                 "text": "text-value",
                 "visible": true
-              },
-              "top": 99,
-              "width": 99,
+              }
+            },
+            "seriesAxis": {
               "format": {
-                "fill": {
-                },
                 "font": {
                   "bold": true,
                   "color": "color-value",
@@ -360,10 +151,193 @@ Content-length: 10865
                   "name": "name-value",
                   "size": 99,
                   "underline": "underline-value"
+                },
+                "line": {
+                  "color": "color-value"
                 }
+              },
+              "majorGridlines": {
+                "visible": true,
+                "format": {
+                  "line": {
+                    "color": "color-value"
+                  }
+                }
+              },
+              "majorUnit": {
+              },
+              "maximum": {
+              },
+              "minimum": {
+              },
+              "minorGridlines": {
+                "visible": true,
+                "format": {
+                  "line": {
+                    "color": "color-value"
+                  }
+                }
+              },
+              "minorUnit": {
+              },
+              "title": {
+                "format": {
+                  "font": {
+                    "bold": true,
+                    "color": "color-value",
+                    "italic": true,
+                    "name": "name-value",
+                    "size": 99,
+                    "underline": "underline-value"
+                  }
+                },
+                "text": "text-value",
+                "visible": true
+              }
+            },
+            "valueAxis": {
+              "format": {
+                "font": {
+                  "bold": true,
+                  "color": "color-value",
+                  "italic": true,
+                  "name": "name-value",
+                  "size": 99,
+                  "underline": "underline-value"
+                },
+                "line": {
+                  "color": "color-value"
+                }
+              },
+              "majorGridlines": {
+                "visible": true,
+                "format": {
+                  "line": {
+                    "color": "color-value"
+                  }
+                }
+              },
+              "majorUnit": {
+              },
+              "maximum": {
+              },
+              "minimum": {
+              },
+              "minorGridlines": {
+                "visible": true,
+                "format": {
+                  "line": {
+                    "color": "color-value"
+                  }
+                }
+              },
+              "minorUnit": {
+              },
+              "title": {
+                "format": {
+                  "font": {
+                    "bold": true,
+                    "color": "color-value",
+                    "italic": true,
+                    "name": "name-value",
+                    "size": 99,
+                    "underline": "underline-value"
+                  }
+                },
+                "text": "text-value",
+                "visible": true
               }
             }
-          ]
+          },
+          "dataLabels": {
+            "format": {
+              "font": {
+                "bold": true,
+                "color": "color-value",
+                "italic": true,
+                "name": "name-value",
+                "size": 99,
+                "underline": "underline-value"
+              },
+              "fill": {
+              }
+            },
+            "position": "position-value",
+            "showValue": true,
+            "showSeriesName": true,
+            "showCategoryName": true,
+            "showLegendKey": true,
+            "showPercentage": true,
+            "showBubbleSize": true,
+            "separator": "separator-value"
+          },
+          "height": 99,
+          "left": 99,
+          "legend": {
+            "format": {
+              "font": {
+                "bold": true,
+                "color": "color-value",
+                "italic": true,
+                "name": "name-value",
+                "size": 99,
+                "underline": "underline-value"
+              },
+              "fill": {
+              }
+            },
+            "visible": true,
+            "position": "position-value",
+            "overlay": true
+          },
+          "name": "name-value",
+          "series": [
+            {
+              "format": {
+                "fill": {
+                },
+                "line": {
+                  "color": "color-value"
+                }
+              },
+              "name": "name-value",
+              "points": [
+                {
+                }
+              ]
+            }
+          ],
+          "title": {
+            "format": {
+              "font": {
+                "bold": true,
+                "color": "color-value",
+                "italic": true,
+                "name": "name-value",
+                "size": 99,
+                "underline": "underline-value"
+              },
+              "fill": {
+              }
+            },
+            "overlay": true,
+            "text": "text-value",
+            "visible": true
+          },
+          "top": 99,
+          "width": 99,
+          "format": {
+            "fill": {
+            },
+            "font": {
+              "bold": true,
+              "color": "color-value",
+              "italic": true,
+              "name": "name-value",
+              "size": 99,
+              "underline": "underline-value"
+            }
+          }
         }
       ],
       "id": "id-value",
@@ -371,40 +345,25 @@ Content-length: 10865
       "name": "name-value",
       "tables": [
         {
-          "count": 99,
-          "items": [
+          "id": 99,
+          "name": "name-value",
+          "showHeaders": true,
+          "showTotals": true,
+          "style": "style-value",
+          "columns": [
             {
               "id": 99,
               "name": "name-value",
-              "showHeaders": true,
-              "showTotals": true,
-              "style": "style-value",
-              "columns": [
-                {
-                  "count": 99,
-                  "items": [
-                    {
-                      "id": 99,
-                      "name": "name-value",
-                      "index": 99,
-                      "values": {
-                      }
-                    }
-                  ]
-                }
-              ],
-              "rows": [
-                {
-                  "count": 99,
-                  "items": [
-                    {
-                      "index": 99,
-                      "values": {
-                      }
-                    }
-                  ]
-                }
-              ]
+              "index": 99,
+              "values": {
+              }
+            }
+          ],
+          "rows": [
+            {
+              "index": 99,
+              "values": {
+              }
             }
           ]
         }

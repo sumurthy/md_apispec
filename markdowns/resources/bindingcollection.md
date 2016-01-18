@@ -19,7 +19,7 @@ Here is a JSON representation of the resource
   "count": 1024,
   "items": [
     {
-      "@odata.type": "microsoft.graph.binding"
+      "@odata.type": "microsoft.graph.binding[]"
     }
   ]
 }
@@ -29,7 +29,7 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of bindings in the collection. Read-only.|
-|items|[Binding](binding.md) collection|A collection of binding objects. Read-only.|
+|items|[Binding[]](binding[].md) collection|A collection of binding objects. Read-only.|
 
 ### Relationships
 None

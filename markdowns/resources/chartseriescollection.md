@@ -19,7 +19,7 @@ Here is a JSON representation of the resource
   "count": 1024,
   "items": [
     {
-      "@odata.type": "microsoft.graph.chartseries"
+      "@odata.type": "microsoft.graph.chartseries[]"
     }
   ]
 }
@@ -29,7 +29,7 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of series in the collection. Read-only.|
-|items|[ChartSeries](chartseries.md) collection|A collection of chartSeries objects. Read-only.|
+|items|[ChartSeries[]](chartseries[].md) collection|A collection of chartSeries objects. Read-only.|
 
 ### Relationships
 None

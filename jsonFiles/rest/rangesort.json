@@ -1,0 +1,108 @@
+{
+  "name": "RangeSort",
+  "description": "Manages sorting operations on Range objects.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": false,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/tables(<id|name>)/columns(<id|name>)/range/sort": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/columns(<id|name>)/range/sort": true,
+    "/workbook/worksheets(<id|name>)/range(<address>)/sort": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/range/sort": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/rows(<index>)/range/sort": true,
+    "/workbook/names(<name>)/range/sort": true
+  },
+  "properties": [
+
+  ],
+  "methods": [
+    {
+      "name": "apply",
+      "displayName": "",
+      "description": "Perform a sort operation.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "fields",
+          "description": "The list of conditions to sort on.",
+          "dataType": "SortField",
+          "isCollection": true,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "matchCase",
+          "description": "Whether to have the casing impact string ordering.",
+          "dataType": "boolean",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "hasHeaders",
+          "description": "Whether the range has a header.",
+          "dataType": "boolean",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "orientation",
+          "description": "Whether the operation is sorting rows or columns.",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": "Excel.SortOrientation",
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "method",
+          "description": "The ordering method used for Chinese characters.",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": "Excel.SortMethod",
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    }
+  ]
+}

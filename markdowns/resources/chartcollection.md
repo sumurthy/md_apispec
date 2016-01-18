@@ -19,7 +19,7 @@ Here is a JSON representation of the resource
   "count": 1024,
   "items": [
     {
-      "@odata.type": "microsoft.graph.chart"
+      "@odata.type": "microsoft.graph.chart[]"
     }
   ]
 }
@@ -29,7 +29,7 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of charts in the worksheet. Read-only.|
-|items|[Chart](chart.md) collection|A collection of chart objects. Read-only.|
+|items|[Chart[]](chart[].md) collection|A collection of chart objects. Read-only.|
 
 ### Relationships
 None

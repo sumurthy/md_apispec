@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,7 +24,7 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/worksheets/<id|name>/charts/<name>/axes": true
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes": true
   },
   "properties": [
     {

@@ -19,7 +19,7 @@ Here is a JSON representation of the resource
   "count": 1024,
   "items": [
     {
-      "@odata.type": "microsoft.graph.tablecolumn"
+      "@odata.type": "microsoft.graph.tablecolumn[]"
     }
   ]
 }
@@ -29,7 +29,7 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of columns in the table. Read-only.|
-|items|[TableColumn](tablecolumn.md) collection|A collection of tableColumn objects. Read-only.|
+|items|[TableColumn[]](tablecolumn[].md) collection|A collection of tableColumn objects. Read-only.|
 
 ### Relationships
 None

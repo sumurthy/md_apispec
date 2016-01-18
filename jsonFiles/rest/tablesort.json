@@ -1,0 +1,166 @@
+{
+  "name": "TableSort",
+  "description": "Manages sorting operations on Table objects.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": false,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/bindings(<id>)/table/sort": true,
+    "/workbook/tables(<id|name>)/sort": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/sort": true
+  },
+  "properties": [
+    {
+      "name": "matchCase",
+      "description": "Represents whether the casing impacted the last sort of the table.",
+      "isKey": null,
+      "dataType": "boolean",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "method",
+      "description": "Represents Chinese character ordering method last used to sort the table.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": true,
+      "enumName": "Excel.SortMethod",
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "fields",
+      "description": "Represents the current conditions used to last sort the table.",
+      "isKey": null,
+      "dataType": "SortField",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "apply",
+      "displayName": "",
+      "description": "Perform a sort operation.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "fields",
+          "description": "The list of conditions to sort on.",
+          "dataType": "SortField",
+          "isCollection": true,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "matchCase",
+          "description": "Whether to have the casing impact string ordering.",
+          "dataType": "boolean",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "method",
+          "description": "The ordering method used for Chinese characters.",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": "Excel.SortMethod",
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "clear",
+      "displayName": "",
+      "description": "Clears the sorting that is currently on the table. While this doesn't modify the table's ordering, it clears the state of the header buttons.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "reapply",
+      "displayName": "",
+      "description": "Reapplies the current sorting parameters to the table.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    }
+  ]
+}

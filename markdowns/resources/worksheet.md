@@ -34,18 +34,18 @@ Here is a JSON representation of the resource
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|charts|[ChartCollection](chartcollection.md) collection|Returns collection of charts that are part of the worksheet. Read-only.|
-|tables|[TableCollection](tablecollection.md) collection|Collection of tables that are part of the worksheet. Read-only.|
+|charts|[Chart](chart.md) collection|Returns collection of charts that are part of the worksheet. Read-only.|
+|tables|[Table](table.md) collection|Collection of tables that are part of the worksheet. Read-only.|
 
 ### Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get Worksheet](../api/worksheet_get.md) | [Worksheet](worksheet.md) |Read properties and relationships of worksheet object.|
-|[Create ChartCollection](../api/worksheet_post_charts.md) |[ChartCollection](chartcollection.md)| Create a new ChartCollection by posting to the charts collection.|
-|[List charts](../api/worksheet_list_charts.md) |[ChartCollection](chartcollection.md) collection| Get a ChartCollection object collection.|
-|[Create TableCollection](../api/worksheet_post_tables.md) |[TableCollection](tablecollection.md)| Create a new TableCollection by posting to the tables collection.|
-|[List tables](../api/worksheet_list_tables.md) |[TableCollection](tablecollection.md) collection| Get a TableCollection object collection.|
+|[Create Chart](../api/worksheet_post_charts.md) |[Chart](chart.md)| Create a new Chart by posting to the charts collection.|
+|[List charts](../api/worksheet_list_charts.md) |[Chart](chart.md) collection| Get a Chart object collection.|
+|[Create Table](../api/worksheet_post_tables.md) |[Table](table.md)| Create a new Table by posting to the tables collection.|
+|[List tables](../api/worksheet_list_tables.md) |[Table](table.md) collection| Get a Table object collection.|
 |[Update](../api/worksheet_update.md) | [Worksheet](worksheet.md)	|Update Worksheet object. |
 |[Delete](../api/worksheet_delete.md) | None |Delete Worksheet object. |
 |[Activate](../api/worksheet_activate.md)|[void](void.md)|Activate the worksheet in the Excel UI.|

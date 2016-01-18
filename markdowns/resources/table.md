@@ -36,18 +36,18 @@ Here is a JSON representation of the resource
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|columns|[TableColumnCollection](tablecolumncollection.md) collection|Represents a collection of all the columns in the table. Read-only.|
-|rows|[TableRowCollection](tablerowcollection.md) collection|Represents a collection of all the rows in the table. Read-only.|
+|columns|[TableColumn](tablecolumn.md) collection|Represents a collection of all the columns in the table. Read-only.|
+|rows|[TableRow](tablerow.md) collection|Represents a collection of all the rows in the table. Read-only.|
 
 ### Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get Table](../api/table_get.md) | [Table](table.md) |Read properties and relationships of table object.|
-|[Create TableColumnCollection](../api/table_post_columns.md) |[TableColumnCollection](tablecolumncollection.md)| Create a new TableColumnCollection by posting to the columns collection.|
-|[List columns](../api/table_list_columns.md) |[TableColumnCollection](tablecolumncollection.md) collection| Get a TableColumnCollection object collection.|
-|[Create TableRowCollection](../api/table_post_rows.md) |[TableRowCollection](tablerowcollection.md)| Create a new TableRowCollection by posting to the rows collection.|
-|[List rows](../api/table_list_rows.md) |[TableRowCollection](tablerowcollection.md) collection| Get a TableRowCollection object collection.|
+|[Create TableColumn](../api/table_post_columns.md) |[TableColumn](tablecolumn.md)| Create a new TableColumn by posting to the columns collection.|
+|[List columns](../api/table_list_columns.md) |[TableColumn](tablecolumn.md) collection| Get a TableColumn object collection.|
+|[Create TableRow](../api/table_post_rows.md) |[TableRow](tablerow.md)| Create a new TableRow by posting to the rows collection.|
+|[List rows](../api/table_list_rows.md) |[TableRow](tablerow.md) collection| Get a TableRow object collection.|
 |[Update](../api/table_update.md) | [Table](table.md)	|Update Table object. |
 |[Delete](../api/table_delete.md) | None |Delete Table object. |
 |[DataBodyRange](../api/table_databodyrange.md)|[Range](range.md)|Gets the range object associated with the data body of the table.|

@@ -9,7 +9,7 @@ require 'json'
 module SpecMaker
 
 	# Initialize 
-	JSON_SOURCE_FOLDER = "../jsonFiles"	
+	JSON_SOURCE_FOLDER = "../jsonFiles/js"	
 	#JSON_SOURCE_FOLDER =  "C:/Users/suramam/git/wip/lib/jsonFiles"
 	ENUMS = JSON_SOURCE_FOLDER + '/settings/enums.json'
 	MARKDOWN_OUTPUT_FOLDER = "../jsOutputMarkdowns/"
@@ -59,7 +59,7 @@ module SpecMaker
 	end
 
 	if !File.exists?(EXAMPLES_FOLDER)
-		@logger.warn("API examples folder does not exist")
+		puts "API examples folder does not exist"
 	end		
 
 	## 
@@ -245,19 +245,21 @@ module SpecMaker
 		@jsonHash = JSON.parse(item, {:symbolize_names => true})
 		# Obtain the resource name. Read the examples file, if it exists. 
 		@resource = uncapitalize(@jsonHash[:name])
-		@logger.debug("")	
+		@log#ger.debug("")	
 		@logger.debug("...............Report for: #{@resource}...........")	
 
 		example_lines = ''
 		@gsType = ''
 		@exampleFileFound = false
-		# begin
-		# 	example_lines = File.readlines(File.join(JSON_EXAMPLE_FOLDER + (@resource + '_' + methodName).downcase + ".md".md"))
-		# 	@gsType = determine_getter_setter_type example_lines
-		# 	@exampleFileFound = true
-		# rescue => err
-		# 	@logger.error("....Example File does not exist for: #{@resource}")
-		# end
+
+		begin
+			#example_lines = File.readlines(File.join(JSON_EXAMPLE_FOLDER + @resource.downcase + ".md"))
+			example_lines = File.readlines(EXAMPLES_FOLDER + @resource.downcase + ".md")
+			@gsType = determine_getter_setter_type example_lines
+			@exampleFileFound = true
+		rescue => err
+			puts "....Example File does not exist for: #{@resource}"
+		end
 
 		propreties = @jsonHash[:properties]
 		if propreties 

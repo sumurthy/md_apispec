@@ -19,7 +19,7 @@ Here is a JSON representation of the resource
   "count": 1024,
   "items": [
     {
-      "@odata.type": "microsoft.graph.rangeborder"
+      "@odata.type": "microsoft.graph.rangeborder[]"
     }
   ]
 }
@@ -29,7 +29,7 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Number of border objects in the collection. Read-only.|
-|items|[RangeBorder](rangeborder.md) collection|A collection of rangeBorder objects. Read-only.|
+|items|[RangeBorder[]](rangeborder[].md) collection|A collection of rangeBorder objects. Read-only.|
 
 ### Relationships
 None

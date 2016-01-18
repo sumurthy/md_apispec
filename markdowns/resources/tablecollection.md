@@ -19,7 +19,7 @@ Here is a JSON representation of the resource
   "count": 1024,
   "items": [
     {
-      "@odata.type": "microsoft.graph.table"
+      "@odata.type": "microsoft.graph.table[]"
     }
   ]
 }
@@ -29,7 +29,7 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of tables in the workbook. Read-only.|
-|items|[Table](table.md) collection|A collection of table objects. Read-only.|
+|items|[Table[]](table[].md) collection|A collection of table objects. Read-only.|
 
 ### Relationships
 None

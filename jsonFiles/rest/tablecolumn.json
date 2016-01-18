@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,9 +24,9 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/bindings/<id>/table/columns/<id|name>": true,
-    "/workbook/tables/<id|name>/columns/<id|name>": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>/columns/<id|name>": true
+    "/workbook/bindings(<id>)/table/columns(<id|name>)": true,
+    "/workbook/tables(<id|name>)/columns(<id|name>)": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/columns(<id|name>)": true
   },
   "properties": [
     {
@@ -75,11 +75,25 @@
       "name": "values",
       "description": "Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.",
       "isKey": null,
-      "dataType": "object[]",
+      "dataType": "json",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
       "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "filter",
+      "description": "Retrieve the filter applied to the column.",
+      "isKey": null,
+      "dataType": "Filter",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
       "supportFilter": false,
       "allowPostToCollection": true,
       "isNullable": null,
@@ -95,7 +109,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -115,7 +129,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -135,7 +149,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -155,7 +169,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -168,14 +182,14 @@
       ]
     },
     {
-      "name": "Delete",
+      "name": "delete",
       "displayName": "",
       "description": "Deletes the column from the table.",
       "prerequisites": "",
-      "returnType": "void",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 

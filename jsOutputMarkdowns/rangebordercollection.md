@@ -39,7 +39,7 @@ rangeBorderCollectionObject.getItem(index);
 #### Parameters
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|index|string|Index value of the border object to be retrieved.  Possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp|
+|index|string|Index value of the border object to be retrieved.|
 
 #### Returns
 [RangeBorder](rangeborder.md)

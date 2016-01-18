@@ -1,0 +1,98 @@
+{
+  "name": "Filter",
+  "description": "Manages the filtering of a table's column.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": false,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/bindings(<id>)/table/columns(<id|name>)/filter": true,
+    "/workbook/tables(<id|name>)/columns(<id|name>)/filter": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/columns(<id|name>)/filter": true
+  },
+  "properties": [
+    {
+      "name": "criteria",
+      "description": "The currently applied filter on the given column.",
+      "isKey": null,
+      "dataType": "FilterCriteria",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "apply",
+      "displayName": "",
+      "description": "Apply the given filter criteria on the given column.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "criteria",
+          "description": "The criteria to apply.",
+          "dataType": "FilterCriteria",
+          "isCollection": false,
+          "isRequired": true,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "clear",
+      "displayName": "",
+      "description": "Clear the filter on the given column.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    }
+  ]
+}

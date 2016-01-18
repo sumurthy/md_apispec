@@ -9,7 +9,7 @@ Represents an Office.js binding that is defined in the workbook.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |id|string|Represents binding identifier. Read-only.|
-|type|string|Returns the type of the binding. Read-only. Possible values are: Range, Table, Text.|
+|type|string|Returns the type of the binding. Read-only.|
 
 _See property access [examples.](#property-access-examples)_
 

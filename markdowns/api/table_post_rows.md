@@ -1,6 +1,6 @@
-# Create TableRowCollection
+# Create TableRow
 
-Use this API to create a new TableRowCollection.
+Use this API to create a new TableRow.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -18,44 +18,39 @@ POST /workbook/worksheets/<id|name>/tables/<id|name>/rows
 | Workbook-Session-Id  |string |It is recommended to include the workbook session Id along with the request. Optional.|
 
 ### Request body
-In the request body, supply a JSON representation of [TableRowCollection](../resources/tablerowcollection.md) object.
+In the request body, supply a JSON representation of [TableRow](../resources/tablerow.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [TableRowCollection](../resources/tablerowcollection.md) object in the response body.
+If successful, this method returns `201, Created` response code and [TableRow](../resources/tablerow.md) object in the response body.
 
 ### Example
 ##### Request
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_tablerowcollection_from_table"
+  "name": "create_tablerow_from_table"
 }-->
 ```http
 POST https://graph.microsoft.com/beta/workbook/tables/<id|name>
 ```
-In the request body, supply a JSON representation of [TableRowCollection](../resources/tablerowcollection.md) object.
+In the request body, supply a JSON representation of [TableRow](../resources/tablerow.md) object.
 ##### Response
 Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": false,
-  "@odata.type": "microsoft.graph.tablerowcollection"
+  "@odata.type": "microsoft.graph.tablerow"
 } -->
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 92
+Content-length: 36
 
 {
-  "count": 99,
-  "items": [
-    {
-      "index": 99,
-      "values": {
-      }
-    }
-  ]
+  "index": 99,
+  "values": {
+  }
 }
 ```
 
@@ -63,7 +58,7 @@ Content-length: 92
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create TableRowCollection",
+  "description": "Create TableRow",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

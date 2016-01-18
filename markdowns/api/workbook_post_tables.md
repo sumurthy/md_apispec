@@ -1,6 +1,6 @@
-# Create TableCollection
+# Create Table
 
-Use this API to create a new TableCollection.
+Use this API to create a new Table.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -16,72 +16,41 @@ POST /workbook/tables
 | Workbook-Session-Id  |string |It is recommended to include the workbook session Id along with the request. Optional.|
 
 ### Request body
-In the request body, supply a JSON representation of [TableCollection](../resources/tablecollection.md) object.
+In the request body, supply a JSON representation of [Table](../resources/table.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [TableCollection](../resources/tablecollection.md) object in the response body.
+If successful, this method returns `201, Created` response code and [Table](../resources/table.md) object in the response body.
 
 ### Example
 ##### Request
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_tablecollection_from_workbook"
+  "name": "create_table_from_workbook"
 }-->
 ```http
 POST https://graph.microsoft.com/beta/workbook
 ```
-In the request body, supply a JSON representation of [TableCollection](../resources/tablecollection.md) object.
+In the request body, supply a JSON representation of [Table](../resources/table.md) object.
 ##### Response
 Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": false,
-  "@odata.type": "microsoft.graph.tablecollection"
+  "@odata.type": "microsoft.graph.table"
 } -->
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 632
+Content-length: 109
 
 {
-  "count": 99,
-  "items": [
-    {
-      "id": 99,
-      "name": "name-value",
-      "showHeaders": true,
-      "showTotals": true,
-      "style": "style-value",
-      "columns": [
-        {
-          "count": 99,
-          "items": [
-            {
-              "id": 99,
-              "name": "name-value",
-              "index": 99,
-              "values": {
-              }
-            }
-          ]
-        }
-      ],
-      "rows": [
-        {
-          "count": 99,
-          "items": [
-            {
-              "index": 99,
-              "values": {
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  "id": 99,
+  "name": "name-value",
+  "showHeaders": true,
+  "showTotals": true,
+  "style": "style-value"
 }
 ```
 
@@ -89,7 +58,7 @@ Content-length: 632
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create TableCollection",
+  "description": "Create Table",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

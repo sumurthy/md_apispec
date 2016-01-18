@@ -514,5 +514,358 @@
         "description": ""
       }
     }
+  },
+  "Excel.DynamicFilterCriteria": {
+    "isExclusive": true,
+    "options": {
+      "Unknown": {
+        "value": null,
+        "description": ""
+      },
+      "AboveAverage": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodApril": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodAugust": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodDecember": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodFebruray": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodJanuary": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodJuly": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodJune": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodMarch": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodMay": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodNovember": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodOctober": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodQuarter1": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodQuarter2": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodQuarter3": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodQuarter4": {
+        "value": null,
+        "description": ""
+      },
+      "AllDatesInPeriodSeptember": {
+        "value": null,
+        "description": ""
+      },
+      "BelowAverage": {
+        "value": null,
+        "description": ""
+      },
+      "LastMonth": {
+        "value": null,
+        "description": ""
+      },
+      "LastQuarter": {
+        "value": null,
+        "description": ""
+      },
+      "LastWeek": {
+        "value": null,
+        "description": ""
+      },
+      "LastYear": {
+        "value": null,
+        "description": ""
+      },
+      "NextMonth": {
+        "value": null,
+        "description": ""
+      },
+      "NextQuarter": {
+        "value": null,
+        "description": ""
+      },
+      "NextWeek": {
+        "value": null,
+        "description": ""
+      },
+      "NextYear": {
+        "value": null,
+        "description": ""
+      },
+      "ThisMonth": {
+        "value": null,
+        "description": ""
+      },
+      "ThisQuarter": {
+        "value": null,
+        "description": ""
+      },
+      "ThisWeek": {
+        "value": null,
+        "description": ""
+      },
+      "ThisYear": {
+        "value": null,
+        "description": ""
+      },
+      "Today": {
+        "value": null,
+        "description": ""
+      },
+      "Tomorrow": {
+        "value": null,
+        "description": ""
+      },
+      "YearToDate": {
+        "value": null,
+        "description": ""
+      },
+      "Yesterday": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.FilterDatetimeSpecificity": {
+    "isExclusive": true,
+    "options": {
+      "Year": {
+        "value": null,
+        "description": ""
+      },
+      "Monday": {
+        "value": null,
+        "description": ""
+      },
+      "Day": {
+        "value": null,
+        "description": ""
+      },
+      "Hour": {
+        "value": null,
+        "description": ""
+      },
+      "Minute": {
+        "value": null,
+        "description": ""
+      },
+      "Second": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.FilterOn": {
+    "isExclusive": true,
+    "options": {
+      "And": {
+        "value": null,
+        "description": ""
+      },
+      "Or": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.IconSet": {
+    "isExclusive": true,
+    "options": {
+      "Invalid": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeArrows": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeArrowsGray": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeFlags": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeTrafficLights1": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeTrafficLights2": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeSigns": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeSymbols": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeSymbols2": {
+        "value": null,
+        "description": ""
+      },
+      "FourArrows": {
+        "value": null,
+        "description": ""
+      },
+      "FourArrowsGray": {
+        "value": null,
+        "description": ""
+      },
+      "FourRedToBlack": {
+        "value": null,
+        "description": ""
+      },
+      "FourRating": {
+        "value": null,
+        "description": ""
+      },
+      "FourTrafficLights": {
+        "value": null,
+        "description": ""
+      },
+      "FiveArrows": {
+        "value": null,
+        "description": ""
+      },
+      "FiveArrowsGray": {
+        "value": null,
+        "description": ""
+      },
+      "FiveRating": {
+        "value": null,
+        "description": ""
+      },
+      "FiveQuarters": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeStars": {
+        "value": null,
+        "description": ""
+      },
+      "ThreeTriangles": {
+        "value": null,
+        "description": ""
+      },
+      "FiveBoxes": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.ImageFittingMode": {
+    "isExclusive": true,
+    "options": {
+      "Fit": {
+        "value": null,
+        "description": ""
+      },
+      "FitAndCenter": {
+        "value": null,
+        "description": ""
+      },
+      "Fill": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.SortOrientation": {
+    "isExclusive": true,
+    "options": {
+      "Rows": {
+        "value": null,
+        "description": ""
+      },
+      "Columns": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.SortOn": {
+    "isExclusive": true,
+    "options": {
+      "Value": {
+        "value": null,
+        "description": ""
+      },
+      "CellColor": {
+        "value": null,
+        "description": ""
+      },
+      "FontColor": {
+        "value": null,
+        "description": ""
+      },
+      "Icon": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.SortDataOption": {
+    "isExclusive": true,
+    "options": {
+      "Normal": {
+        "value": null,
+        "description": ""
+      },
+      "TextAsNumber": {
+        "value": null,
+        "description": ""
+      }
+    }
+  },
+  "Excel.SortMethod": {
+    "isExclusive": true,
+    "options": {
+      "PinYin": {
+        "value": null,
+        "description": ""
+      },
+      "StrokeCount": {
+        "value": null,
+        "description": ""
+      }
+    }
   }
 }

@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,19 +24,19 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/minorgridlines": true,
-    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/minorgridlines": true,
-    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/minorgridlines": true,
-    "/workbook/worksheets/<id|name>/charts/<name>/axes/valueaxis/majorgridlines": true,
-    "/workbook/worksheets/<id|name>/charts/<name>/axes/seriesaxis/majorgridlines": true,
-    "/workbook/worksheets/<id|name>/charts/<name>/axes/categoryaxis/majorgridlines": true
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes/valueaxis/minorgridlines": true,
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes/seriesaxis/minorgridlines": true,
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes/categoryaxis/minorgridlines": true,
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes/valueaxis/majorgridlines": true,
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes/seriesaxis/majorgridlines": true,
+    "/workbook/worksheets(<id|name>)/charts(<name>)/axes/categoryaxis/majorgridlines": true
   },
   "properties": [
     {
       "name": "visible",
       "description": "Boolean value representing if the axis gridlines are visible or not.",
       "isKey": null,
-      "dataType": "bool",
+      "dataType": "boolean",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,

@@ -1,0 +1,61 @@
+{
+  "name": "FilterDatetime",
+  "description": "Represents how to filter a date when filtering on values.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": false,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+  },
+  "properties": [
+    {
+      "name": "date",
+      "description": "The date in ISO8601 format used to filter data.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "specificity",
+      "description": "How specific the date should be used to keep data. For example, if the date is 2005-04-02 and the specifity is set to \"month\", the filter operation will keep all rows with a date in the month of april 2009.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": false,
+      "enumName": "Excel.FilterDatetimeSpecificity",
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+
+  ]
+}

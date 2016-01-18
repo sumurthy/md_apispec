@@ -1,0 +1,67 @@
+{
+  "name": "Icon",
+  "description": "Represents a cell icon.",
+  "collectionOf": null,
+  "isComplexType": false,
+  "isEntitySet": false,
+  "allowPatch": true,
+  "allowUpsert": true,
+  "allowPatchCreate": true,
+  "allowDelete": false,
+  "isReferenceable": true,
+  "isExpandable": true,
+  "isFilterable": true,
+  "isCountable": true,
+  "isSelectable": true,
+  "isSkipSupported": true,
+  "isTopSupported": true,
+  "info": null,
+  "propertyNotes": "",
+  "relationshipNotes": "",
+  "methodNotes": "",
+  "listDescription": "",
+  "createDescription": "",
+  "updateDescription": "",
+  "deleteDescription": "",
+  "restPath": {
+    "/workbook/bindings(<id>)/table/sort/fields/icon": true,
+    "/workbook/tables(<id|name>)/sort/fields/icon": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/sort/fields/icon": true,
+    "/workbook/bindings(<id>)/table/columns(<id|name>)/filter/criteria/icon": true,
+    "/workbook/tables(<id|name>)/columns(<id|name>)/filter/criteria/icon": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/columns(<id|name>)/filter/criteria/icon": true
+  },
+  "properties": [
+    {
+      "name": "set",
+      "description": "Represents the set that the icon is part of.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": false,
+      "enumName": "Excel.IconSet",
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "index",
+      "description": "Represents the index of the icon in the given set.",
+      "isKey": null,
+      "dataType": "int",
+      "isReadOnly": false,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    }
+  ],
+  "methods": [
+
+  ]
+}

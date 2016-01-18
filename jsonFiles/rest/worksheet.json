@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,14 +24,14 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/worksheets/<id|name>": true
+    "/workbook/worksheets(<id|name>)": true
   },
   "properties": [
     {
       "name": "charts",
       "description": "Returns collection of charts that are part of the worksheet.",
       "isKey": null,
-      "dataType": "ChartCollection",
+      "dataType": "Chart",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,
@@ -87,7 +87,7 @@
       "name": "tables",
       "description": "Collection of tables that are part of the worksheet.",
       "isKey": null,
-      "dataType": "TableCollection",
+      "dataType": "Table",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,
@@ -99,13 +99,27 @@
     },
     {
       "name": "visibility",
-      "description": "The Visibility of the worksheet,",
+      "description": "The Visibility of the worksheet.",
       "isKey": null,
       "dataType": "string",
-      "isReadOnly": true,
+      "isReadOnly": false,
       "enumName": "Excel.SheetVisibility",
       "isCollection": false,
       "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "protection",
+      "description": "Returns sheet protection object for a worksheet.",
+      "isKey": null,
+      "dataType": "WorksheetProtection",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
       "supportFilter": false,
       "allowPostToCollection": true,
       "isNullable": null,
@@ -114,34 +128,14 @@
   ],
   "methods": [
     {
-      "name": "Activate",
-      "displayName": "",
-      "description": "Activate the worksheet in the Excel UI.",
-      "prerequisites": "",
-      "returnType": "void",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
-      "isFunction": null,
-      "scopes": [
-
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-
-      ]
-    },
-    {
-      "name": "Delete",
+      "name": "delete",
       "displayName": "",
       "description": "Deletes the worksheet from the workbook.",
       "prerequisites": "",
-      "returnType": "void",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -161,7 +155,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -200,7 +194,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -224,12 +218,12 @@
     {
       "name": "UsedRange",
       "displayName": "",
-      "description": "The used range is the smallest range than encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.",
+      "description": "The used range is the smallest range that encompasses any cells that have a value or formatting assigned to them. If the worksheet is blank, this function will return the top left cell.",
       "prerequisites": "",
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -238,7 +232,16 @@
 
       ],
       "parameters": [
-
+        {
+          "name": "valuesOnly",
+          "description": "Considers only cells with values as used cells (ignores formatting).",
+          "dataType": "boolean",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
       ]
     }
   ]

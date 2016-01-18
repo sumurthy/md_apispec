@@ -13,7 +13,7 @@ This object represents the font attributes (font name, font size, color, etc.) f
 |italic|bool|Represents the italic status of the font.|
 |name|string|Font name (e.g. "Calibri")|
 |size|double|Size of the font (e.g. 11)|
-|underline|string|Type of underline applied to the font. Possible values are: None, Single.|
+|underline|string|Type of underline applied to the font.|
 
 _See property access [examples.](#property-access-examples)_
 

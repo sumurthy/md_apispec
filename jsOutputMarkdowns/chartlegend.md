@@ -9,7 +9,7 @@ Represents the legend in a chart.
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |overlay|bool|Boolean value for whether the chart legend should overlap with the main body of the chart.|
-|position|string|Represents the position of the legend on the chart. Possible values are: Top, Bottom, Left, Right, Corner, Custom.|
+|position|string|Represents the position of the legend on the chart.|
 |visible|bool|A boolean value the represents the visibility of a ChartLegend object.|
 
 _See property access [examples.](#property-access-examples)_

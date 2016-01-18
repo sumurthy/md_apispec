@@ -1,6 +1,6 @@
 # List worksheets
 
-Retrieve a list of worksheetcollection objects.
+Retrieve a list of worksheet objects.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -12,7 +12,7 @@ GET /workbook/worksheets
 |Name|Value|Description|
 |:---------------|:--------|:-------|
 |$count|none|The count of related entities can be requested by specifying the $count query option.|
-|$expand|string|Comma-separated list of relationships to expand and include in the response. See relationships table of [WorksheetCollection](../resources/worksheetcollection.md) for supported names. |
+|$expand|string|Comma-separated list of relationships to expand and include in the response. See relationships table of [Worksheet](../resources/worksheet.md) for supported names. |
 |$filter|string|Filter string that lets you filter the response based on a set of criteria.|
 |$orderby|string|Comma-separated list of properties that are used to sort the order of items in the response collection.|
 |$select|string|Comma-separated list of properties to include in the response.|
@@ -29,7 +29,7 @@ GET /workbook/worksheets
 ### Request body
 Do not supply a request body for this method.
 ### Response
-If successful, this method returns a `200 OK` response code and collection of [WorksheetCollection](../resources/worksheetcollection.md) objects in the response body.
+If successful, this method returns a `200 OK` response code and collection of [Worksheet](../resources/worksheet.md) objects in the response body.
 ### Example
 ##### Request
 Here is an example of the request.
@@ -45,340 +45,21 @@ Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": false,
-  "@odata.type": "microsoft.graph.worksheetcollection",
+  "@odata.type": "microsoft.graph.worksheet",
   "isCollection": true
 } -->
 ```http
 HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 11066
+Content-length: 145
 
 {
   "value": [
     {
-      "items": [
-        {
-          "charts": [
-            {
-              "count": 99,
-              "items": [
-                {
-                  "axes": {
-                    "categoryAxis": {
-                      "format": {
-                        "font": {
-                          "bold": true,
-                          "color": "color-value",
-                          "italic": true,
-                          "name": "name-value",
-                          "size": 99,
-                          "underline": "underline-value"
-                        },
-                        "line": {
-                          "color": "color-value"
-                        }
-                      },
-                      "majorGridlines": {
-                        "visible": true,
-                        "format": {
-                          "line": {
-                            "color": "color-value"
-                          }
-                        }
-                      },
-                      "majorUnit": {
-                      },
-                      "maximum": {
-                      },
-                      "minimum": {
-                      },
-                      "minorGridlines": {
-                        "visible": true,
-                        "format": {
-                          "line": {
-                            "color": "color-value"
-                          }
-                        }
-                      },
-                      "minorUnit": {
-                      },
-                      "title": {
-                        "format": {
-                          "font": {
-                            "bold": true,
-                            "color": "color-value",
-                            "italic": true,
-                            "name": "name-value",
-                            "size": 99,
-                            "underline": "underline-value"
-                          }
-                        },
-                        "text": "text-value",
-                        "visible": true
-                      }
-                    },
-                    "seriesAxis": {
-                      "format": {
-                        "font": {
-                          "bold": true,
-                          "color": "color-value",
-                          "italic": true,
-                          "name": "name-value",
-                          "size": 99,
-                          "underline": "underline-value"
-                        },
-                        "line": {
-                          "color": "color-value"
-                        }
-                      },
-                      "majorGridlines": {
-                        "visible": true,
-                        "format": {
-                          "line": {
-                            "color": "color-value"
-                          }
-                        }
-                      },
-                      "majorUnit": {
-                      },
-                      "maximum": {
-                      },
-                      "minimum": {
-                      },
-                      "minorGridlines": {
-                        "visible": true,
-                        "format": {
-                          "line": {
-                            "color": "color-value"
-                          }
-                        }
-                      },
-                      "minorUnit": {
-                      },
-                      "title": {
-                        "format": {
-                          "font": {
-                            "bold": true,
-                            "color": "color-value",
-                            "italic": true,
-                            "name": "name-value",
-                            "size": 99,
-                            "underline": "underline-value"
-                          }
-                        },
-                        "text": "text-value",
-                        "visible": true
-                      }
-                    },
-                    "valueAxis": {
-                      "format": {
-                        "font": {
-                          "bold": true,
-                          "color": "color-value",
-                          "italic": true,
-                          "name": "name-value",
-                          "size": 99,
-                          "underline": "underline-value"
-                        },
-                        "line": {
-                          "color": "color-value"
-                        }
-                      },
-                      "majorGridlines": {
-                        "visible": true,
-                        "format": {
-                          "line": {
-                            "color": "color-value"
-                          }
-                        }
-                      },
-                      "majorUnit": {
-                      },
-                      "maximum": {
-                      },
-                      "minimum": {
-                      },
-                      "minorGridlines": {
-                        "visible": true,
-                        "format": {
-                          "line": {
-                            "color": "color-value"
-                          }
-                        }
-                      },
-                      "minorUnit": {
-                      },
-                      "title": {
-                        "format": {
-                          "font": {
-                            "bold": true,
-                            "color": "color-value",
-                            "italic": true,
-                            "name": "name-value",
-                            "size": 99,
-                            "underline": "underline-value"
-                          }
-                        },
-                        "text": "text-value",
-                        "visible": true
-                      }
-                    }
-                  },
-                  "dataLabels": {
-                    "format": {
-                      "font": {
-                        "bold": true,
-                        "color": "color-value",
-                        "italic": true,
-                        "name": "name-value",
-                        "size": 99,
-                        "underline": "underline-value"
-                      },
-                      "fill": {
-                      }
-                    },
-                    "position": "position-value",
-                    "showValue": true,
-                    "showSeriesName": true,
-                    "showCategoryName": true,
-                    "showLegendKey": true,
-                    "showPercentage": true,
-                    "showBubbleSize": true,
-                    "separator": "separator-value"
-                  },
-                  "height": 99,
-                  "left": 99,
-                  "legend": {
-                    "format": {
-                      "font": {
-                        "bold": true,
-                        "color": "color-value",
-                        "italic": true,
-                        "name": "name-value",
-                        "size": 99,
-                        "underline": "underline-value"
-                      },
-                      "fill": {
-                      }
-                    },
-                    "visible": true,
-                    "position": "position-value",
-                    "overlay": true
-                  },
-                  "name": "name-value",
-                  "series": [
-                    {
-                      "count": 99,
-                      "items": [
-                        {
-                          "format": {
-                            "fill": {
-                            },
-                            "line": {
-                              "color": "color-value"
-                            }
-                          },
-                          "name": "name-value",
-                          "points": [
-                            {
-                              "count": 99,
-                              "items": [
-                                {
-                                  "format": {
-                                    "fill": {
-                                    }
-                                  },
-                                  "value": {
-                                  }
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ],
-                  "title": {
-                    "format": {
-                      "font": {
-                        "bold": true,
-                        "color": "color-value",
-                        "italic": true,
-                        "name": "name-value",
-                        "size": 99,
-                        "underline": "underline-value"
-                      },
-                      "fill": {
-                      }
-                    },
-                    "overlay": true,
-                    "text": "text-value",
-                    "visible": true
-                  },
-                  "top": 99,
-                  "width": 99,
-                  "format": {
-                    "fill": {
-                    },
-                    "font": {
-                      "bold": true,
-                      "color": "color-value",
-                      "italic": true,
-                      "name": "name-value",
-                      "size": 99,
-                      "underline": "underline-value"
-                    }
-                  }
-                }
-              ]
-            }
-          ],
-          "id": "id-value",
-          "position": 99,
-          "name": "name-value",
-          "tables": [
-            {
-              "count": 99,
-              "items": [
-                {
-                  "id": 99,
-                  "name": "name-value",
-                  "showHeaders": true,
-                  "showTotals": true,
-                  "style": "style-value",
-                  "columns": [
-                    {
-                      "count": 99,
-                      "items": [
-                        {
-                          "id": 99,
-                          "name": "name-value",
-                          "index": 99,
-                          "values": {
-                          }
-                        }
-                      ]
-                    }
-                  ],
-                  "rows": [
-                    {
-                      "count": 99,
-                      "items": [
-                        {
-                          "index": 99,
-                          "values": {
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "visibility": "visibility-value"
-        }
-      ]
+      "id": "id-value",
+      "position": 99,
+      "name": "name-value",
+      "visibility": "visibility-value"
     }
   ]
 }

@@ -8,7 +8,7 @@ Represents a collection of all the data labels on a chart point.
 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
-|position|string|DataLabelPosition value that represents the position of the data label. Possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.|
+|position|string|DataLabelPosition value that represents the position of the data label.|
 |separator|string|String representing the separator used for the data labels on a chart.|
 |showBubbleSize|bool|Boolean value representing if the data label bubble size is visible or not.|
 |showCategoryName|bool|Boolean value representing if the data label category name is visible or not.|

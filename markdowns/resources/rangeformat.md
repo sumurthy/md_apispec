@@ -32,7 +32,7 @@ Here is a JSON representation of the resource
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|borders|[RangeBorderCollection](rangebordercollection.md) collection|Collection of border objects that apply to the overall range selected Read-only.|
+|borders|[RangeBorder](rangeborder.md) collection|Collection of border objects that apply to the overall range selected Read-only.|
 |fill|[RangeFill](rangefill.md)|Returns the fill object defined on the overall range. Read-only.|
 |font|[RangeFont](rangefont.md)|Returns the font object defined on the overall range selected Read-only.|
 
@@ -41,8 +41,8 @@ Here is a JSON representation of the resource
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get RangeFormat](../api/rangeformat_get.md) | [RangeFormat](rangeformat.md) |Read properties and relationships of rangeFormat object.|
-|[Create RangeBorderCollection](../api/rangeformat_post_borders.md) |[RangeBorderCollection](rangebordercollection.md)| Create a new RangeBorderCollection by posting to the borders collection.|
-|[List borders](../api/rangeformat_list_borders.md) |[RangeBorderCollection](rangebordercollection.md) collection| Get a RangeBorderCollection object collection.|
+|[Create RangeBorder](../api/rangeformat_post_borders.md) |[RangeBorder](rangeborder.md)| Create a new RangeBorder by posting to the borders collection.|
+|[List borders](../api/rangeformat_list_borders.md) |[RangeBorder](rangeborder.md) collection| Get a RangeBorder object collection.|
 |[Update](../api/rangeformat_update.md) | [RangeFormat](rangeformat.md)	|Update RangeFormat object. |
 |[Delete](../api/rangeformat_delete.md) | None |Delete RangeFormat object. |
 

@@ -1,6 +1,6 @@
-# Create ChartPointsCollection
+# Create ChartPoints
 
-Use this API to create a new ChartPointsCollection.
+Use this API to create a new ChartPoints.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -16,47 +16,36 @@ POST /workbook/worksheets/<id|name>/charts/<name>/series/<undefined>/points
 | Workbook-Session-Id  |string |It is recommended to include the workbook session Id along with the request. Optional.|
 
 ### Request body
-In the request body, supply a JSON representation of [ChartPointsCollection](../resources/chartpointscollection.md) object.
+In the request body, supply a JSON representation of [ChartPoints](../resources/chartpoints.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [ChartPointsCollection](../resources/chartpointscollection.md) object in the response body.
+If successful, this method returns `201, Created` response code and [ChartPoints](../resources/chartpoints.md) object in the response body.
 
 ### Example
 ##### Request
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_chartpointscollection_from_chartseries"
+  "name": "create_chartpoints_from_chartseries"
 }-->
 ```http
 POST https://graph.microsoft.com/beta/workbook/worksheets/<id|name>/charts/<name>/series/<undefined>
 ```
-In the request body, supply a JSON representation of [ChartPointsCollection](../resources/chartpointscollection.md) object.
+In the request body, supply a JSON representation of [ChartPoints](../resources/chartpoints.md) object.
 ##### Response
 Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": false,
-  "@odata.type": "microsoft.graph.chartpointscollection"
+  "@odata.type": "microsoft.graph.chartpoints"
 } -->
 ```http
 HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 127
+Content-length: 3
 
 {
-  "count": 99,
-  "items": [
-    {
-      "format": {
-        "fill": {
-        }
-      },
-      "value": {
-      }
-    }
-  ]
 }
 ```
 
@@ -64,7 +53,7 @@ Content-length: 127
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create ChartPointsCollection",
+  "description": "Create ChartPoints",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

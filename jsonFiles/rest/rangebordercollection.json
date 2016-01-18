@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,79 +24,17 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/bindings/<id>/table/range/format/borders": true,
-    "/workbook/tables/<id|name>/range/format/borders": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>/range/format/borders": true,
-    "/workbook/bindings/<id>/table/rows/<index>/range/format/borders": true,
-    "/workbook/tables/<id|name>/rows/<index>/range/format/borders": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>/rows/<index>/range/format/borders": true,
-    "/workbook/bindings/<id>/table/columns/<id|name>/range/format/borders": true,
-    "/workbook/tables/<id|name>/columns/<id|name>/range/format/borders": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>/columns/<id|name>/range/format/borders": true,
-    "/workbook/bindings/<id>/range/format/borders": true,
-    "/workbook/worksheets/<id|name>/range(<address>)/format/borders": true,
-    "/workbook/names/<name>/range/format/borders": true
+    "/workbook/tables(<id|name>)/columns(<id|name>)/range/format/borders": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/columns(<id|name>)/range/format/borders": true,
+    "/workbook/worksheets(<id|name>)/range(<address>)/format/borders": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/range/format/borders": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/rows(<index>)/range/format/borders": true,
+    "/workbook/names(<name>)/range/format/borders": true
   },
   "properties": [
-    {
-      "name": "count",
-      "description": "Number of border objects in the collection.",
-      "isKey": null,
-      "dataType": "int",
-      "isReadOnly": true,
-      "enumName": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "supportFilter": false,
-      "allowPostToCollection": true,
-      "isNullable": null,
-      "isUnicode": null
-    },
-    {
-      "name": "items",
-      "description": "A collection of rangeBorder objects.",
-      "isKey": null,
-      "dataType": "RangeBorder",
-      "isReadOnly": true,
-      "enumName": null,
-      "isCollection": true,
-      "isRelationship": false,
-      "supportFilter": false,
-      "allowPostToCollection": true,
-      "isNullable": null,
-      "isUnicode": null
-    }
+
   ],
   "methods": [
-    {
-      "name": "Item",
-      "displayName": "",
-      "description": "Gets a border object using its name",
-      "prerequisites": "",
-      "returnType": "RangeBorder",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
-      "isFunction": null,
-      "scopes": [
-
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-        {
-          "name": "index",
-          "description": "Index value of the border object to be retrieved.",
-          "dataType": "string",
-          "isCollection": false,
-          "isRequired": true,
-          "enumName": "Excel.BorderIndex",
-          "isNullable": null,
-          "isUnicode": null
-        }
-      ]
-    },
     {
       "name": "ItemAt",
       "displayName": "",
@@ -105,7 +43,7 @@
       "returnType": "RangeBorder",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 

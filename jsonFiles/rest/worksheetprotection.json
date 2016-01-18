@@ -1,13 +1,13 @@
 {
-  "name": "BindingCollection",
-  "description": "Represents the collection of all the binding objects that are part of the workbook.",
-  "collectionOf": "Binding",
+  "name": "WorksheetProtection",
+  "description": "Represents the protection of a sheet object.",
+  "collectionOf": null,
   "isComplexType": false,
   "isEntitySet": false,
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,14 +24,14 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/bindings": true
+    "/workbook/worksheets(<id|name>)/protection": true
   },
   "properties": [
     {
-      "name": "count",
-      "description": "Returns the number of bindings in the collection.",
+      "name": "protected",
+      "description": "Indicates if the worksheet is protected. ",
       "isKey": null,
-      "dataType": "int",
+      "dataType": "boolean",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": false,
@@ -42,14 +42,14 @@
       "isUnicode": null
     },
     {
-      "name": "items",
-      "description": "A collection of binding objects.",
+      "name": "options",
+      "description": "Sheet protection options.",
       "isKey": null,
-      "dataType": "Binding",
+      "dataType": "WorksheetProtectionOptions",
       "isReadOnly": true,
       "enumName": null,
-      "isCollection": true,
-      "isRelationship": false,
+      "isCollection": false,
+      "isRelationship": true,
       "supportFilter": false,
       "allowPostToCollection": true,
       "isNullable": null,
@@ -58,14 +58,14 @@
   ],
   "methods": [
     {
-      "name": "Item",
+      "name": "protect",
       "displayName": "",
-      "description": "Gets a binding object by ID.",
+      "description": "Protect a worksheet. It throws if the worksheet has been protected.",
       "prerequisites": "",
-      "returnType": "Binding",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -75,11 +75,21 @@
       ],
       "parameters": [
         {
-          "name": "id",
-          "description": "Id of the binding object to be retrieved.",
+          "name": "options",
+          "description": "sheet protection options.",
+          "dataType": "WorksheetProtectionOptions",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "password",
+          "description": "sheet protection password.",
           "dataType": "string",
           "isCollection": false,
-          "isRequired": true,
+          "isRequired": false,
           "enumName": null,
           "isNullable": null,
           "isUnicode": null
@@ -87,14 +97,14 @@
       ]
     },
     {
-      "name": "ItemAt",
+      "name": "unprotect",
       "displayName": "",
-      "description": "Gets a binding object based on its position in the items array.",
+      "description": "Unprotect a worksheet",
       "prerequisites": "",
-      "returnType": "Binding",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -104,11 +114,11 @@
       ],
       "parameters": [
         {
-          "name": "index",
-          "description": "Index value of the object to be retrieved. Zero-indexed.",
-          "dataType": "number",
+          "name": "password",
+          "description": "sheet protection password.",
+          "dataType": "string",
           "isCollection": false,
-          "isRequired": true,
+          "isRequired": false,
           "enumName": null,
           "isNullable": null,
           "isUnicode": null

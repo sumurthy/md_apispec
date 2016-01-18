@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,70 +24,14 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/bindings/<id>/table/columns": true,
-    "/workbook/tables/<id|name>/columns": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>/columns": true
+    "/workbook/bindings(<id>)/table/columns": true,
+    "/workbook/tables(<id|name>)/columns": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/columns": true
   },
   "properties": [
-    {
-      "name": "count",
-      "description": "Returns the number of columns in the table.",
-      "isKey": null,
-      "dataType": "int",
-      "isReadOnly": true,
-      "enumName": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "supportFilter": false,
-      "allowPostToCollection": true,
-      "isNullable": null,
-      "isUnicode": null
-    },
-    {
-      "name": "items",
-      "description": "A collection of tableColumn objects.",
-      "isKey": null,
-      "dataType": "TableColumn",
-      "isReadOnly": true,
-      "enumName": null,
-      "isCollection": true,
-      "isRelationship": false,
-      "supportFilter": false,
-      "allowPostToCollection": true,
-      "isNullable": null,
-      "isUnicode": null
-    }
+
   ],
   "methods": [
-    {
-      "name": "Item",
-      "displayName": "",
-      "description": "Gets a column object by Name or ID.",
-      "prerequisites": "",
-      "returnType": "TableColumn",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
-      "isFunction": null,
-      "scopes": [
-
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-        {
-          "name": "key",
-          "description": " Column Name or ID.",
-          "dataType": "number or string",
-          "isCollection": false,
-          "isRequired": true,
-          "enumName": null,
-          "isNullable": null,
-          "isUnicode": null
-        }
-      ]
-    },
     {
       "name": "ItemAt",
       "displayName": "",
@@ -96,7 +40,7 @@
       "returnType": "TableColumn",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -118,14 +62,14 @@
       ]
     },
     {
-      "name": "Add",
+      "name": "add",
       "displayName": "",
       "description": "Adds a new column to the table.",
       "prerequisites": "",
       "returnType": "TableColumn",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -147,8 +91,8 @@
         {
           "name": "values",
           "description": "A 2-dimensional array of unformatted values of the table column.",
-          "dataType": "(boolean or string or number)[][]",
-          "isCollection": false,
+          "dataType": "(boolean or string or number)",
+          "isCollection": true,
           "isRequired": false,
           "enumName": null,
           "isNullable": null,

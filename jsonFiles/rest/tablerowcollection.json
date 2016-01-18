@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,39 +24,12 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/bindings/<id>/table/rows": true,
-    "/workbook/tables/<id|name>/rows": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>/rows": true
+    "/workbook/bindings(<id>)/table/rows": true,
+    "/workbook/tables(<id|name>)/rows": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)/rows": true
   },
   "properties": [
-    {
-      "name": "count",
-      "description": "Returns the number of rows in the table.",
-      "isKey": null,
-      "dataType": "int",
-      "isReadOnly": true,
-      "enumName": null,
-      "isCollection": false,
-      "isRelationship": false,
-      "supportFilter": false,
-      "allowPostToCollection": true,
-      "isNullable": null,
-      "isUnicode": null
-    },
-    {
-      "name": "items",
-      "description": "A collection of tableRow objects.",
-      "isKey": null,
-      "dataType": "TableRow",
-      "isReadOnly": true,
-      "enumName": null,
-      "isCollection": true,
-      "isRelationship": false,
-      "supportFilter": false,
-      "allowPostToCollection": true,
-      "isNullable": null,
-      "isUnicode": null
-    }
+
   ],
   "methods": [
     {
@@ -67,7 +40,7 @@
       "returnType": "TableRow",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -89,14 +62,14 @@
       ]
     },
     {
-      "name": "Add",
+      "name": "add",
       "displayName": "",
       "description": "Adds a new row to the table.",
       "prerequisites": "",
       "returnType": "TableRow",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -118,8 +91,8 @@
         {
           "name": "values",
           "description": "A 2-dimensional array of unformatted values of the table row.",
-          "dataType": "(boolean or string or number)[][]",
-          "isCollection": false,
+          "dataType": "(boolean or string or number)",
+          "isCollection": true,
           "isRequired": false,
           "enumName": null,
           "isNullable": null,

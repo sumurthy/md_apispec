@@ -65,40 +65,70 @@ module SpecMaker
 		@restHash[:description] = @jsHash[:description]
 		@restHash[:collectionOf] = @jsHash[:collectionOf]
 
-		@jsHash[:restPath].each do |path|
-			path = path.gsub("{", "<")
-			path = path.gsub("}", ">")
-			@restHash[:restPath][path] = true
+		if @jsHash[:restPath]
+			@jsHash[:restPath].each do |path|
+				path = path.gsub("{", "<")
+				path = path.gsub("}", ">")
+				@restHash[:restPath][path] = true
+			end
 		end
 
-		if @jsHash[:properties]
+		if @jsHash[:properties] && !@jsHash[:isCollection]
 			@jsHash[:properties].each do |item|
 				restItem = deep_copy(@property)
 				restItem[:name] = item[:name]
-				restItem[:dataType] = item[:dataType].chomp('[]')
+				restItem[:dataType] = item[:dataType]
+				if restItem[:dataType] == 'object[][]'
+					restItem[:dataType] = 'json'
+				end
+				if restItem[:dataType] == 'bool'
+					restItem[:dataType] = 'boolean'
+				end				
 				restItem[:description] = item[:description]
+				restItem[:description] = restItem[:description].chomp('Read-Only.')
 				restItem[:isReadOnly] = item[:isReadOnly]
 				restItem[:enumName] = item[:enumNameJs]
 				restItem[:isCollection] = item[:isCollection]
 				restItem[:isRelationship] = item[:isRelationship]
 				restItem[:isKey] = item[:isKey]
+				if restItem[:isCollection]
+					restItem[:dataType] = item[:dataType].chomp('Collection')
+				end
+
 				@restHash[:properties].push restItem
 			end		
 		end
 
 		if @jsHash[:methods]
 			@jsHash[:methods].each do |item|
-				if item[:restfulName]
+				if item[:restfulName] && item[:restfulName] != 'Item'
 					restItem = deep_copy(@method)
 					restItem[:name] = item[:restfulName]
 					restItem[:returnType] = item[:returnType]
+					restItem[:returnType] = nil if restItem[:returnType] == 'void'
 					restItem[:description] = item[:description]
+					restItem[:httpSuccessCode] = "200"
 					if item[:parameters]	
 						item[:parameters].each do |parm|
 							parameter = deep_copy(@parameter)
 							parameter[:name] = parm[:name]
 							parameter[:dataType] = parm[:dataType]
+							if parameter[:dataType] == 'Range'
+								parameter[:dataType] = 'string'
+							end
+							if parameter[:dataType] == 'Range or string'
+								parameter[:dataType] = 'string'
+							end
+							if parameter[:dataType] == 'bool'
+								parameter[:dataType] = 'boolean'
+							end
+							parameter[:dataType] = parameter[:dataType].chomp('[]')
+							parameter[:dataType] = parameter[:dataType].chomp('[]')
 							parameter[:description] = parm[:description]
+
+							parameter[:description] = parm[:description].gsub('(Optional) ', '')
+							
+							parameter[:isCollection] = parm[:isCollection]
 							parameter[:isRequired] = parm[:isRequired]
 							parameter[:enumName] = parm[:enumNameJs]
 							restItem[:parameters].push parameter

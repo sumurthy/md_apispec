@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -27,20 +27,7 @@
     "/workbook/worksheets": true
   },
   "properties": [
-    {
-      "name": "items",
-      "description": "A collection of worksheet objects.",
-      "isKey": null,
-      "dataType": "Worksheet",
-      "isReadOnly": true,
-      "enumName": null,
-      "isCollection": true,
-      "isRelationship": false,
-      "supportFilter": false,
-      "allowPostToCollection": true,
-      "isNullable": null,
-      "isUnicode": null
-    }
+
   ],
   "methods": [
     {
@@ -51,7 +38,7 @@
       "returnType": "Worksheet",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -64,43 +51,14 @@
       ]
     },
     {
-      "name": "Item",
-      "displayName": "",
-      "description": "Gets a worksheet object using its Name or ID.",
-      "prerequisites": "",
-      "returnType": "Worksheet",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
-      "isFunction": null,
-      "scopes": [
-
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-        {
-          "name": "key",
-          "description": "The Name or ID of the worksheet.",
-          "dataType": "string",
-          "isCollection": false,
-          "isRequired": true,
-          "enumName": null,
-          "isNullable": null,
-          "isUnicode": null
-        }
-      ]
-    },
-    {
-      "name": "Add",
+      "name": "add",
       "displayName": "",
       "description": "Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call \".activate() on it.",
       "prerequisites": "",
       "returnType": "Worksheet",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 

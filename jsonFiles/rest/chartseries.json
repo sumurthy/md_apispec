@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,7 +24,7 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/worksheets/<id|name>/charts/<name>/series/<undefined>": true
+    "/workbook/worksheets(<id|name>)/charts(<name>)/series(<undefined>)": true
   },
   "properties": [
     {
@@ -59,7 +59,7 @@
       "name": "points",
       "description": "Represents a collection of all points in the series.",
       "isKey": null,
-      "dataType": "ChartPointsCollection",
+      "dataType": "ChartPoints",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,

@@ -19,7 +19,7 @@ Here is a JSON representation of the resource
   "count": 1024,
   "items": [
     {
-      "@odata.type": "microsoft.graph.chartpoint"
+      "@odata.type": "microsoft.graph.chartpoint[]"
     }
   ]
 }
@@ -29,7 +29,7 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |count|int|Returns the number of chart points in the collection. Read-only.|
-|items|[ChartPoint](chartpoint.md) collection|A collection of chartPoints objects. Read-only.|
+|items|[ChartPoint[]](chartpoint[].md) collection|A collection of chartPoints objects. Read-only.|
 
 ### Relationships
 None

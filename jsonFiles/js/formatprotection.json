@@ -1,0 +1,74 @@
+{
+  "name": "FormatProtection",
+  "description": "Represents the format protection of a range object.",
+  "isCollection": false,
+  "collectionOf": null,
+  "restPath": [
+    "/workbook/tables({id|name})/columns({id|name})/range/format/protection",
+    "/workbook/worksheets({id|name})/tables({id|name})/columns({id|name})/range/format/protection",
+    "/workbook/worksheets({id|name})/range({address})/format/protection",
+    "/workbook/worksheets({id|name})/tables({id|name})/range/format/protection",
+    "/workbook/worksheets({id|name})/tables({id|name})/rows({index})/range/format/protection",
+    "/workbook/names({name})/range/format/protection"
+  ],
+  "info": {
+    "version": "1.1",
+    "addedIn": "1.1",
+    "addinTypes": [
+      "Excel"
+    ],
+    "nameSpace": "Excel",
+    "addinHosts": [
+      "Content",
+      "Task pane"
+    ],
+    "title": "Office JavaScript Add-in API",
+    "description": "Office JavaScript Add-in API for June fork"
+  },
+  "properties": [
+    {
+      "name": "locked",
+      "dataType": "bool",
+      "description": "Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    },
+    {
+      "name": "formulaHidden",
+      "dataType": "bool",
+      "description": "Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.",
+      "isReadOnly": false,
+      "enumNameJs": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "isKey": null,
+      "notes": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "load",
+      "returnType": "void",
+      "description": "Fills the proxy object created in JavaScript layer with property and object values specified in the parameter.",
+      "syntax": "object.load(param);",
+      "signature": "load(param: object)",
+      "restfulName": null,
+      "notes": null,
+      "parameters": [
+        {
+          "name": "param",
+          "dataType": "object",
+          "description": "Accepts parameter and relationship names as delimited string or an array. Or, provide [loadOption](loadoption.md) object.",
+          "isRequired": false,
+          "enumNameJs": null,
+          "possibleValues": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

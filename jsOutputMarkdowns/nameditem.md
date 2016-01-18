@@ -9,7 +9,7 @@ Represents a defined name for a range of cells or value. Names can be primitive 
 | Property	   | Type	|Description
 |:---------------|:--------|:----------|
 |name|string|The name of the object. Read-only.|
-|type|string|Indicates what type of reference is associated with the name. Read-only. Possible values are: String, Integer, Double, Boolean, Range.|
+|type|string|Indicates what type of reference is associated with the name. Read-only.|
 |value|object|Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.|
 |visible|bool|Specifies whether the object is visible or not.|
 

@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,9 +24,9 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/bindings/<id>/table": true,
-    "/workbook/tables/<id|name>": true,
-    "/workbook/worksheets/<id|name>/tables/<id|name>": true
+    "/workbook/bindings(<id>)/table": true,
+    "/workbook/tables(<id|name>)": true,
+    "/workbook/worksheets(<id|name>)/tables(<id|name>)": true
   },
   "properties": [
     {
@@ -61,7 +61,7 @@
       "name": "showHeaders",
       "description": "Indicates whether the header row is visible or not. This value can be set to show or remove the header row.",
       "isKey": null,
-      "dataType": "bool",
+      "dataType": "boolean",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -75,7 +75,7 @@
       "name": "showTotals",
       "description": "Indicates whether the total row is visible or not. This value can be set to show or remove the total row.",
       "isKey": null,
-      "dataType": "bool",
+      "dataType": "boolean",
       "isReadOnly": false,
       "enumName": null,
       "isCollection": false,
@@ -103,7 +103,7 @@
       "name": "columns",
       "description": "Represents a collection of all the columns in the table.",
       "isKey": null,
-      "dataType": "TableColumnCollection",
+      "dataType": "TableColumn",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,
@@ -117,10 +117,38 @@
       "name": "rows",
       "description": "Represents a collection of all the rows in the table.",
       "isKey": null,
-      "dataType": "TableRowCollection",
+      "dataType": "TableRow",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "worksheet",
+      "description": "The worksheet containing the current table.",
+      "isKey": null,
+      "dataType": "Worksheet",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
+      "name": "sort",
+      "description": "Represents the sorting for the table.",
+      "isKey": null,
+      "dataType": "TableSort",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
       "isRelationship": true,
       "supportFilter": false,
       "allowPostToCollection": true,
@@ -137,7 +165,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -157,7 +185,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -177,7 +205,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -197,7 +225,7 @@
       "returnType": "Range",
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -210,14 +238,74 @@
       ]
     },
     {
-      "name": "Delete",
+      "name": "delete",
       "displayName": "",
       "description": "Deletes the table.",
       "prerequisites": "",
-      "returnType": "void",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "convertToRange",
+      "displayName": "",
+      "description": "Converts the table into a normal range of cells. All data is preserved.",
+      "prerequisites": "",
+      "returnType": "Range",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "clearFilters",
+      "displayName": "",
+      "description": "Clears all the filters currently applied on the table.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+
+      ]
+    },
+    {
+      "name": "reapplyFilters",
+      "displayName": "",
+      "description": "Reapplies all the filters currently on the table.",
+      "prerequisites": "",
+      "returnType": null,
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 

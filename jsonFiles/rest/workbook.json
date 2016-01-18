@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -42,10 +42,24 @@
       "isUnicode": null
     },
     {
+      "name": "functions",
+      "description": "Represents Excel application instance that contains this workbook.",
+      "isKey": null,
+      "dataType": "Functions",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
+    {
       "name": "names",
       "description": "Represents a collection of workbook scoped named items (named ranges and constants).",
       "isKey": null,
-      "dataType": "NamedItemCollection",
+      "dataType": "NamedItem",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,
@@ -59,7 +73,7 @@
       "name": "worksheets",
       "description": "Represents a collection of worksheets associated with the workbook.",
       "isKey": null,
-      "dataType": "WorksheetCollection",
+      "dataType": "Worksheet",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,
@@ -73,7 +87,7 @@
       "name": "tables",
       "description": "Represents a collection of tables associated with the workbook.",
       "isKey": null,
-      "dataType": "TableCollection",
+      "dataType": "Table",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,
@@ -87,7 +101,7 @@
       "name": "bindings",
       "description": "Represents a collection of bindings that are part of the workbook.",
       "isKey": null,
-      "dataType": "BindingCollection",
+      "dataType": "Binding",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,
@@ -99,25 +113,6 @@
     }
   ],
   "methods": [
-    {
-      "name": "SelectedRange",
-      "displayName": "",
-      "description": "Gets the currently selected range from the workbook.",
-      "prerequisites": "",
-      "returnType": "Range",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
-      "isFunction": null,
-      "scopes": [
 
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-
-      ]
-    }
   ]
 }

@@ -1,5 +1,19 @@
 # Table
 
+### convertToRange()
+```js
+Excel.run(function (ctx) { 
+	var tableName = 'Table1';
+	var table = ctx.workbook.tables.getItem(tableName);
+	table.convertToRange();
+	return ctx.sync(); 
+}).catch(function(error) {
+		console.log("Error: " + error);
+		if (error instanceof OfficeExtension.Error) {
+			console.log("Debug info: " + JSON.stringify(error.debugInfo));
+		}
+});
+```
 ### delete()
 ```js
 Excel.run(function (ctx) { 

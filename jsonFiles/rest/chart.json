@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -24,9 +24,23 @@
   "updateDescription": "",
   "deleteDescription": "",
   "restPath": {
-    "/workbook/worksheets/<id|name>/charts/<name>": true
+    "/workbook/worksheets(<id|name>)/charts(<name>)": true
   },
   "properties": [
+    {
+      "name": "id",
+      "description": "Gets a chart based on its position in the collection.",
+      "isKey": null,
+      "dataType": "string",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": false,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
+    },
     {
       "name": "axes",
       "description": "Represents chart axes.",
@@ -115,7 +129,7 @@
       "name": "series",
       "description": "Represents either a single series or collection of series in the chart.",
       "isKey": null,
-      "dataType": "ChartSeriesCollection",
+      "dataType": "ChartSeries",
       "isReadOnly": true,
       "enumName": null,
       "isCollection": true,
@@ -180,18 +194,32 @@
       "allowPostToCollection": true,
       "isNullable": null,
       "isUnicode": null
+    },
+    {
+      "name": "worksheet",
+      "description": "The worksheet containing the current chart.",
+      "isKey": null,
+      "dataType": "Worksheet",
+      "isReadOnly": true,
+      "enumName": null,
+      "isCollection": false,
+      "isRelationship": true,
+      "supportFilter": false,
+      "allowPostToCollection": true,
+      "isNullable": null,
+      "isUnicode": null
     }
   ],
   "methods": [
     {
-      "name": "Delete",
+      "name": "delete",
       "displayName": "",
       "description": "Deletes the chart object.",
       "prerequisites": "",
-      "returnType": "void",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -204,14 +232,14 @@
       ]
     },
     {
-      "name": "SetData",
+      "name": "setData",
       "displayName": "",
       "description": "Resets the source data for the chart.",
       "prerequisites": "",
-      "returnType": "void",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -222,8 +250,8 @@
       "parameters": [
         {
           "name": "sourceData",
-          "description": "The address or name of the range that contains the source data. If an address or a worksheet-scoped name is used, it must include the worksheet name (e.g. \"Sheet1!A5:B9\"). ",
-          "dataType": "Range or string",
+          "description": "The Range object corresponding to the source data.",
+          "dataType": "string",
           "isCollection": false,
           "isRequired": true,
           "enumName": null,
@@ -243,14 +271,14 @@
       ]
     },
     {
-      "name": "SetPosition",
+      "name": "setPosition",
       "displayName": "",
       "description": "Positions the chart relative to cells on the worksheet.",
       "prerequisites": "",
-      "returnType": "void",
+      "returnType": null,
       "isReturnNullable": null,
       "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
+      "httpSuccessCode": "200",
       "isFunction": null,
       "scopes": [
 
@@ -262,7 +290,7 @@
         {
           "name": "startCell",
           "description": "The start cell. This is where the chart will be moved to. The start cell is the top-left or top-right cell, depending on the user's right-to-left display settings.",
-          "dataType": "Range or string",
+          "dataType": "string",
           "isCollection": false,
           "isRequired": true,
           "enumName": null,
@@ -271,11 +299,60 @@
         },
         {
           "name": "endCell",
-          "description": "(Optional) The end cell. If specified, the chart's width and height will be set to fully cover up this cell/range.",
-          "dataType": "Range or string",
+          "description": "The end cell. If specified, the chart's width and height will be set to fully cover up this cell/range.",
+          "dataType": "string",
           "isCollection": false,
           "isRequired": false,
           "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        }
+      ]
+    },
+    {
+      "name": "Image",
+      "displayName": "",
+      "description": "Renders the chart as a base64-encoded image by scaling the chart to fit the specified dimensions.",
+      "prerequisites": "",
+      "returnType": "System.IO.Stream",
+      "isReturnNullable": null,
+      "isReturnTypeCollection": false,
+      "httpSuccessCode": "200",
+      "isFunction": null,
+      "scopes": [
+
+      ],
+      "errorCodes": [
+
+      ],
+      "parameters": [
+        {
+          "name": "height",
+          "description": "The desired height of the resulting image.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "width",
+          "description": "The desired width of the resulting image.",
+          "dataType": "number",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": null,
+          "isNullable": null,
+          "isUnicode": null
+        },
+        {
+          "name": "fittingMode",
+          "description": "The method used to scale the chart to the specified to the specified dimensions (if both height and width are set).\"",
+          "dataType": "string",
+          "isCollection": false,
+          "isRequired": false,
+          "enumName": "Excel.ImageFittingMode",
           "isNullable": null,
           "isUnicode": null
         }

@@ -1,6 +1,6 @@
 # WorksheetCollection: Add
 
-Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets. If you wish to activate the newly added worksheet, call ".activate() on it.
+Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request

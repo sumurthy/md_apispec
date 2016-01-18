@@ -7,7 +7,7 @@
   "allowPatch": true,
   "allowUpsert": true,
   "allowPatchCreate": true,
-  "allowDelete": true,
+  "allowDelete": false,
   "isReferenceable": true,
   "isExpandable": true,
   "isFilterable": true,
@@ -27,50 +27,9 @@
     "/workbook/names": true
   },
   "properties": [
-    {
-      "name": "items",
-      "description": "A collection of namedItem objects.",
-      "isKey": null,
-      "dataType": "NamedItem",
-      "isReadOnly": true,
-      "enumName": null,
-      "isCollection": true,
-      "isRelationship": false,
-      "supportFilter": false,
-      "allowPostToCollection": true,
-      "isNullable": null,
-      "isUnicode": null
-    }
+
   ],
   "methods": [
-    {
-      "name": "Item",
-      "displayName": "",
-      "description": "Gets a nameditem object using its name",
-      "prerequisites": "",
-      "returnType": "NamedItem",
-      "isReturnNullable": null,
-      "isReturnTypeCollection": false,
-      "httpSuccessCode": null,
-      "isFunction": null,
-      "scopes": [
 
-      ],
-      "errorCodes": [
-
-      ],
-      "parameters": [
-        {
-          "name": "name",
-          "description": "nameditem name.",
-          "dataType": "string",
-          "isCollection": false,
-          "isRequired": true,
-          "enumName": null,
-          "isNullable": null,
-          "isUnicode": null
-        }
-      ]
-    }
   ]
 }
